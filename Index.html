@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vaswan Films | Film Production House</title>
+
+    <meta name="description" content="Vaswan Films - Film, Web Series, Music and Creative Production House.">
+    <meta name="keywords" content="Vaswan Films, Film Production, Web Series, Movies, Mumbai">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0b0b;
+            color: white;
+            line-height: 1.6;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(0,0,0,0.90);
+            border-bottom: 1px solid #333;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 20px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #d4af37;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            color: #d4af37;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px 50px;
+            background:
+                linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.85)),
+                radial-gradient(circle at center, #333 0%, #080808 65%);
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            letter-spacing: 5px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #d4af37;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 28px;
+            background: #d4af37;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            background: white;
+        }
+
+        section {
+            padding: 80px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 40px;
+        }
+
+        .section-title span {
+            color: #d4af37;
+        }
+
+        .about {
+            text-align: center;
+            max-width: 850px;
+            margin: auto;
+            color: #ccc;
+            font-size: 17px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: #151515;
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid #292929;
+            border-radius: 8px;
+        }
+
+        .card h3 {
+            color: #d4af37;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #bbb;
+        }
+
+        .project {
+            background: #151515;
+            padding: 25px;
+            margin-bottom: 18px;
+            border-left: 4px solid #d4af37;
+            border-radius: 5px;
+        }
+
+        .project h3 {
+            color: #d4af37;
+        }
+
+        .project p {
+            color: #ccc;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            margin: 10px 0;
+            color: #ccc;
+        }
+
+        .contact a {
+            color: #d4af37;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #050505;
+            border-top: 1px solid #222;
+            color: #888;
+        }
+
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">VASWAN <span>FILMS</span></div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+    <div>
+        <h1>VASWAN <span>FILMS</span></h1>
+
+        <p>
+            Films • Web Series • Music • Creative Production
+        </p>
+
+        <a href="#projects" class="btn">OUR PROJECTS</a>
+        <a href="#contact" class="btn">CONTACT US</a>
+    </div>
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <h2 class="section-title">ABOUT <span>VASWAN FILMS</span></h2>
+
+    <div class="about">
+
+        <p>
+            Vaswan Films is a creative film and entertainment production house
+            focused on developing meaningful stories, films, web series,
+            music and visual content.
+        </p>
+
+        <br>
+
+        <p>
+            Based in Mumbai, Vaswan Films aims to create engaging cinema
+            and entertainment projects for audiences across India and beyond.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <h2 class="section-title">OUR <span>PROJECTS</span></h2>
+
+    <div class="project">
+
+        <h3>GUNNAH</h3>
+
+        <p>
+            A crime-thriller project exploring the consequences of
+            wrong behaviour and misconduct.
+        </p>
+
+    </div>
+
+
+    <div class="project">
+
+        <h3>AAKHIRI TICKET</h3>
+
+        <p>
+            A social-emotional film built around a powerful human story
+            and an important message.
+        </p>
+
+    </div>
+
+
+    <div class="project">
+
+        <h3>UPCOMING PROJECTS</h3>
+
+        <p>
+            New films, web series and creative projects are currently
+            under development.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+    <h2 class="section-title">OUR <span>SERVICES</span></h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Film Production</h3>
+            <p>
+                Feature films and short films from concept to production.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Web Series</h3>
+            <p>
+                Development and production of original web series content.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Music & Videos</h3>
+            <p>
+                Music videos, promotional videos and creative visual content.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Advertising</h3>
+            <p>
+                Creative advertising and branded entertainment projects.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Casting</h3>
+            <p>
+                Artist and talent casting for film and entertainment projects.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Creative Development</h3>
+            <p>
+                Story, screenplay and concept development for visual media.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <h2 class="section-title">CONTACT <span>US</span></h2>
+
+    <div class="contact">
+
+        <p><strong>Vaswan Films</strong></p>
+
+        <p>Mumbai, Maharashtra, India</p>
+
+        <p>
+            Email:
+            <a href="mailto:vaswankrishna@gmail.com">
+                vaswankrishna@gmail.com
+            </a>
+        </p>
+
+        <p>
+            Phone:
+            <a href="tel:+918928879904">
+                +91 8928879904
+            </a>
+        </p>
+
+        <p>
+            YouTube:
+            <a href="https://www.youtube.com/@Krishnavaswanfilms"
+               target="_blank">
+                Vaswan Films
+            </a>
+        </p>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    © 2026 Vaswan Films. All Rights Reserved.
+
+</footer>
+
+</body>
+</html>
