@@ -5,44 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vaswan Films - Official Website</title>
     
-    <!-- Preconnect to external servers for faster loading -->
-    <link rel="preconnect" href="https://jsdelivr.net">
-    <link rel="preconnect" href="https://cloudflare.com">
-    <link rel="preconnect" href="https://elfsight.com">
-
-    <!-- Bootstrap 5 CSS (Optimized) -->
-    <link href="https://jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Direct Bootstrap 5 CSS for Perfect Layout -->
+    <link href="https://jsdelivr.net" rel="stylesheet" crossorigin="anonymous">
+    <!-- FontAwesome for Social Icons -->
+    <link rel="stylesheet" href="https://cloudflare.com" crossorigin="anonymous">
     
     <style>
-        /* Fast Loading CSS with system fonts fallback */
-        body { background-color: #0b0b0b; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; text-rendering: optimizeLegibility; }
-        .navbar { background-color: #000000; border-bottom: 2px solid #ffc107; }
-        .hero-section { background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.95)), url('https://unsplash.com') no-repeat center center/cover; padding: 100px 0 60px 0; text-align: center; }
-        .section-title { font-weight: 700; color: #ffc107; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 40px; text-align: center; }
+        /* Force Beautiful Dark Theme Even If CSS Delays */
+        body { background-color: #0b0b0b !important; color: #ffffff !important; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .navbar { background-color: #000000 !important; border-bottom: 2px solid #ffc107; padding: 10px 0; }
+        .navbar-brand { font-size: 24px; font-weight: 700; color: #ffc107 !important; text-decoration: none; display: flex; align-items: center; }
+        .nav-link { color: #ffffff !important; font-weight: 600; text-decoration: none; }
+        .nav-link:hover { color: #ffc107 !important; }
+        .hero-section { background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.95)), url('https://unsplash.com') no-repeat center center/cover; padding: 120px 0 80px 0; text-align: center; }
+        .section-title { font-weight: 700; color: #ffc107 !important; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 40px; text-align: center; }
         .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #ffc107; margin: 10px auto 0 auto; }
-        .feed-container { background-color: #141414; border: 1px solid #252525; border-radius: 16px; padding: 20px; min-height: 200px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
-        .social-btn { width: 50px; height: 50px; line-height: 50px; display: inline-block; background: #161616; color: #fff; border-radius: 50%; margin: 0 10px; font-size: 20px; border: 1px solid #333; transition: 0.3s; text-align: center; text-decoration: none; }
-        .social-btn:hover { color: #000; background: #ffc107; border-color: #ffc107; transform: scale(1.1); }
-        .footer { background-color: #000000; padding: 30px 0; border-top: 1px solid #222; font-size: 14px; text-align: center; }
+        .feed-container { background-color: #141414; border: 1px solid #252525; border-radius: 16px; padding: 20px; min-height: 250px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+        .social-btn { width: 50px; height: 50px; line-height: 50px; display: inline-block; background: #161616; color: #fff !important; border-radius: 50%; margin: 0 10px; font-size: 20px; border: 1px solid #333; transition: 0.3s; text-align: center; text-decoration: none; }
+        .social-btn:hover { color: #000 !important; background: #ffc107; border-color: #ffc107; transform: scale(1.1); }
+        .footer { background-color: #000000; padding: 30px 0; border-top: 1px solid #222; font-size: 14px; text-align: center; color: #888; }
+        
+        /* Fixed mobile menu appearance */
+        .navbar-nav { --bs-nav-link-padding-y: 0.5rem; }
     </style>
 </head>
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- Navigation Bar with Text Logo -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold text-warning fs-3" href="#">🎬 VASWAN FILMS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-toggle="navbarNav">
+            <a class="navbar-brand" href="#">
+                🎬 VASWAN FILMS
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="#youtube">Auto Video Feed</a></li>
-                    <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="#instagram">Social Feed</a></li>
-                    <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="#contact">Contact</a></li>
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link px-3" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#youtube">Auto Video Feed</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#instagram">Social Feed</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -51,28 +54,28 @@
     <!-- Hero Section -->
     <header id="home" class="hero-section">
         <div class="container">
-            <h1 class="display-3 fw-bold text-warning mb-2">Vaswan Films</h1>
-            <p class="lead text-light mb-4 fs-4">Official Hub of Krishna Vaswan Entertainment</p>
+            <h1 class="display-4 fw-bold text-warning mb-2">Vaswan Films</h1>
+            <p class="lead text-light mb-4 fs-5">Official Hub of Krishna Vaswan Entertainment</p>
             <a href="#youtube" class="btn btn-warning btn-lg fw-bold px-4 py-2 shadow">Watch Live Feed</a>
         </div>
     </header>
 
     <!-- YouTube Live Automatic Feed Section -->
     <section id="youtube" class="container my-5 py-5">
-        <h2 class="section-title">Latest YouTube Videos (Auto Update)</h2>
+        <h2 class="section-title">Latest YouTube Videos</h2>
         <div class="feed-container">
-            <!-- Lazy-loaded Elfsight YouTube Widget -->
-            <script src="https://elfsight.com/platform/platform.js" async defer></script>
+            <!-- Elfsight YouTube Widget -->
+            <script src="https://elfsight.com" async defer></script>
             <div class="elfsight-app-547dfc2a-fa68-4509-b4f7-e43597cc89f1" data-elfsight-app-lazy></div>
-            <p class="text-center text-muted small mt-3">💡 Yeh section aapke YouTube channel se live connected hai.</p>
+            <p class="text-center text-muted small mt-3">💡 Yeh section aapke YouTube channel se live connected hai aur automatic update hota rahega.</p>
         </div>
     </section>
 
     <!-- Instagram/Social Automatic Gallery -->
     <section id="instagram" class="container my-5 py-5 border-top border-secondary">
-        <h2 class="section-title">Instagram & Reels (Auto Update)</h2>
+        <h2 class="section-title">Instagram & Reels</h2>
         <div class="feed-container">
-            <!-- Lazy-loaded Elfsight Instagram Widget -->
+            <!-- Elfsight Instagram Widget -->
             <div class="elfsight-app-4375bcfd-bd88-466d-a602-535359dd2ef2" data-elfsight-app-lazy></div>
             <p class="text-center text-muted small mt-3">💡 Aapki Instagram Reels aur Posts yahan automatic show hongi.</p>
         </div>
@@ -101,7 +104,7 @@
         </div>
     </footer>
 
-    <!-- Bootstrap 5 JS Bundle (Deferred for speed) -->
-    <script src="https://jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://jsdelivr.net" crossorigin="anonymous"></script>
 </body>
 </html>
