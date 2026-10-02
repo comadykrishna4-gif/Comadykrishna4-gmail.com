@@ -6,22 +6,22 @@
     <title>Vaswan Films - Official Website</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://jsdelivr.net" rel="stylesheet">
-    <!-- FontAwesome for Social Media Icons -->
+    <!-- FontAwesome for Social Icons -->
     <link rel="stylesheet" href="https://cloudflare.com">
     <style>
         body { background-color: #0b0b0b; color: #ffffff; font-family: 'Segoe UI', Roboto, sans-serif; }
         .navbar { background-color: #000000; border-bottom: 2px solid #ffc107; }
         .hero-section { background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.95)), url('https://unsplash.com') no-repeat center center/cover; padding: 120px 0 80px 0; text-align: center; }
-        .section-title { font-weight: 700; color: #ffc107; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 40px; position: relative; }
+        .section-title { font-weight: 700; color: #ffc107; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 40px; text-align: center; }
         .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #ffc107; margin: 10px auto 0 auto; }
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; border: 2px solid #222; box-shadow: 0 4px 15px rgba(255,193,7,0.1); }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-        .project-card { background-color: #161616; border: 1px solid #282828; border-radius: 12px; overflow: hidden; transition: 0.3s; }
-        .project-card:hover { transform: translateY(-8px); border-color: #ffc107; box-shadow: 0 5px 15px rgba(255, 193, 7, 0.2); }
-        .project-img { height: 220px; object-fit: cover; width: 100%; background-color: #222; }
-        .social-btn { width: 50px; height: 50px; line-height: 50px; display: inline-block; background: #161616; color: #fff; border-radius: 50%; margin: 0 10px; font-size: 20px; border: 1px solid #333; transition: 0.3s; text-align: center; }
+        
+        /* Auto Update Widgets Style */
+        .feed-container { background-color: #141414; border: 1px solid #252525; border-radius: 16px; padding: 20px; min-height: 400px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+        .widget-placeholder { border: 2px dashed #333; border-radius: 12px; padding: 40px; text-align: center; color: #888; }
+        
+        .social-btn { width: 50px; height: 50px; line-height: 50px; display: inline-block; background: #161616; color: #fff; border-radius: 50%; margin: 0 10px; font-size: 20px; border: 1px solid #333; transition: 0.3s; text-align: center; text-decoration: none; }
         .social-btn:hover { color: #000; background: #ffc107; border-color: #ffc107; transform: scale(1.1); }
-        .footer { background-color: #000000; padding: 30px 0; border-top: 1px solid #222; font-size: 14px; }
+        .footer { background-color: #000000; padding: 30px 0; border-top: 1px solid #222; font-size: 14px; text-align: center; }
     </style>
 </head>
 <body>
@@ -36,8 +36,8 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="#trailers">Latest Trailers</a></li>
-                    <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="#gallery">Upcoming Projects</a></li>
+                    <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="#youtube">Auto Video Feed</a></li>
+                    <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="#instagram">Social Feed</a></li>
                     <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -48,77 +48,48 @@
     <header id="home" class="hero-section">
         <div class="container">
             <h1 class="display-3 fw-bold text-warning mb-2">Vaswan Films</h1>
-            <p class="lead text-light mb-4 fs-4">Official Hub of Entertainment, Movies & Web Series</p>
-            <a href="#trailers" class="btn btn-warning btn-lg fw-bold px-4 py-2 shadow">Watch Latest Work</a>
+            <p class="lead text-light mb-4 fs-4">Official Hub of Krishna Vaswan Entertainment</p>
+            <a href="#youtube" class="btn btn-warning btn-lg fw-bold px-4 py-2 shadow">Watch Live Feed</a>
         </div>
     </header>
 
-    <!-- YouTube Video Section -->
-    <section id="trailers" class="container my-5 py-5">
-        <h2 class="text-center section-title">Latest Video & Trailers</h2>
-        <div class="row justify-content-center">
-            <div class="col-lg-8 col-md-10">
-                <!-- YouTube Embed Video Box -->
-                <div class="video-container">
-                    <!-- Note: Replace "dQw4w9WgXcQ" with your actual YouTube video ID later -->
-                    <iframe src="https://youtube.com" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <p class="text-center text-muted mt-3">Watch our featured digital release on YouTube.</p>
-            </div>
+    <!-- YouTube Live Automatic Feed Section -->
+    <section id="youtube" class="container my-5 py-5">
+        <h2 class="section-title">Latest YouTube Videos (Auto Update)</h2>
+        <div class="feed-container">
+            <!-- Elfsight YouTube Widget Embed Code Starting -->
+            <script src="https://elfsight.com" async defer></script>
+            <div class="elfsight-app-547dfc2a-fa68-4509-b4f7-e43597cc89f1" data-elfsight-app-lazy></div>
+            <!-- Elfsight YouTube Widget End -->
+            
+            <p class="text-center text-muted small mt-3">💡 Yeh section aapke YouTube channel se live connected hai aur automatic update hota rahega.</p>
         </div>
     </section>
 
-    <!-- Upcoming Projects Gallery -->
-    <section id="gallery" class="container my-5 py-5 border-top border-secondary">
-        <h2 class="text-center section-title">Upcoming Projects</h2>
-        <div class="row g-4">
-            <!-- Project 1 -->
-            <div class="col-md-4">
-                <div class="project-card">
-                    <img src="https://unsplash.com" class="project-img" alt="Project 1">
-                    <div class="p-4">
-                        <span class="badge bg-warning text-dark mb-2 fw-bold">New Web Series</span>
-                        <h3 class="h5 text-white">Project Title One</h3>
-                        <p class="text-muted small">An upcoming thrilling drama coming soon to digital platforms near you.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Project 2 -->
-            <div class="col-md-4">
-                <div class="project-card">
-                    <img src="https://unsplash.com" class="project-img" alt="Project 2">
-                    <div class="p-4">
-                        <span class="badge bg-danger mb-2 fw-bold">Short Film</span>
-                        <h3 class="h5 text-white">Project Title Two</h3>
-                        <p class="text-muted small">A heartwarming short format storytelling experience currently in production.</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Project 3 -->
-            <div class="col-md-4">
-                <div class="project-card">
-                    <img src="https://unsplash.com" class="project-img" alt="Project 3">
-                    <div class="p-4">
-                        <span class="badge bg-info text-dark mb-2 fw-bold">Music Video</span>
-                        <h3 class="h5 text-white">Project Title Three</h3>
-                        <p class="text-muted small">A cinematic musical masterpiece featuring stunning visuals and locations.</p>
-                    </div>
-                </div>
-            </div>
+    <!-- Instagram/Social Automatic Gallery -->
+    <section id="instagram" class="container my-5 py-5 border-top border-secondary">
+        <h2 class="section-title">Instagram & Reels (Auto Update)</h2>
+        <div class="feed-container">
+            <!-- Elfsight Instagram Widget Embed Code Starting -->
+            <script src="https://elfsight.com" async defer></script>
+            <div class="elfsight-app-4375bcfd-bd88-466d-a602-535359dd2ef2" data-elfsight-app-lazy></div>
+            <!-- Elfsight Instagram Widget End -->
+            
+            <p class="text-center text-muted small mt-3">💡 Aapki Instagram Reels aur Posts yahan automatic show hongi.</p>
         </div>
     </section>
 
-    <!-- Contact & Social Media Section -->
+    <!-- Contact & Social Media Links -->
     <section id="contact" class="container my-5 py-5 text-center border-top border-secondary">
         <div class="p-5 bg-dark rounded-4 border border-secondary shadow-lg">
-            <h2 class="section-title text-center">Connect With Us</h2>
-            <p class="text-muted mb-4 fs-5">Follow Vaswan Films on social networks or drop an email for business inquiries.</p>
+            <h2 class="section-title">Connect With Krishna Vaswan</h2>
+            <p class="text-muted mb-4 fs-5">Follow our handles or drop an email for direct collaborations.</p>
             
-            <!-- Social Buttons (Links will need updating) -->
+            <!-- Exact Social Profile Links Connected Here -->
             <div class="mb-4">
-                <a href="https://youtube.com" target="_blank" class="social-btn"><i class="fab fa-youtube"></i></a>
-                <a href="https://instagram.com" target="_blank" class="social-btn"><i class="fab fa-instagram"></i></a>
-                <a href="https://facebook.com" target="_blank" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/@krishnaavaswan" target="_blank" class="social-btn" title="YouTube"><i class="fab fa-youtube text-danger"></i></a>
+                <a href="https://www.instagram.com/krishnaavaswan_official?stkn=MTRoNDQ3emVyY2d4Zw==" target="_blank" class="social-btn" title="Instagram"><i class="fab fa-instagram text-light"></i></a>
+                <a href="https://www.facebook.com/share/19fpEhneVS/" target="_blank" class="social-btn" title="Facebook"><i class="fab fa-facebook-f text-primary"></i></a>
             </div>
 
             <div class="mt-4 pt-2">
@@ -129,9 +100,9 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer text-center text-muted">
+    <footer class="footer text-muted">
         <div class="container">
-            <p class="m-0">&copy; 2026 Vaswan Films. All Rights Reserved. Crafted with ❤️</p>
+            <p class="m-0">&copy; 2026 Vaswan Films. All Rights Reserved. Crafted for Krishna Vaswan ❤️</p>
         </div>
     </footer>
 
