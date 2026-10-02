@@ -4,21 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vaswan Films - Official Website</title>
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://jsdelivr.net" rel="stylesheet">
-    <!-- FontAwesome for Social Icons -->
-    <link rel="stylesheet" href="https://cloudflare.com">
+    
+    <!-- Preconnect to external servers for faster loading -->
+    <link rel="preconnect" href="https://jsdelivr.net">
+    <link rel="preconnect" href="https://cloudflare.com">
+    <link rel="preconnect" href="https://elfsight.com">
+
+    <!-- Bootstrap 5 CSS (Optimized) -->
+    <link href="https://jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        body { background-color: #0b0b0b; color: #ffffff; font-family: 'Segoe UI', Roboto, sans-serif; }
+        /* Fast Loading CSS with system fonts fallback */
+        body { background-color: #0b0b0b; color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; text-rendering: optimizeLegibility; }
         .navbar { background-color: #000000; border-bottom: 2px solid #ffc107; }
-        .hero-section { background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.95)), url('https://unsplash.com') no-repeat center center/cover; padding: 120px 0 80px 0; text-align: center; }
+        .hero-section { background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.95)), url('https://unsplash.com') no-repeat center center/cover; padding: 100px 0 60px 0; text-align: center; }
         .section-title { font-weight: 700; color: #ffc107; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 40px; text-align: center; }
         .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: #ffc107; margin: 10px auto 0 auto; }
-        
-        /* Auto Update Widgets Style */
-        .feed-container { background-color: #141414; border: 1px solid #252525; border-radius: 16px; padding: 20px; min-height: 400px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
-        .widget-placeholder { border: 2px dashed #333; border-radius: 12px; padding: 40px; text-align: center; color: #888; }
-        
+        .feed-container { background-color: #141414; border: 1px solid #252525; border-radius: 16px; padding: 20px; min-height: 200px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
         .social-btn { width: 50px; height: 50px; line-height: 50px; display: inline-block; background: #161616; color: #fff; border-radius: 50%; margin: 0 10px; font-size: 20px; border: 1px solid #333; transition: 0.3s; text-align: center; text-decoration: none; }
         .social-btn:hover { color: #000; background: #ffc107; border-color: #ffc107; transform: scale(1.1); }
         .footer { background-color: #000000; padding: 30px 0; border-top: 1px solid #222; font-size: 14px; text-align: center; }
@@ -57,12 +61,10 @@
     <section id="youtube" class="container my-5 py-5">
         <h2 class="section-title">Latest YouTube Videos (Auto Update)</h2>
         <div class="feed-container">
-            <!-- Elfsight YouTube Widget Embed Code Starting -->
-            <script src="https://elfsight.com" async defer></script>
+            <!-- Lazy-loaded Elfsight YouTube Widget -->
+            <script src="https://elfsight.com/platform/platform.js" async defer></script>
             <div class="elfsight-app-547dfc2a-fa68-4509-b4f7-e43597cc89f1" data-elfsight-app-lazy></div>
-            <!-- Elfsight YouTube Widget End -->
-            
-            <p class="text-center text-muted small mt-3">💡 Yeh section aapke YouTube channel se live connected hai aur automatic update hota rahega.</p>
+            <p class="text-center text-muted small mt-3">💡 Yeh section aapke YouTube channel se live connected hai.</p>
         </div>
     </section>
 
@@ -70,11 +72,8 @@
     <section id="instagram" class="container my-5 py-5 border-top border-secondary">
         <h2 class="section-title">Instagram & Reels (Auto Update)</h2>
         <div class="feed-container">
-            <!-- Elfsight Instagram Widget Embed Code Starting -->
-            <script src="https://elfsight.com" async defer></script>
+            <!-- Lazy-loaded Elfsight Instagram Widget -->
             <div class="elfsight-app-4375bcfd-bd88-466d-a602-535359dd2ef2" data-elfsight-app-lazy></div>
-            <!-- Elfsight Instagram Widget End -->
-            
             <p class="text-center text-muted small mt-3">💡 Aapki Instagram Reels aur Posts yahan automatic show hongi.</p>
         </div>
     </section>
@@ -83,15 +82,11 @@
     <section id="contact" class="container my-5 py-5 text-center border-top border-secondary">
         <div class="p-5 bg-dark rounded-4 border border-secondary shadow-lg">
             <h2 class="section-title">Connect With Krishna Vaswan</h2>
-            <p class="text-muted mb-4 fs-5">Follow our handles or drop an email for direct collaborations.</p>
-            
-            <!-- Exact Social Profile Links Connected Here -->
             <div class="mb-4">
-                <a href="https://www.youtube.com/@krishnaavaswan" target="_blank" class="social-btn" title="YouTube"><i class="fab fa-youtube text-danger"></i></a>
-                <a href="https://www.instagram.com/krishnaavaswan_official?stkn=MTRoNDQ3emVyY2d4Zw==" target="_blank" class="social-btn" title="Instagram"><i class="fab fa-instagram text-light"></i></a>
-                <a href="https://www.facebook.com/share/19fpEhneVS/" target="_blank" class="social-btn" title="Facebook"><i class="fab fa-facebook-f text-primary"></i></a>
+                <a href="https://youtube.com" target="_blank" class="social-btn" title="YouTube"><i class="fab fa-youtube text-danger"></i></a>
+                <a href="https://instagram.com" target="_blank" class="social-btn" title="Instagram"><i class="fab fa-instagram text-light"></i></a>
+                <a href="https://facebook.com" target="_blank" class="social-btn" title="Facebook"><i class="fab fa-facebook-f text-primary"></i></a>
             </div>
-
             <div class="mt-4 pt-2">
                 <p class="lead text-muted m-0">Business Email:</p>
                 <a href="mailto:comadykrishna4@gmail.com" class="text-warning fs-4 fw-bold text-decoration-none">comadykrishna4@gmail.com</a>
@@ -106,7 +101,7 @@
         </div>
     </footer>
 
-    <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://jsdelivr.net"></script>
+    <!-- Bootstrap 5 JS Bundle (Deferred for speed) -->
+    <script src="https://jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 </body>
 </html>
