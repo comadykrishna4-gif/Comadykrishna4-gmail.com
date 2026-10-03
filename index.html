@@ -6,7 +6,8 @@
 
 <title>Vaswan Films | Film Production House</title>
 
-<meta name="description" content="Vaswan Films - Film Production House, Web Series, Short Films, Casting and Creative Production.">
+<meta name="description"
+content="Vaswan Films - Film Production, Web Series, Short Films, Casting and Creative Entertainment.">
 
 <style>
 
@@ -21,15 +22,40 @@ html{
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#080808;
+    font-family:Arial,Helvetica,sans-serif;
     color:#fff;
+    background:#071018;
     line-height:1.6;
 }
 
+/* CINEMATIC BACKGROUND */
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-2;
+    background:
+    radial-gradient(circle at 15% 20%,rgba(212,175,55,.13),transparent 30%),
+    radial-gradient(circle at 85% 70%,rgba(20,80,120,.20),transparent 35%),
+    linear-gradient(135deg,#061019,#0b1118 50%,#05080c);
+}
+
+body:after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    opacity:.08;
+    background-image:
+    radial-gradient(#fff 1px,transparent 1px);
+    background-size:5px 5px;
+    pointer-events:none;
+}
+
 a{
-    text-decoration:none;
     color:inherit;
+    text-decoration:none;
 }
 
 .container{
@@ -43,42 +69,43 @@ a{
 header{
     position:fixed;
     top:0;
+    left:0;
     width:100%;
     z-index:999;
-    background:rgba(5,5,5,.94);
-    border-bottom:1px solid rgba(212,175,55,.25);
-    backdrop-filter:blur(10px);
+    background:rgba(4,10,15,.82);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(212,175,55,.22);
 }
 
 .navbar{
-    height:75px;
+    height:76px;
     display:flex;
     align-items:center;
     justify-content:space-between;
 }
 
 .logo{
-    font-size:25px;
-    font-weight:bold;
-    letter-spacing:3px;
+    font-size:23px;
+    font-weight:800;
+    letter-spacing:4px;
     color:#d4af37;
 }
 
 .logo span{
-    color:white;
+    color:#fff;
 }
 
 .nav-links{
     display:flex;
-    gap:28px;
     list-style:none;
+    gap:28px;
 }
 
 .nav-links a{
-    color:#fff;
-    font-size:14px;
+    font-size:13px;
+    letter-spacing:1.5px;
     text-transform:uppercase;
-    letter-spacing:1px;
+    color:#ddd;
     transition:.3s;
 }
 
@@ -100,155 +127,201 @@ header{
     align-items:center;
     text-align:center;
     position:relative;
+    overflow:hidden;
+
     background:
-    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.9)),
-    radial-gradient(circle at center,#2b2410,#050505 65%);
+    linear-gradient(
+        rgba(4,10,15,.48),
+        rgba(4,10,15,.92)
+    ),
+    radial-gradient(
+        circle at center,
+        rgba(212,175,55,.12),
+        transparent 45%
+    );
 }
 
 .hero-content{
-    width:100%;
+    padding-top:70px;
 }
 
-.small-title{
+.eyebrow{
     color:#d4af37;
-    letter-spacing:5px;
+    font-size:12px;
+    letter-spacing:6px;
     text-transform:uppercase;
-    font-size:13px;
-    margin-bottom:20px;
+    margin-bottom:24px;
 }
 
 .hero h1{
-    font-size:clamp(45px,9vw,95px);
+    font-size:clamp(48px,9vw,100px);
     letter-spacing:8px;
     line-height:1;
-    margin-bottom:25px;
+    font-weight:800;
 }
 
 .hero h1 span{
     color:#d4af37;
 }
 
+.hero-line{
+    width:100px;
+    height:2px;
+    background:#d4af37;
+    margin:30px auto;
+}
+
 .hero p{
-    max-width:650px;
+    max-width:680px;
     margin:auto;
-    color:#ccc;
+    color:#c7cbd0;
     font-size:18px;
 }
 
 .btn{
     display:inline-block;
     margin-top:35px;
-    padding:14px 28px;
+    padding:15px 30px;
     border:1px solid #d4af37;
     color:#d4af37;
     text-transform:uppercase;
     letter-spacing:2px;
-    transition:.3s;
+    font-size:13px;
+    transition:.35s;
 }
 
 .btn:hover{
     background:#d4af37;
-    color:#000;
+    color:#071018;
+    box-shadow:0 10px 35px rgba(212,175,55,.2);
 }
 
 /* SECTIONS */
 
 section{
-    padding:100px 0;
+    padding:105px 0;
 }
 
-.section-title{
+.section-heading{
     text-align:center;
-    margin-bottom:55px;
+    margin-bottom:60px;
 }
 
-.section-title small{
+.section-heading small{
     color:#d4af37;
     letter-spacing:4px;
+    text-transform:uppercase;
+    font-size:11px;
 }
 
-.section-title h2{
+.section-heading h2{
     font-size:42px;
-    margin-top:10px;
+    margin:10px 0;
 }
 
-.section-title p{
-    color:#aaa;
+.section-heading p{
     max-width:650px;
-    margin:15px auto;
+    margin:auto;
+    color:#929aa2;
 }
 
 /* ABOUT */
 
 .about{
-    background:#0d0d0d;
+    background:rgba(8,18,27,.55);
+    border-top:1px solid rgba(255,255,255,.04);
+    border-bottom:1px solid rgba(255,255,255,.04);
 }
 
 .about-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1.2fr .8fr;
     gap:60px;
     align-items:center;
 }
 
-.about-text h3{
-    font-size:30px;
-    margin-bottom:20px;
-}
-
-.about-text p{
-    color:#aaa;
-    margin-bottom:18px;
-}
-
 .gold-line{
-    width:70px;
+    width:65px;
     height:3px;
     background:#d4af37;
     margin-bottom:25px;
 }
 
-/* STATS */
+.about h3{
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.about p{
+    color:#aab0b6;
+    margin-bottom:18px;
+}
 
 .stats{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-    margin-top:40px;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
 }
 
 .stat{
-    border:1px solid #292929;
-    padding:25px;
+    padding:30px 20px;
     text-align:center;
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.08);
+    transition:.3s;
+}
+
+.stat:hover{
+    border-color:#d4af37;
+    transform:translateY(-5px);
 }
 
 .stat h3{
     color:#d4af37;
-    font-size:35px;
+    font-size:38px;
+}
+
+.stat p{
+    margin:0;
+    font-size:13px;
 }
 
 /* PROJECTS */
 
 .projects{
-    background:#080808;
+    background:
+    linear-gradient(rgba(5,11,17,.92),rgba(5,11,17,.96));
 }
 
 .project-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:25px;
+    gap:22px;
 }
 
 .project{
-    min-height:350px;
-    border:1px solid #292929;
-    background:linear-gradient(145deg,#171717,#090909);
+    min-height:330px;
     padding:30px;
     display:flex;
     flex-direction:column;
     justify-content:flex-end;
+    position:relative;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.1);
+    background:
+    linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.015));
     transition:.4s;
+}
+
+.project:before{
+    content:"";
+    position:absolute;
+    width:180px;
+    height:180px;
+    right:-70px;
+    top:-70px;
+    border-radius:50%;
+    background:rgba(212,175,55,.12);
 }
 
 .project:hover{
@@ -258,69 +331,93 @@ section{
 
 .project-number{
     color:#d4af37;
-    font-size:14px;
+    font-size:11px;
     letter-spacing:3px;
 }
 
 .project h3{
-    font-size:28px;
-    margin:10px 0;
+    font-size:29px;
+    margin:9px 0;
 }
 
 .project p{
-    color:#aaa;
+    color:#9ba3aa;
+    font-size:14px;
 }
 
 /* GALLERY */
 
 .gallery{
-    background:#0d0d0d;
+    background:
+    radial-gradient(circle at 50% 0%,rgba(212,175,55,.08),transparent 40%);
 }
 
 .gallery-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:20px;
+    gap:25px;
 }
 
 .gallery-card{
+    background:#0b131b;
+    border:1px solid rgba(255,255,255,.1);
     overflow:hidden;
-    background:#111;
-    border:1px solid #292929;
+    border-radius:8px;
+    transition:.4s;
+}
+
+.gallery-card:hover{
+    transform:translateY(-8px);
+    border-color:#d4af37;
+    box-shadow:0 20px 50px rgba(0,0,0,.45);
 }
 
 .gallery-card img{
     width:100%;
-    height:360px;
+    height:480px;
     object-fit:cover;
     display:block;
     transition:.5s;
 }
 
 .gallery-card:hover img{
-    transform:scale(1.05);
+    transform:scale(1.035);
 }
 
-.gallery-caption{
-    padding:18px;
+.gallery-info{
+    padding:20px;
 }
 
-.gallery-caption h3{
+.gallery-info h3{
     color:#d4af37;
+    font-size:21px;
+}
+
+.gallery-info p{
+    color:#858e97;
+    font-size:13px;
+    margin-top:5px;
 }
 
 /* YOUTUBE */
 
 .youtube{
-    text-align:center;
+    background:rgba(6,14,21,.8);
 }
 
 .youtube-box{
-    max-width:800px;
+    max-width:850px;
     margin:auto;
-    padding:45px;
-    border:1px solid #292929;
-    background:#101010;
+    padding:55px 30px;
+    text-align:center;
+    border:1px solid rgba(212,175,55,.25);
+    background:
+    linear-gradient(135deg,rgba(255,255,255,.055),rgba(255,255,255,.015));
+}
+
+.youtube-icon{
+    font-size:45px;
+    margin-bottom:15px;
 }
 
 .youtube-box h3{
@@ -328,45 +425,47 @@ section{
 }
 
 .youtube-box p{
-    color:#aaa;
-    margin:15px 0;
+    color:#929ba3;
+    max-width:600px;
+    margin:12px auto;
 }
 
-/* FORMS */
+/* CONTACT */
 
 .contact{
-    background:#0d0d0d;
+    background:#071018;
 }
 
 .form-section{
-    margin-bottom:70px;
+    margin-bottom:65px;
 }
 
 .form-title{
     text-align:center;
-    margin-bottom:30px;
+    margin-bottom:25px;
 }
 
 .form-title h3{
-    font-size:30px;
+    font-size:28px;
 }
 
 .form-title p{
-    color:#999;
+    color:#8e979f;
 }
 
 .form-box{
     max-width:850px;
     margin:auto;
     padding:35px;
-    background:#111;
-    border:1px solid #292929;
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:8px;
 }
 
 .form-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:18px;
+    gap:17px;
 }
 
 input,
@@ -374,11 +473,12 @@ select,
 textarea{
     width:100%;
     padding:15px;
-    background:#080808;
+    border:1px solid #29333c;
+    background:#071018;
     color:#fff;
-    border:1px solid #333;
     outline:none;
-    font-size:15px;
+    font-size:14px;
+    border-radius:3px;
 }
 
 input:focus,
@@ -397,17 +497,16 @@ textarea{
 }
 
 .file-note{
-    color:#888;
-    font-size:13px;
+    color:#707b84;
+    font-size:12px;
     margin-top:7px;
 }
 
 .checkbox{
     display:flex;
     gap:10px;
-    align-items:flex-start;
-    color:#aaa;
-    font-size:14px;
+    color:#89939b;
+    font-size:13px;
 }
 
 .checkbox input{
@@ -418,66 +517,72 @@ textarea{
 .submit-btn{
     width:100%;
     padding:16px;
-    border:1px solid #d4af37;
+    border:0;
     background:#d4af37;
-    color:#000;
+    color:#071018;
     font-weight:bold;
     letter-spacing:2px;
     cursor:pointer;
-    font-size:15px;
+    transition:.3s;
 }
 
 .submit-btn:hover{
     background:#fff;
-    border-color:#fff;
 }
 
 /* FOOTER */
 
 footer{
-    background:#050505;
-    padding:50px 0 25px;
+    padding:55px 0 25px;
     text-align:center;
-    border-top:1px solid #222;
+    background:#04080c;
+    border-top:1px solid rgba(212,175,55,.18);
 }
 
 .footer-logo{
-    font-size:28px;
-    letter-spacing:4px;
     color:#d4af37;
+    font-size:28px;
+    letter-spacing:5px;
+    font-weight:bold;
 }
 
 footer p{
-    color:#777;
-    margin-top:12px;
+    color:#717a82;
+    margin-top:10px;
 }
 
 .footer-contact{
     margin-top:20px;
-    color:#bbb;
+    color:#b4bbc1;
+    line-height:2;
 }
 
 .copyright{
     margin-top:35px;
-    font-size:13px;
-    color:#555;
+    color:#4f575e;
+    font-size:12px;
 }
 
 /* MOBILE */
 
 @media(max-width:800px){
 
+    .navbar{
+        height:70px;
+    }
+
     .nav-links{
+        display:none;
         position:absolute;
-        top:75px;
+        top:70px;
         left:0;
         width:100%;
-        background:#080808;
-        display:none;
+        background:#071018;
         flex-direction:column;
-        padding:25px;
         text-align:center;
-        border-bottom:1px solid #222;
+        padding:25px;
+        gap:22px;
+        border-bottom:1px solid #27323b;
     }
 
     .nav-links.active{
@@ -488,20 +593,40 @@ footer p{
         display:block;
     }
 
+    .hero h1{
+        letter-spacing:4px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    section{
+        padding:75px 0;
+    }
+
+    .section-heading h2{
+        font-size:34px;
+    }
+
     .about-grid{
         grid-template-columns:1fr;
+        gap:40px;
     }
 
-    .project-grid{
-        grid-template-columns:1fr;
-    }
-
+    .project-grid,
     .gallery-grid{
         grid-template-columns:1fr;
     }
 
+    .gallery-card img{
+        height:auto;
+        max-height:650px;
+        object-fit:cover;
+    }
+
     .stats{
-        grid-template-columns:1fr;
+        grid-template-columns:1fr 1fr;
     }
 
     .form-grid{
@@ -510,14 +635,6 @@ footer p{
 
     .full{
         grid-column:auto;
-    }
-
-    .hero h1{
-        letter-spacing:4px;
-    }
-
-    section{
-        padding:75px 0;
     }
 
     .form-box{
@@ -531,7 +648,7 @@ footer p{
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAVIGATION -->
 
 <header>
 
@@ -565,7 +682,7 @@ VASWAN <span>FILMS</span>
 
 <div class="container hero-content">
 
-<div class="small-title">
+<div class="eyebrow">
 Film Production House
 </div>
 
@@ -573,13 +690,16 @@ Film Production House
 VASWAN <span>FILMS</span>
 </h1>
 
+<div class="hero-line"></div>
+
 <p>
 Stories that connect. Characters that stay.
-Cinema created with passion, creativity and purpose.
+Creating films, web series and original entertainment
+with passion and purpose.
 </p>
 
-<a href="#projects" class="btn">
-Explore Our Work
+<a href="#gallery" class="btn">
+Explore Our Cinema
 </a>
 
 </div>
@@ -593,37 +713,35 @@ Explore Our Work
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-heading">
 
-<small>WHO WE ARE</small>
+<small>Our Story</small>
 
-<h2>About Vaswan Films</h2>
+<h2>Behind The Stories</h2>
 
 <p>
-A creative production house focused on films, web series,
-short films, casting and original storytelling.
+Vaswan Films is a creative production platform
+focused on original stories and new cinematic talent.
 </p>
 
 </div>
 
 <div class="about-grid">
 
-<div class="about-text">
+<div>
 
 <div class="gold-line"></div>
 
-<h3>Creating Stories For The Screen</h3>
+<h3>Creating Stories Beyond The Screen</h3>
 
 <p>
-Vaswan Films is a creative film production platform dedicated
-to developing meaningful stories, talented artists and
-fresh cinematic ideas.
+We develop films, web series, short films, advertisements
+and creative entertainment projects.
 </p>
 
 <p>
-From short films and web series to new talent and original
-projects, our aim is to create entertainment with strong
-characters and memorable stories.
+Our focus is on strong characters, emotional storytelling
+and giving talented artists a platform to be seen.
 </p>
 
 </div>
@@ -632,17 +750,22 @@ characters and memorable stories.
 
 <div class="stat">
 <h3>200+</h3>
-<p>TV Episodes Experience</p>
+<p>TV Episodes</p>
 </div>
 
 <div class="stat">
 <h3>05+</h3>
-<p>Advertisement Projects</p>
+<p>Advertisements</p>
 </div>
 
 <div class="stat">
 <h3>01</h3>
 <p>Web Series</p>
+</div>
+
+<div class="stat">
+<h3>∞</h3>
+<p>Stories Ahead</p>
 </div>
 
 </div>
@@ -660,14 +783,14 @@ characters and memorable stories.
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-heading">
 
-<small>OUR CINEMA</small>
+<small>Selected Work</small>
 
-<h2>Featured Projects</h2>
+<h2>Our Projects</h2>
 
 <p>
-Selected projects created and developed by our creative team.
+Original stories and cinematic projects from Vaswan Films.
 </p>
 
 </div>
@@ -681,12 +804,11 @@ Selected projects created and developed by our creative team.
 <h3>GUNNAH</h3>
 
 <p>
-A crime-thriller story exploring the consequences of
-wrong behaviour and misconduct.
+A crime thriller exploring wrong behaviour,
+consequences and justice.
 </p>
 
 </div>
-
 
 <div class="project">
 
@@ -695,22 +817,21 @@ wrong behaviour and misconduct.
 <h3>AAKHIRI TICKET</h3>
 
 <p>
-A human emotional story about a child, a journey and
-one final ticket.
+An emotional journey built around a child,
+a train and one final ticket.
 </p>
 
 </div>
 
-
 <div class="project">
 
-<div class="project-number">03 / UPCOMING</div>
+<div class="project-number">03 / ACTION PROJECT</div>
 
-<h3>COMING SOON</h3>
+<h3>POLICE POWER</h3>
 
 <p>
-New stories, new characters and new cinematic experiences
-are currently in development.
+An action-driven cinematic project currently
+part of our creative portfolio.
 </p>
 
 </div>
@@ -728,54 +849,72 @@ are currently in development.
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-heading">
 
-<small>VISUAL STORIES</small>
+<small>Visual Portfolio</small>
 
 <h2>Poster Gallery</h2>
 
 <p>
-Explore selected posters and production visuals.
+A selection of cinematic posters and projects.
 </p>
 
 </div>
 
 <div class="gallery-grid">
 
-<div class="gallery-card">
-
-<img src="images/aakhiri-ticket.jpg"
-alt="Aakhiri Ticket Poster">
-
-<div class="gallery-caption">
-<h3>Aakhiri Ticket</h3>
-<p>Written & Directed by Krishna Vaswan</p>
-</div>
-
-</div>
-
+<!-- GUNNAH -->
 
 <div class="gallery-card">
 
-<img src="images/gunnah-poster.jpg"
+<img
+src="images/gunnah-poster.png"
 alt="Gunnah Poster">
 
-<div class="gallery-caption">
+<div class="gallery-info">
+
 <h3>Gunnah</h3>
-<p>Web Series / Crime Thriller</p>
-</div>
+
+<p>Crime Thriller Web Series</p>
 
 </div>
 
+</div>
+
+
+<!-- AAKHIRI TICKET -->
 
 <div class="gallery-card">
 
-<img src="images/vaswan-films.jpg"
-alt="Vaswan Films">
+<img
+src="images/aakhiri-ticket.png"
+alt="Aakhiri Ticket Poster">
 
-<div class="gallery-caption">
-<h3>Vaswan Films</h3>
-<p>Film Production & Creative Projects</p>
+<div class="gallery-info">
+
+<h3>Aakhiri Ticket</h3>
+
+<p>Written & Directed by Krishna Vaswan</p>
+
+</div>
+
+</div>
+
+
+<!-- POLICE POWER -->
+
+<div class="gallery-card">
+
+<img
+src="images/police-power.png"
+alt="Police Power Poster">
+
+<div class="gallery-info">
+
+<h3>Police Power</h3>
+
+<p>Action Project</p>
+
 </div>
 
 </div>
@@ -793,26 +932,29 @@ alt="Vaswan Films">
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-heading">
 
-<small>WATCH OUR WORK</small>
+<small>Watch Our Work</small>
 
-<h2>YouTube</h2>
+<h2>Vaswan Films on YouTube</h2>
 
 </div>
 
 <div class="youtube-box">
 
-<h3>Vaswan Films</h3>
+<div class="youtube-icon">▶</div>
+
+<h3>Official YouTube Channel</h3>
 
 <p>
-Watch our films, songs, web series and upcoming projects
-on our official YouTube channel.
+Watch films, songs, web series and upcoming projects
+from Vaswan Films.
 </p>
 
-<a class="btn"
+<a
 href="https://www.youtube.com/@Krishnavaswanfilms"
-target="_blank">
+target="_blank"
+class="btn">
 
 Visit YouTube Channel
 
@@ -825,27 +967,27 @@ Visit YouTube Channel
 </section>
 
 
-<!-- CONTACT / FORMS -->
+<!-- CONTACT -->
 
 <section class="contact" id="contact">
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-heading">
 
-<small>WORK WITH US</small>
+<small>Work With Us</small>
 
 <h2>Let's Create Together</h2>
 
 <p>
-Have a project, audition, collaboration or job enquiry?
-Send your details directly to our production desk.
+Have a film idea, casting enquiry, audition or career opportunity?
+Connect with our production desk.
 </p>
 
 </div>
 
 
-<!-- ENQUIRY FORM -->
+<!-- GENERAL ENQUIRY -->
 
 <div class="form-section">
 
@@ -853,7 +995,7 @@ Send your details directly to our production desk.
 
 <h3>📩 General Enquiry</h3>
 
-<p>For films, collaborations, production and business enquiries.</p>
+<p>For production, collaboration and business enquiries.</p>
 
 </div>
 
@@ -871,34 +1013,30 @@ value="New Enquiry - Vaswan Films">
 name="_template"
 value="table">
 
-<input type="hidden"
-name="_url"
-value="https://vaswanfilms.in/">
-
 <div class="form-grid">
 
 <input
 type="text"
 name="name"
-placeholder="Your Full Name"
+placeholder="Full Name"
 required>
 
 <input
 type="email"
 name="email"
-placeholder="Your Email Address"
+placeholder="Email Address"
 required>
 
 <input
 type="tel"
 name="phone"
-placeholder="Phone / WhatsApp Number">
+placeholder="Phone / WhatsApp">
 
 <select name="enquiry_type" required>
 
-<option value="">Select Enquiry Type</option>
+<option value="">Enquiry Type</option>
 <option>Film / Web Series</option>
-<option>Acting / Casting</option>
+<option>Casting</option>
 <option>Production Collaboration</option>
 <option>Business Enquiry</option>
 <option>Other</option>
@@ -928,17 +1066,15 @@ SEND ENQUIRY
 </div>
 
 
-<!-- ACTOR FORM -->
+<!-- ACTOR -->
 
 <div class="form-section">
 
 <div class="form-title">
 
-<h3>🎭 Actor / Talent Audition</h3>
+<h3>🎭 Actor / Talent Submission</h3>
 
-<p>
-Actors can submit their introduction and audition video.
-</p>
+<p>Submit your introduction or audition video.</p>
 
 </div>
 
@@ -948,26 +1084,22 @@ Actors can submit their introduction and audition video.
 action="https://formsubmit.co/comadykrishna4@gmail.com"
 method="POST"
 enctype="multipart/form-data"
-onsubmit="return checkVideoSize(this)">
+onsubmit="return checkVideo(this)">
 
 <input type="hidden"
 name="_subject"
-value="New Actor / Audition Submission - Vaswan Films">
+value="New Actor Audition - Vaswan Films">
 
 <input type="hidden"
 name="_template"
 value="table">
-
-<input type="hidden"
-name="_url"
-value="https://vaswanfilms.in/">
 
 <div class="form-grid">
 
 <input
 type="text"
 name="name"
-placeholder="Artist Full Name"
+placeholder="Artist Name"
 required>
 
 <input
@@ -979,36 +1111,32 @@ required>
 <input
 type="tel"
 name="phone"
-placeholder="Phone / WhatsApp Number"
+placeholder="Phone / WhatsApp"
 required>
 
 <input
 type="number"
 name="age"
 placeholder="Age"
-min="1"
-max="100"
 required>
-
-<select name="experience" required>
-
-<option value="">Experience</option>
-<option>Fresh / New Talent</option>
-<option>Theatre Experience</option>
-<option>TV Experience</option>
-<option>Film Experience</option>
-<option>Web Series Experience</option>
-
-</select>
 
 <input
 type="text"
 name="city"
 placeholder="City">
 
-<div class="full">
+<select name="experience">
 
-<label>Introduction / Audition Video</label>
+<option value="">Experience</option>
+<option>Fresh Talent</option>
+<option>Theatre</option>
+<option>TV</option>
+<option>Film</option>
+<option>Web Series</option>
+
+</select>
+
+<div class="full">
 
 <input
 type="file"
@@ -1017,7 +1145,7 @@ accept="video/*"
 required>
 
 <div class="file-note">
-Maximum total upload size: 10 MB.
+Maximum video upload: 10 MB
 </div>
 
 </div>
@@ -1026,14 +1154,12 @@ Maximum total upload size: 10 MB.
 
 <input
 type="checkbox"
-name="consent"
-value="Yes"
 required>
 
 <label>
-I confirm that the information and video submitted by me
-may be reviewed by Vaswan Films for casting purposes.
-For applicants below 18, parent/guardian permission is required.
+I confirm that the submitted information may be reviewed
+for casting purposes. Applicants below 18 must have
+parent/guardian permission.
 </label>
 
 </div>
@@ -1055,17 +1181,15 @@ SUBMIT AUDITION
 </div>
 
 
-<!-- JOB FORM -->
+<!-- JOB -->
 
 <div class="form-section">
 
 <div class="form-title">
 
-<h3>💼 Careers / Jobs</h3>
+<h3>💼 Careers at Vaswan Films</h3>
 
-<p>
-Want to work with Vaswan Films? Send your resume to our team.
-</p>
+<p>Send your resume for future production opportunities.</p>
 
 </div>
 
@@ -1074,8 +1198,7 @@ Want to work with Vaswan Films? Send your resume to our team.
 <form
 action="https://formsubmit.co/comadykrishna4@gmail.com"
 method="POST"
-enctype="multipart/form-data"
-onsubmit="return checkResumeSize(this)">
+enctype="multipart/form-data">
 
 <input type="hidden"
 name="_subject"
@@ -1084,10 +1207,6 @@ value="New Job Application - Vaswan Films">
 <input type="hidden"
 name="_template"
 value="table">
-
-<input type="hidden"
-name="_url"
-value="https://vaswanfilms.in/">
 
 <div class="form-grid">
 
@@ -1106,19 +1225,19 @@ required>
 <input
 type="tel"
 name="phone"
-placeholder="Phone / WhatsApp Number"
+placeholder="Phone / WhatsApp"
 required>
 
 <select name="position" required>
 
-<option value="">Select Position</option>
+<option value="">Position Applying For</option>
 <option>Video Editor</option>
 <option>Cameraman / DOP</option>
 <option>Graphic Designer</option>
 <option>Production Team</option>
 <option>Production Manager</option>
-<option>Social Media / Marketing</option>
 <option>Writer</option>
+<option>Social Media / Marketing</option>
 <option>Actor</option>
 <option>Other</option>
 
@@ -1127,16 +1246,14 @@ required>
 <input
 type="text"
 name="experience"
-placeholder="Years of Experience">
+placeholder="Experience">
 
 <input
 type="text"
 name="city"
-placeholder="Current City">
+placeholder="City">
 
 <div class="full">
-
-<label>Upload Resume</label>
 
 <input
 type="file"
@@ -1145,7 +1262,7 @@ accept=".pdf,.doc,.docx"
 required>
 
 <div class="file-note">
-PDF, DOC or DOCX recommended. Keep the file size small.
+Upload PDF, DOC or DOCX resume.
 </div>
 
 </div>
@@ -1153,12 +1270,12 @@ PDF, DOC or DOCX recommended. Keep the file size small.
 <textarea
 class="full"
 name="message"
-placeholder="Tell us briefly about yourself and your experience."></textarea>
+placeholder="Briefly tell us about yourself..."></textarea>
 
 <div class="full">
 
 <button class="submit-btn" type="submit">
-SUBMIT JOB APPLICATION
+SUBMIT APPLICATION
 </button>
 
 </div>
@@ -1192,10 +1309,7 @@ Film Production • Web Series • Short Films • Casting
 
 <div class="footer-contact">
 
-📧 comadykrishna4@gmail.com
-
-<br>
-
+📧 comadykrishna4@gmail.com<br>
 📱 +91 8928879904
 
 </div>
@@ -1213,1319 +1327,35 @@ Film Production • Web Series • Short Films • Casting
 
 function toggleMenu(){
 
-    document
-    .getElementById("navLinks")
-    .classList
-    .toggle("active");
+document
+.getElementById("navLinks")
+.classList
+.toggle("active");
 
 }
 
+function checkVideo(form){
 
-/* VIDEO SIZE CHECK */
+const file =
+form.querySelector(
+'input[name="audition_video"]'
+).files[0];
 
-function checkVideoSize(form){
+if(file && file.size > 10 * 1024 * 1024){
 
-    const file =
-    form.querySelector('input[name="audition_video"]').files[0];
+alert(
+"Video 10 MB se chhota hona chahiye."
+);
 
-    if(file && file.size > 10 * 1024 * 1024){
+return false;
 
-        alert(
-        "Video file is larger than 10 MB. Please upload a smaller video."
-        );
-
-        return false;
-    }
-
-    return true;
 }
 
+return true;
 
-/* RESUME SIZE CHECK */
-
-function checkResumeSize(form){
-
-    const file =
-    form.querySelector('input[name="resume"]').files[0];
-
-    if(file && file.size > 10 * 1024 * 1024){
-
-        alert(
-        "Resume file is larger than 10 MB. Please upload a smaller file."
-        );
-
-        return false;
-    }
-
-    return true;
 }
 
 </script>
 
 </body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Vaswan Films | Film Production House</title>
-
-<meta name="description" content="Vaswan Films - Film Production House, Web Series, Short Films, Casting and Creative Production.">
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#080808;
-    color:#fff;
-    line-height:1.6;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-}
-
-/* NAVBAR */
-
-header{
-    position:fixed;
-    top:0;
-    width:100%;
-    z-index:999;
-    background:rgba(5,5,5,.94);
-    border-bottom:1px solid rgba(212,175,55,.25);
-    backdrop-filter:blur(10px);
-}
-
-.navbar{
-    height:75px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    font-size:25px;
-    font-weight:bold;
-    letter-spacing:3px;
-    color:#d4af37;
-}
-
-.logo span{
-    color:white;
-}
-
-.nav-links{
-    display:flex;
-    gap:28px;
-    list-style:none;
-}
-
-.nav-links a{
-    color:#fff;
-    font-size:14px;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    transition:.3s;
-}
-
-.nav-links a:hover{
-    color:#d4af37;
-}
-
-.menu{
-    display:none;
-    font-size:28px;
-    cursor:pointer;
-}
-
-/* HERO */
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    text-align:center;
-    position:relative;
-    background:
-    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.9)),
-    radial-gradient(circle at center,#2b2410,#050505 65%);
-}
-
-.hero-content{
-    width:100%;
-}
-
-.small-title{
-    color:#d4af37;
-    letter-spacing:5px;
-    text-transform:uppercase;
-    font-size:13px;
-    margin-bottom:20px;
-}
-
-.hero h1{
-    font-size:clamp(45px,9vw,95px);
-    letter-spacing:8px;
-    line-height:1;
-    margin-bottom:25px;
-}
-
-.hero h1 span{
-    color:#d4af37;
-}
-
-.hero p{
-    max-width:650px;
-    margin:auto;
-    color:#ccc;
-    font-size:18px;
-}
-
-.btn{
-    display:inline-block;
-    margin-top:35px;
-    padding:14px 28px;
-    border:1px solid #d4af37;
-    color:#d4af37;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    transition:.3s;
-}
-
-.btn:hover{
-    background:#d4af37;
-    color:#000;
-}
-
-/* SECTIONS */
-
-section{
-    padding:100px 0;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:55px;
-}
-
-.section-title small{
-    color:#d4af37;
-    letter-spacing:4px;
-}
-
-.section-title h2{
-    font-size:42px;
-    margin-top:10px;
-}
-
-.section-title p{
-    color:#aaa;
-    max-width:650px;
-    margin:15px auto;
-}
-
-/* ABOUT */
-
-.about{
-    background:#0d0d0d;
-}
-
-.about-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:60px;
-    align-items:center;
-}
-
-.about-text h3{
-    font-size:30px;
-    margin-bottom:20px;
-}
-
-.about-text p{
-    color:#aaa;
-    margin-bottom:18px;
-}
-
-.gold-line{
-    width:70px;
-    height:3px;
-    background:#d4af37;
-    margin-bottom:25px;
-}
-
-/* STATS */
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-    margin-top:40px;
-}
-
-.stat{
-    border:1px solid #292929;
-    padding:25px;
-    text-align:center;
-}
-
-.stat h3{
-    color:#d4af37;
-    font-size:35px;
-}
-
-/* PROJECTS */
-
-.projects{
-    background:#080808;
-}
-
-.project-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-}
-
-.project{
-    min-height:350px;
-    border:1px solid #292929;
-    background:linear-gradient(145deg,#171717,#090909);
-    padding:30px;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-    transition:.4s;
-}
-
-.project:hover{
-    transform:translateY(-8px);
-    border-color:#d4af37;
-}
-
-.project-number{
-    color:#d4af37;
-    font-size:14px;
-    letter-spacing:3px;
-}
-
-.project h3{
-    font-size:28px;
-    margin:10px 0;
-}
-
-.project p{
-    color:#aaa;
-}
-
-/* GALLERY */
-
-.gallery{
-    background:#0d0d0d;
-}
-
-.gallery-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.gallery-card{
-    overflow:hidden;
-    background:#111;
-    border:1px solid #292929;
-}
-
-.gallery-card img{
-    width:100%;
-    height:360px;
-    object-fit:cover;
-    display:block;
-    transition:.5s;
-}
-
-.gallery-card:hover img{
-    transform:scale(1.05);
-}
-
-.gallery-caption{
-    padding:18px;
-}
-
-.gallery-caption h3{
-    color:#d4af37;
-}
-
-/* YOUTUBE */
-
-.youtube{
-    text-align:center;
-}
-
-.youtube-box{
-    max-width:800px;
-    margin:auto;
-    padding:45px;
-    border:1px solid #292929;
-    background:#101010;
-}
-
-.youtube-box h3{
-    font-size:30px;
-}
-
-.youtube-box p{
-    color:#aaa;
-    margin:15px 0;
-}
-
-/* FORMS */
-
-.contact{
-    background:#0d0d0d;
-}
-
-.form-section{
-    margin-bottom:70px;
-}
-
-.form-title{
-    text-align:center;
-    margin-bottom:30px;
-}
-
-.form-title h3{
-    font-size:30px;
-}
-
-.form-title p{
-    color:#999;
-}
-
-.form-box{
-    max-width:850px;
-    margin:auto;
-    padding:35px;
-    background:#111;
-    border:1px solid #292929;
-}
-
-.form-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:18px;
-}
-
-input,
-select,
-textarea{
-    width:100%;
-    padding:15px;
-    background:#080808;
-    color:#fff;
-    border:1px solid #333;
-    outline:none;
-    font-size:15px;
-}
-
-input:focus,
-select:focus,
-textarea:focus{
-    border-color:#d4af37;
-}
-
-textarea{
-    min-height:140px;
-    resize:vertical;
-}
-
-.full{
-    grid-column:1/-1;
-}
-
-.file-note{
-    color:#888;
-    font-size:13px;
-    margin-top:7px;
-}
-
-.checkbox{
-    display:flex;
-    gap:10px;
-    align-items:flex-start;
-    color:#aaa;
-    font-size:14px;
-}
-
-.checkbox input{
-    width:auto;
-    margin-top:5px;
-}
-
-.submit-btn{
-    width:100%;
-    padding:16px;
-    border:1px solid #d4af37;
-    background:#d4af37;
-    color:#000;
-    font-weight:bold;
-    letter-spacing:2px;
-    cursor:pointer;
-    font-size:15px;
-}
-
-.submit-btn:hover{
-    background:#fff;
-    border-color:#fff;
-}
-
-/* FOOTER */
-
-footer{
-    background:#050505;
-    padding:50px 0 25px;
-    text-align:center;
-    border-top:1px solid #222;
-}
-
-.footer-logo{
-    font-size:28px;
-    letter-spacing:4px;
-    color:#d4af37;
-}
-
-footer p{
-    color:#777;
-    margin-top:12px;
-}
-
-.footer-contact{
-    margin-top:20px;
-    color:#bbb;
-}
-
-.copyright{
-    margin-top:35px;
-    font-size:13px;
-    color:#555;
-}
-
-/* MOBILE */
-
-@media(max-width:800px){
-
-    .nav-links{
-        position:absolute;
-        top:75px;
-        left:0;
-        width:100%;
-        background:#080808;
-        display:none;
-        flex-direction:column;
-        padding:25px;
-        text-align:center;
-        border-bottom:1px solid #222;
-    }
-
-    .nav-links.active{
-        display:flex;
-    }
-
-    .menu{
-        display:block;
-    }
-
-    .about-grid{
-        grid-template-columns:1fr;
-    }
-
-    .project-grid{
-        grid-template-columns:1fr;
-    }
-
-    .gallery-grid{
-        grid-template-columns:1fr;
-    }
-
-    .stats{
-        grid-template-columns:1fr;
-    }
-
-    .form-grid{
-        grid-template-columns:1fr;
-    }
-
-    .full{
-        grid-column:auto;
-    }
-
-    .hero h1{
-        letter-spacing:4px;
-    }
-
-    section{
-        padding:75px 0;
-    }
-
-    .form-box{
-        padding:22px;
-    }
-
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- NAVBAR -->
-
-<header>
-
-<div class="container navbar">
-
-<div class="logo">
-VASWAN <span>FILMS</span>
-</div>
-
-<div class="menu" onclick="toggleMenu()">☰</div>
-
-<ul class="nav-links" id="navLinks">
-
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#gallery">Gallery</a></li>
-<li><a href="#youtube">YouTube</a></li>
-<li><a href="#contact">Contact</a></li>
-
-</ul>
-
-</div>
-
-</header>
-
-
-<!-- HERO -->
-
-<section class="hero" id="home">
-
-<div class="container hero-content">
-
-<div class="small-title">
-Film Production House
-</div>
-
-<h1>
-VASWAN <span>FILMS</span>
-</h1>
-
-<p>
-Stories that connect. Characters that stay.
-Cinema created with passion, creativity and purpose.
-</p>
-
-<a href="#projects" class="btn">
-Explore Our Work
-</a>
-
-</div>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section class="about" id="about">
-
-<div class="container">
-
-<div class="section-title">
-
-<small>WHO WE ARE</small>
-
-<h2>About Vaswan Films</h2>
-
-<p>
-A creative production house focused on films, web series,
-short films, casting and original storytelling.
-</p>
-
-</div>
-
-<div class="about-grid">
-
-<div class="about-text">
-
-<div class="gold-line"></div>
-
-<h3>Creating Stories For The Screen</h3>
-
-<p>
-Vaswan Films is a creative film production platform dedicated
-to developing meaningful stories, talented artists and
-fresh cinematic ideas.
-</p>
-
-<p>
-From short films and web series to new talent and original
-projects, our aim is to create entertainment with strong
-characters and memorable stories.
-</p>
-
-</div>
-
-<div class="stats">
-
-<div class="stat">
-<h3>200+</h3>
-<p>TV Episodes Experience</p>
-</div>
-
-<div class="stat">
-<h3>05+</h3>
-<p>Advertisement Projects</p>
-</div>
-
-<div class="stat">
-<h3>01</h3>
-<p>Web Series</p>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- PROJECTS -->
-
-<section class="projects" id="projects">
-
-<div class="container">
-
-<div class="section-title">
-
-<small>OUR CINEMA</small>
-
-<h2>Featured Projects</h2>
-
-<p>
-Selected projects created and developed by our creative team.
-</p>
-
-</div>
-
-<div class="project-grid">
-
-<div class="project">
-
-<div class="project-number">01 / WEB SERIES</div>
-
-<h3>GUNNAH</h3>
-
-<p>
-A crime-thriller story exploring the consequences of
-wrong behaviour and misconduct.
-</p>
-
-</div>
-
-
-<div class="project">
-
-<div class="project-number">02 / SHORT FILM</div>
-
-<h3>AAKHIRI TICKET</h3>
-
-<p>
-A human emotional story about a child, a journey and
-one final ticket.
-</p>
-
-</div>
-
-
-<div class="project">
-
-<div class="project-number">03 / UPCOMING</div>
-
-<h3>COMING SOON</h3>
-
-<p>
-New stories, new characters and new cinematic experiences
-are currently in development.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- GALLERY -->
-
-<section class="gallery" id="gallery">
-
-<div class="container">
-
-<div class="section-title">
-
-<small>VISUAL STORIES</small>
-
-<h2>Poster Gallery</h2>
-
-<p>
-Explore selected posters and production visuals.
-</p>
-
-</div>
-
-<div class="gallery-grid">
-
-<div class="gallery-card">
-
-<img src="images/aakhiri-ticket.jpg"
-alt="Aakhiri Ticket Poster">
-
-<div class="gallery-caption">
-<h3>Aakhiri Ticket</h3>
-<p>Written & Directed by Krishna Vaswan</p>
-</div>
-
-</div>
-
-
-<div class="gallery-card">
-
-<img src="images/gunnah-poster.jpg"
-alt="Gunnah Poster">
-
-<div class="gallery-caption">
-<h3>Gunnah</h3>
-<p>Web Series / Crime Thriller</p>
-</div>
-
-</div>
-
-
-<div class="gallery-card">
-
-<img src="images/vaswan-films.jpg"
-alt="Vaswan Films">
-
-<div class="gallery-caption">
-<h3>Vaswan Films</h3>
-<p>Film Production & Creative Projects</p>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- YOUTUBE -->
-
-<section class="youtube" id="youtube">
-
-<div class="container">
-
-<div class="section-title">
-
-<small>WATCH OUR WORK</small>
-
-<h2>YouTube</h2>
-
-</div>
-
-<div class="youtube-box">
-
-<h3>Vaswan Films</h3>
-
-<p>
-Watch our films, songs, web series and upcoming projects
-on our official YouTube channel.
-</p>
-
-<a class="btn"
-href="https://www.youtube.com/@Krishnavaswanfilms"
-target="_blank">
-
-Visit YouTube Channel
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- CONTACT / FORMS -->
-
-<section class="contact" id="contact">
-
-<div class="container">
-
-<div class="section-title">
-
-<small>WORK WITH US</small>
-
-<h2>Let's Create Together</h2>
-
-<p>
-Have a project, audition, collaboration or job enquiry?
-Send your details directly to our production desk.
-</p>
-
-</div>
-
-
-<!-- ENQUIRY FORM -->
-
-<div class="form-section">
-
-<div class="form-title">
-
-<h3>📩 General Enquiry</h3>
-
-<p>For films, collaborations, production and business enquiries.</p>
-
-</div>
-
-<div class="form-box">
-
-<form
-action="https://formsubmit.co/comadykrishna4@gmail.com"
-method="POST">
-
-<input type="hidden"
-name="_subject"
-value="New Enquiry - Vaswan Films">
-
-<input type="hidden"
-name="_template"
-value="table">
-
-<input type="hidden"
-name="_url"
-value="https://vaswanfilms.in/">
-
-<div class="form-grid">
-
-<input
-type="text"
-name="name"
-placeholder="Your Full Name"
-required>
-
-<input
-type="email"
-name="email"
-placeholder="Your Email Address"
-required>
-
-<input
-type="tel"
-name="phone"
-placeholder="Phone / WhatsApp Number">
-
-<select name="enquiry_type" required>
-
-<option value="">Select Enquiry Type</option>
-<option>Film / Web Series</option>
-<option>Acting / Casting</option>
-<option>Production Collaboration</option>
-<option>Business Enquiry</option>
-<option>Other</option>
-
-</select>
-
-<textarea
-class="full"
-name="message"
-placeholder="Write your message..."
-required></textarea>
-
-<div class="full">
-
-<button class="submit-btn" type="submit">
-SEND ENQUIRY
-</button>
-
-</div>
-
-</div>
-
-</form>
-
-</div>
-
-</div>
-
-
-<!-- ACTOR FORM -->
-
-<div class="form-section">
-
-<div class="form-title">
-
-<h3>🎭 Actor / Talent Audition</h3>
-
-<p>
-Actors can submit their introduction and audition video.
-</p>
-
-</div>
-
-<div class="form-box">
-
-<form
-action="https://formsubmit.co/comadykrishna4@gmail.com"
-method="POST"
-enctype="multipart/form-data"
-onsubmit="return checkVideoSize(this)">
-
-<input type="hidden"
-name="_subject"
-value="New Actor / Audition Submission - Vaswan Films">
-
-<input type="hidden"
-name="_template"
-value="table">
-
-<input type="hidden"
-name="_url"
-value="https://vaswanfilms.in/">
-
-<div class="form-grid">
-
-<input
-type="text"
-name="name"
-placeholder="Artist Full Name"
-required>
-
-<input
-type="email"
-name="email"
-placeholder="Email Address"
-required>
-
-<input
-type="tel"
-name="phone"
-placeholder="Phone / WhatsApp Number"
-required>
-
-<input
-type="number"
-name="age"
-placeholder="Age"
-min="1"
-max="100"
-required>
-
-<select name="experience" required>
-
-<option value="">Experience</option>
-<option>Fresh / New Talent</option>
-<option>Theatre Experience</option>
-<option>TV Experience</option>
-<option>Film Experience</option>
-<option>Web Series Experience</option>
-
-</select>
-
-<input
-type="text"
-name="city"
-placeholder="City">
-
-<div class="full">
-
-<label>Introduction / Audition Video</label>
-
-<input
-type="file"
-name="audition_video"
-accept="video/*"
-required>
-
-<div class="file-note">
-Maximum total upload size: 10 MB.
-</div>
-
-</div>
-
-<div class="full checkbox">
-
-<input
-type="checkbox"
-name="consent"
-value="Yes"
-required>
-
-<label>
-I confirm that the information and video submitted by me
-may be reviewed by Vaswan Films for casting purposes.
-For applicants below 18, parent/guardian permission is required.
-</label>
-
-</div>
-
-<div class="full">
-
-<button class="submit-btn" type="submit">
-SUBMIT AUDITION
-</button>
-
-</div>
-
-</div>
-
-</form>
-
-</div>
-
-</div>
-
-
-<!-- JOB FORM -->
-
-<div class="form-section">
-
-<div class="form-title">
-
-<h3>💼 Careers / Jobs</h3>
-
-<p>
-Want to work with Vaswan Films? Send your resume to our team.
-</p>
-
-</div>
-
-<div class="form-box">
-
-<form
-action="https://formsubmit.co/comadykrishna4@gmail.com"
-method="POST"
-enctype="multipart/form-data"
-onsubmit="return checkResumeSize(this)">
-
-<input type="hidden"
-name="_subject"
-value="New Job Application - Vaswan Films">
-
-<input type="hidden"
-name="_template"
-value="table">
-
-<input type="hidden"
-name="_url"
-value="https://vaswanfilms.in/">
-
-<div class="form-grid">
-
-<input
-type="text"
-name="name"
-placeholder="Full Name"
-required>
-
-<input
-type="email"
-name="email"
-placeholder="Email Address"
-required>
-
-<input
-type="tel"
-name="phone"
-placeholder="Phone / WhatsApp Number"
-required>
-
-<select name="position" required>
-
-<option value="">Select Position</option>
-<option>Video Editor</option>
-<option>Cameraman / DOP</option>
-<option>Graphic Designer</option>
-<option>Production Team</option>
-<option>Production Manager</option>
-<option>Social Media / Marketing</option>
-<option>Writer</option>
-<option>Actor</option>
-<option>Other</option>
-
-</select>
-
-<input
-type="text"
-name="experience"
-placeholder="Years of Experience">
-
-<input
-type="text"
-name="city"
-placeholder="Current City">
-
-<div class="full">
-
-<label>Upload Resume</label>
-
-<input
-type="file"
-name="resume"
-accept=".pdf,.doc,.docx"
-required>
-
-<div class="file-note">
-PDF, DOC or DOCX recommended. Keep the file size small.
-</div>
-
-</div>
-
-<textarea
-class="full"
-name="message"
-placeholder="Tell us briefly about yourself and your experience."></textarea>
-
-<div class="full">
-
-<button class="submit-btn" type="submit">
-SUBMIT JOB APPLICATION
-</button>
-
-</div>
-
-</div>
-
-</form>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-<div class="container">
-
-<div class="footer-logo">
-VASWAN FILMS
-</div>
-
-<p>
-Film Production • Web Series • Short Films • Casting
-</p>
-
-<div class="footer-contact">
-
-📧 comadykrishna4@gmail.com
-
-<br>
-
-📱 +91 8928879904
-
-</div>
-
-<div class="copyright">
-© 2026 Vaswan Films. All Rights Reserved.
-</div>
-
-</div>
-
-</footer>
-
-
-<script>
-
-function toggleMenu(){
-
-    document
-    .getElementById("navLinks")
-    .classList
-    .toggle("active");
-
-}
-
-
-/* VIDEO SIZE CHECK */
-
-function checkVideoSize(form){
-
-    const file =
-    form.querySelector('input[name="audition_video"]').files[0];
-
-    if(file && file.size > 10 * 1024 * 1024){
-
-        alert(
-        "Video file is larger than 10 MB. Please upload a smaller video."
-        );
-
-        return false;
-    }
-
-    return true;
-}
-
-
-/* RESUME SIZE CHECK */
-
-function checkResumeSize(form){
-
-    const file =
-    form.querySelector('input[name="resume"]').files[0];
-
-    if(file && file.size > 10 * 1024 * 1024){
-
-        alert(
-        "Resume file is larger than 10 MB. Please upload a smaller file."
-        );
-
-        return false;
-    }
-
-    return true;
-}
-
-</script>
-
-</body>
-</html>
+                               </html>
