@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://cloudflare.com" crossorigin="anonymous">
     
     <style>
-        /* Dharma Productions Inspired Premium Theme */
         :root {
             --dharma-orange: #f37022;
             --dharma-dark: #1a1a1a;
@@ -21,71 +20,42 @@
 
         body { background-color: var(--dharma-light); color: #333333; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
         
-        /* Top Navigation Bar */
+        /* Navigation Bar */
         .navbar { background-color: var(--dharma-orange) !important; padding: 15px 0; border-bottom: 4px solid #d95e14; }
         .navbar-brand { font-size: 26px; font-weight: 800; color: var(--dharma-light) !important; letter-spacing: 1px; }
         .nav-link { color: var(--dharma-light) !important; font-weight: 600; font-size: 15px; text-transform: uppercase; }
-        .nav-link:hover { opacity: 0.8; }
         
-        /* Main Hero Banner / Carousel Slider Placeholder */
-        .hero-banner { 
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('https://unsplash.com') no-repeat center center/cover; 
-            height: 550px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            color: white; 
-            text-align: center;
-            border-bottom: 5px solid var(--dharma-orange);
-        }
-        .hero-title { font-size: 4rem; font-weight: 900; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); text-transform: uppercase; }
+        /* Premium Auto-Playing Slider Section */
+        .slider-section { background-color: #000; padding: 20px 0; border-bottom: 5px solid var(--dharma-orange); }
+        .carousel-item { height: 500px; background-color: #000; }
+        .carousel-item img { height: 100%; width: auto; max-width: 100%; object-fit: contain; margin: 0 auto; display: block; }
         
-        /* Section Heading Style */
-        .section-title { font-weight: 800; color: var(--dharma-orange); text-transform: uppercase; font-size: 32px; letter-spacing: 1px; margin-bottom: 30px; text-align: center; }
+        /* Headings */
+        .section-title { font-weight: 800; color: var(--dharma-orange); text-transform: uppercase; font-size: 32px; letter-spacing: 1px; margin-top: 40px; margin-bottom: 30px; text-align: center; }
         
-        /* Filter Tabs (Upcoming / Released) */
-        .filter-btn-container { text-align: center; margin-bottom: 40px; }
-        .btn-filter-orange { background-color: var(--dharma-orange); color: white; font-weight: 700; border-radius: 4px; padding: 10px 30px; text-transform: uppercase; border: none; margin-right: 5px; }
-        .btn-filter-dark { background-color: black; color: white; font-weight: 700; border-radius: 4px; padding: 10px 30px; text-transform: uppercase; border: none; }
-        
-        /* Movie Cards Grid */
-        .movie-card { background: white; border: 1px solid #e0e0e0; border-radius: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: 0.3s; margin-bottom: 30px; }
-        .movie-card:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
-        .movie-img { width: 100%; height: 420px; object-fit: cover; }
-        .movie-details { padding: 20px; text-align: left; }
-        .movie-name { font-size: 18px; font-weight: 700; text-transform: uppercase; color: #111; margin-bottom: 5px; }
-        .movie-date { font-size: 14px; color: #777; font-weight: 500; text-transform: uppercase; }
-        
-        /* View All Button */
-        .btn-view-all { border: 2px solid var(--dharma-orange); color: var(--dharma-orange); font-weight: 700; background: transparent; padding: 12px 40px; text-transform: uppercase; border-radius: 0; transition: 0.3s; }
-        .btn-view-all:hover { background-color: var(--dharma-orange); color: white; }
-
-        /* Video Section Area */
+        /* Video Section */
         .video-section { background-color: #111111; color: white; padding: 60px 0; border-top: 5px solid var(--dharma-orange); }
-        .video-section .section-title { color: var(--dharma-orange); }
         .feed-container { background-color: #1a1a1a; border-radius: 8px; padding: 15px; }
 
-        /* Social Banner Section */
+        /* Social Banner */
         .social-banner { background-color: var(--dharma-orange); color: white; padding: 60px 0; text-align: center; }
         .social-title { font-size: 45px; font-weight: 900; letter-spacing: 2px; }
         .btn-enter { background-color: transparent; border: 2px solid white; color: white; font-weight: 700; padding: 10px 45px; text-transform: uppercase; margin-top: 20px; transition: 0.3s; }
         .btn-enter:hover { background-color: white; color: var(--dharma-orange); }
 
-        /* Let's Talk Contact Grid */
+        /* Contact Box styling */
         .contact-section { padding: 60px 0; background-color: var(--dharma-grey); }
-        .info-box { padding: 30px; text-align: center; background: white; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); height: 100%; }
+        .info-box { padding: 30px; text-align: center; background: white; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 20px; }
         .info-icon { font-size: 35px; color: var(--dharma-orange); margin-bottom: 15px; }
         .info-label { font-weight: 800; font-size: 18px; color: var(--dharma-orange); text-transform: uppercase; margin-bottom: 10px; }
-        .info-email a { color: #333; font-weight: 600; text-decoration: none; word-break: break-all; }
-        .info-email a:hover { color: var(--dharma-orange); }
+        .info-email a { color: #333; font-weight: 600; text-decoration: none; }
 
-        /* Footer */
-        .footer { background-color: #ffffff; padding: 25px 0; border-top: 1px solid #e0e0e0; font-size: 14px; text-align: center; color: #666; font-weight: 500; }
+        .footer { background-color: #ffffff; padding: 25px 0; border-top: 1px solid #e0e0e0; font-size: 14px; text-align: center; color: #666; }
     </style>
 </head>
 <body>
 
-    <!-- Header / Navigation Bar -->
+    <!-- Header Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#">☀️ VASWAN FILMS</a>
@@ -95,7 +65,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link px-3" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#movies">Movies</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#gallery">Poster Gallery</a></li>
                     <li class="nav-item"><a class="nav-link px-3" href="#videos">Videos</a></li>
                     <li class="nav-item"><a class="nav-link px-3" href="#contact">Let's Talk</a></li>
                 </ul>
@@ -103,80 +73,110 @@
         </div>
     </nav>
 
-    <!-- Main Hero Slider Section Placeholder -->
-    <div id="home" class="hero-banner">
-        <div>
-            <h1 class="hero-title">Vaswan Films</h1>
-            <p class="fs-4 fw-light text-uppercase tracking-wider">Cinematic Excellence & Storytelling</p>
+    <!-- Main Auto-Playing Slider (Carousel) Section -->
+    <div id="home" class="slider-section">
+        <div class="container">
+            <div id="projectSlider" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+                <!-- Indicators/Dots -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#projectSlider" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#projectSlider" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#projectSlider" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#projectSlider" data-bs-slide-to="3"></button>
+                    <button type="button" data-bs-target="#projectSlider" data-bs-slide-to="4"></button>
+                    <button type="button" data-bs-target="#projectSlider" data-bs-slide-to="5"></button>
+                </div>
+                
+                <!-- The Slideshow Images -->
+                <div class="carousel-inner">
+                    <!-- Image 1: Aakhiri Ticket -->
+                    <div class="carousel-item active">
+                        <img src="Aakhiri Ticket_ A journey of dreams.png" alt="Aakhiri Ticket">
+                    </div>
+                    <!-- Image 2 -->
+                    <div class="carousel-item">
+                        <img src="4b8824f4-d2ff-479c-9fe7-051ab6353174.png" alt="Vaswan Films Project">
+                    </div>
+                    <!-- Image 3 -->
+                    <div class="carousel-item">
+                        <img src="9c325ee8-b3bd-408b-9fcb-148fd3574674.png" alt="Vaswan Films Design">
+                    </div>
+                    <!-- Image 4 -->
+                    <div class="carousel-item">
+                        <img src="08341a6e-9815-4f56-878b-00b30912e4c2.png" alt="Poster Design">
+                    </div>
+                    <!-- Image 5 -->
+                    <div class="carousel-item">
+                        <img src="ChatGPT Image Jan 30, 2026, 03_52_29 PM.png" alt="Brand Art">
+                    </div>
+                    <!-- Image 6 -->
+                    <div class="carousel-item">
+                        <img src="images (8).jpeg" alt="Vaswan Artwork">
+                    </div>
+                </div>
+
+                <!-- Left and Right Controls/Arrows -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#projectSlider" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#projectSlider" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </div>
         </div>
     </div>
 
-    <!-- Movie Portfolio Section -->
-    <section id="movies" class="container my-5 py-4">
-        <!-- Filter Tabs Like Dharma -->
-        <div class="filter-btn-container">
-            <button class="btn-filter-orange">Upcoming</button>
-            <button class="btn-filter-dark">Released</button>
-        </div>
+    <!-- Gallery Text Header -->
+    <div id="gallery" class="container">
+        <h2 class="section-title">Vaswan Films Official Gallery</h2>
+        <p class="text-center text-muted">Aapke saare exclusive posters aur creative artworks upar slider mein live chal rahe hain.</p>
+    </div>
 
-        <div class="row g-4">
-            <!-- Movie 1 (Sample Poster) -->
-            <div class="col-md-6 col-lg-4">
-                <div class="movie-card">
-                    <!-- Yeh images aap baad me Canva se banakar badal sakte hain -->
-                    <img src="https://unsplash.com" class="movie-img" alt="Movie 1">
-                    <div class="movie-details">
-                        <div class="movie-name">Udta Teer Clone</div>
-                        <div class="movie-date">09 Oct 2026</div>
-                    </div>
-                </div>
-            </div>
-            <!-- Movie 2 (Sample Poster) -->
-            <div class="col-md-6 col-lg-4">
-                <div class="movie-card">
-                    <img src="https://unsplash.com" class="movie-img" alt="Movie 2">
-                    <div class="movie-details">
-                        <div class="movie-name">Ramayana Project</div>
-                        <div class="movie-date">Nov 2026</div>
-                    </div>
-                </div>
-            </div>
-            <!-- Movie 3 (Sample Poster) -->
-            <div class="col-md-6 col-lg-4">
-                <div class="movie-card">
-                    <img src="https://unsplash.com" class="movie-img" alt="Movie 3">
-                    <div class="movie-details">
-                        <div class="movie-name">Future Web Series</div>
-                        <div class="movie-date">Dec 2026</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- View All Button -->
-        <div class="text-center mt-4">
-            <button class="btn-view-all">View All</button>
-        </div>
-    </section>
-
-    <!-- Auto Update YouTube/Videos Area -->
-    <section id="videos" class="video-section">
+    <!-- Auto Update YouTube Section -->
+    <section id="videos" class="video-section mt-5">
         <div class="container">
-            <h2 class="section-title">Videos Feed</h2>
+            <h2 class="section-title" style="color: var(--dharma-orange) !important;">Videos Feed</h2>
             <div class="feed-container">
-                <!-- Live Automatic YouTube Feeds Connected Here -->
                 <script src="https://elfsight.com" async defer></script>
                 <div class="elfsight-app-547dfc2a-fa68-4509-b4f7-e43597cc89f1" data-elfsight-app-lazy></div>
             </div>
         </div>
     </section>
 
-    <!-- Orange Social Banner Section -->
+    <!-- Orange Social Hub Section -->
     <section class="social-banner">
         <div class="container">
             <h2 class="social-title">SOCIAL HUB</h2>
-            <p class="fs-5 max-w-2xl mx-auto mt-2">Welcome to the Vaswan Films digital family. Bringing you the absolute best in entertainment.</p>
+            <p class="fs-5 max-w-2xl mx-auto mt-2">Welcome to the Vaswan Films digital family. Our profiles update here automatically.</p>
             <a href="https://instagram.com" target="_blank" class="btn btn-enter">Enter Hub</a>
         </div>
     </section>
 
+    <!-- Let's Talk Contact Grid -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" style="color: black !important;">Let's Talk</h2>
+            <p class="text-center text-muted mb-5">For business enquiries or collaborations, get in touch with us:</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="info-box">
+                        <div class="info-icon"><i class="fa-solid fa-circle-info"></i></div>
+                        <div class="info-label">Info & Enquiries</div>
+                        <div class="info-email"><a href="mailto:comadykrishna4@gmail.com">comadykrishna4@gmail.com</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="info-box">
+                        <div class="info-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                        <div class="info-label">Creative Desk</div>
+                        <div class="info-email"><a href="mailto:comadykrishna4@gmail.com">comadykrishna4@gmail.com</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
