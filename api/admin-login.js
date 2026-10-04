@@ -1,3 +1,18 @@
+import crypto from "crypto";
+
+function createToken(password) {
+  const expires = Date.now() + 60 * 60 * 1000;
+
+  const data = `admin:${expires}`;
+
+  const signature = crypto
+    .createHmac("sha256", password)
+    .update(data)
+    .digest("hex");
+
+  return Buffer.from(`${data}:${signature}`).toString("base64url");
+}
+
 export default function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({
@@ -24,8 +39,16 @@ export default function handler(req, res) {
       });
     }
 
+    const token = createToken(adminPassword);
+
+    res.setHeader(
+      "Set-Cookie",
+      `vf_admin=${token}; HttpOnly; Secure; SameSite=Strict; Path=/; Max-Age=3600`
+    );
+
     return res.status(200).json({
-      success: true
+      success: true,
+      message: "Admin login successful."
     });
 
   } catch (error) {
