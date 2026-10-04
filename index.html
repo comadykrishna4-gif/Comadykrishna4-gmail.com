@@ -1129,7 +1129,7 @@ placeholder="Tell us briefly about yourself and your talent"
 
 <button class="submit" type="submit">
 
-CONTINUE TO ₹100 PAYMENT
+CONTINUE TO ₹199 PAYMENT
 
 </button>
 
@@ -1138,17 +1138,38 @@ CONTINUE TO ₹100 PAYMENT
 
 
 <!-- PAYMENT -->
-
 <div class="payment" id="paymentBox">
 
-<h3>Registration Fee</h3>
+    <h3>Registration Fee</h3>
 
-<p>
-Application / registration fee
-</p>
+    <p>
+        Application / registration fee
+    </p>
 
-<div class="amount">
-₹100
+    <div class="amount">
+        ₹199
+    </div>
+
+    <p style="color:#666;margin-top:10px;">
+        Secure payment powered by Razorpay
+    </p>
+
+    <br>
+
+    <button
+        type="button"
+        class="submit"
+        onclick="startRazorpayPayment()"
+        id="payButton"
+    >
+        PAY ₹199 NOW
+    </button>
+
+    <p
+        id="paymentStatus"
+        style="margin-top:15px;font-weight:bold;"
+    ></p>
+
 </div>
 
 
