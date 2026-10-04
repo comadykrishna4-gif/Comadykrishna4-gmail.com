@@ -2000,6 +2000,84 @@ try {
           "PAY ₹199 & REGISTER";
 
       }
+        <script>
+
+async function loadCloudinaryGallery() {
+
+  const galleryGrid =
+    document.getElementById("galleryGrid");
+
+  if (!galleryGrid) return;
+
+  try {
+
+    const response =
+      await fetch("/api/gallery");
+
+    const data =
+      await response.json();
+
+    if (!response.ok || !data.success) {
+      console.error(
+        "Gallery loading failed:",
+        data.error
+      );
+      return;
+    }
+
+    data.items.forEach((item) => {
+
+      const galleryItem =
+        document.createElement("div");
+
+      galleryItem.className =
+        "gallery-item";
+
+      if (item.type === "video") {
+
+        galleryItem.innerHTML = `
+          <video
+            src="${item.url}"
+            controls
+            muted
+            playsinline
+            preload="metadata"
+            style="width:100%;height:100%;object-fit:cover;">
+          </video>
+        `;
+
+      } else {
+
+        galleryItem.innerHTML = `
+          <img
+            src="${item.url}"
+            alt="Vaswan Films Gallery"
+            loading="lazy"
+            style="width:100%;height:100%;object-fit:cover;">
+        `;
+
+      }
+
+      galleryGrid.appendChild(
+        galleryItem
+      );
+
+    });
+
+  } catch (error) {
+
+    console.error(
+      "Gallery error:",
+      error
+    );
+
+  }
+
+}
+
+loadCloudinaryGallery();
+
+</script>
 
 </body>
             </html>
