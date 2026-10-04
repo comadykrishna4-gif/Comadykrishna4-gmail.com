@@ -1,1452 +1,1907 @@
 <!DOCTYPE html>
 <html lang="en">
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Vaswan Films | Reality Show</title>
-
-<meta name="description"
-content="Vaswan Films - Reality Shows, Films, Web Series and Entertainment." />
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#fff;
-    color:#111;
-    line-height:1.6;
-}
-
-/* HEADER */
-
-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:rgba(255,255,255,.97);
-    border-bottom:1px solid #eee;
-    backdrop-filter:blur(10px);
-}
-
-.navbar{
-    max-width:1200px;
-    margin:auto;
-    padding:14px 22px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    text-decoration:none;
-    color:#111;
-}
-
-.logo-circle{
-    width:48px;
-    height:48px;
-    border-radius:50%;
-    background:#111;
-    border:2px solid #d4af37;
-    color:#d4af37;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:20px;
-    font-weight:bold;
-}
-
-.logo-text strong{
-    display:block;
-    font-size:20px;
-    letter-spacing:2px;
-}
-
-.logo-text span{
-    font-size:9px;
-    color:#888;
-    letter-spacing:3px;
-}
-
-.nav-links{
-    display:flex;
-    list-style:none;
-    gap:25px;
-}
-
-.nav-links a{
-    color:#222;
-    text-decoration:none;
-    font-size:14px;
-    font-weight:bold;
-}
-
-.nav-links a:hover{
-    color:#bd8c20;
-}
-
-.menu{
-    display:none;
-    font-size:28px;
-    cursor:pointer;
-}
-
-/* HERO */
-
-.hero{
-    min-height:680px;
-    position:relative;
-    display:flex;
-    align-items:center;
-    overflow:hidden;
-
-    background-image:
-    linear-gradient(
-        90deg,
-        rgba(255,255,255,.98) 0%,
-        rgba(255,255,255,.88) 38%,
-        rgba(255,255,255,.15) 100%
-    ),
-    url("https://images.unsplash.com/photo-1664342174384-e3a832f9424d?auto=format&fit=crop&fm=jpg&q=80&w=1800");
-
-    background-size:cover;
-    background-position:center;
-}
-
-.hero-content{
-    width:100%;
-    max-width:1200px;
-    margin:auto;
-    padding:80px 25px;
-}
-
-.hero-small{
-    color:#bd8c20;
-    font-size:13px;
-    letter-spacing:4px;
-    font-weight:bold;
-    margin-bottom:15px;
-}
-
-.hero h1{
-    max-width:680px;
-    font-size:64px;
-    line-height:1.05;
-    margin-bottom:25px;
-}
-
-.hero h1 span{
-    color:#bd8c20;
-}
-
-.hero p{
-    max-width:570px;
-    color:#666;
-    font-size:18px;
-    margin-bottom:30px;
-}
-
-.btn{
-    display:inline-block;
-    padding:14px 27px;
-    text-decoration:none;
-    font-weight:bold;
-    border-radius:4px;
-    margin-right:8px;
-    transition:.3s;
-}
-
-.gold-btn{
-    background:#c49a35;
-    color:white;
-}
-
-.gold-btn:hover{
-    background:#a97c18;
-    transform:translateY(-3px);
-}
-
-.black-btn{
-    background:#111;
-    color:white;
-}
-
-.black-btn:hover{
-    background:#333;
-    transform:translateY(-3px);
-}
-
-/* COMMON */
-
-section{
-    padding:90px 22px;
-}
-
-.container{
-    max-width:1200px;
-    margin:auto;
-}
-
-.heading{
-    text-align:center;
-    margin-bottom:50px;
-}
-
-.heading small{
-    color:#bd8c20;
-    letter-spacing:3px;
-    font-weight:bold;
-}
-
-.heading h2{
-    font-size:42px;
-    margin:8px 0;
-}
-
-.heading p{
-    color:#777;
-}
-
-/* ABOUT */
-
-.about{
-    background:#fafafa;
-}
-
-.about-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:60px;
-    align-items:center;
-}
-
-.about-image{
-    min-height:430px;
-    border-radius:8px;
-
-    background-image:
-    linear-gradient(
-        rgba(0,0,0,.2),
-        rgba(0,0,0,.2)
-    ),
-    url("https://images.unsplash.com/photo-1664342174384-e3a832f9424d?auto=format&fit=crop&fm=jpg&q=80&w=1200");
-
-    background-size:cover;
-    background-position:center;
-}
-
-.about-content h2{
-    font-size:42px;
-    line-height:1.15;
-    margin:12px 0 20px;
-}
-
-.about-content h2 span{
-    color:#bd8c20;
-}
-
-.about-content p{
-    color:#666;
-    margin-bottom:18px;
-}
-
-/* REALITY SHOW */
-
-.reality{
-    background:#111;
-    color:white;
-}
-
-.reality-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:55px;
-    align-items:center;
-}
-
-.reality-image{
-    height:550px;
-    border-radius:8px;
-    overflow:hidden;
-}
-
-.reality-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.reality-content small{
-    color:#d4af37;
-    letter-spacing:3px;
-    font-weight:bold;
-}
-
-.reality-content h2{
-    font-size:48px;
-    line-height:1.1;
-    margin:15px 0 20px;
-}
-
-.reality-content h2 span{
-    color:#d4af37;
-}
-
-.reality-content p{
-    color:#bbb;
-    margin-bottom:20px;
-}
-
-.features{
-    list-style:none;
-    margin:25px 0;
-}
-
-.features li{
-    margin:12px 0;
-    color:#ddd;
-}
-
-.features li::before{
-    content:"✓";
-    color:#d4af37;
-    font-weight:bold;
-    margin-right:10px;
-}
-
-/* APPLICATION */
-
-.application{
-    background:#f8f8f8;
-}
-
-.application-grid{
-    display:grid;
-    grid-template-columns:.8fr 1.2fr;
-    gap:50px;
-    align-items:start;
-}
-
-.application-info h2{
-    font-size:42px;
-    line-height:1.1;
-    margin:12px 0 20px;
-}
-
-.application-info h2 span{
-    color:#bd8c20;
-}
-
-.application-info p{
-    color:#666;
-}
-
-.info-box{
-    margin-top:25px;
-    padding:20px;
-    background:#111;
-    color:white;
-    border-left:4px solid #d4af37;
-}
-
-.info-box strong{
-    color:#d4af37;
-}
-
-/* FORM */
-
-.form-box{
-    background:white;
-    padding:30px;
-    border-radius:8px;
-    box-shadow:0 10px 35px rgba(0,0,0,.08);
-}
-
-.form-box h3{
-    font-size:27px;
-    margin-bottom:5px;
-}
-
-.form-subtitle{
-    color:#777;
-    font-size:13px;
-    margin-bottom:22px;
-}
-
-.form-row{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
-}
-
-.field{
-    margin-bottom:16px;
-}
-
-.field label{
-    display:block;
-    font-size:13px;
-    font-weight:bold;
-    margin-bottom:6px;
-}
-
-.field input,
-.field select,
-.field textarea{
-    width:100%;
-    padding:13px;
-    border:1px solid #ddd;
-    border-radius:4px;
-    font-size:14px;
-    outline:none;
-}
-
-.field input:focus,
-.field select:focus,
-.field textarea:focus{
-    border-color:#c49a35;
-}
-
-.field textarea{
-    min-height:100px;
-    resize:vertical;
-}
-
-.submit{
-    width:100%;
-    border:none;
-    background:#c49a35;
-    color:white;
-    padding:15px;
-    font-weight:bold;
-    font-size:15px;
-    border-radius:4px;
-    cursor:pointer;
-}
-
-.submit:hover{
-    background:#a97c18;
-}
-
-/* PAYMENT */
-
-.payment{
-    display:none;
-    margin-top:25px;
-    padding:25px;
-    text-align:center;
-    border:2px solid #d4af37;
-    background:#fffaf0;
-    border-radius:6px;
-}
-
-.payment h3{
-    margin-bottom:8px;
-}
-
-.amount{
-    font-size:32px;
-    color:#bd8c20;
-    font-weight:bold;
-    margin:10px;
-}
-
-.qr{
-    width:190px;
-    height:190px;
-    margin:20px auto;
-    background:#eee;
-    border:5px solid #111;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:13px;
-    color:#666;
-    text-align:center;
-}
-
-/* PROJECTS */
-
-.projects{
-    background:white;
-}
-
-.projects-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-}
-
-.project{
-    border:1px solid #e5e5e5;
-    padding:28px;
-    transition:.3s;
-}
-
-.project:hover{
-    transform:translateY(-7px);
-    box-shadow:0 15px 35px rgba(0,0,0,.08);
-}
-
-.project-number{
-    font-size:14px;
-    color:#bd8c20;
-    font-weight:bold;
-}
-
-.project h3{
-    font-size:24px;
-    margin:10px 0;
-}
-
-.project p{
-    color:#777;
-    font-size:14px;
-}
-
-/* CONTACT */
-
-.contact{
-    background:#fafafa;
-}
-
-.contact-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.contact-card{
-    background:white;
-    border:1px solid #e5e5e5;
-    padding:30px;
-    text-align:center;
-}
-
-.contact-card .icon{
-    font-size:30px;
-    margin-bottom:10px;
-}
-
-.contact-card h3{
-    margin-bottom:5px;
-}
-
-.contact-card p{
-    color:#777;
-}
-
-.contact-card a{
-    color:#bd8c20;
-    text-decoration:none;
-}
-
-/* FOOTER */
-
-footer{
-    background:#111;
-    color:#aaa;
-    text-align:center;
-    padding:30px 20px;
-}
-
-footer strong{
-    color:#d4af37;
-}
-
-.footer-links{
-    margin-top:10px;
-}
-
-.footer-links a{
-    color:#aaa;
-    text-decoration:none;
-    margin:0 8px;
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-
-    .nav-links{
-        display:none;
-        position:absolute;
-        top:76px;
-        left:0;
-        width:100%;
-        background:white;
-        flex-direction:column;
-        padding:20px;
-        gap:18px;
-        border-bottom:1px solid #ddd;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vaswan Films | Production • Entertainment • Talent</title>
+  <meta name="description" content="Vaswan Films - Production, Entertainment, Reality Shows, Films and Talent Casting.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Razorpay -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+  <style>
+    :root {
+      --black: #050505;
+      --black2: #0b0b0b;
+      --gold: #d7b46a;
+      --gold2: #f3d38a;
+      --white: #ffffff;
+      --muted: #a9a9a9;
+      --line: rgba(215,180,106,.22);
     }
 
-    .nav-links.active{
-        display:flex;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .menu{
-        display:block;
+    html {
+      scroll-behavior: smooth;
     }
 
-    .hero{
-        min-height:600px;
-        background-image:
-        linear-gradient(
-            rgba(255,255,255,.9),
-            rgba(255,255,255,.75)
-        ),
-        url("https://images.unsplash.com/photo-1664342174384-e3a832f9424d?auto=format&fit=crop&fm=jpg&q=80&w=1200");
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: "Inter", sans-serif;
+      overflow-x: hidden;
     }
 
-    .hero h1{
-        font-size:48px;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    .about-grid,
-    .reality-grid,
-    .application-grid{
-        grid-template-columns:1fr;
+    img {
+      width: 100%;
+      display: block;
     }
 
-    .projects-grid{
-        grid-template-columns:1fr 1fr;
+    button,
+    input,
+    textarea {
+      font-family: inherit;
     }
 
-    .contact-grid{
-        grid-template-columns:1fr;
-    }
-}
+    /* =========================
+       PRELOADER
+    ========================= */
 
-@media(max-width:600px){
-
-    section{
-        padding:65px 18px;
-    }
-
-    .hero{
-        min-height:570px;
-    }
-
-    .hero-content{
-        padding:50px 18px;
+    #loader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: #050505;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: .7s;
     }
 
-    .hero h1{
-        font-size:40px;
+    .loader-logo {
+      text-align: center;
     }
 
-    .hero p{
-        font-size:16px;
+    .loader-vf {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 80px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: -5px;
     }
 
-    .btn{
-        display:block;
-        text-align:center;
-        margin:10px 0;
+    .loader-text {
+      font-size: 11px;
+      letter-spacing: 5px;
+      color: #aaa;
+      margin-top: -8px;
     }
 
-    .heading h2{
-        font-size:32px;
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(0,0,0,.55);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,.07);
     }
 
-    .about-content h2{
-        font-size:34px;
+    nav {
+      max-width: 1250px;
+      margin: auto;
+      height: 82px;
+      padding: 0 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    .reality-content h2{
-        font-size:38px;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
-    .reality-image{
-        height:400px;
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--gold);
+      display: grid;
+      place-items: center;
+      position: relative;
     }
 
-    .application-info h2{
-        font-size:34px;
+    .brand-mark::before {
+      content: "";
+      position: absolute;
+      inset: 4px;
+      border: 1px solid rgba(215,180,106,.35);
     }
 
-    .form-row{
-        grid-template-columns:1fr;
+    .brand-mark span {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 25px;
+      font-weight: 700;
+      color: var(--gold);
+      position: relative;
+      z-index: 2;
     }
 
-    .form-box{
-        padding:20px;
+    .brand-name {
+      line-height: 1;
     }
 
-    .projects-grid{
-        grid-template-columns:1fr;
+    .brand-name strong {
+      display: block;
+      font-size: 18px;
+      letter-spacing: 3px;
     }
-}
 
-</style>
+    .brand-name small {
+      color: var(--gold);
+      font-size: 8px;
+      letter-spacing: 3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      color: #ddd;
+      letter-spacing: 1px;
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .nav-btn {
+      padding: 12px 20px;
+      border: 1px solid var(--gold);
+      color: var(--gold) !important;
+    }
+
+    .menu {
+      display: none;
+      font-size: 28px;
+      color: var(--gold);
+      cursor: pointer;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.96) 0%, rgba(0,0,0,.75) 42%, rgba(0,0,0,.25) 100%),
+        url("https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2000&q=90")
+        center/cover;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, #050505 0%, transparent 25%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      width: min(1250px, 100%);
+      padding: 140px 25px 80px;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      letter-spacing: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(65px, 9vw, 145px);
+      line-height: .82;
+      font-weight: 600;
+      max-width: 900px;
+      letter-spacing: -4px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+      display: block;
+      font-style: italic;
+    }
+
+    .hero-desc {
+      max-width: 520px;
+      color: #c5c5c5;
+      line-height: 1.8;
+      margin: 35px 0;
+      font-size: 14px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 50px;
+      padding: 0 27px;
+      border: 1px solid var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      transition: .35s;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #090909;
+    }
+
+    .btn-gold:hover {
+      background: var(--gold2);
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      color: var(--gold);
+    }
+
+    .btn-outline:hover {
+      background: var(--gold);
+      color: #000;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      right: 30px;
+      bottom: 45px;
+      z-index: 3;
+      writing-mode: vertical-rl;
+      font-size: 9px;
+      letter-spacing: 4px;
+      color: #aaa;
+    }
+
+    /* =========================
+       GOLD STRIP
+    ========================= */
+
+    .marquee {
+      overflow: hidden;
+      background: var(--gold);
+      color: #050505;
+      padding: 13px 0;
+      white-space: nowrap;
+    }
+
+    .marquee-track {
+      display: inline-block;
+      animation: marquee 22s linear infinite;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 3px;
+    }
+
+    .marquee-track span {
+      margin: 0 35px;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* =========================
+       COMMON SECTION
+    ========================= */
+
+    section {
+      padding: 110px 25px;
+    }
+
+    .container {
+      max-width: 1250px;
+      margin: auto;
+    }
+
+    .section-head {
+      margin-bottom: 55px;
+    }
+
+    .section-label {
+      color: var(--gold);
+      letter-spacing: 4px;
+      font-size: 10px;
+      font-weight: 700;
+      margin-bottom: 13px;
+    }
+
+    .section-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(45px, 6vw, 75px);
+      font-weight: 500;
+      line-height: .95;
+    }
+
+    .section-title span {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .section-text {
+      max-width: 600px;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about {
+      background:
+        radial-gradient(circle at 85% 20%, rgba(215,180,106,.08), transparent 30%),
+        var(--black);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-photo {
+      height: 570px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .about-photo img {
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(25%);
+      transition: 1s;
+    }
+
+    .about-photo:hover img {
+      transform: scale(1.04);
+    }
+
+    .photo-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 30px;
+      background: linear-gradient(transparent, rgba(0,0,0,.9));
+    }
+
+    .photo-caption strong {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+    }
+
+    .about-copy h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 42px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .about-copy p {
+      color: #aaa;
+      line-height: 1.9;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 15px;
+      margin-top: 35px;
+    }
+
+    .stat {
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+
+    .stat strong {
+      font-family: "Cormorant Garamond", serif;
+      color: var(--gold);
+      font-size: 42px;
+    }
+
+    .stat span {
+      display: block;
+      color: #888;
+      font-size: 9px;
+      letter-spacing: 2px;
+      margin-top: 4px;
+    }
+
+    /* =========================
+       REALITY SHOW
+    ========================= */
+
+    .reality {
+      background: #080808;
+    }
+
+    .show-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 20px;
+    }
+
+    .show-card {
+      min-height: 480px;
+      position: relative;
+      overflow: hidden;
+      background: #111;
+    }
+
+    .show-card img {
+      height: 100%;
+      object-fit: cover;
+      transition: .8s;
+    }
+
+    .show-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .show-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent 30%, rgba(0,0,0,.9));
+    }
+
+    .show-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 30px;
+      z-index: 2;
+    }
+
+    .show-number {
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 3px;
+    }
+
+    .show-content h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 38px;
+      margin: 7px 0;
+    }
+
+    .show-content p {
+      color: #bbb;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       PROJECTS
+    ========================= */
+
+    .projects {
+      background: var(--black);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap: 20px;
+    }
+
+    .project-card {
+      min-height: 420px;
+      position: relative;
+      overflow: hidden;
+      background: #111;
+    }
+
+    .project-card.small {
+      min-height: 200px;
+    }
+
+    .project-card img {
+      height: 100%;
+      object-fit: cover;
+      transition: .8s;
+    }
+
+    .project-card:hover img {
+      transform: scale(1.06);
+    }
+
+    .project-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent 30%, rgba(0,0,0,.95));
+    }
+
+    .project-info {
+      position: absolute;
+      left: 25px;
+      right: 25px;
+      bottom: 22px;
+      z-index: 2;
+    }
+
+    .project-info small {
+      color: var(--gold);
+      letter-spacing: 3px;
+    }
+
+    .project-info h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 42px;
+      margin-top: 5px;
+    }
+
+    .project-side {
+      display: grid;
+      gap: 20px;
+    }
+
+    /* =========================
+       CASTING
+    ========================= */
+
+    .casting {
+      background:
+        linear-gradient(90deg, rgba(5,5,5,.96), rgba(5,5,5,.65)),
+        url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1800&q=85")
+        center/cover fixed;
+    }
+
+    .casting-box {
+      max-width: 760px;
+    }
+
+    .casting-box h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(50px,7vw,90px);
+      line-height: .9;
+      font-weight: 500;
+    }
+
+    .casting-box h2 span {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .casting-box p {
+      color: #bbb;
+      line-height: 1.8;
+      margin: 25px 0;
+      max-width: 580px;
+    }
+
+    /* =========================
+       GALLERY
+    ========================= */
+
+    .gallery {
+      background: #080808;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      grid-auto-rows: 230px;
+      gap: 12px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .gallery-item:nth-child(1) {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .gallery-item:nth-child(5) {
+      grid-column: span 2;
+    }
+
+    .gallery-item img {
+      height: 100%;
+      object-fit: cover;
+      transition: .7s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.07);
+    }
+
+    /* =========================
+       REGISTRATION
+    ========================= */
+
+    .registration {
+      background:
+        radial-gradient(circle at 10% 10%, rgba(215,180,106,.10), transparent 30%),
+        #050505;
+    }
+
+    .register-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .price {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 72px;
+      color: var(--gold);
+      margin: 20px 0;
+    }
+
+    .price small {
+      font-family: "Inter", sans-serif;
+      font-size: 12px;
+      color: #999;
+    }
+
+    .benefits {
+      list-style: none;
+      margin-top: 25px;
+    }
+
+    .benefits li {
+      color: #aaa;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      font-size: 13px;
+    }
+
+    .benefits li::before {
+      content: "✦";
+      color: var(--gold);
+      margin-right: 12px;
+    }
+
+    .form-box {
+      background: #0c0c0c;
+      border: 1px solid var(--line);
+      padding: 35px;
+    }
+
+    .form-box h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 35px;
+      margin-bottom: 25px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .field {
+      margin-bottom: 14px;
+    }
+
+    .field label {
+      display: block;
+      color: #888;
+      font-size: 9px;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      background: #070707;
+      border: 1px solid rgba(255,255,255,.12);
+      color: #fff;
+      padding: 15px;
+      outline: none;
+      transition: .3s;
+    }
+
+    .field textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: var(--gold);
+    }
+
+    .pay-btn {
+      width: 100%;
+      border: none;
+      cursor: pointer;
+      background: var(--gold);
+      color: #000;
+      padding: 17px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      transition: .3s;
+    }
+
+    .pay-btn:hover {
+      background: var(--gold2);
+    }
+
+    .secure {
+      text-align: center;
+      color: #777;
+      font-size: 9px;
+      margin-top: 13px;
+      letter-spacing: 1px;
+    }
+
+    #formMessage {
+      display: none;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact {
+      background: #080808;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+    }
+
+    .contact-list {
+      margin-top: 30px;
+    }
+
+    .contact-item {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .contact-item small {
+      display: block;
+      color: var(--gold);
+      font-size: 9px;
+      letter-spacing: 3px;
+      margin-bottom: 7px;
+    }
+
+    .contact-item a,
+    .contact-item span {
+      color: #ddd;
+      font-size: 15px;
+    }
+
+    .contact-box {
+      border: 1px solid var(--line);
+      padding: 45px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact-box h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .contact-box p {
+      color: #999;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding: 40px 25px;
+      background: #030303;
+    }
+
+    .footer-inner {
+      max-width: 1250px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-brand {
+      color: var(--gold);
+      letter-spacing: 3px;
+      font-weight: 700;
+    }
+
+    footer p {
+      color: #666;
+      font-size: 10px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 18px;
+    }
+
+    .socials a {
+      color: #aaa;
+      font-size: 11px;
+    }
+
+    .socials a:hover {
+      color: var(--gold);
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 850px) {
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 82px;
+        left: 0;
+        right: 0;
+        background: rgba(5,5,5,.98);
+        padding: 25px;
+        flex-direction: column;
+        align-items: flex-start;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu {
+        display: block;
+      }
+
+      .hero {
+        min-height: 850px;
+      }
+
+      .hero h1 {
+        font-size: 72px;
+      }
+
+      .about-grid,
+      .register-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .about-photo {
+        height: 450px;
+      }
+
+      .show-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .show-card {
+        min-height: 430px;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 180px;
+      }
+
+      .gallery-item:nth-child(1) {
+        grid-column: span 2;
+      }
+
+      .gallery-item:nth-child(5) {
+        grid-column: span 1;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 550px) {
+
+      section {
+        padding: 80px 18px;
+      }
+
+      nav {
+        padding: 0 18px;
+      }
+
+      .brand-name strong {
+        font-size: 15px;
+      }
+
+      .brand-name small {
+        font-size: 6px;
+      }
+
+      .hero-content {
+        padding: 130px 18px 80px;
+      }
+
+      .hero h1 {
+        font-size: 62px;
+        letter-spacing: -2px;
+      }
+
+      .hero-desc {
+        font-size: 13px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .stats {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .stat strong {
+        font-size: 31px;
+      }
+
+      .form-box {
+        padding: 22px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gallery-item:nth-child(1) {
+        grid-column: span 2;
+      }
+
+      .contact-box {
+        padding: 30px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
+  <!-- PRELOADER -->
+  <div id="loader">
+    <div class="loader-logo">
+      <div class="loader-vf">VF</div>
+      <div class="loader-text">VASWAN FILMS</div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav>
+
+      <a href="#home" class="brand">
+        <div class="brand-mark">
+          <span>VF</span>
+        </div>
+
+        <div class="brand-name">
+          <strong>VASWAN FILMS</strong>
+          <small>PRODUCTION • ENTERTAINMENT</small>
+        </div>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#about">ABOUT</a>
+        <a href="#reality">REALITY SHOW</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="#gallery">GALLERY</a>
+        <a href="#contact">CONTACT</a>
+        <a href="#register" class="nav-btn">JOIN NOW</a>
+      </div>
+
+      <div class="menu" id="menuBtn">☰</div>
+
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">REALITY • CINEMA • TALENT</div>
+
+      <h1>
+        Where Stories
+        <span>Become Stardom.</span>
+      </h1>
+
+      <p class="hero-desc">
+        Vaswan Films is a creative production and entertainment house
+        built for powerful stories, fresh talent, reality entertainment
+        and cinematic experiences.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#register" class="btn btn-gold">
+          JOIN REALITY SHOW
+        </a>
+
+        <a href="#projects" class="btn btn-outline">
+          EXPLORE OUR WORLD
+        </a>
+      </div>
 
-<!-- HEADER -->
-
-<header>
-
-<nav class="navbar">
-
-<a href="#home" class="logo">
-
-<div class="logo-circle">
-VF
-</div>
-
-<div class="logo-text">
-
-<strong>VASWAN FILMS</strong>
-
-<span>PRODUCTION HOUSE</span>
-
-</div>
-
-</a>
-
-
-<div class="menu" onclick="toggleMenu()">
-☰
-</div>
-
-
-<ul class="nav-links" id="navLinks">
-
-<li>
-<a href="#home">Home</a>
-</li>
-
-<li>
-<a href="#about">About</a>
-</li>
-
-<li>
-<a href="#reality">Reality Show</a>
-</li>
-
-<li>
-<a href="#projects">Projects</a>
-</li>
-
-<li>
-<a href="#admission">Admission</a>
-</li>
-
-<li>
-<a href="#contact">Contact</a>
-</li>
-
-</ul>
-
-</nav>
-
-</header>
-
-
-<!-- HERO -->
-
-<section class="hero" id="home">
-
-<div class="hero-content">
-
-<div class="hero-small">
-VASWAN FILMS
-</div>
-
-<h1>
-Your Talent.
-<br>
-Your <span>Stage.</span>
-<br>
-Your Story.
-</h1>
-
-<p>
-A new platform for talented performers who dream
-of entering the world of entertainment.
-</p>
-
-<a href="#admission" class="btn gold-btn">
-Reality Show Admission
-</a>
-
-<a href="#reality" class="btn black-btn">
-Know More
-</a>
-
-</div>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section class="about" id="about">
-
-<div class="container">
-
-<div class="heading">
-
-<small>ABOUT VASWAN FILMS</small>
-
-<h2>Where Talent Meets Opportunity</h2>
-
-<p>
-Building entertainment projects and discovering fresh talent.
-</p>
-
-</div>
-
-
-<div class="about-grid">
-
-<div class="about-image"></div>
-
-
-<div class="about-content">
-
-<small style="color:#bd8c20;font-weight:bold;letter-spacing:3px;">
-OUR VISION
-</small>
-
-<h2>
-Discover.
-Develop.
-<span>Deliver.</span>
-</h2>
-
-<p>
-Vaswan Films is focused on films, web series,
-reality entertainment and new talent.
-</p>
-
-<p>
-Our aim is to create a professional platform where
-talented people can showcase their skills and get
-an opportunity to be seen.
-</p>
-
-<a href="#admission" class="btn gold-btn">
-Apply Now
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- REALITY SHOW -->
-
-<section class="reality" id="reality">
-
-<div class="container">
-
-<div class="reality-grid">
-
-
-<div class="reality-image">
-
-<img
-src="https://images.unsplash.com/photo-1664342174384-e3a832f9424d?auto=format&fit=crop&fm=jpg&q=80&w=1400"
-alt="Reality Show Stage"
->
-
-</div>
-
-
-<div class="reality-content">
-
-<small>VASWAN FILMS PRESENTS</small>
-
-<h2>
-REALITY SHOW
-<span>ADMISSION</span>
-</h2>
-
-<p>
-Do you have a special talent?
-Do you believe you can entertain an audience?
-This could be your chance to step onto the stage.
-</p>
-
-<ul class="features">
-
-<li>Acting Talent</li>
-
-<li>Singing Talent</li>
-
-<li>Dancing Talent</li>
-
-<li>Comedy & Entertainment</li>
-
-<li>Special Performance Skills</li>
-
-<li>Fresh Talent Welcome</li>
-
-</ul>
-
-<a href="#admission" class="btn gold-btn">
-Register Now
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ADMISSION -->
-
-<section class="application" id="admission">
-
-<div class="container">
-
-<div class="application-grid">
-
-
-<div class="application-info">
-
-<small style="color:#bd8c20;font-weight:bold;letter-spacing:3px;">
-REGISTRATION OPEN
-</small>
-
-<h2>
-Reality Show
-<span>Admission</span>
-</h2>
-
-<p>
-Fill out the registration form to express your interest
-in participating in the Vaswan Films Reality Show.
-</p>
-
-<div class="info-box">
-
-<strong>Important</strong>
-
-<br>
-
-Please provide correct information.
-Selection will be based on the show's audition
-and selection process.
-
-</div>
-
-</div>
-
-
-<div class="form-box">
-
-<h3>Reality Show Registration</h3>
-
-<p class="form-subtitle">
-Complete the form below.
-</p>
-
-
-<form id="registrationForm"
-onsubmit="showPayment(event)">
-
-
-<div class="form-row">
-
-
-<div class="field">
-
-<label>Full Name *</label>
-
-<input
-type="text"
-required
-placeholder="Enter your name"
->
-
-</div>
-
-
-<div class="field">
-
-<label>Age *</label>
-
-<input
-type="number"
-min="18"
-required
-placeholder="Your age"
->
-
-</div>
-
-</div>
-
-
-<div class="form-row">
-
-
-<div class="field">
-
-<label>City *</label>
-
-<input
-type="text"
-required
-placeholder="Your city"
->
-
-</div>
-
-
-<div class="field">
-
-<label>Gender *</label>
-
-<select required>
-
-<option value="">
-Select
-</option>
-
-<option>Male</option>
-
-<option>Female</option>
-
-<option>Other</option>
-
-</select>
-
-</div>
-
-</div>
-
-
-<div class="field">
-
-<label>Your Talent *</label>
-
-<select required>
-
-<option value="">
-Select your talent
-</option>
-
-<option>Acting</option>
-
-<option>Singing</option>
-
-<option>Dancing</option>
-
-<option>Comedy</option>
-
-<option>Modeling</option>
-
-<option>Other</option>
-
-</select>
-
-</div>
-
-
-<div class="form-row">
-
-
-<div class="field">
-
-<label>Contact Number *</label>
-
-<input
-type="tel"
-inputmode="numeric"
-pattern="[0-9]{10}"
-maxlength="10"
-required
-placeholder="10 digit mobile number"
->
-
-</div>
-
-
-<div class="field">
-
-<label>Email ID *</label>
-
-<input
-type="email"
-required
-placeholder="your@email.com"
->
-
-</div>
-
-</div>
-
-
-<div class="field">
-
-<label>Address *</label>
-
-<textarea
-required
-placeholder="Enter your address"
-></textarea>
-
-</div>
-
-
-<div class="field">
-
-<label>About Your Talent</label>
-
-<textarea
-placeholder="Tell us briefly about yourself and your talent"
-></textarea>
-
-</div>
-
-
-<button class="submit" type="submit">
-
-CONTINUE TO ₹199 PAYMENT
-
-</button>
-
-
-</form>
-
-
-<!-- PAYMENT -->
-<div class="payment" id="paymentBox">
-
-    <h3>Registration Fee</h3>
-
-    <p>
-        Application / registration fee
-    </p>
-
-    <div class="amount">
-        ₹199
     </div>
 
-    <p style="color:#666;margin-top:10px;">
-        Secure payment powered by Razorpay
-    </p>
+    <div class="hero-scroll">
+      SCROLL TO DISCOVER
+    </div>
+
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>VASWAN FILMS</span>
+      <span>•</span>
+      <span>CREATE</span>
+      <span>•</span>
+      <span>PERFORM</span>
+      <span>•</span>
+      <span>INSPIRE</span>
+      <span>•</span>
+      <span>VASWAN FILMS</span>
+      <span>•</span>
+      <span>CREATE</span>
+      <span>•</span>
+      <span>PERFORM</span>
+      <span>•</span>
+      <span>INSPIRE</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+
+    <div class="container">
+
+      <div class="about-grid">
+
+        <div class="about-photo">
+          <img
+            src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=85"
+            alt="Film production">
+          <div class="photo-caption">
+            <strong>Stories. Vision. Cinema.</strong>
+          </div>
+        </div>
+
+        <div class="about-copy">
+
+          <div class="section-label">WHO WE ARE</div>
+
+          <h3>
+            We don't just make
+            <span style="color:#d7b46a;">content.</span>
+            We create moments.
+          </h3>
+
+          <p>
+            Vaswan Films is a production and entertainment platform
+            focused on cinema, reality entertainment, talent discovery
+            and original storytelling.
+          </p>
+
+          <p>
+            From new faces to new stories, our vision is to create a
+            professional space where talent gets an opportunity to
+            perform, connect and grow.
+          </p>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>200+</strong>
+              <span>TV EPISODES</span>
+            </div>
+
+            <div class="stat">
+              <strong>5+</strong>
+              <span>ADS</span>
+            </div>
+
+            <div class="stat">
+              <strong>1+</strong>
+              <span>WEB PROJECT</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- REALITY SHOW -->
+  <section class="reality" id="reality">
+
+    <div class="container">
+
+      <div class="section-head">
+        <div class="section-label">THE NEXT SCREEN FACE</div>
+
+        <h2 class="section-title">
+          Reality <span>Starts Here.</span>
+        </h2>
+
+        <p class="section-text">
+          A platform designed for people who believe they belong in front
+          of the camera. Bring your personality, confidence and story.
+        </p>
+      </div>
+
+      <div class="show-grid">
+
+        <div class="show-card">
+          <img
+            src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=900&q=85"
+            alt="Talent">
+          <div class="show-content">
+            <div class="show-number">01 / TALENT</div>
+            <h3>Be Seen.</h3>
+            <p>
+              Discover your screen presence and show the world what
+              makes you different.
+            </p>
+          </div>
+        </div>
 
-    <br>
+        <div class="show-card">
+          <img
+            src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=900&q=85"
+            alt="Reality entertainment">
+          <div class="show-content">
+            <div class="show-number">02 / REALITY</div>
+            <h3>Be Real.</h3>
+            <p>
+              Authentic personalities, real emotions and unforgettable
+              entertainment.
+            </p>
+          </div>
+        </div>
 
-    <button
-        type="button"
-        class="submit"
-        onclick="startRazorpayPayment()"
-        id="payButton"
-    >
-        PAY ₹199 NOW
-    </button>
+        <div class="show-card">
+          <img
+            src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=900&q=85"
+            alt="Stage performance">
+          <div class="show-content">
+            <div class="show-number">03 / STAGE</div>
+            <h3>Be Ready.</h3>
+            <p>
+              Your journey can start with one registration and one
+              opportunity.
+            </p>
+          </div>
+        </div>
 
-    <p
-        id="paymentStatus"
-        style="margin-top:15px;font-weight:bold;"
-    ></p>
+      </div>
 
-</div>
+    </div>
 
+  </section>
 
-<div class="qr">
+  <!-- PROJECTS -->
+  <section class="projects" id="projects">
 
-OFFICIAL PAYMENT QR
-<br>
-WILL BE ADDED HERE
+    <div class="container">
 
-</div>
+      <div class="section-head">
+        <div class="section-label">OUR WORLD</div>
 
+        <h2 class="section-title">
+          Stories We <span>Create.</span>
+        </h2>
+      </div>
 
-<p>
-Scan the official QR code to make payment.
-</p>
+      <div class="project-grid">
 
-<br>
+        <div class="project-card">
 
-<strong>
-Payment verification will be connected
-with the real payment system.
-</strong>
+          <img
+            src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=85"
+            alt="Gunnah">
 
-</div>
+          <div class="project-info">
+            <small>CRIME THRILLER</small>
+            <h3>GUNNAH</h3>
+          </div>
 
+        </div>
 
-</div>
+        <div class="project-side">
 
-</div>
+          <div class="project-card small">
 
-</div>
+            <img
+              src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=900&q=85"
+              alt="Cinema">
 
-</section>
+            <div class="project-info">
+              <small>FEATURE FILM</small>
+              <h3>Aakhiri Ticket</h3>
+            </div>
 
+          </div>
 
-<!-- PROJECTS -->
+          <div class="project-card small">
 
-<section class="projects" id="projects">
+            <img
+              src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85"
+              alt="Upcoming project">
 
-<div class="container">
+            <div class="project-info">
+              <small>COMING NEXT</small>
+              <h3>More Stories</h3>
+            </div>
 
-<div class="heading">
+          </div>
 
-<small>VASWAN FILMS</small>
+        </div>
 
-<h2>Our Projects</h2>
+      </div>
 
-<p>
-Films, web series and upcoming entertainment projects.
-</p>
+    </div>
 
-</div>
+  </section>
 
+  <!-- CASTING -->
+  <section class="casting">
 
-<div class="projects-grid">
+    <div class="container">
 
+      <div class="casting-box">
 
-<div class="project">
+        <div class="section-label">CASTING • TALENT • OPPORTUNITY</div>
 
-<div class="project-number">
-01 — SHORT FILM
-</div>
+        <h2>
+          Your face could be
+          <span>the next story.</span>
+        </h2>
 
-<h3>Aakhiri Ticket</h3>
+        <p>
+          We are constantly looking for fresh faces, actors, performers
+          and creative talent for upcoming entertainment projects.
+        </p>
 
-<p>
-A story of dreams, emotions and an unforgettable journey.
-</p>
+        <a href="#register" class="btn btn-gold">
+          REGISTER NOW
+        </a>
 
-</div>
+      </div>
 
+    </div>
 
-<div class="project">
+  </section>
 
-<div class="project-number">
-02 — WEB SERIES
-</div>
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
 
-<h3>Gunnah</h3>
+    <div class="container">
 
-<p>
-A crime thriller exploring wrong behaviour,
-consequences and society.
-</p>
+      <div class="section-head">
+        <div class="section-label">BEHIND THE SCENES</div>
 
-</div>
+        <h2 class="section-title">
+          Our <span>Gallery.</span>
+        </h2>
+      </div>
 
+      <div class="gallery-grid">
 
-<div class="project">
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1200&q=85"
+            alt="Production">
+        </div>
 
-<div class="project-number">
-03 — REALITY SHOW
-</div>
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85"
+            alt="Production">
+        </div>
 
-<h3>Vaswan Reality Show</h3>
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=900&q=85"
+            alt="Cinema">
+        </div>
 
-<p>
-A platform created to discover fresh and talented performers.
-</p>
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=900&q=85"
+            alt="Camera">
+        </div>
 
-</div>
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=85"
+            alt="Fashion">
+        </div>
 
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=900&q=85"
+            alt="Entertainment">
+        </div>
 
-</div>
+      </div>
 
-</div>
+    </div>
 
-</section>
+  </section>
 
+  <!-- REGISTRATION -->
+  <section class="registration" id="register">
 
-<!-- CONTACT -->
+    <div class="container">
 
-<section class="contact" id="contact">
+      <div class="register-grid">
 
-<div class="container">
+        <div>
 
-<div class="heading">
+          <div class="section-label">YOUR JOURNEY STARTS HERE</div>
 
-<small>CONTACT</small>
+          <h2 class="section-title">
+            Take the first
+            <span>step.</span>
+          </h2>
 
-<h2>Work With Vaswan Films</h2>
+          <div class="price">
+            ₹199 <small>registration fee</small>
+          </div>
 
-<p>
-For production, collaboration and entertainment opportunities.
-</p>
+          <ul class="benefits">
+            <li>Reality Show Registration</li>
+            <li>Talent Profile Submission</li>
+            <li>Professional Screening Opportunity</li>
+            <li>Upcoming Project Consideration</li>
+          </ul>
 
-</div>
+        </div>
 
+        <div class="form-box">
 
-<div class="contact-grid">
+          <h3>Register With Vaswan Films</h3>
 
+          <div id="formMessage"></div>
 
-<div class="contact-card">
+          <form id="registrationForm">
 
-<div class="icon">
-🎬
-</div>
+            <div class="form-row">
 
-<h3>Production</h3>
+              <div class="field">
+                <label>Full Name *</label>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Your full name"
+                  required>
+              </div>
 
-<p>
-Films & Web Series
-</p>
+              <div class="field">
+                <label>Mobile *</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  placeholder="10 digit mobile"
+                  maxlength="10"
+                  required>
+              </div>
 
-</div>
+            </div>
 
+            <div class="form-row">
 
-<div class="contact-card">
+              <div class="field">
+                <label>Email *</label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="your@email.com"
+                  required>
+              </div>
 
-<div class="icon">
-⭐
-</div>
+              <div class="field">
+                <label>City *</label>
+                <input
+                  type="text"
+                  id="city"
+                  placeholder="Mumbai"
+                  required>
+              </div>
 
-<h3>Reality Show</h3>
+            </div>
 
-<p>
-Talent Registration
-</p>
+            <div class="field">
+              <label>Instagram / Portfolio</label>
+              <input
+                type="text"
+                id="portfolio"
+                placeholder="@username or portfolio link">
+            </div>
 
-</div>
+            <button type="submit" class="pay-btn" id="payButton">
+              PAY ₹199 & REGISTER
+            </button>
 
+            <div class="secure">
+              🔒 SECURE PAYMENT • RAZORPAY
+            </div>
 
-<div class="contact-card">
+          </form>
 
-<div class="icon">
-▶️
-</div>
+        </div>
 
-<h3>YouTube</h3>
+      </div>
 
-<p>
+    </div>
 
-<a
-href="https://www.youtube.com/@Krishnavaswanfilms"
-target="_blank"
->
-Vaswan Films
-</a>
+  </section>
 
-</p>
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
 
-</div>
+    <div class="container">
 
+      <div class="contact-grid">
 
-</div>
+        <div>
 
-</div>
+          <div class="section-label">GET IN TOUCH</div>
 
-</section>
+          <h2 class="section-title">
+            Let's create
+            <span>something.</span>
+          </h2>
 
+          <div class="contact-list">
 
-<!-- FOOTER -->
+            <div class="contact-item">
+              <small>EMAIL</small>
+              <a href="mailto:vaswankrishna@gmail.com">
+                vaswankrishna@gmail.com
+              </a>
+            </div>
 
-<footer>
+            <div class="contact-item">
+              <small>WHATSAPP</small>
+              <a href="https://wa.me/918928879904" target="_blank">
+                +91 89288 79904
+              </a>
+            </div>
 
-<p>
-© 2026 <strong>VASWAN FILMS</strong>.
-All Rights Reserved.
-</p>
+            <div class="contact-item">
+              <small>LOCATION</small>
+              <span>Mumbai, Maharashtra, India</span>
+            </div>
 
-<div class="footer-links">
+          </div>
 
-<a href="#home">Home</a>
+        </div>
 
-<a href="#reality">Reality Show</a>
+        <div class="contact-box">
 
-<a href="#admission">Admission</a>
+          <h3>Vaswan Films</h3>
 
-<a href="#contact">Contact</a>
+          <p>
+            Production • Entertainment • Reality • Cinema • Talent
+          </p>
 
-</div>
+          <a
+            href="https://wa.me/918928879904"
+            target="_blank"
+            class="btn btn-gold">
+            CHAT ON WHATSAPP
+          </a>
 
-</footer>
+          <br>
 
+          <a
+            href="https://www.youtube.com/@Krishnavaswanfilms"
+            target="_blank"
+            class="btn btn-outline">
+            VISIT OUR YOUTUBE
+          </a>
 
-<script>
+        </div>
 
-/* MOBILE MENU */
+      </div>
 
-function toggleMenu(){
+    </div>
 
-document
-.getElementById("navLinks")
-.classList.toggle("active");
+  </section>
 
-}
+  <!-- FOOTER -->
+  <footer>
 
+    <div class="footer-inner">
 
-/* PAYMENT BOX */
+      <div>
+        <div class="footer-brand">VASWAN FILMS</div>
+        <p>Production • Entertainment • Talent</p>
+      </div>
 
-function showPayment(event){
+      <p>
+        © 2026 Vaswan Films. All Rights Reserved.
+      </p>
 
-event.preventDefault();
+      <div class="socials">
+        <a href="https://www.youtube.com/@Krishnavaswanfilms" target="_blank">
+          YOUTUBE
+        </a>
+        <a href="mailto:vaswankrishna@gmail.com">
+          EMAIL
+        </a>
+      </div>
 
-const form =
-document.getElementById("registrationForm");
+    </div>
 
-if(!form.checkValidity()){
+  </footer>
 
-form.reportValidity();
+  <script>
 
-return;
+    /* =========================
+       LOADER
+    ========================= */
 
-}
+    window.addEventListener("load", function() {
 
-document
-.getElementById("paymentBox")
-.style.display="block";
+      setTimeout(function() {
+        const loader = document.getElementById("loader");
 
-document
-.getElementById("paymentBox")
-.scrollIntoView({
-behavior:"smooth",
-block:"center"
-});
+        loader.style.opacity = "0";
 
-}
+        setTimeout(function() {
+          loader.style.display = "none";
+        }, 700);
 
+      }, 700);
 
-/* CLOSE MOBILE MENU */
+    });
 
-document
-.querySelectorAll(".nav-links a")
-.forEach(function(link){
 
-link.addEventListener("click",function(){
+    /* =========================
+       MOBILE MENU
+    ========================= */
 
-document
-.getElementById("navLinks")
-.classList.remove("active");
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
 
-});
+    menuBtn.addEventListener("click", function() {
+      navLinks.classList.toggle("active");
+    });
 
-});
+    document.querySelectorAll(".nav-links a").forEach(function(link) {
 
-</script>
+      link.addEventListener("click", function() {
+        navLinks.classList.remove("active");
+      });
+
+    });
+
+
+    /* =========================
+       RAZORPAY REGISTRATION
+    ========================= */
+
+    const registrationForm =
+      document.getElementById("registrationForm");
+
+    const payButton =
+      document.getElementById("payButton");
+
+    const formMessage =
+      document.getElementById("formMessage");
+
+
+    function showMessage(message) {
+
+      formMessage.innerHTML = message;
+      formMessage.style.display = "block";
+
+    }
+
+
+    registrationForm.addEventListener("submit", async function(e) {
+
+      e.preventDefault();
+
+      const name =
+        document.getElementById("name").value.trim();
+
+      const phone =
+        document.getElementById("phone").value.trim();
+
+      const email =
+        document.getElementById("email").value.trim();
+
+      const city =
+        document.getElementById("city").value.trim();
+
+      const portfolio =
+        document.getElementById("portfolio").value.trim();
+
+
+      if (!name || !phone || !email || !city) {
+
+        showMessage(
+          "Please fill all required details."
+        );
+
+        return;
+      }
+
+
+      if (!/^[0-9]{10}$/.test(phone)) {
+
+        showMessage(
+          "Please enter a valid 10 digit mobile number."
+        );
+
+        return;
+      }
+
+
+      payButton.disabled = true;
+      payButton.innerText = "PLEASE WAIT...";
+
+
+      try {
+
+        const response = await fetch(
+          "/api/create-order",
+          {
+            method: "POST",
+
+            headers: {
+              "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+
+              name: name,
+              phone: phone,
+              email: email,
+              city: city,
+              portfolio: portfolio
+
+            })
+
+          }
+        );
+
+
+        const data = await response.json();
+
+
+        if (!response.ok) {
+
+          throw new Error(
+            data.error ||
+            "Unable to create payment order."
+          );
+
+        }
+
+
+        const options = {
+
+          key: data.key_id,
+
+          amount: data.amount,
+
+          currency: data.currency,
+
+          name: "Vaswan Films",
+
+          description:
+            "Reality Show Registration - ₹199",
+
+          order_id: data.order_id,
+
+
+          prefill: {
+
+            name: name,
+
+            email: email,
+
+            contact: phone
+
+          },
+
+
+          notes: {
+
+            city: city,
+
+            portfolio: portfolio
+
+          },
+
+
+          theme: {
+
+            color: "#d7b46a"
+
+          },
+
+
+          handler: function(paymentResponse) {
+
+            showMessage(
+              "Payment successful! Your registration has been received. Payment ID: " +
+              paymentResponse.razorpay_payment_id
+            );
+
+            payButton.innerText =
+              "REGISTRATION SUCCESSFUL";
+
+          },
+
+
+          modal: {
+
+            ondismiss: function() {
+
+              payButton.disabled = false;
+
+              payButton.innerText =
+                "PAY ₹199 & REGISTER";
+
+            }
+
+          }
+
+        };
+
+
+        const razorpay =
+          new Razorpay(options);
+
+
+        razorpay.on(
+          "payment.failed",
+          function(response) {
+
+            showMessage(
+              "Payment failed. Please try again."
+            );
+
+            payButton.disabled = false;
+
+            payButton.innerText =
+              "PAY ₹199 & REGISTER";
+
+          }
+        );
+
+
+        razorpay.open();
+
+
+      } catch (error) {
+
+        console.error(error);
+
+        showMessage(
+          error.message ||
+          "Something went wrong. Please try again."
+        );
+
+        payButton.disabled = false;
+
+        payButton.innerText =
+          "PAY ₹199 & REGISTER";
+
+      }
+
+    });
+
+  </script>
 
 </body>
-</html>
+            </html>
