@@ -1830,17 +1830,76 @@
           },
 
 
-          handler: function(paymentResponse) {
+          handler: async function(paymentResponse) {
 
-            showMessage(
-              "Payment successful! Your registration has been received. Payment ID: " +
-              paymentResponse.razorpay_payment_id
-            );
+  try {
 
-            payButton.innerText =
-              "REGISTRATION SUCCESSFUL";
+    showMessage(
+      "Payment received. Verifying payment..."
+    );
 
-          },
+    const verifyResponse = await fetch(
+      "/api/verify-payment",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          razorpay_order_id:
+            paymentResponse.razorpay_order_id,
+
+          razorpay_payment_id:
+            paymentResponse.razorpay_payment_id,
+
+          razorpay_signature:
+            paymentResponse.razorpay_signature
+        })
+      }
+    );
+
+    const verifyData =
+      await verifyResponse.json();
+
+    if (!verifyResponse.ok || !verifyData.success) {
+
+      throw new Error(
+        verifyData.error ||
+        "Payment verification failed."
+      );
+
+    }
+
+    showMessage(
+      "🎉 Registration successful! Payment verified successfully. Payment ID: " +
+      paymentResponse.razorpay_payment_id
+    );
+
+    payButton.disabled = true;
+
+    payButton.innerText =
+      "REGISTRATION SUCCESSFUL ✓";
+
+  } catch (error) {
+
+    console.error(
+      "Payment Verification Error:",
+      error
+    );
+
+    showMessage(
+      "Payment received, but verification could not be completed. Please contact Vaswan Films with your Payment ID: " +
+      paymentResponse.razorpay_payment_id
+    );
+
+    payButton.disabled = false;
+
+    payButton.innerText =
+      "VERIFY PAYMENT";
+
+  }
+
+},
 
 
           modal: {
