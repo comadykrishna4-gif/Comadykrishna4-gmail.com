@@ -1,33 +1,96 @@
-const Razorpay = require("razorpay");
-
-const razorpay = new Razorpay({
-  key_id: process.env.RAZORPAY_KEY_ID,
-  key_secret: process.env.RAZORPAY_KEY_SECRET,
-});
-
 export default async function handler(req, res) {
+  // Only POST requests are allowed
   if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
+    return res.status(405).json({
+      error: "Method not allowed"
+    });
   }
 
   try {
-    const { amount } = req.body;
+    // Get registration details
+    const {
+      name,
+      email,
+      phone,
+      city,
+      portfolio
+    } = req.body || {};
 
-    if (!amount || amount <= 0) {
-      return res.status(400).json({ error: "Invalid amount" });
+    // Validate required fields
+    if (!name || !email || !phone || !city) {
+      return res.status(400).json({
+        error: "Please complete all required details."
+      });
     }
 
-    const order = await razorpay.orders.create({
-      amount: Math.round(amount * 100),
-      currency: "INR",
-      receipt: `order_${Date.now()}`,
+    // Get Razorpay credentials from Vercel Environment Variables
+    const keyId = process.env.RAZORPAY_KEY_ID;
+    const keySecret = process.env.RAZORPAY_KEY_SECRET;
+
+    // Check credentials
+    if (!keyId || !keySecret) {
+      return res.status(500).json({
+        error: "Razorpay environment variables are not configured."
+      });
+    }
+
+    // Create Basic Authentication
+    const auth = Buffer
+      .from(`${keyId}:${keySecret}`)
+      .toString("base64");
+
+    // Create Razorpay Order
+    const razorpayResponse = await fetch(
+      "https://api.razorpay.com/v1/orders",
+      {
+        method: "POST",
+
+        headers: {
+          "Authorization": `Basic ${auth}`,
+          "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+          amount: 19900,
+          currency: "INR",
+          receipt: `VF_${Date.now()}`,
+
+          notes: {
+            name: name,
+            email: email,
+            phone: phone,
+            city: city,
+            portfolio: portfolio || ""
+          }
+        })
+      }
+    );
+
+    const order = await razorpayResponse.json();
+
+    // Razorpay error
+    if (!razorpayResponse.ok) {
+      return res.status(razorpayResponse.status).json({
+        error:
+          order?.error?.description ||
+          "Razorpay order creation failed."
+      });
+    }
+
+    // Send order details to website
+    return res.status(200).json({
+      key_id: keyId,
+      order_id: order.id,
+      amount: order.amount,
+      currency: order.currency
     });
 
-    return res.status(200).json(order);
   } catch (error) {
-    console.error(error);
+
+    console.error("Razorpay Error:", error);
+
     return res.status(500).json({
-      error: "Unable to create Razorpay order",
+      error: "Internal server error."
     });
   }
 }
