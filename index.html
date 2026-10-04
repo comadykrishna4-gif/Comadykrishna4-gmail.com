@@ -4,13 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Vaswan Films | Film Production House</title>
+<title>Vaswan Films | Production House</title>
 
-<meta name="description"
-content="Vaswan Films - Film Production, Web Series, Short Films, Casting and Creative Entertainment.">
+<meta name="description" content="Vaswan Films - Production House, Films, Web Series, Acting and Entertainment.">
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -22,77 +20,64 @@ html{
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    color:#fff;
-    background:#071018;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#ffffff;
+    color:#111111;
     line-height:1.6;
 }
-    <img src="images/myphoto.jpg" alt="Bollywood Photo">
-/* CINEMATIC BACKGROUND */
 
-body:before{
-    content:"";
-    position:fixed;
-    inset:0;
-    z-index:-2;
-    background:
-    radial-gradient(circle at 15% 20%,rgba(212,175,55,.13),transparent 30%),
-    radial-gradient(circle at 85% 70%,rgba(20,80,120,.20),transparent 35%),
-    linear-gradient(135deg,#061019,#0b1118 50%,#05080c);
-}
-
-body:after{
-    content:"";
-    position:fixed;
-    inset:0;
-    z-index:-1;
-    opacity:.08;
-    background-image:
-    radial-gradient(#fff 1px,transparent 1px);
-    background-size:5px 5px;
-    pointer-events:none;
-}
-
-a{
-    color:inherit;
-    text-decoration:none;
-}
-
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-}
-
-/* NAVBAR */
+/* HEADER */
 
 header{
-    position:fixed;
+    position:sticky;
     top:0;
-    left:0;
-    width:100%;
-    z-index:999;
-    background:rgba(4,10,15,.82);
-    backdrop-filter:blur(15px);
-    border-bottom:1px solid rgba(212,175,55,.22);
+    z-index:1000;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid #eeeeee;
 }
 
 .navbar{
-    height:76px;
+    max-width:1200px;
+    margin:auto;
+    padding:15px 25px;
     display:flex;
     align-items:center;
     justify-content:space-between;
 }
 
 .logo{
-    font-size:23px;
-    font-weight:800;
-    letter-spacing:4px;
-    color:#d4af37;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+    color:#111;
 }
 
-.logo span{
-    color:#fff;
+.logo-mark{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:#111;
+    color:#d4af37;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    font-weight:bold;
+    border:2px solid #d4af37;
+}
+
+.logo-text strong{
+    display:block;
+    font-size:20px;
+    letter-spacing:2px;
+}
+
+.logo-text span{
+    font-size:9px;
+    letter-spacing:3px;
+    color:#888;
 }
 
 .nav-links{
@@ -102,18 +87,17 @@ header{
 }
 
 .nav-links a{
-    font-size:13px;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-    color:#ddd;
-    transition:.3s;
+    text-decoration:none;
+    color:#222;
+    font-size:14px;
+    font-weight:600;
 }
 
 .nav-links a:hover{
-    color:#d4af37;
+    color:#b88a16;
 }
 
-.menu{
+.menu-btn{
     display:none;
     font-size:28px;
     cursor:pointer;
@@ -122,96 +106,101 @@ header{
 /* HERO */
 
 .hero{
-    min-height:100vh;
+    min-height:650px;
     display:flex;
     align-items:center;
-    text-align:center;
     position:relative;
     overflow:hidden;
-
     background:
-    linear-gradient(
-        rgba(4,10,15,.48),
-        rgba(4,10,15,.92)
-    ),
-    radial-gradient(
-        circle at center,
-        rgba(212,175,55,.12),
-        transparent 45%
-    );
+    linear-gradient(90deg,#ffffff 30%,rgba(255,255,255,.88) 50%,rgba(255,255,255,.2)),
+    url("images/4b8824f4-d2ff-479c-9fe7-051ab6363174.png");
+    background-size:cover;
+    background-position:center;
 }
 
 .hero-content{
-    padding-top:70px;
+    max-width:1200px;
+    width:100%;
+    margin:auto;
+    padding:80px 25px;
 }
 
-.eyebrow{
-    color:#d4af37;
-    font-size:12px;
-    letter-spacing:6px;
-    text-transform:uppercase;
-    margin-bottom:24px;
+.hero-small{
+    color:#b88a16;
+    font-weight:bold;
+    letter-spacing:4px;
+    font-size:13px;
+    margin-bottom:15px;
 }
 
 .hero h1{
-    font-size:clamp(48px,9vw,100px);
-    letter-spacing:8px;
-    line-height:1;
-    font-weight:800;
+    max-width:650px;
+    font-size:64px;
+    line-height:1.05;
+    margin-bottom:25px;
 }
 
 .hero h1 span{
-    color:#d4af37;
-}
-
-.hero-line{
-    width:100px;
-    height:2px;
-    background:#d4af37;
-    margin:30px auto;
+    color:#b88a16;
 }
 
 .hero p{
-    max-width:680px;
-    margin:auto;
-    color:#c7cbd0;
+    max-width:560px;
+    color:#666;
     font-size:18px;
+    margin-bottom:30px;
 }
 
 .btn{
     display:inline-block;
-    margin-top:35px;
-    padding:15px 30px;
-    border:1px solid #d4af37;
-    color:#d4af37;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    font-size:13px;
-    transition:.35s;
+    padding:14px 28px;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:3px;
+    margin-right:10px;
+    transition:.3s;
 }
 
-.btn:hover{
-    background:#d4af37;
-    color:#071018;
-    box-shadow:0 10px 35px rgba(212,175,55,.2);
+.btn-gold{
+    background:#c49a35;
+    color:white;
 }
 
-/* SECTIONS */
+.btn-gold:hover{
+    background:#a87c19;
+    transform:translateY(-3px);
+}
+
+.btn-dark{
+    background:#111;
+    color:white;
+}
+
+.btn-dark:hover{
+    background:#333;
+    transform:translateY(-3px);
+}
+
+/* GENERAL */
 
 section{
-    padding:105px 0;
+    padding:90px 25px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
 }
 
 .section-heading{
     text-align:center;
-    margin-bottom:60px;
+    margin-bottom:50px;
 }
 
 .section-heading small{
-    color:#d4af37;
-    letter-spacing:4px;
-    text-transform:uppercase;
-    font-size:11px;
+    color:#b88a16;
+    letter-spacing:3px;
+    font-weight:bold;
 }
 
 .section-heading h2{
@@ -220,459 +209,566 @@ section{
 }
 
 .section-heading p{
-    max-width:650px;
-    margin:auto;
-    color:#929aa2;
+    color:#777;
 }
 
 /* ABOUT */
 
 .about{
-    background:rgba(8,18,27,.55);
-    border-top:1px solid rgba(255,255,255,.04);
-    border-bottom:1px solid rgba(255,255,255,.04);
+    background:#fafafa;
 }
 
 .about-grid{
     display:grid;
-    grid-template-columns:1.2fr .8fr;
+    grid-template-columns:1fr 1fr;
     gap:60px;
     align-items:center;
 }
 
-.gold-line{
-    width:65px;
-    height:3px;
-    background:#d4af37;
-    margin-bottom:25px;
+.about-image img{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+    border-radius:5px;
 }
 
-.about h3{
-    font-size:32px;
+.about-content h2{
+    font-size:42px;
     margin-bottom:20px;
 }
 
-.about p{
-    color:#aab0b6;
+.about-content h2 span{
+    color:#b88a16;
+}
+
+.about-content p{
+    color:#666;
     margin-bottom:18px;
-}
-
-.stats{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
-}
-
-.stat{
-    padding:30px 20px;
-    text-align:center;
-    background:rgba(255,255,255,.035);
-    border:1px solid rgba(255,255,255,.08);
-    transition:.3s;
-}
-
-.stat:hover{
-    border-color:#d4af37;
-    transform:translateY(-5px);
-}
-
-.stat h3{
-    color:#d4af37;
-    font-size:38px;
-}
-
-.stat p{
-    margin:0;
-    font-size:13px;
 }
 
 /* PROJECTS */
 
-.projects{
-    background:
-    linear-gradient(rgba(5,11,17,.92),rgba(5,11,17,.96));
-}
-
-.project-grid{
+.projects-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:22px;
+    gap:25px;
 }
 
-.project{
-    min-height:330px;
-    padding:30px;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-    position:relative;
+.project-card{
+    border:1px solid #e5e5e5;
+    background:#fff;
     overflow:hidden;
-    border:1px solid rgba(255,255,255,.1);
-    background:
-    linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.015));
-    transition:.4s;
+    transition:.35s;
 }
 
-.project:before{
-    content:"";
-    position:absolute;
-    width:180px;
-    height:180px;
-    right:-70px;
-    top:-70px;
-    border-radius:50%;
-    background:rgba(212,175,55,.12);
-}
-
-.project:hover{
+.project-card:hover{
     transform:translateY(-8px);
-    border-color:#d4af37;
+    box-shadow:0 20px 45px rgba(0,0,0,.1);
 }
 
-.project-number{
-    color:#d4af37;
-    font-size:11px;
-    letter-spacing:3px;
+.project-card img{
+    width:100%;
+    height:360px;
+    object-fit:cover;
+    display:block;
 }
 
-.project h3{
-    font-size:29px;
-    margin:9px 0;
+.project-info{
+    padding:22px;
 }
 
-.project p{
-    color:#9ba3aa;
+.project-info small{
+    color:#b88a16;
+    font-weight:bold;
+}
+
+.project-info h3{
+    font-size:22px;
+    margin:7px 0;
+}
+
+.project-info p{
+    color:#777;
     font-size:14px;
 }
 
 /* GALLERY */
 
 .gallery{
-    background:
-    radial-gradient(circle at 50% 0%,rgba(212,175,55,.08),transparent 40%);
+    background:#f8f8f8;
 }
 
 .gallery-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
 }
 
 .gallery-card{
-    background:#0b131b;
-    border:1px solid rgba(255,255,255,.1);
+    background:#fff;
     overflow:hidden;
-    border-radius:8px;
-    transition:.4s;
-}
-
-.gallery-card:hover{
-    transform:translateY(-8px);
-    border-color:#d4af37;
-    box-shadow:0 20px 50px rgba(0,0,0,.45);
+    border-radius:5px;
+    cursor:pointer;
+    box-shadow:0 5px 20px rgba(0,0,0,.07);
 }
 
 .gallery-card img{
     width:100%;
-    height:480px;
+    height:390px;
     object-fit:cover;
     display:block;
     transition:.5s;
 }
 
 .gallery-card:hover img{
-    transform:scale(1.035);
+    transform:scale(1.05);
 }
 
-.gallery-info{
-    padding:20px;
+/* ADMISSION */
+
+.admission{
+    background:#111;
+    color:#fff;
 }
 
-.gallery-info h3{
+.admission-grid{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:60px;
+    align-items:start;
+}
+
+.admission-text h2{
+    font-size:48px;
+    line-height:1.1;
+    margin:15px 0 25px;
+}
+
+.admission-text h2 span{
     color:#d4af37;
-    font-size:21px;
 }
 
-.gallery-info p{
-    color:#858e97;
+.admission-text p{
+    color:#bbb;
+    margin-bottom:20px;
+}
+
+.admission-points{
+    list-style:none;
+    margin-top:25px;
+}
+
+.admission-points li{
+    margin:12px 0;
+    color:#ddd;
+}
+
+.admission-points li::before{
+    content:"✓";
+    color:#d4af37;
+    font-weight:bold;
+    margin-right:10px;
+}
+
+/* FORM */
+
+.form-box{
+    background:#fff;
+    color:#111;
+    padding:30px;
+    border-radius:8px;
+}
+
+.form-box h3{
+    font-size:26px;
+    margin-bottom:5px;
+}
+
+.form-subtitle{
+    color:#777;
     font-size:13px;
-    margin-top:5px;
+    margin-bottom:20px;
 }
 
-/* YOUTUBE */
-
-.youtube{
-    background:rgba(6,14,21,.8);
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
 }
 
-.youtube-box{
-    max-width:850px;
-    margin:auto;
-    padding:55px 30px;
+.input-group{
+    margin-bottom:16px;
+}
+
+.input-group label{
+    display:block;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:6px;
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select{
+    width:100%;
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:4px;
+    font-size:14px;
+    outline:none;
+}
+
+.input-group input:focus,
+.input-group textarea:focus,
+.input-group select:focus{
+    border-color:#c49a35;
+}
+
+.input-group textarea{
+    min-height:90px;
+    resize:vertical;
+}
+
+.privacy-note{
+    background:#fff8e5;
+    border-left:4px solid #d4af37;
+    padding:12px;
+    font-size:12px;
+    color:#555;
+    margin-bottom:18px;
+}
+
+.submit-btn{
+    width:100%;
+    padding:15px;
+    background:#c49a35;
+    border:none;
+    color:#fff;
+    font-weight:bold;
+    cursor:pointer;
+    border-radius:4px;
+    font-size:15px;
+}
+
+/* PAYMENT */
+
+.payment-box{
+    display:none;
+    margin-top:25px;
+    padding:25px;
+    background:#fafafa;
+    border:2px solid #d4af37;
+    border-radius:6px;
     text-align:center;
-    border:1px solid rgba(212,175,55,.25);
-    background:
-    linear-gradient(135deg,rgba(255,255,255,.055),rgba(255,255,255,.015));
 }
 
-.youtube-icon{
-    font-size:45px;
-    margin-bottom:15px;
+.payment-box h3{
+    color:#111;
+    margin-bottom:5px;
 }
 
-.youtube-box h3{
-    font-size:30px;
+.payment-box p{
+    color:#666;
+    font-size:14px;
 }
 
-.youtube-box p{
-    color:#929ba3;
-    max-width:600px;
-    margin:12px auto;
+.qr-placeholder{
+    width:190px;
+    height:190px;
+    margin:20px auto;
+    background:#eee;
+    border:5px solid #111;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    font-size:13px;
+    color:#666;
+}
+
+.amount{
+    font-size:28px;
+    font-weight:bold;
+    color:#b88a16;
 }
 
 /* CONTACT */
 
 .contact{
-    background:#071018;
-}
-
-.form-section{
-    margin-bottom:65px;
-}
-
-.form-title{
-    text-align:center;
-    margin-bottom:25px;
-}
-
-.form-title h3{
-    font-size:28px;
-}
-
-.form-title p{
-    color:#8e979f;
-}
-
-.form-box{
-    max-width:850px;
-    margin:auto;
-    padding:35px;
-    background:rgba(255,255,255,.035);
-    border:1px solid rgba(255,255,255,.1);
-    border-radius:8px;
-}
-
-.form-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:17px;
-}
-
-input,
-select,
-textarea{
-    width:100%;
-    padding:15px;
-    border:1px solid #29333c;
-    background:#071018;
-    color:#fff;
-    outline:none;
-    font-size:14px;
-    border-radius:3px;
-}
-
-input:focus,
-select:focus,
-textarea:focus{
-    border-color:#d4af37;
-}
-
-textarea{
-    min-height:140px;
-    resize:vertical;
-}
-
-.full{
-    grid-column:1/-1;
-}
-
-.file-note{
-    color:#707b84;
-    font-size:12px;
-    margin-top:7px;
-}
-
-.checkbox{
-    display:flex;
-    gap:10px;
-    color:#89939b;
-    font-size:13px;
-}
-
-.checkbox input{
-    width:auto;
-    margin-top:5px;
-}
-
-.submit-btn{
-    width:100%;
-    padding:16px;
-    border:0;
-    background:#d4af37;
-    color:#071018;
-    font-weight:bold;
-    letter-spacing:2px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.submit-btn:hover{
     background:#fff;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.contact-card{
+    border:1px solid #e5e5e5;
+    padding:30px;
+    text-align:center;
+}
+
+.contact-card .icon{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.contact-card h3{
+    margin-bottom:5px;
+}
+
+.contact-card p{
+    color:#777;
+    font-size:14px;
+}
+
+.contact-card a{
+    color:#b88a16;
+    text-decoration:none;
+}
+
+/* YOUTUBE */
+
+.youtube-section{
+    background:#f8f8f8;
+    text-align:center;
+}
+
+.youtube-section h2{
+    font-size:40px;
+    margin-bottom:15px;
+}
+
+.youtube-section p{
+    color:#777;
+    margin-bottom:25px;
 }
 
 /* FOOTER */
 
 footer{
-    padding:55px 0 25px;
+    background:#111;
+    color:#aaa;
     text-align:center;
-    background:#04080c;
-    border-top:1px solid rgba(212,175,55,.18);
+    padding:30px 20px;
 }
 
-.footer-logo{
+footer strong{
     color:#d4af37;
-    font-size:28px;
-    letter-spacing:5px;
-    font-weight:bold;
 }
 
-footer p{
-    color:#717a82;
+.footer-links{
     margin-top:10px;
 }
 
-.footer-contact{
-    margin-top:20px;
-    color:#b4bbc1;
-    line-height:2;
+.footer-links a{
+    color:#aaa;
+    text-decoration:none;
+    margin:0 10px;
 }
 
-.copyright{
-    margin-top:35px;
-    color:#4f575e;
-    font-size:12px;
+/* LIGHTBOX */
+
+.lightbox{
+    display:none;
+    position:fixed;
+    z-index:2000;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.92);
+    align-items:center;
+    justify-content:center;
+    padding:20px;
 }
 
-/* MOBILE */
+.lightbox img{
+    max-width:95%;
+    max-height:90%;
+    object-fit:contain;
+}
 
-@media(max-width:800px){
+.close-lightbox{
+    position:absolute;
+    top:20px;
+    right:30px;
+    color:white;
+    font-size:40px;
+    cursor:pointer;
+}
 
-    .navbar{
-        height:70px;
-    }
+/* RESPONSIVE */
+
+@media(max-width:900px){
 
     .nav-links{
         display:none;
         position:absolute;
-        top:70px;
+        top:78px;
         left:0;
         width:100%;
-        background:#071018;
+        background:#fff;
         flex-direction:column;
-        text-align:center;
-        padding:25px;
-        gap:22px;
-        border-bottom:1px solid #27323b;
+        padding:20px 25px;
+        gap:18px;
+        border-bottom:1px solid #ddd;
     }
 
     .nav-links.active{
         display:flex;
     }
 
-    .menu{
+    .menu-btn{
         display:block;
     }
 
+    .hero{
+        min-height:600px;
+        background:
+        linear-gradient(90deg,rgba(255,255,255,.94),rgba(255,255,255,.7)),
+        url("images/4b8824f4-d2ff-479c-9fe7-051ab6363174.png");
+        background-size:cover;
+        background-position:center;
+    }
+
     .hero h1{
-        letter-spacing:4px;
+        font-size:46px;
     }
 
-    .hero p{
-        font-size:15px;
-    }
-
-    section{
-        padding:75px 0;
-    }
-
-    .section-heading h2{
-        font-size:34px;
-    }
-
-    .about-grid{
-        grid-template-columns:1fr;
-        gap:40px;
-    }
-
-    .project-grid,
-    .gallery-grid{
+    .about-grid,
+    .admission-grid{
         grid-template-columns:1fr;
     }
 
-    .gallery-card img{
-        height:auto;
-        max-height:650px;
-        object-fit:cover;
-    }
-
-    .stats{
+    .projects-grid{
         grid-template-columns:1fr 1fr;
     }
 
-    .form-grid{
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    section{
+        padding:65px 18px;
+    }
+
+    .navbar{
+        padding:12px 18px;
+    }
+
+    .logo-mark{
+        width:42px;
+        height:42px;
+    }
+
+    .logo-text strong{
+        font-size:17px;
+    }
+
+    .hero{
+        min-height:560px;
+    }
+
+    .hero-content{
+        padding:60px 18px;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .btn{
+        display:block;
+        text-align:center;
+        margin:10px 0;
+    }
+
+    .section-heading h2{
+        font-size:32px;
+    }
+
+    .about-content h2{
+        font-size:34px;
+    }
+
+    .about-image img{
+        height:400px;
+    }
+
+    .projects-grid{
         grid-template-columns:1fr;
     }
 
-    .full{
-        grid-column:auto;
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+    }
+
+    .gallery-card img{
+        height:260px;
+    }
+
+    .admission-text h2{
+        font-size:38px;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
     }
 
     .form-box{
-        padding:22px;
+        padding:20px;
     }
 
+    .youtube-section h2{
+        font-size:32px;
+    }
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- HEADER -->
 
 <header>
+<nav class="navbar">
 
-<div class="container navbar">
+<a href="#home" class="logo">
+    <div class="logo-mark">VF</div>
 
-<div class="logo">
-VASWAN <span>FILMS</span>
-</div>
+    <div class="logo-text">
+        <strong>VASWAN FILMS</strong>
+        <span>PRODUCTION HOUSE</span>
+    </div>
+</a>
 
-<div class="menu" onclick="toggleMenu()">☰</div>
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
 
 <ul class="nav-links" id="navLinks">
-
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#gallery">Gallery</a></li>
-<li><a href="#youtube">YouTube</a></li>
-<li><a href="#contact">Contact</a></li>
-
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#admission">Acting Admission</a></li>
+    <li><a href="#contact">Contact</a></li>
 </ul>
 
-</div>
-
+</nav>
 </header>
 
 
@@ -680,26 +776,29 @@ VASWAN <span>FILMS</span>
 
 <section class="hero" id="home">
 
-<div class="container hero-content">
+<div class="hero-content">
 
-<div class="eyebrow">
-Film Production House
+<div class="hero-small">
+VASWAN FILMS
 </div>
 
 <h1>
-VASWAN <span>FILMS</span>
+Stories That
+<span>Deserve</span>
+The Screen.
 </h1>
 
-<div class="hero-line"></div>
-
 <p>
-Stories that connect. Characters that stay.
-Creating films, web series and original entertainment
-with passion and purpose.
+We create films, web series and entertainment projects
+with powerful stories, talented artists and cinematic vision.
 </p>
 
-<a href="#gallery" class="btn">
-Explore Our Cinema
+<a href="#projects" class="btn btn-gold">
+Explore Projects
+</a>
+
+<a href="#admission" class="btn btn-dark">
+Acting Admission
 </a>
 
 </div>
@@ -713,60 +812,43 @@ Explore Our Cinema
 
 <div class="container">
 
-<div class="section-heading">
-
-<small>Our Story</small>
-
-<h2>Behind The Stories</h2>
-
-<p>
-Vaswan Films is a creative production platform
-focused on original stories and new cinematic talent.
-</p>
-
-</div>
-
 <div class="about-grid">
 
-<div>
+<div class="about-image">
 
-<div class="gold-line"></div>
+<img
+src="images/ChatGPT%20Image%20Jan%2030%2C%202026%2C%2003_52_29%20PM.png"
+alt="Vaswan Films"
+>
 
-<h3>Creating Stories Beyond The Screen</h3>
+</div>
+
+<div class="about-content">
+
+<small style="color:#b88a16;font-weight:bold;letter-spacing:3px;">
+ABOUT US
+</small>
+
+<h2>
+Creating Stories.
+<br>
+Creating <span>Dreams.</span>
+</h2>
 
 <p>
-We develop films, web series, short films, advertisements
-and creative entertainment projects.
+Vaswan Films is a production house focused on films,
+web series, entertainment content and new talent.
 </p>
 
 <p>
-Our focus is on strong characters, emotional storytelling
-and giving talented artists a platform to be seen.
+Our vision is to bring fresh stories and talented artists
+to the screen with professional filmmaking and powerful
+cinematic experiences.
 </p>
 
-</div>
-
-<div class="stats">
-
-<div class="stat">
-<h3>200+</h3>
-<p>TV Episodes</p>
-</div>
-
-<div class="stat">
-<h3>05+</h3>
-<p>Advertisements</p>
-</div>
-
-<div class="stat">
-<h3>01</h3>
-<p>Web Series</p>
-</div>
-
-<div class="stat">
-<h3>∞</h3>
-<p>Stories Ahead</p>
-</div>
+<a href="#contact" class="btn btn-gold">
+Work With Us
+</a>
 
 </div>
 
@@ -779,62 +861,93 @@ and giving talented artists a platform to be seen.
 
 <!-- PROJECTS -->
 
-<section class="projects" id="projects">
+<section id="projects">
 
 <div class="container">
 
 <div class="section-heading">
 
-<small>Selected Work</small>
+<small>OUR WORK</small>
 
-<h2>Our Projects</h2>
+<h2>Featured Projects</h2>
 
 <p>
-Original stories and cinematic projects from Vaswan Films.
+Stories, characters and ideas created for the screen.
 </p>
 
 </div>
 
-<div class="project-grid">
 
-<div class="project">
+<div class="projects-grid">
 
-<div class="project-number">01 / WEB SERIES</div>
 
-<h3>GUNNAH</h3>
+<div class="project-card">
+
+<img
+src="images/Aakhiri%20Ticket_%20A%20journey%20of%20dreams.png"
+alt="Aakhiri Ticket"
+>
+
+<div class="project-info">
+
+<small>SHORT FILM</small>
+
+<h3>Aakhiri Ticket</h3>
+
+<p>
+A journey of dreams, emotions and one final ticket.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="project-card">
+
+<img
+src="images/4b8824f4-d2ff-479c-9fe7-051ab6363174.png"
+alt="Gunnah"
+>
+
+<div class="project-info">
+
+<small>WEB SERIES</small>
+
+<h3>Gunnah</h3>
 
 <p>
 A crime thriller exploring wrong behaviour,
-consequences and justice.
+consequences and society.
 </p>
 
 </div>
 
-<div class="project">
+</div>
 
-<div class="project-number">02 / SHORT FILM</div>
 
-<h3>AAKHIRI TICKET</h3>
+<div class="project-card">
+
+<img
+src="images/08341a6e-9815-4f56-878b-00b30912e4c2.png"
+alt="Upcoming Project"
+>
+
+<div class="project-info">
+
+<small>UPCOMING</small>
+
+<h3>New Stories</h3>
 
 <p>
-An emotional journey built around a child,
-a train and one final ticket.
+More exciting film and web-series projects are
+coming soon from Vaswan Films.
 </p>
 
 </div>
 
-<div class="project">
-
-<div class="project-number">03 / ACTION PROJECT</div>
-
-<h3>POLICE POWER</h3>
-
-<p>
-An action-driven cinematic project currently
-part of our creative portfolio.
-</p>
-
 </div>
+
 
 </div>
 
@@ -851,71 +964,295 @@ part of our creative portfolio.
 
 <div class="section-heading">
 
-<small>Visual Portfolio</small>
+<small>VISUAL STORIES</small>
 
-<h2>Poster Gallery</h2>
+<h2>Our Gallery</h2>
 
 <p>
-A selection of cinematic posters and projects.
+A glimpse into the world of Vaswan Films.
 </p>
 
 </div>
 
+
 <div class="gallery-grid">
 
-<!-- GUNNAH -->
 
-<div class="gallery-card">
-
-<img
-src="images/gunnah-poster.png"
-alt="Gunnah Poster">
-
-<div class="gallery-info">
-
-<h3>Gunnah</h3>
-
-<p>Crime Thriller Web Series</p>
-
-</div>
-
-</div>
-
-
-<!-- AAKHIRI TICKET -->
-
-<div class="gallery-card">
+<div class="gallery-card"
+onclick="openLightbox(this.querySelector('img').src)">
 
 <img
-src="images/aakhiri-ticket.png"
-alt="Aakhiri Ticket Poster">
-
-<div class="gallery-info">
-
-<h3>Aakhiri Ticket</h3>
-
-<p>Written & Directed by Krishna Vaswan</p>
-
-</div>
+src="images/ChatGPT%20Image%20Jan%2030%2C%202026%2C%2003_52_29%20PM.png"
+alt="Vaswan Films Gallery"
+>
 
 </div>
 
 
-<!-- POLICE POWER -->
-
-<div class="gallery-card">
+<div class="gallery-card"
+onclick="openLightbox(this.querySelector('img').src)">
 
 <img
-src="images/police-power.png"
-alt="Police Power Poster">
-
-<div class="gallery-info">
-
-<h3>Police Power</h3>
-
-<p>Action Project</p>
+src="images/Aakhiri%20Ticket_%20A%20journey%20of%20dreams.png"
+alt="Aakhiri Ticket Gallery"
+>
 
 </div>
+
+
+<div class="gallery-card"
+onclick="openLightbox(this.querySelector('img').src)">
+
+<img
+src="images/4b8824f4-d2ff-479c-9fe7-051ab6363174.png"
+alt="Gunnah Gallery"
+>
+
+</div>
+
+
+<div class="gallery-card"
+onclick="openLightbox(this.querySelector('img').src)">
+
+<img
+src="images/08341a6e-9815-4f56-878b-00b30912e4c2.png"
+alt="Vaswan Films Gallery"
+>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ACTING ADMISSION -->
+
+<section class="admission" id="admission">
+
+<div class="container">
+
+<div class="admission-grid">
+
+
+<div class="admission-text">
+
+<small style="color:#d4af37;letter-spacing:3px;font-weight:bold;">
+VASWAN FILMS
+</small>
+
+<h2>
+Acting
+<span>Admission</span>
+Open
+</h2>
+
+<p>
+Do you have the talent and confidence to become an actor?
+Apply for the Vaswan Films acting opportunity.
+</p>
+
+<ul class="admission-points">
+
+<li>Freshers can apply</li>
+<li>Male & Female applicants</li>
+<li>Film & Web Series opportunities</li>
+<li>Professional selection process</li>
+<li>Submit your details online</li>
+
+</ul>
+
+</div>
+
+
+<div class="form-box">
+
+<h3>Acting Application</h3>
+
+<p class="form-subtitle">
+Fill in your details carefully.
+</p>
+
+
+<form id="admissionForm" onsubmit="showPayment(event)">
+
+
+<div class="form-row">
+
+<div class="input-group">
+
+<label>Name *</label>
+
+<input
+type="text"
+name="name"
+required
+placeholder="Enter your full name"
+>
+
+</div>
+
+
+<div class="input-group">
+
+<label>Father Name *</label>
+
+<input
+type="text"
+name="father"
+required
+placeholder="Father's name"
+>
+
+</div>
+
+</div>
+
+
+<div class="form-row">
+
+<div class="input-group">
+
+<label>Mother Name *</label>
+
+<input
+type="text"
+name="mother"
+required
+placeholder="Mother's name"
+>
+
+</div>
+
+
+<div class="input-group">
+
+<label>Qualification *</label>
+
+<input
+type="text"
+name="qualification"
+required
+placeholder="e.g. Graduate"
+>
+
+</div>
+
+</div>
+
+
+<div class="form-row">
+
+<div class="input-group">
+
+<label>Contact Number *</label>
+
+<input
+type="tel"
+name="phone"
+inputmode="numeric"
+pattern="[0-9]{10}"
+maxlength="10"
+required
+placeholder="10 digit mobile number"
+>
+
+</div>
+
+
+<div class="input-group">
+
+<label>Email ID *</label>
+
+<input
+type="email"
+name="email"
+required
+placeholder="your@email.com"
+>
+
+</div>
+
+</div>
+
+
+<div class="input-group">
+
+<label>Address *</label>
+
+<textarea
+name="address"
+required
+placeholder="Enter your complete address"
+></textarea>
+
+</div>
+
+
+<div class="input-group">
+
+<label>Aadhaar Number</label>
+
+<input
+type="text"
+name="aadhaar"
+inputmode="numeric"
+pattern="[0-9]{12}"
+maxlength="12"
+placeholder="12 digit Aadhaar number"
+>
+
+</div>
+
+
+<div class="privacy-note">
+<strong>Privacy:</strong> Aadhaar is sensitive personal information.
+Do not submit it unless it is genuinely required by the official
+application process. This demo form does not store your information.
+</div>
+
+
+<button type="submit" class="submit-btn">
+CONTINUE TO ₹100 PAYMENT
+</button>
+
+
+</form>
+
+
+<!-- PAYMENT -->
+
+<div class="payment-box" id="paymentBox">
+
+<h3>Application Fee</h3>
+
+<p>Please pay the application fee:</p>
+
+<div class="amount">₹100</div>
+
+
+<div class="qr-placeholder">
+REAL PAYMENT QR<br>
+WILL BE ADDED HERE
+</div>
+
+
+<p>
+Scan the official QR code to make the ₹100 payment.
+</p>
+
+<br>
+
+<strong>
+Payment verification will be connected after
+the official payment system is added.
+</strong>
+
+</div>
+
 
 </div>
 
@@ -928,39 +1265,23 @@ alt="Police Power Poster">
 
 <!-- YOUTUBE -->
 
-<section class="youtube" id="youtube">
+<section class="youtube-section">
 
 <div class="container">
 
-<div class="section-heading">
-
-<small>Watch Our Work</small>
-
-<h2>Vaswan Films on YouTube</h2>
-
-</div>
-
-<div class="youtube-box">
-
-<div class="youtube-icon">▶</div>
-
-<h3>Official YouTube Channel</h3>
+<h2>Watch Our Work</h2>
 
 <p>
-Watch films, songs, web series and upcoming projects
-from Vaswan Films.
+Watch films, songs and entertainment content on our YouTube channel.
 </p>
 
 <a
 href="https://www.youtube.com/@Krishnavaswanfilms"
 target="_blank"
-class="btn">
-
+class="btn btn-gold"
+>
 Visit YouTube Channel
-
 </a>
-
-</div>
 
 </div>
 
@@ -975,316 +1296,63 @@ Visit YouTube Channel
 
 <div class="section-heading">
 
-<small>Work With Us</small>
+<small>GET IN TOUCH</small>
 
-<h2>Let's Create Together</h2>
+<h2>Contact Vaswan Films</h2>
 
 <p>
-Have a film idea, casting enquiry, audition or career opportunity?
-Connect with our production desk.
+For film projects, collaborations and professional opportunities.
 </p>
 
 </div>
 
 
-<!-- GENERAL ENQUIRY -->
+<div class="contact-grid">
 
-<div class="form-section">
 
-<div class="form-title">
+<div class="contact-card">
 
-<h3>📩 General Enquiry</h3>
+<div class="icon">🎬</div>
 
-<p>For production, collaboration and business enquiries.</p>
+<h3>Production</h3>
 
-</div>
-
-<div class="form-box">
-
-<form
-action="https://formsubmit.co/comadykrishna4@gmail.com"
-method="POST">
-
-<input type="hidden"
-name="_subject"
-value="New Enquiry - Vaswan Films">
-
-<input type="hidden"
-name="_template"
-value="table">
-
-<div class="form-grid">
-
-<input
-type="text"
-name="name"
-placeholder="Full Name"
-required>
-
-<input
-type="email"
-name="email"
-placeholder="Email Address"
-required>
-
-<input
-type="tel"
-name="phone"
-placeholder="Phone / WhatsApp">
-
-<select name="enquiry_type" required>
-
-<option value="">Enquiry Type</option>
-<option>Film / Web Series</option>
-<option>Casting</option>
-<option>Production Collaboration</option>
-<option>Business Enquiry</option>
-<option>Other</option>
-
-</select>
-
-<textarea
-class="full"
-name="message"
-placeholder="Write your message..."
-required></textarea>
-
-<div class="full">
-
-<button class="submit-btn" type="submit">
-SEND ENQUIRY
-</button>
-
-</div>
-
-</div>
-
-</form>
-
-</div>
+<p>
+Film & Web Series Projects
+</p>
 
 </div>
 
 
-<!-- ACTOR -->
+<div class="contact-card">
 
-<div class="form-section">
+<div class="icon">🎭</div>
 
-<div class="form-title">
+<h3>Acting</h3>
 
-<h3>🎭 Actor / Talent Submission</h3>
-
-<p>Submit your introduction or audition video.</p>
-
-</div>
-
-<div class="form-box">
-
-<form
-action="https://formsubmit.co/comadykrishna4@gmail.com"
-method="POST"
-enctype="multipart/form-data"
-onsubmit="return checkVideo(this)">
-
-<input type="hidden"
-name="_subject"
-value="New Actor Audition - Vaswan Films">
-
-<input type="hidden"
-name="_template"
-value="table">
-
-<div class="form-grid">
-
-<input
-type="text"
-name="name"
-placeholder="Artist Name"
-required>
-
-<input
-type="email"
-name="email"
-placeholder="Email Address"
-required>
-
-<input
-type="tel"
-name="phone"
-placeholder="Phone / WhatsApp"
-required>
-
-<input
-type="number"
-name="age"
-placeholder="Age"
-required>
-
-<input
-type="text"
-name="city"
-placeholder="City">
-
-<select name="experience">
-
-<option value="">Experience</option>
-<option>Fresh Talent</option>
-<option>Theatre</option>
-<option>TV</option>
-<option>Film</option>
-<option>Web Series</option>
-
-</select>
-
-<div class="full">
-
-<input
-type="file"
-name="audition_video"
-accept="video/*"
-required>
-
-<div class="file-note">
-Maximum video upload: 10 MB
-</div>
-
-</div>
-
-<div class="full checkbox">
-
-<input
-type="checkbox"
-required>
-
-<label>
-I confirm that the submitted information may be reviewed
-for casting purposes. Applicants below 18 must have
-parent/guardian permission.
-</label>
-
-</div>
-
-<div class="full">
-
-<button class="submit-btn" type="submit">
-SUBMIT AUDITION
-</button>
-
-</div>
-
-</div>
-
-</form>
-
-</div>
+<p>
+Acting opportunities and auditions
+</p>
 
 </div>
 
 
-<!-- JOB -->
+<div class="contact-card">
 
-<div class="form-section">
+<div class="icon">▶</div>
 
-<div class="form-title">
+<h3>YouTube</h3>
 
-<h3>💼 Careers at Vaswan Films</h3>
-
-<p>Send your resume for future production opportunities.</p>
-
-</div>
-
-<div class="form-box">
-
-<form
-action="https://formsubmit.co/comadykrishna4@gmail.com"
-method="POST"
-enctype="multipart/form-data">
-
-<input type="hidden"
-name="_subject"
-value="New Job Application - Vaswan Films">
-
-<input type="hidden"
-name="_template"
-value="table">
-
-<div class="form-grid">
-
-<input
-type="text"
-name="name"
-placeholder="Full Name"
-required>
-
-<input
-type="email"
-name="email"
-placeholder="Email Address"
-required>
-
-<input
-type="tel"
-name="phone"
-placeholder="Phone / WhatsApp"
-required>
-
-<select name="position" required>
-
-<option value="">Position Applying For</option>
-<option>Video Editor</option>
-<option>Cameraman / DOP</option>
-<option>Graphic Designer</option>
-<option>Production Team</option>
-<option>Production Manager</option>
-<option>Writer</option>
-<option>Social Media / Marketing</option>
-<option>Actor</option>
-<option>Other</option>
-
-</select>
-
-<input
-type="text"
-name="experience"
-placeholder="Experience">
-
-<input
-type="text"
-name="city"
-placeholder="City">
-
-<div class="full">
-
-<input
-type="file"
-name="resume"
-accept=".pdf,.doc,.docx"
-required>
-
-<div class="file-note">
-Upload PDF, DOC or DOCX resume.
-</div>
+<p>
+<a
+href="https://www.youtube.com/@Krishnavaswanfilms"
+target="_blank"
+>
+Vaswan Films
+</a>
+</p>
 
 </div>
 
-<textarea
-class="full"
-name="message"
-placeholder="Briefly tell us about yourself..."></textarea>
-
-<div class="full">
-
-<button class="submit-btn" type="submit">
-SUBMIT APPLICATION
-</button>
-
-</div>
-
-</div>
-
-</form>
-
-</div>
 
 </div>
 
@@ -1297,65 +1365,136 @@ SUBMIT APPLICATION
 
 <footer>
 
-<div class="container">
-
-<div class="footer-logo">
-VASWAN FILMS
-</div>
-
 <p>
-Film Production • Web Series • Short Films • Casting
+© 2026 <strong>VASWAN FILMS</strong>.
+All Rights Reserved.
 </p>
 
-<div class="footer-contact">
+<div class="footer-links">
 
-📧 comadykrishna4@gmail.com<br>
-📱 +91 8928879904
-
-</div>
-
-<div class="copyright">
-© 2026 Vaswan Films. All Rights Reserved.
-</div>
+<a href="#home">Home</a>
+<a href="#projects">Projects</a>
+<a href="#gallery">Gallery</a>
+<a href="#admission">Admission</a>
 
 </div>
 
 </footer>
 
 
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox">
+
+<span class="close-lightbox" onclick="closeLightbox()">
+&times;
+</span>
+
+<img id="lightboxImage" src="" alt="Gallery Image">
+
+</div>
+
+
 <script>
+
+/* MOBILE MENU */
 
 function toggleMenu(){
 
+    document
+    .getElementById("navLinks")
+    .classList.toggle("active");
+
+}
+
+
+/* PAYMENT BOX */
+
+function showPayment(event){
+
+    event.preventDefault();
+
+    const form =
+    document.getElementById("admissionForm");
+
+    if(!form.checkValidity()){
+
+        form.reportValidity();
+
+        return;
+
+    }
+
+    document
+    .getElementById("paymentBox")
+    .style.display = "block";
+
+    document
+    .getElementById("paymentBox")
+    .scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
+
+}
+
+
+/* LIGHTBOX */
+
+function openLightbox(image){
+
+    document
+    .getElementById("lightboxImage")
+    .src = image;
+
+    document
+    .getElementById("lightbox")
+    .style.display = "flex";
+
+}
+
+
+function closeLightbox(){
+
+    document
+    .getElementById("lightbox")
+    .style.display = "none";
+
+}
+
+
+/* CLOSE LIGHTBOX BY CLICKING OUTSIDE */
+
 document
-.getElementById("navLinks")
-.classList
-.toggle("active");
+.getElementById("lightbox")
+.addEventListener("click",function(event){
 
-}
+    if(event.target === this){
 
-function checkVideo(form){
+        closeLightbox();
 
-const file =
-form.querySelector(
-'input[name="audition_video"]'
-).files[0];
+    }
 
-if(file && file.size > 10 * 1024 * 1024){
+});
 
-alert(
-"Video 10 MB se chhota hona chahiye."
-);
 
-return false;
+/* CLOSE MOBILE MENU AFTER CLICK */
 
-}
+document
+.querySelectorAll(".nav-links a")
+.forEach(function(link){
 
-return true;
+    link.addEventListener("click",function(){
 
-}
+        document
+        .getElementById("navLinks")
+        .classList.remove("active");
+
+    });
+
+});
 
 </script>
 
 </body>
-                               </html>
+    </html>
