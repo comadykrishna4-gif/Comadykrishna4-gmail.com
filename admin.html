@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vaswan Films Admin</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #080808;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .admin-box {
+      width: 92%;
+      max-width: 430px;
+      padding: 35px 25px;
+      background: #111;
+      border: 1px solid #d4af37;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 15px 50px rgba(0,0,0,.6);
+    }
+
+    h1 {
+      color: #d4af37;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #aaa;
+      margin-bottom: 25px;
+    }
+
+    input {
+      width: 100%;
+      padding: 15px;
+      background: #080808;
+      color: #fff;
+      border: 1px solid #444;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 5px;
+      background: #d4af37;
+      color: #080808;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      opacity: .9;
+    }
+
+    #loginMessage {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #d4af37;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="admin-box">
+
+    <h1>VASWAN FILMS</h1>
+
+    <p>Admin Gallery Login</p>
+
+    <input
+      type="password"
+      id="adminPassword"
+      placeholder="Enter Admin Password"
+    >
+
+    <button onclick="adminLogin()">
+      LOGIN
+    </button>
+
+    <div id="loginMessage"></div>
+
+  </div>
+
+  <script>
+
+    async function adminLogin() {
+
+      const password =
+        document.getElementById("adminPassword").value;
+
+      const message =
+        document.getElementById("loginMessage");
+
+      if (!password) {
+        message.innerText =
+          "Please enter your password.";
+        return;
+      }
+
+      message.innerText =
+        "Checking...";
+
+      try {
+
+        const response = await fetch(
+          "/api/admin-login",
+          {
+            method: "POST",
+
+            headers: {
+              "Content-Type":
+                "application/json"
+            },
+
+            body: JSON.stringify({
+              password: password
+            })
+          }
+        );
+
+        const data =
+          await response.json();
+
+        if (!response.ok || !data.success) {
+
+          message.innerText =
+            data.error ||
+            "Login failed.";
+
+          return;
+        }
+
+        message.innerText =
+          "Login successful!";
+
+        window.location.href =
+          "/admin-gallery.html";
+
+      } catch (error) {
+
+        console.error(error);
+
+        message.innerText =
+          "Something went wrong.";
+
+      }
+    }
+
+  </script>
+
+</body>
+</html>
