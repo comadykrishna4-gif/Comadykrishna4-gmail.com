@@ -184,104 +184,148 @@
     // Upload Media
     async function uploadMedia() {
 
-      const fileInput =
-        document.getElementById("mediaFile");
+  const fileInput =
+    document.getElementById("mediaFile");
 
-      const status =
-        document.getElementById("status");
+  const status =
+    document.getElementById("status");
 
-      const button =
-        document.getElementById("uploadButton");
+  const button =
+    document.getElementById("uploadButton");
 
-      const file =
-        fileInput.files[0];
+  const file =
+    fileInput.files[0];
 
-      if (!file) {
+  if (!file) {
 
-        status.innerText =
-          "Please select a photo or video.";
+    status.innerText =
+      "Please select a photo or video.";
 
-        return;
-      }
+    return;
+  }
 
-      button.disabled = true;
+  button.disabled = true;
+
+  status.innerText =
+    "Preparing secure upload...";
+
+
+  try {
+
+    // Step 1: Get secure Cloudinary signature
+    const signResponse =
+      await fetch(
+        "/api/cloudinary-upload",
+        {
+          method: "GET",
+          credentials: "include"
+        }
+      );
+
+
+    const signData =
+      await signResponse.json();
+
+
+    if (
+      !signResponse.ok ||
+      !signData.success
+    ) {
 
       status.innerText =
-        "Uploading... Please wait.";
+        signData.error ||
+        "Authentication failed.";
+
+      button.disabled = false;
+
+      return;
+    }
 
 
-      try {
+    // Step 2: Prepare Cloudinary upload
+    const formData =
+      new FormData();
 
-        const formData =
-          new FormData();
+    formData.append(
+      "file",
+      file
+    );
 
-        formData.append(
-          "file",
-          file
-        );
+    formData.append(
+      "api_key",
+      signData.api_key
+    );
+
+    formData.append(
+      "timestamp",
+      signData.timestamp
+    );
+
+    formData.append(
+      "folder",
+      signData.folder
+    );
+
+    formData.append(
+      "signature",
+      signData.signature
+    );
 
 
-        const response =
-          await fetch(
-            "/api/cloudinary-upload",
-            {
-              method: "POST",
-              credentials: "include",
-              body: formData
-            }
-          );
+    status.innerText =
+      "Uploading to Cloudinary...";
 
 
-        const data =
-          await response.json();
-
-
-        if (!response.ok || !data.success) {
-
-          status.innerText =
-            data.error ||
-            "Upload failed.";
-
-          button.disabled = false;
-
-          return;
+    // Step 3: Upload directly to Cloudinary
+    const uploadResponse =
+      await fetch(
+        `https://api.cloudinary.com/v1_1/${signData.cloud_name}/auto/upload`,
+        {
+          method: "POST",
+          body: formData
         }
+      );
 
 
-        status.innerText =
-          "Upload successful! ✅";
+    const uploadData =
+      await uploadResponse.json();
 
 
-        fileInput.value = "";
+    if (!uploadResponse.ok) {
 
-        button.disabled = false;
+      console.error(uploadData);
 
+      status.innerText =
+        uploadData.error?.message ||
+        "Cloudinary upload failed.";
 
-      } catch (error) {
+      button.disabled = false;
 
-        console.error(error);
-
-        status.innerText =
-          "Something went wrong.";
-
-        button.disabled = false;
-      }
-
+      return;
     }
 
 
-    // Logout
-    async function logout() {
-
-      document.cookie =
-        "vf_admin=; Max-Age=0; Path=/;";
-
-      window.location.href =
-        "/admin.html";
-    }
+    status.innerText =
+      "Upload successful! ✅";
 
 
-    // Start
+    fileInput.value = "";
+
+    button.disabled = false;
+
+
+  } catch (error) {
+
+    console.error(error);
+
+    status.innerText =
+      "Something went wrong.";
+
+    button.disabled = false;
+
+  }
+
+          }    // Start
     checkAdmin();
 
   </script>
