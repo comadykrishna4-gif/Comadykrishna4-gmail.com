@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Vaswan Films - Admin Gallery</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #080808;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      padding: 30px 15px;
+    }
+
+    .admin-container {
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .admin-box {
+      background: #111;
+      border: 1px solid #d4af37;
+      border-radius: 10px;
+      padding: 30px 20px;
+      box-shadow: 0 15px 50px rgba(0,0,0,.6);
+    }
+
+    h1 {
+      text-align: center;
+      color: #d4af37;
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #aaa;
+      margin-bottom: 30px;
+    }
+
+    .upload-area {
+      border: 1px dashed #d4af37;
+      padding: 30px 20px;
+      text-align: center;
+      border-radius: 8px;
+      background: #0c0c0c;
+    }
+
+    input[type="file"] {
+      width: 100%;
+      padding: 12px;
+      background: #080808;
+      color: #fff;
+      border: 1px solid #444;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 5px;
+      background: #d4af37;
+      color: #080808;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    #status {
+      margin-top: 20px;
+      text-align: center;
+      color: #d4af37;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .logout {
+      margin-top: 15px;
+      background: #222;
+      color: #d4af37;
+      border: 1px solid #d4af37;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="admin-container">
+
+    <div class="admin-box">
+
+      <h1>VASWAN FILMS</h1>
+
+      <div class="subtitle">
+        Admin Gallery
+      </div>
+
+      <div class="upload-area">
+
+        <input
+          type="file"
+          id="mediaFile"
+          accept="image/*,video/*"
+        >
+
+        <button
+          id="uploadButton"
+          onclick="uploadMedia()"
+        >
+          UPLOAD PHOTO / VIDEO
+        </button>
+
+        <div id="status"></div>
+
+      </div>
+
+      <button
+        class="logout"
+        onclick="logout()"
+      >
+        LOGOUT
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    // Check Admin Login
+    async function checkAdmin() {
+
+      try {
+
+        const response = await fetch(
+          "/api/admin-check",
+          {
+            method: "GET",
+            credentials: "include"
+          }
+        );
+
+        if (!response.ok) {
+
+          window.location.href =
+            "/admin.html";
+
+          return false;
+        }
+
+        return true;
+
+      } catch (error) {
+
+        window.location.href =
+          "/admin.html";
+
+        return false;
+      }
+    }
+
+
+    // Upload Media
+    async function uploadMedia() {
+
+      const fileInput =
+        document.getElementById("mediaFile");
+
+      const status =
+        document.getElementById("status");
+
+      const button =
+        document.getElementById("uploadButton");
+
+      const file =
+        fileInput.files[0];
+
+      if (!file) {
+
+        status.innerText =
+          "Please select a photo or video.";
+
+        return;
+      }
+
+      button.disabled = true;
+
+      status.innerText =
+        "Uploading... Please wait.";
+
+
+      try {
+
+        const formData =
+          new FormData();
+
+        formData.append(
+          "file",
+          file
+        );
+
+
+        const response =
+          await fetch(
+            "/api/cloudinary-upload",
+            {
+              method: "POST",
+              credentials: "include",
+              body: formData
+            }
+          );
+
+
+        const data =
+          await response.json();
+
+
+        if (!response.ok || !data.success) {
+
+          status.innerText =
+            data.error ||
+            "Upload failed.";
+
+          button.disabled = false;
+
+          return;
+        }
+
+
+        status.innerText =
+          "Upload successful! ✅";
+
+
+        fileInput.value = "";
+
+        button.disabled = false;
+
+
+      } catch (error) {
+
+        console.error(error);
+
+        status.innerText =
+          "Something went wrong.";
+
+        button.disabled = false;
+      }
+
+    }
+
+
+    // Logout
+    async function logout() {
+
+      document.cookie =
+        "vf_admin=; Max-Age=0; Path=/;";
+
+      window.location.href =
+        "/admin.html";
+    }
+
+
+    // Start
+    checkAdmin();
+
+  </script>
+
+</body>
+</html>
