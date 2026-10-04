@@ -8,14 +8,6 @@ export default function handler(req, res) {
 
   try {
     const { password } = req.body || {};
-
-    if (!password) {
-      return res.status(400).json({
-        success: false,
-        error: "Password is required."
-      });
-    }
-
     const adminPassword = process.env.ADMIN_PASSWORD;
 
     if (!adminPassword) {
@@ -25,7 +17,7 @@ export default function handler(req, res) {
       });
     }
 
-    if (password !== adminPassword) {
+    if (!password || password !== adminPassword) {
       return res.status(401).json({
         success: false,
         error: "Incorrect password."
@@ -33,8 +25,7 @@ export default function handler(req, res) {
     }
 
     return res.status(200).json({
-      success: true,
-      message: "Admin login successful."
+      success: true
     });
 
   } catch (error) {
