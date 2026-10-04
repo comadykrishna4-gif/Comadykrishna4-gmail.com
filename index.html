@@ -1774,7 +1774,20 @@
         );
 
 
-        const data = await response.json();
+        const responseText = await response.text();
+
+console.log("API STATUS:", response.status);
+console.log("API RESPONSE:", responseText);
+
+let data;
+
+try {
+  data = JSON.parse(responseText);
+} catch (error) {
+  throw new Error(
+    "Server returned non-JSON response: " + responseText.substring(0, 200)
+  );
+}
 
 
         if (!response.ok) {
