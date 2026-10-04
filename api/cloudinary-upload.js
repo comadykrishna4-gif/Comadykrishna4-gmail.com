@@ -1,3 +1,4 @@
+import crypto from "crypto";
 import { v2 as cloudinary } from "cloudinary";
 
 cloudinary.config({
@@ -18,8 +19,7 @@ function parseCookies(cookieHeader) {
       cookie.trim().split("=");
 
     if (key) {
-      cookies[key] =
-        value.join("=");
+      cookies[key] = value.join("=");
     }
 
   });
@@ -27,27 +27,20 @@ function parseCookies(cookieHeader) {
   return cookies;
 }
 
-
 function checkAdmin(req) {
 
   const adminPassword =
     process.env.ADMIN_PASSWORD;
 
-  if (!adminPassword) {
-    return false;
-  }
+  if (!adminPassword) return false;
 
   const cookies =
-    parseCookies(
-      req.headers.cookie || ""
-    );
+    parseCookies(req.headers.cookie || "");
 
   const token =
     cookies.vf_admin;
 
-  if (!token) {
-    return false;
-  }
+  if (!token) return false;
 
   try {
 
@@ -59,15 +52,11 @@ function checkAdmin(req) {
     const parts =
       decoded.split(":");
 
-    if (parts.length !== 3) {
-      return false;
-    }
+    if (parts.length !== 3) return false;
 
     const type = parts[0];
-    const expires =
-      Number(parts[1]);
-    const signature =
-      parts[2];
+    const expires = Number(parts[1]);
+    const signature = parts[2];
 
     if (
       type !== "admin" ||
@@ -81,18 +70,13 @@ function checkAdmin(req) {
       return false;
     }
 
-    const crypto =
-      require("crypto");
-
     const expectedSignature =
       crypto
         .createHmac(
           "sha256",
           adminPassword
         )
-        .update(
-          `admin:${expires}`
-        )
+        .update(`admin:${expires}`)
         .digest("hex");
 
     return (
@@ -109,9 +93,7 @@ function checkAdmin(req) {
     return false;
 
   }
-
 }
-
 
 export default async function handler(req, res) {
 
@@ -124,17 +106,14 @@ export default async function handler(req, res) {
 
   }
 
-
   if (!checkAdmin(req)) {
 
     return res.status(401).json({
       success: false,
-      error:
-        "Admin authentication required."
+      error: "Admin authentication required."
     });
 
   }
-
 
   try {
 
@@ -147,10 +126,8 @@ export default async function handler(req, res) {
     const body =
       Buffer.concat(chunks);
 
-
     const contentType =
       req.headers["content-type"] || "";
-
 
     if (
       !contentType.includes(
@@ -160,40 +137,31 @@ export default async function handler(req, res) {
 
       return res.status(400).json({
         success: false,
-        error:
-          "Please upload a file."
+        error: "Please upload a file."
       });
 
     }
-
 
     const boundaryMatch =
       contentType.match(
         /boundary=(?:"([^"]+)"|([^;]+))/
       );
 
-
     if (!boundaryMatch) {
 
       return res.status(400).json({
         success: false,
-        error:
-          "Upload boundary missing."
+        error: "Upload boundary missing."
       });
 
     }
-
 
     const boundary =
       boundaryMatch[1] ||
       boundaryMatch[2];
 
-
     const boundaryBuffer =
-      Buffer.from(
-        `--${boundary}`
-      );
-
+      Buffer.from(`--${boundary}`);
 
     const parts = [];
 
@@ -207,29 +175,22 @@ export default async function handler(req, res) {
           start
         );
 
-      if (index === -1) {
-        break;
-      }
+      if (index === -1) break;
 
       if (index > start) {
+
         parts.push(
-          body.slice(
-            start,
-            index
-          )
+          body.slice(start, index)
         );
+
       }
 
       start =
-        index +
-        boundaryBuffer.length;
+        index + boundaryBuffer.length;
 
     }
 
-
     let fileBuffer = null;
-    let fileName = "upload";
-
 
     for (const part of parts) {
 
@@ -238,66 +199,55 @@ export default async function handler(req, res) {
           Buffer.from("\r\n\r\n")
         );
 
-      if (headerEnd === -1) {
-        continue;
-      }
+      if (headerEnd === -1) continue;
 
       const headers =
         part
           .slice(0, headerEnd)
           .toString();
 
-      const content =
+      if (
+        !headers.includes(
+          'name="file"'
+        )
+      ) {
+        continue;
+      }
+
+      const fileContent =
         part.slice(
           headerEnd + 4
         );
 
+      fileBuffer =
+        fileContent;
 
-      const fileMatch =
-        headers.match(
-          /filename="([^"]+)"/
-        );
-
-      if (fileMatch) {
-
-        fileName =
-          fileMatch[1];
+      if (
+        fileBuffer
+          .slice(-2)
+          .toString() === "\r\n"
+      ) {
 
         fileBuffer =
-          content;
-
-        if (
-          fileBuffer
-            .slice(-2)
-            .toString() ===
-          "\r\n"
-        ) {
-
-          fileBuffer =
-            fileBuffer.slice(
-              0,
-              -2
-            );
-
-        }
-
-        break;
+          fileBuffer.slice(
+            0,
+            -2
+          );
 
       }
 
-    }
+      break;
 
+    }
 
     if (!fileBuffer) {
 
       return res.status(400).json({
         success: false,
-        error:
-          "No file received."
+        error: "No file received."
       });
 
     }
-
 
     const result =
       await new Promise(
@@ -330,14 +280,12 @@ export default async function handler(req, res) {
               }
             );
 
-
           uploadStream.end(
             fileBuffer
           );
 
         }
       );
-
 
     return res.status(200).json({
 
@@ -356,7 +304,6 @@ export default async function handler(req, res) {
         result.resource_type
 
     });
-
 
   } catch (error) {
 
