@@ -4,11 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Vaswan Films | Production House</title>
+<title>Vaswan Films | Reality Show</title>
 
-<meta name="description" content="Vaswan Films - Production House, Films, Web Series, Acting and Entertainment.">
+<meta name="description"
+content="Vaswan Films - Reality Shows, Films, Web Series and Entertainment." />
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -21,8 +23,8 @@ html{
 
 body{
     font-family:Arial, Helvetica, sans-serif;
-    background:#ffffff;
-    color:#111111;
+    background:#fff;
+    color:#111;
     line-height:1.6;
 }
 
@@ -32,15 +34,15 @@ header{
     position:sticky;
     top:0;
     z-index:1000;
-    background:rgba(255,255,255,.96);
+    background:rgba(255,255,255,.97);
+    border-bottom:1px solid #eee;
     backdrop-filter:blur(10px);
-    border-bottom:1px solid #eeeeee;
 }
 
 .navbar{
     max-width:1200px;
     margin:auto;
-    padding:15px 25px;
+    padding:14px 22px;
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -54,18 +56,18 @@ header{
     color:#111;
 }
 
-.logo-mark{
+.logo-circle{
     width:48px;
     height:48px;
     border-radius:50%;
     background:#111;
+    border:2px solid #d4af37;
     color:#d4af37;
     display:flex;
     align-items:center;
     justify-content:center;
     font-size:20px;
     font-weight:bold;
-    border:2px solid #d4af37;
 }
 
 .logo-text strong{
@@ -76,28 +78,28 @@ header{
 
 .logo-text span{
     font-size:9px;
-    letter-spacing:3px;
     color:#888;
+    letter-spacing:3px;
 }
 
 .nav-links{
     display:flex;
     list-style:none;
-    gap:28px;
+    gap:25px;
 }
 
 .nav-links a{
-    text-decoration:none;
     color:#222;
+    text-decoration:none;
     font-size:14px;
-    font-weight:600;
+    font-weight:bold;
 }
 
 .nav-links a:hover{
-    color:#b88a16;
+    color:#bd8c20;
 }
 
-.menu-btn{
+.menu{
     display:none;
     font-size:28px;
     cursor:pointer;
@@ -106,46 +108,53 @@ header{
 /* HERO */
 
 .hero{
-    min-height:650px;
+    min-height:680px;
+    position:relative;
     display:flex;
     align-items:center;
-    position:relative;
     overflow:hidden;
-    background:
-    linear-gradient(90deg,#ffffff 30%,rgba(255,255,255,.88) 50%,rgba(255,255,255,.2)),
-    url("images/4b8824f4-d2ff-479c-9fe7-051ab6363174.png");
+
+    background-image:
+    linear-gradient(
+        90deg,
+        rgba(255,255,255,.98) 0%,
+        rgba(255,255,255,.88) 38%,
+        rgba(255,255,255,.15) 100%
+    ),
+    url("https://images.unsplash.com/photo-1664342174384-e3a832f9424d?auto=format&fit=crop&fm=jpg&q=80&w=1800");
+
     background-size:cover;
     background-position:center;
 }
 
 .hero-content{
-    max-width:1200px;
     width:100%;
+    max-width:1200px;
     margin:auto;
     padding:80px 25px;
 }
 
 .hero-small{
-    color:#b88a16;
-    font-weight:bold;
-    letter-spacing:4px;
+    color:#bd8c20;
     font-size:13px;
+    letter-spacing:4px;
+    font-weight:bold;
     margin-bottom:15px;
 }
 
 .hero h1{
-    max-width:650px;
+    max-width:680px;
     font-size:64px;
     line-height:1.05;
     margin-bottom:25px;
 }
 
 .hero h1 span{
-    color:#b88a16;
+    color:#bd8c20;
 }
 
 .hero p{
-    max-width:560px;
+    max-width:570px;
     color:#666;
     font-size:18px;
     margin-bottom:30px;
@@ -153,38 +162,38 @@ header{
 
 .btn{
     display:inline-block;
-    padding:14px 28px;
+    padding:14px 27px;
     text-decoration:none;
     font-weight:bold;
-    border-radius:3px;
-    margin-right:10px;
+    border-radius:4px;
+    margin-right:8px;
     transition:.3s;
 }
 
-.btn-gold{
+.gold-btn{
     background:#c49a35;
     color:white;
 }
 
-.btn-gold:hover{
-    background:#a87c19;
+.gold-btn:hover{
+    background:#a97c18;
     transform:translateY(-3px);
 }
 
-.btn-dark{
+.black-btn{
     background:#111;
     color:white;
 }
 
-.btn-dark:hover{
+.black-btn:hover{
     background:#333;
     transform:translateY(-3px);
 }
 
-/* GENERAL */
+/* COMMON */
 
 section{
-    padding:90px 25px;
+    padding:90px 22px;
 }
 
 .container{
@@ -192,23 +201,23 @@ section{
     margin:auto;
 }
 
-.section-heading{
+.heading{
     text-align:center;
     margin-bottom:50px;
 }
 
-.section-heading small{
-    color:#b88a16;
+.heading small{
+    color:#bd8c20;
     letter-spacing:3px;
     font-weight:bold;
 }
 
-.section-heading h2{
+.heading h2{
     font-size:42px;
-    margin:10px 0;
+    margin:8px 0;
 }
 
-.section-heading p{
+.heading p{
     color:#777;
 }
 
@@ -225,20 +234,29 @@ section{
     align-items:center;
 }
 
-.about-image img{
-    width:100%;
-    height:500px;
-    object-fit:cover;
-    border-radius:5px;
+.about-image{
+    min-height:430px;
+    border-radius:8px;
+
+    background-image:
+    linear-gradient(
+        rgba(0,0,0,.2),
+        rgba(0,0,0,.2)
+    ),
+    url("https://images.unsplash.com/photo-1664342174384-e3a832f9424d?auto=format&fit=crop&fm=jpg&q=80&w=1200");
+
+    background-size:cover;
+    background-position:center;
 }
 
 .about-content h2{
     font-size:42px;
-    margin-bottom:20px;
+    line-height:1.15;
+    margin:12px 0 20px;
 }
 
 .about-content h2 span{
-    color:#b88a16;
+    color:#bd8c20;
 }
 
 .about-content p{
@@ -246,148 +264,127 @@ section{
     margin-bottom:18px;
 }
 
-/* PROJECTS */
+/* REALITY SHOW */
 
-.projects-grid{
+.reality{
+    background:#111;
+    color:white;
+}
+
+.reality-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
+    grid-template-columns:1fr 1fr;
+    gap:55px;
+    align-items:center;
 }
 
-.project-card{
-    border:1px solid #e5e5e5;
-    background:#fff;
+.reality-image{
+    height:550px;
+    border-radius:8px;
     overflow:hidden;
-    transition:.35s;
 }
 
-.project-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 20px 45px rgba(0,0,0,.1);
-}
-
-.project-card img{
+.reality-image img{
     width:100%;
-    height:360px;
+    height:100%;
     object-fit:cover;
-    display:block;
 }
 
-.project-info{
-    padding:22px;
-}
-
-.project-info small{
-    color:#b88a16;
+.reality-content small{
+    color:#d4af37;
+    letter-spacing:3px;
     font-weight:bold;
 }
 
-.project-info h3{
-    font-size:22px;
-    margin:7px 0;
-}
-
-.project-info p{
-    color:#777;
-    font-size:14px;
-}
-
-/* GALLERY */
-
-.gallery{
-    background:#f8f8f8;
-}
-
-.gallery-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
-}
-
-.gallery-card{
-    background:#fff;
-    overflow:hidden;
-    border-radius:5px;
-    cursor:pointer;
-    box-shadow:0 5px 20px rgba(0,0,0,.07);
-}
-
-.gallery-card img{
-    width:100%;
-    height:390px;
-    object-fit:cover;
-    display:block;
-    transition:.5s;
-}
-
-.gallery-card:hover img{
-    transform:scale(1.05);
-}
-
-/* ADMISSION */
-
-.admission{
-    background:#111;
-    color:#fff;
-}
-
-.admission-grid{
-    display:grid;
-    grid-template-columns:.8fr 1.2fr;
-    gap:60px;
-    align-items:start;
-}
-
-.admission-text h2{
+.reality-content h2{
     font-size:48px;
     line-height:1.1;
-    margin:15px 0 25px;
+    margin:15px 0 20px;
 }
 
-.admission-text h2 span{
+.reality-content h2 span{
     color:#d4af37;
 }
 
-.admission-text p{
+.reality-content p{
     color:#bbb;
     margin-bottom:20px;
 }
 
-.admission-points{
+.features{
     list-style:none;
-    margin-top:25px;
+    margin:25px 0;
 }
 
-.admission-points li{
+.features li{
     margin:12px 0;
     color:#ddd;
 }
 
-.admission-points li::before{
+.features li::before{
     content:"✓";
     color:#d4af37;
     font-weight:bold;
     margin-right:10px;
 }
 
+/* APPLICATION */
+
+.application{
+    background:#f8f8f8;
+}
+
+.application-grid{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:50px;
+    align-items:start;
+}
+
+.application-info h2{
+    font-size:42px;
+    line-height:1.1;
+    margin:12px 0 20px;
+}
+
+.application-info h2 span{
+    color:#bd8c20;
+}
+
+.application-info p{
+    color:#666;
+}
+
+.info-box{
+    margin-top:25px;
+    padding:20px;
+    background:#111;
+    color:white;
+    border-left:4px solid #d4af37;
+}
+
+.info-box strong{
+    color:#d4af37;
+}
+
 /* FORM */
 
 .form-box{
-    background:#fff;
-    color:#111;
+    background:white;
     padding:30px;
     border-radius:8px;
+    box-shadow:0 10px 35px rgba(0,0,0,.08);
 }
 
 .form-box h3{
-    font-size:26px;
+    font-size:27px;
     margin-bottom:5px;
 }
 
 .form-subtitle{
     color:#777;
     font-size:13px;
-    margin-bottom:20px;
+    margin-bottom:22px;
 }
 
 .form-row{
@@ -396,83 +393,79 @@ section{
     gap:15px;
 }
 
-.input-group{
+.field{
     margin-bottom:16px;
 }
 
-.input-group label{
+.field label{
     display:block;
     font-size:13px;
     font-weight:bold;
     margin-bottom:6px;
 }
 
-.input-group input,
-.input-group textarea,
-.input-group select{
+.field input,
+.field select,
+.field textarea{
     width:100%;
-    padding:12px;
+    padding:13px;
     border:1px solid #ddd;
     border-radius:4px;
     font-size:14px;
     outline:none;
 }
 
-.input-group input:focus,
-.input-group textarea:focus,
-.input-group select:focus{
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
     border-color:#c49a35;
 }
 
-.input-group textarea{
-    min-height:90px;
+.field textarea{
+    min-height:100px;
     resize:vertical;
 }
 
-.privacy-note{
-    background:#fff8e5;
-    border-left:4px solid #d4af37;
-    padding:12px;
-    font-size:12px;
-    color:#555;
-    margin-bottom:18px;
+.submit{
+    width:100%;
+    border:none;
+    background:#c49a35;
+    color:white;
+    padding:15px;
+    font-weight:bold;
+    font-size:15px;
+    border-radius:4px;
+    cursor:pointer;
 }
 
-.submit-btn{
-    width:100%;
-    padding:15px;
-    background:#c49a35;
-    border:none;
-    color:#fff;
-    font-weight:bold;
-    cursor:pointer;
-    border-radius:4px;
-    font-size:15px;
+.submit:hover{
+    background:#a97c18;
 }
 
 /* PAYMENT */
 
-.payment-box{
+.payment{
     display:none;
     margin-top:25px;
     padding:25px;
-    background:#fafafa;
-    border:2px solid #d4af37;
-    border-radius:6px;
     text-align:center;
+    border:2px solid #d4af37;
+    background:#fffaf0;
+    border-radius:6px;
 }
 
-.payment-box h3{
-    color:#111;
-    margin-bottom:5px;
+.payment h3{
+    margin-bottom:8px;
 }
 
-.payment-box p{
-    color:#666;
-    font-size:14px;
+.amount{
+    font-size:32px;
+    color:#bd8c20;
+    font-weight:bold;
+    margin:10px;
 }
 
-.qr-placeholder{
+.qr{
     width:190px;
     height:190px;
     margin:20px auto;
@@ -481,30 +474,64 @@ section{
     display:flex;
     align-items:center;
     justify-content:center;
-    text-align:center;
     font-size:13px;
     color:#666;
+    text-align:center;
 }
 
-.amount{
-    font-size:28px;
-    font-weight:bold;
-    color:#b88a16;
+/* PROJECTS */
+
+.projects{
+    background:white;
 }
 
-/* CONTACT */
-
-.contact{
-    background:#fff;
-}
-
-.contact-grid{
+.projects-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:25px;
 }
 
+.project{
+    border:1px solid #e5e5e5;
+    padding:28px;
+    transition:.3s;
+}
+
+.project:hover{
+    transform:translateY(-7px);
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.project-number{
+    font-size:14px;
+    color:#bd8c20;
+    font-weight:bold;
+}
+
+.project h3{
+    font-size:24px;
+    margin:10px 0;
+}
+
+.project p{
+    color:#777;
+    font-size:14px;
+}
+
+/* CONTACT */
+
+.contact{
+    background:#fafafa;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
 .contact-card{
+    background:white;
     border:1px solid #e5e5e5;
     padding:30px;
     text-align:center;
@@ -521,29 +548,11 @@ section{
 
 .contact-card p{
     color:#777;
-    font-size:14px;
 }
 
 .contact-card a{
-    color:#b88a16;
+    color:#bd8c20;
     text-decoration:none;
-}
-
-/* YOUTUBE */
-
-.youtube-section{
-    background:#f8f8f8;
-    text-align:center;
-}
-
-.youtube-section h2{
-    font-size:40px;
-    margin-bottom:15px;
-}
-
-.youtube-section p{
-    color:#777;
-    margin-bottom:25px;
 }
 
 /* FOOTER */
@@ -566,53 +575,22 @@ footer strong{
 .footer-links a{
     color:#aaa;
     text-decoration:none;
-    margin:0 10px;
+    margin:0 8px;
 }
 
-/* LIGHTBOX */
-
-.lightbox{
-    display:none;
-    position:fixed;
-    z-index:2000;
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,.92);
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-}
-
-.lightbox img{
-    max-width:95%;
-    max-height:90%;
-    object-fit:contain;
-}
-
-.close-lightbox{
-    position:absolute;
-    top:20px;
-    right:30px;
-    color:white;
-    font-size:40px;
-    cursor:pointer;
-}
-
-/* RESPONSIVE */
+/* MOBILE */
 
 @media(max-width:900px){
 
     .nav-links{
         display:none;
         position:absolute;
-        top:78px;
+        top:76px;
         left:0;
         width:100%;
-        background:#fff;
+        background:white;
         flex-direction:column;
-        padding:20px 25px;
+        padding:20px;
         gap:18px;
         border-bottom:1px solid #ddd;
     }
@@ -621,33 +599,31 @@ footer strong{
         display:flex;
     }
 
-    .menu-btn{
+    .menu{
         display:block;
     }
 
     .hero{
         min-height:600px;
-        background:
-        linear-gradient(90deg,rgba(255,255,255,.94),rgba(255,255,255,.7)),
-        url("images/4b8824f4-d2ff-479c-9fe7-051ab6363174.png");
-        background-size:cover;
-        background-position:center;
+        background-image:
+        linear-gradient(
+            rgba(255,255,255,.9),
+            rgba(255,255,255,.75)
+        ),
+        url("https://images.unsplash.com/photo-1664342174384-e3a832f9424d?auto=format&fit=crop&fm=jpg&q=80&w=1200");
     }
 
     .hero h1{
-        font-size:46px;
+        font-size:48px;
     }
 
     .about-grid,
-    .admission-grid{
+    .reality-grid,
+    .application-grid{
         grid-template-columns:1fr;
     }
 
     .projects-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .gallery-grid{
         grid-template-columns:1fr 1fr;
     }
 
@@ -662,25 +638,12 @@ footer strong{
         padding:65px 18px;
     }
 
-    .navbar{
-        padding:12px 18px;
-    }
-
-    .logo-mark{
-        width:42px;
-        height:42px;
-    }
-
-    .logo-text strong{
-        font-size:17px;
-    }
-
     .hero{
-        min-height:560px;
+        min-height:570px;
     }
 
     .hero-content{
-        padding:60px 18px;
+        padding:50px 18px;
     }
 
     .hero h1{
@@ -697,7 +660,7 @@ footer strong{
         margin:10px 0;
     }
 
-    .section-heading h2{
+    .heading h2{
         font-size:32px;
     }
 
@@ -705,25 +668,16 @@ footer strong{
         font-size:34px;
     }
 
-    .about-image img{
+    .reality-content h2{
+        font-size:38px;
+    }
+
+    .reality-image{
         height:400px;
     }
 
-    .projects-grid{
-        grid-template-columns:1fr;
-    }
-
-    .gallery-grid{
-        grid-template-columns:1fr 1fr;
-        gap:10px;
-    }
-
-    .gallery-card img{
-        height:260px;
-    }
-
-    .admission-text h2{
-        font-size:38px;
+    .application-info h2{
+        font-size:34px;
     }
 
     .form-row{
@@ -734,41 +688,75 @@ footer strong{
         padding:20px;
     }
 
-    .youtube-section h2{
-        font-size:32px;
+    .projects-grid{
+        grid-template-columns:1fr;
     }
 }
+
 </style>
 </head>
 
 <body>
 
+
 <!-- HEADER -->
 
 <header>
+
 <nav class="navbar">
 
 <a href="#home" class="logo">
-    <div class="logo-mark">VF</div>
 
-    <div class="logo-text">
-        <strong>VASWAN FILMS</strong>
-        <span>PRODUCTION HOUSE</span>
-    </div>
+<div class="logo-circle">
+VF
+</div>
+
+<div class="logo-text">
+
+<strong>VASWAN FILMS</strong>
+
+<span>PRODUCTION HOUSE</span>
+
+</div>
+
 </a>
 
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<div class="menu" onclick="toggleMenu()">
+☰
+</div>
+
 
 <ul class="nav-links" id="navLinks">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#admission">Acting Admission</a></li>
-    <li><a href="#contact">Contact</a></li>
+
+<li>
+<a href="#home">Home</a>
+</li>
+
+<li>
+<a href="#about">About</a>
+</li>
+
+<li>
+<a href="#reality">Reality Show</a>
+</li>
+
+<li>
+<a href="#projects">Projects</a>
+</li>
+
+<li>
+<a href="#admission">Admission</a>
+</li>
+
+<li>
+<a href="#contact">Contact</a>
+</li>
+
 </ul>
 
 </nav>
+
 </header>
 
 
@@ -783,22 +771,24 @@ VASWAN FILMS
 </div>
 
 <h1>
-Stories That
-<span>Deserve</span>
-The Screen.
+Your Talent.
+<br>
+Your <span>Stage.</span>
+<br>
+Your Story.
 </h1>
 
 <p>
-We create films, web series and entertainment projects
-with powerful stories, talented artists and cinematic vision.
+A new platform for talented performers who dream
+of entering the world of entertainment.
 </p>
 
-<a href="#projects" class="btn btn-gold">
-Explore Projects
+<a href="#admission" class="btn gold-btn">
+Reality Show Admission
 </a>
 
-<a href="#admission" class="btn btn-dark">
-Acting Admission
+<a href="#reality" class="btn black-btn">
+Know More
 </a>
 
 </div>
@@ -812,42 +802,49 @@ Acting Admission
 
 <div class="container">
 
-<div class="about-grid">
+<div class="heading">
 
-<div class="about-image">
+<small>ABOUT VASWAN FILMS</small>
 
-<img
-src="images/ChatGPT%20Image%20Jan%2030%2C%202026%2C%2003_52_29%20PM.png"
-alt="Vaswan Films"
->
+<h2>Where Talent Meets Opportunity</h2>
+
+<p>
+Building entertainment projects and discovering fresh talent.
+</p>
 
 </div>
 
+
+<div class="about-grid">
+
+<div class="about-image"></div>
+
+
 <div class="about-content">
 
-<small style="color:#b88a16;font-weight:bold;letter-spacing:3px;">
-ABOUT US
+<small style="color:#bd8c20;font-weight:bold;letter-spacing:3px;">
+OUR VISION
 </small>
 
 <h2>
-Creating Stories.
-<br>
-Creating <span>Dreams.</span>
+Discover.
+Develop.
+<span>Deliver.</span>
 </h2>
 
 <p>
-Vaswan Films is a production house focused on films,
-web series, entertainment content and new talent.
+Vaswan Films is focused on films, web series,
+reality entertainment and new talent.
 </p>
 
 <p>
-Our vision is to bring fresh stories and talented artists
-to the screen with professional filmmaking and powerful
-cinematic experiences.
+Our aim is to create a professional platform where
+talented people can showcase their skills and get
+an opportunity to be seen.
 </p>
 
-<a href="#contact" class="btn btn-gold">
-Work With Us
+<a href="#admission" class="btn gold-btn">
+Apply Now
 </a>
 
 </div>
@@ -859,284 +856,147 @@ Work With Us
 </section>
 
 
-<!-- PROJECTS -->
+<!-- REALITY SHOW -->
 
-<section id="projects">
-
-<div class="container">
-
-<div class="section-heading">
-
-<small>OUR WORK</small>
-
-<h2>Featured Projects</h2>
-
-<p>
-Stories, characters and ideas created for the screen.
-</p>
-
-</div>
-
-
-<div class="projects-grid">
-
-
-<div class="project-card">
-
-<img
-src="images/Aakhiri%20Ticket_%20A%20journey%20of%20dreams.png"
-alt="Aakhiri Ticket"
->
-
-<div class="project-info">
-
-<small>SHORT FILM</small>
-
-<h3>Aakhiri Ticket</h3>
-
-<p>
-A journey of dreams, emotions and one final ticket.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="project-card">
-
-<img
-src="images/4b8824f4-d2ff-479c-9fe7-051ab6363174.png"
-alt="Gunnah"
->
-
-<div class="project-info">
-
-<small>WEB SERIES</small>
-
-<h3>Gunnah</h3>
-
-<p>
-A crime thriller exploring wrong behaviour,
-consequences and society.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="project-card">
-
-<img
-src="images/08341a6e-9815-4f56-878b-00b30912e4c2.png"
-alt="Upcoming Project"
->
-
-<div class="project-info">
-
-<small>UPCOMING</small>
-
-<h3>New Stories</h3>
-
-<p>
-More exciting film and web-series projects are
-coming soon from Vaswan Films.
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- GALLERY -->
-
-<section class="gallery" id="gallery">
+<section class="reality" id="reality">
 
 <div class="container">
 
-<div class="section-heading">
-
-<small>VISUAL STORIES</small>
-
-<h2>Our Gallery</h2>
-
-<p>
-A glimpse into the world of Vaswan Films.
-</p>
-
-</div>
+<div class="reality-grid">
 
 
-<div class="gallery-grid">
-
-
-<div class="gallery-card"
-onclick="openLightbox(this.querySelector('img').src)">
+<div class="reality-image">
 
 <img
-src="images/ChatGPT%20Image%20Jan%2030%2C%202026%2C%2003_52_29%20PM.png"
-alt="Vaswan Films Gallery"
+src="https://images.unsplash.com/photo-1664342174384-e3a832f9424d?auto=format&fit=crop&fm=jpg&q=80&w=1400"
+alt="Reality Show Stage"
 >
 
 </div>
 
 
-<div class="gallery-card"
-onclick="openLightbox(this.querySelector('img').src)">
+<div class="reality-content">
 
-<img
-src="images/Aakhiri%20Ticket_%20A%20journey%20of%20dreams.png"
-alt="Aakhiri Ticket Gallery"
->
-
-</div>
-
-
-<div class="gallery-card"
-onclick="openLightbox(this.querySelector('img').src)">
-
-<img
-src="images/4b8824f4-d2ff-479c-9fe7-051ab6363174.png"
-alt="Gunnah Gallery"
->
-
-</div>
-
-
-<div class="gallery-card"
-onclick="openLightbox(this.querySelector('img').src)">
-
-<img
-src="images/08341a6e-9815-4f56-878b-00b30912e4c2.png"
-alt="Vaswan Films Gallery"
->
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ACTING ADMISSION -->
-
-<section class="admission" id="admission">
-
-<div class="container">
-
-<div class="admission-grid">
-
-
-<div class="admission-text">
-
-<small style="color:#d4af37;letter-spacing:3px;font-weight:bold;">
-VASWAN FILMS
-</small>
+<small>VASWAN FILMS PRESENTS</small>
 
 <h2>
-Acting
-<span>Admission</span>
-Open
+REALITY SHOW
+<span>ADMISSION</span>
 </h2>
 
 <p>
-Do you have the talent and confidence to become an actor?
-Apply for the Vaswan Films acting opportunity.
+Do you have a special talent?
+Do you believe you can entertain an audience?
+This could be your chance to step onto the stage.
 </p>
 
-<ul class="admission-points">
+<ul class="features">
 
-<li>Freshers can apply</li>
-<li>Male & Female applicants</li>
-<li>Film & Web Series opportunities</li>
-<li>Professional selection process</li>
-<li>Submit your details online</li>
+<li>Acting Talent</li>
+
+<li>Singing Talent</li>
+
+<li>Dancing Talent</li>
+
+<li>Comedy & Entertainment</li>
+
+<li>Special Performance Skills</li>
+
+<li>Fresh Talent Welcome</li>
 
 </ul>
+
+<a href="#admission" class="btn gold-btn">
+Register Now
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ADMISSION -->
+
+<section class="application" id="admission">
+
+<div class="container">
+
+<div class="application-grid">
+
+
+<div class="application-info">
+
+<small style="color:#bd8c20;font-weight:bold;letter-spacing:3px;">
+REGISTRATION OPEN
+</small>
+
+<h2>
+Reality Show
+<span>Admission</span>
+</h2>
+
+<p>
+Fill out the registration form to express your interest
+in participating in the Vaswan Films Reality Show.
+</p>
+
+<div class="info-box">
+
+<strong>Important</strong>
+
+<br>
+
+Please provide correct information.
+Selection will be based on the show's audition
+and selection process.
+
+</div>
 
 </div>
 
 
 <div class="form-box">
 
-<h3>Acting Application</h3>
+<h3>Reality Show Registration</h3>
 
 <p class="form-subtitle">
-Fill in your details carefully.
+Complete the form below.
 </p>
 
 
-<form id="admissionForm" onsubmit="showPayment(event)">
+<form id="registrationForm"
+onsubmit="showPayment(event)">
 
 
 <div class="form-row">
 
-<div class="input-group">
 
-<label>Name *</label>
+<div class="field">
+
+<label>Full Name *</label>
 
 <input
 type="text"
-name="name"
 required
-placeholder="Enter your full name"
+placeholder="Enter your name"
 >
 
 </div>
 
 
-<div class="input-group">
+<div class="field">
 
-<label>Father Name *</label>
-
-<input
-type="text"
-name="father"
-required
-placeholder="Father's name"
->
-
-</div>
-
-</div>
-
-
-<div class="form-row">
-
-<div class="input-group">
-
-<label>Mother Name *</label>
+<label>Age *</label>
 
 <input
-type="text"
-name="mother"
+type="number"
+min="18"
 required
-placeholder="Mother's name"
->
-
-</div>
-
-
-<div class="input-group">
-
-<label>Qualification *</label>
-
-<input
-type="text"
-name="qualification"
-required
-placeholder="e.g. Graduate"
+placeholder="Your age"
 >
 
 </div>
@@ -1146,13 +1006,79 @@ placeholder="e.g. Graduate"
 
 <div class="form-row">
 
-<div class="input-group">
+
+<div class="field">
+
+<label>City *</label>
+
+<input
+type="text"
+required
+placeholder="Your city"
+>
+
+</div>
+
+
+<div class="field">
+
+<label>Gender *</label>
+
+<select required>
+
+<option value="">
+Select
+</option>
+
+<option>Male</option>
+
+<option>Female</option>
+
+<option>Other</option>
+
+</select>
+
+</div>
+
+</div>
+
+
+<div class="field">
+
+<label>Your Talent *</label>
+
+<select required>
+
+<option value="">
+Select your talent
+</option>
+
+<option>Acting</option>
+
+<option>Singing</option>
+
+<option>Dancing</option>
+
+<option>Comedy</option>
+
+<option>Modeling</option>
+
+<option>Other</option>
+
+</select>
+
+</div>
+
+
+<div class="form-row">
+
+
+<div class="field">
 
 <label>Contact Number *</label>
 
 <input
 type="tel"
-name="phone"
 inputmode="numeric"
 pattern="[0-9]{10}"
 maxlength="10"
@@ -1163,13 +1089,12 @@ placeholder="10 digit mobile number"
 </div>
 
 
-<div class="input-group">
+<div class="field">
 
 <label>Email ID *</label>
 
 <input
 type="email"
-name="email"
 required
 placeholder="your@email.com"
 >
@@ -1179,44 +1104,33 @@ placeholder="your@email.com"
 </div>
 
 
-<div class="input-group">
+<div class="field">
 
 <label>Address *</label>
 
 <textarea
-name="address"
 required
-placeholder="Enter your complete address"
+placeholder="Enter your address"
 ></textarea>
 
 </div>
 
 
-<div class="input-group">
+<div class="field">
 
-<label>Aadhaar Number</label>
+<label>About Your Talent</label>
 
-<input
-type="text"
-name="aadhaar"
-inputmode="numeric"
-pattern="[0-9]{12}"
-maxlength="12"
-placeholder="12 digit Aadhaar number"
->
+<textarea
+placeholder="Tell us briefly about yourself and your talent"
+></textarea>
 
 </div>
 
 
-<div class="privacy-note">
-<strong>Privacy:</strong> Aadhaar is sensitive personal information.
-Do not submit it unless it is genuinely required by the official
-application process. This demo form does not store your information.
-</div>
+<button class="submit" type="submit">
 
-
-<button type="submit" class="submit-btn">
 CONTINUE TO ₹100 PAYMENT
+
 </button>
 
 
@@ -1225,30 +1139,37 @@ CONTINUE TO ₹100 PAYMENT
 
 <!-- PAYMENT -->
 
-<div class="payment-box" id="paymentBox">
+<div class="payment" id="paymentBox">
 
-<h3>Application Fee</h3>
+<h3>Registration Fee</h3>
 
-<p>Please pay the application fee:</p>
+<p>
+Application / registration fee
+</p>
 
-<div class="amount">₹100</div>
+<div class="amount">
+₹100
+</div>
 
 
-<div class="qr-placeholder">
-REAL PAYMENT QR<br>
+<div class="qr">
+
+OFFICIAL PAYMENT QR
+<br>
 WILL BE ADDED HERE
+
 </div>
 
 
 <p>
-Scan the official QR code to make the ₹100 payment.
+Scan the official QR code to make payment.
 </p>
 
 <br>
 
 <strong>
-Payment verification will be connected after
-the official payment system is added.
+Payment verification will be connected
+with the real payment system.
 </strong>
 
 </div>
@@ -1263,25 +1184,75 @@ the official payment system is added.
 </section>
 
 
-<!-- YOUTUBE -->
+<!-- PROJECTS -->
 
-<section class="youtube-section">
+<section class="projects" id="projects">
 
 <div class="container">
 
-<h2>Watch Our Work</h2>
+<div class="heading">
+
+<small>VASWAN FILMS</small>
+
+<h2>Our Projects</h2>
 
 <p>
-Watch films, songs and entertainment content on our YouTube channel.
+Films, web series and upcoming entertainment projects.
 </p>
 
-<a
-href="https://www.youtube.com/@Krishnavaswanfilms"
-target="_blank"
-class="btn btn-gold"
->
-Visit YouTube Channel
-</a>
+</div>
+
+
+<div class="projects-grid">
+
+
+<div class="project">
+
+<div class="project-number">
+01 — SHORT FILM
+</div>
+
+<h3>Aakhiri Ticket</h3>
+
+<p>
+A story of dreams, emotions and an unforgettable journey.
+</p>
+
+</div>
+
+
+<div class="project">
+
+<div class="project-number">
+02 — WEB SERIES
+</div>
+
+<h3>Gunnah</h3>
+
+<p>
+A crime thriller exploring wrong behaviour,
+consequences and society.
+</p>
+
+</div>
+
+
+<div class="project">
+
+<div class="project-number">
+03 — REALITY SHOW
+</div>
+
+<h3>Vaswan Reality Show</h3>
+
+<p>
+A platform created to discover fresh and talented performers.
+</p>
+
+</div>
+
+
+</div>
 
 </div>
 
@@ -1294,14 +1265,14 @@ Visit YouTube Channel
 
 <div class="container">
 
-<div class="section-heading">
+<div class="heading">
 
-<small>GET IN TOUCH</small>
+<small>CONTACT</small>
 
-<h2>Contact Vaswan Films</h2>
+<h2>Work With Vaswan Films</h2>
 
 <p>
-For film projects, collaborations and professional opportunities.
+For production, collaboration and entertainment opportunities.
 </p>
 
 </div>
@@ -1312,12 +1283,14 @@ For film projects, collaborations and professional opportunities.
 
 <div class="contact-card">
 
-<div class="icon">🎬</div>
+<div class="icon">
+🎬
+</div>
 
 <h3>Production</h3>
 
 <p>
-Film & Web Series Projects
+Films & Web Series
 </p>
 
 </div>
@@ -1325,12 +1298,14 @@ Film & Web Series Projects
 
 <div class="contact-card">
 
-<div class="icon">🎭</div>
+<div class="icon">
+⭐
+</div>
 
-<h3>Acting</h3>
+<h3>Reality Show</h3>
 
 <p>
-Acting opportunities and auditions
+Talent Registration
 </p>
 
 </div>
@@ -1338,17 +1313,21 @@ Acting opportunities and auditions
 
 <div class="contact-card">
 
-<div class="icon">▶</div>
+<div class="icon">
+▶️
+</div>
 
 <h3>YouTube</h3>
 
 <p>
+
 <a
 href="https://www.youtube.com/@Krishnavaswanfilms"
 target="_blank"
 >
 Vaswan Films
 </a>
+
 </p>
 
 </div>
@@ -1373,26 +1352,16 @@ All Rights Reserved.
 <div class="footer-links">
 
 <a href="#home">Home</a>
-<a href="#projects">Projects</a>
-<a href="#gallery">Gallery</a>
+
+<a href="#reality">Reality Show</a>
+
 <a href="#admission">Admission</a>
+
+<a href="#contact">Contact</a>
 
 </div>
 
 </footer>
-
-
-<!-- LIGHTBOX -->
-
-<div class="lightbox" id="lightbox">
-
-<span class="close-lightbox" onclick="closeLightbox()">
-&times;
-</span>
-
-<img id="lightboxImage" src="" alt="Gallery Image">
-
-</div>
 
 
 <script>
@@ -1401,9 +1370,9 @@ All Rights Reserved.
 
 function toggleMenu(){
 
-    document
-    .getElementById("navLinks")
-    .classList.toggle("active");
+document
+.getElementById("navLinks")
+.classList.toggle("active");
 
 }
 
@@ -1412,89 +1381,50 @@ function toggleMenu(){
 
 function showPayment(event){
 
-    event.preventDefault();
+event.preventDefault();
 
-    const form =
-    document.getElementById("admissionForm");
+const form =
+document.getElementById("registrationForm");
 
-    if(!form.checkValidity()){
+if(!form.checkValidity()){
 
-        form.reportValidity();
+form.reportValidity();
 
-        return;
-
-    }
-
-    document
-    .getElementById("paymentBox")
-    .style.display = "block";
-
-    document
-    .getElementById("paymentBox")
-    .scrollIntoView({
-        behavior:"smooth",
-        block:"center"
-    });
+return;
 
 }
-
-
-/* LIGHTBOX */
-
-function openLightbox(image){
-
-    document
-    .getElementById("lightboxImage")
-    .src = image;
-
-    document
-    .getElementById("lightbox")
-    .style.display = "flex";
-
-}
-
-
-function closeLightbox(){
-
-    document
-    .getElementById("lightbox")
-    .style.display = "none";
-
-}
-
-
-/* CLOSE LIGHTBOX BY CLICKING OUTSIDE */
 
 document
-.getElementById("lightbox")
-.addEventListener("click",function(event){
+.getElementById("paymentBox")
+.style.display="block";
 
-    if(event.target === this){
-
-        closeLightbox();
-
-    }
-
+document
+.getElementById("paymentBox")
+.scrollIntoView({
+behavior:"smooth",
+block:"center"
 });
 
+}
 
-/* CLOSE MOBILE MENU AFTER CLICK */
+
+/* CLOSE MOBILE MENU */
 
 document
 .querySelectorAll(".nav-links a")
 .forEach(function(link){
 
-    link.addEventListener("click",function(){
+link.addEventListener("click",function(){
 
-        document
-        .getElementById("navLinks")
-        .classList.remove("active");
+document
+.getElementById("navLinks")
+.classList.remove("active");
 
-    });
+});
 
 });
 
 </script>
 
 </body>
-    </html>
+</html>
