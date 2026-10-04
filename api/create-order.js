@@ -1,3 +1,5 @@
+import Razorpay from "razorpay";
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({
@@ -29,55 +31,39 @@ export default async function handler(req, res) {
       });
     }
 
-    const auth = Buffer
-      .from(`${keyId}:${keySecret}`)
-      .toString("base64");
+    const razorpay = new Razorpay({
+      key_id: keyId,
+      key_secret: keySecret
+    });
 
-    const response = await fetch(
-      "https://api.razorpay.com/v1/orders",
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Basic ${auth}`,
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          amount: 19900,
-          currency: "INR",
-          receipt: `VF_${Date.now()}`,
-          notes: {
-            name,
-            email,
-            phone,
-            city,
-            portfolio: portfolio || ""
-          }
-        })
+    const order = await razorpay.orders.create({
+      amount: 19900,
+      currency: "INR",
+      receipt: `VF_${Date.now()}`,
+      notes: {
+        name,
+        email,
+        phone,
+        city,
+        portfolio: portfolio || ""
       }
-    );
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      return res.status(response.status).json({
-        error:
-          data?.error?.description ||
-          "Razorpay order creation failed."
-      });
-    }
+    });
 
     return res.status(200).json({
       key_id: keyId,
-      order_id: data.id,
-      amount: data.amount,
-      currency: data.currency
+      order_id: order.id,
+      amount: order.amount,
+      currency: order.currency
     });
 
   } catch (error) {
     console.error("Razorpay Error:", error);
 
     return res.status(500).json({
-      error: error.message || "Server error."
+      error:
+        error?.error?.description ||
+        error?.message ||
+        "Razorpay order creation failed."
     });
   }
 }
