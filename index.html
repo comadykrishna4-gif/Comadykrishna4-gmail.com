@@ -2173,6 +2173,45 @@ async function startPayment() {
 
         paymentButton.innerText = "PAYMENT VERIFIED";
 
+        const applicationResponse = await fetch("/api/send-application", {
+    method: "POST",
+
+    headers: {
+        "Content-Type": "application/json"
+    },
+
+    body: JSON.stringify({
+        name: document.getElementById("name").value.trim(),
+        father: document.getElementById("father").value.trim(),
+        mother: document.getElementById("mother").value.trim(),
+        age: document.getElementById("age").value.trim(),
+        gender: document.getElementById("gender").value,
+        email: document.getElementById("email").value.trim(),
+        phone: document.getElementById("phone").value.trim(),
+        instagram: document.getElementById("instagram").value.trim(),
+        address: document.getElementById("address").value.trim(),
+        youtube: document.getElementById("youtube").value.trim(),
+
+        razorpay_order_id:
+            paymentResponse.razorpay_order_id,
+
+        razorpay_payment_id:
+            paymentResponse.razorpay_payment_id,
+
+        razorpay_signature:
+            paymentResponse.razorpay_signature
+    })
+});
+
+const applicationResult = await applicationResponse.json();
+
+if (!applicationResponse.ok || !applicationResult.success) {
+    throw new Error(
+        applicationResult.error ||
+        "Application PDF could not be generated."
+    );
+}
+        
         alert(
             "Payment successful and verified!\\n\\n" +
             "Payment ID: " +
