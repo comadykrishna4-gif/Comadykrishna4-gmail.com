@@ -2142,19 +2142,56 @@ async function startPayment() {
                 color: "#d4af37"
             },
 
-            handler: function (paymentResponse) {
+            handler: async function (paymentResponse) {
 
-                alert(
-                    "Payment successful!\\n\\n" +
-                    "Payment ID: " +
-                    paymentResponse.razorpay_payment_id
-                );
+    paymentButton.innerText = "VERIFYING PAYMENT...";
+    paymentButton.disabled = true;
 
-                paymentButton.innerText = "PAYMENT SUCCESSFUL";
+    try {
 
-                paymentButton.disabled = true;
+        const verifyResponse = await fetch("/api/verify-payment", {
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
             },
 
+            body: JSON.stringify({
+                razorpay_order_id: paymentResponse.razorpay_order_id,
+                razorpay_payment_id: paymentResponse.razorpay_payment_id,
+                razorpay_signature: paymentResponse.razorpay_signature
+            })
+        });
+
+        const verifyResult = await verifyResponse.json();
+
+        if (!verifyResponse.ok || !verifyResult.success) {
+            throw new Error(
+                verifyResult.error || "Payment verification failed."
+            );
+        }
+
+        paymentButton.innerText = "PAYMENT VERIFIED";
+
+        alert(
+            "Payment successful and verified!\\n\\n" +
+            "Payment ID: " +
+            paymentResponse.razorpay_payment_id
+        );
+
+    } catch (error) {
+
+        console.error("Verification error:", error);
+
+        alert(
+            "Payment was received, but verification could not be completed.\\n\\n" +
+            error.message
+        );
+
+        paymentButton.disabled = false;
+        paymentButton.innerText = "VERIFY PAYMENT";
+    }
+},
             modal: {
 
                 ondismiss: function () {
