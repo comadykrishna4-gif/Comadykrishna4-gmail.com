@@ -183,7 +183,10 @@ export default async function handler(req, res) {
 
     const { data, error } = await resend.emails.send({
       from: "VASWAN FILMS <onboarding@resend.dev>",
-      to: ["Vaswankrishna@gmail.com"],
+      to: [
+  "comadykrishna4@gmail.com",
+  "Vaswankrishna@gmail.com"
+],
       subject: `Kon Banega King - Application ${applicationId}`,
       html: `
         <h2>New Kon Banega King Casting Application</h2>
