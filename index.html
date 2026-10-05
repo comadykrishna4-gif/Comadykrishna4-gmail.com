@@ -4,54 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kon Banega King | Official Reality Show | K.K. Entertainment</title>
+<title>Kon Banega King | Vaswan Films</title>
 
-<meta name="description" content="Kon Banega King - The Ultimate Test of Courage, Strength and Survival. Official casting by K.K. Entertainment.">
-<meta name="keywords" content="Kon Banega King, Reality Show, Casting, K.K. Entertainment, Krishna Vaswan, Reality Show India">
-<meta name="author" content="Krishna Vaswan">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<meta name="description" content="Kon Banega King - The Ultimate Reality Challenge by Vaswan Films. Apply now for the ultimate adventure reality show.">
 
 <style>
-
-:root{
-    --gold:#c9a227;
-    --gold2:#e5c45b;
-    --dark:#111111;
-    --text:#222;
-    --white:#ffffff;
-    --cream:#fffdf7;
-    --border:#eadca9;
-    --shadow:0 15px 45px rgba(0,0,0,.12);
-}
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+}
+
+html{
     scroll-behavior:smooth;
 }
 
 body{
-    font-family:'Montserrat',sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     background:#fff;
-    color:var(--text);
-    overflow-x:hidden;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-img{
-    max-width:100%;
-    display:block;
+    color:#111;
 }
 
 /* ================= HEADER ================= */
@@ -61,404 +32,362 @@ header{
     top:0;
     left:0;
     width:100%;
-    z-index:9999;
-    background:rgba(255,255,255,.96);
-    backdrop-filter:blur(15px);
-    border-bottom:1px solid var(--border);
-}
-
-.navbar{
-    max-width:1250px;
-    margin:auto;
-    min-height:78px;
+    z-index:1000;
+    padding:16px 5%;
     display:flex;
-    align-items:center;
     justify-content:space-between;
-    padding:12px 20px;
+    align-items:center;
+    background:rgba(0,0,0,.82);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(212,175,55,.35);
 }
 
-.logo{
-    font-family:'Cinzel',serif;
-    font-weight:800;
-    font-size:21px;
-    letter-spacing:1px;
-    color:#111;
+.header-logo{
+    color:#d4af37;
+    font-weight:900;
+    letter-spacing:3px;
+    font-size:20px;
 }
 
-.logo span{
-    color:var(--gold);
-}
-
-.nav-links{
+nav{
     display:flex;
     gap:25px;
-    align-items:center;
 }
 
-.nav-links a{
-    font-size:13px;
-    font-weight:700;
-    transition:.3s;
-}
-
-.nav-links a:hover{
-    color:var(--gold);
-}
-
-.menu-btn{
-    display:none;
-    border:0;
-    background:none;
-    font-size:28px;
-    cursor:pointer;
-}
-
-/* ================= BUTTON ================= */
-
-.btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    padding:14px 24px;
-    border-radius:3px;
-    font-size:13px;
-    font-weight:800;
-    letter-spacing:.8px;
-    cursor:pointer;
-    border:1px solid var(--gold);
-    transition:.3s;
-}
-
-.btn-gold{
-    background:linear-gradient(135deg,var(--gold),var(--gold2));
-    color:#111;
-}
-
-.btn-gold:hover{
-    transform:translateY(-3px);
-    box-shadow:0 10px 25px rgba(201,162,39,.35);
-}
-
-.btn-outline{
-    background:white;
-    color:#111;
-}
-
-.btn-outline:hover{
-    background:#111;
+nav a{
     color:white;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#d4af37;
+}
+
+@media(max-width:750px){
+    nav{
+        display:none;
+    }
 }
 
 /* ================= HERO ================= */
 
 .hero{
-    height:100vh;
-    min-height:650px;
+    min-height:100vh;
     position:relative;
     overflow:hidden;
-    margin-top:78px;
-    background:#111;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
 }
 
-.slide{
+.hero-slide{
     position:absolute;
     inset:0;
-    opacity:0;
-    transform:scale(1.05);
-    transition:opacity 1.2s ease,transform 7s ease;
     background-size:cover;
     background-position:center;
+    opacity:0;
+    animation:slider 20s infinite;
 }
 
-.slide.active{
-    opacity:1;
-    transform:scale(1);
+.hero-slide:nth-child(1){
+    background-image:
+    linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.78)),
+    url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2000&q=90");
 }
 
-.slide::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:
-      linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.28),rgba(0,0,0,.55)),
-      linear-gradient(0deg,rgba(0,0,0,.65),transparent 55%);
+.hero-slide:nth-child(2){
+    background-image:
+    linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.78)),
+    url("https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=2000&q=90");
+    animation-delay:5s;
 }
 
-.slide1{
-    background-image:url("https://images.unsplash.com/photo-1767385206119-f6671d92327a?auto=format&fit=crop&w=2000&q=85");
+.hero-slide:nth-child(3){
+    background-image:
+    linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.78)),
+    url("https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=2000&q=90");
+    animation-delay:10s;
 }
 
-.slide2{
-    background-image:url("https://images.unsplash.com/photo-1775647423221-ac87d3ec338b?auto=format&fit=crop&w=2000&q=85");
+.hero-slide:nth-child(4){
+    background-image:
+    linear-gradient(rgba(0,0,0,.60),rgba(0,0,0,.78)),
+    url("https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=2000&q=90");
+    animation-delay:15s;
 }
 
-.slide3{
-    background-image:url("https://images.unsplash.com/photo-1762709753410-25f211f9402f?auto=format&fit=crop&w=2000&q=85");
-}
-
-.slide4{
-    background-image:url("https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&w=2000&q=85");
+@keyframes slider{
+    0%{opacity:0;}
+    8%{opacity:1;}
+    25%{opacity:1;}
+    33%{opacity:0;}
+    100%{opacity:0;}
 }
 
 .hero-content{
     position:relative;
-    z-index:3;
-    height:100%;
-    max-width:1250px;
-    margin:auto;
-    padding:100px 25px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    color:#fff;
+    z-index:2;
+    width:95%;
+    max-width:1100px;
+    padding-top:80px;
 }
+
+/* ================= VF LOGO ================= */
+
+.vf-logo{
+    margin-bottom:25px;
+}
+
+.vf-mark{
+    font-family:Georgia,serif;
+    font-size:82px;
+    line-height:.85;
+    font-weight:900;
+    letter-spacing:10px;
+    color:#d4af37;
+    text-shadow:
+        0 2px 0 #8d6b16,
+        0 8px 25px rgba(0,0,0,.8);
+}
+
+.vf-name{
+    margin-top:15px;
+    font-size:20px;
+    letter-spacing:9px;
+    font-weight:800;
+    color:white;
+}
+
+/* ================= MAIN TITLE ================= */
 
 .small-title{
-    color:var(--gold2);
-    font-size:14px;
-    font-weight:800;
-    letter-spacing:5px;
-    margin-bottom:18px;
+    margin-top:35px;
+    font-size:15px;
+    letter-spacing:7px;
+    font-weight:bold;
+    color:#d4af37;
 }
 
-.hero h1{
-    font-family:'Cinzel',serif;
-    font-size:clamp(45px,8vw,105px);
-    line-height:.95;
-    max-width:850px;
-    letter-spacing:2px;
+.king-title{
+    margin-top:10px;
+    font-family:Georgia,serif;
+    font-size:clamp(48px,9vw,115px);
+    line-height:.9;
+    font-weight:900;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#fff;
+    text-shadow:
+        0 4px 0 #8b6a15,
+        0 8px 30px rgba(0,0,0,.9);
 }
 
-.hero h1 span{
-    color:var(--gold2);
+.king-title span{
+    color:#d4af37;
+    display:block;
+    font-size:1.08em;
 }
 
-.hero p{
-    max-width:650px;
-    margin:25px 0;
-    font-size:16px;
-    line-height:1.8;
-    color:#eee;
+.tagline{
+    margin-top:25px;
+    font-size:18px;
+    letter-spacing:4px;
+    font-weight:bold;
 }
 
 .hero-buttons{
+    margin-top:35px;
     display:flex;
-    gap:14px;
+    justify-content:center;
+    gap:15px;
     flex-wrap:wrap;
 }
 
-.hero-buttons .btn-outline{
-    background:rgba(255,255,255,.95);
+.btn{
+    display:inline-block;
+    padding:15px 32px;
+    border-radius:4px;
+    text-decoration:none;
+    font-weight:900;
+    letter-spacing:1px;
+    transition:.3s;
 }
 
-.slide-dots{
-    position:absolute;
-    z-index:5;
-    bottom:30px;
-    left:50%;
-    transform:translateX(-50%);
-    display:flex;
-    gap:8px;
-}
-
-.dot{
-    width:35px;
-    height:4px;
-    background:rgba(255,255,255,.4);
-    cursor:pointer;
-}
-
-.dot.active{
-    background:var(--gold2);
-}
-
-/* ================= COMMON ================= */
-
-section{
-    padding:95px 20px;
-}
-
-.container{
-    max-width:1200px;
-    margin:auto;
-}
-
-.section-head{
-    text-align:center;
-    margin-bottom:55px;
-}
-
-.section-kicker{
-    color:var(--gold);
-    font-size:12px;
-    letter-spacing:4px;
-    font-weight:800;
-    margin-bottom:10px;
-}
-
-.section-title{
-    font-family:'Cinzel',serif;
-    font-size:clamp(30px,5vw,52px);
+.btn-gold{
+    background:#d4af37;
     color:#111;
 }
 
-.section-text{
+.btn-gold:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 30px rgba(212,175,55,.35);
+}
+
+.btn-outline{
+    border:1px solid #d4af37;
+    color:white;
+}
+
+.btn-outline:hover{
+    background:#d4af37;
+    color:#111;
+}
+
+/* ================= SECTIONS ================= */
+
+section{
+    padding:90px 6%;
+}
+
+.section-title{
+    text-align:center;
+    font-family:Georgia,serif;
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.section-title span{
+    color:#c49b27;
+}
+
+.section-subtitle{
+    text-align:center;
     max-width:750px;
-    margin:15px auto 0;
+    margin:0 auto 50px;
     color:#666;
-    line-height:1.8;
+    line-height:1.7;
 }
 
-/* ================= KING INTRO ================= */
+/* ================= SHOW ================= */
 
-.king-intro{
-    background:var(--cream);
+.show{
+    background:#fafafa;
 }
 
-.king-grid{
+.show-grid{
+    max-width:1100px;
+    margin:auto;
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:60px;
+    gap:45px;
     align-items:center;
 }
 
-.king-card{
-    border:1px solid var(--border);
-    padding:45px;
-    background:#fff;
-    box-shadow:var(--shadow);
-    position:relative;
+.show-image{
+    width:100%;
+    height:450px;
+    object-fit:cover;
+    border-radius:8px;
+    box-shadow:0 15px 45px rgba(0,0,0,.15);
 }
 
-.king-card::before{
-    content:"KING";
-    position:absolute;
-    right:20px;
-    top:10px;
-    font-family:'Cinzel',serif;
-    font-size:65px;
-    font-weight:800;
-    color:rgba(201,162,39,.08);
-}
-
-.king-card h3{
-    font-family:'Cinzel',serif;
-    font-size:30px;
+.show-text h3{
+    font-size:32px;
     margin-bottom:20px;
 }
 
-.king-card p{
-    color:#666;
-    line-height:1.9;
+.show-text p{
+    line-height:1.8;
+    color:#555;
+    margin-bottom:18px;
+}
+
+.gold-line{
+    width:70px;
+    height:4px;
+    background:#d4af37;
     margin-bottom:20px;
 }
 
-.king-points{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:15px;
-}
-
-.point{
-    padding:18px;
-    border-left:3px solid var(--gold);
-    background:#fffdf5;
-}
-
-.point strong{
-    display:block;
-    margin-bottom:5px;
-}
-
-.point span{
-    font-size:12px;
-    color:#777;
+@media(max-width:800px){
+    .show-grid{
+        grid-template-columns:1fr;
+    }
 }
 
 /* ================= CHALLENGES ================= */
 
 .challenges{
-    background:#fff;
+    background:#111;
+    color:white;
+}
+
+.challenges .section-subtitle{
+    color:#bbb;
 }
 
 .challenge-grid{
+    max-width:1200px;
+    margin:auto;
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
 }
 
 .challenge{
     position:relative;
-    height:380px;
+    height:320px;
     overflow:hidden;
-    border-radius:4px;
-    background:#111;
+    border-radius:8px;
+    border:1px solid #333;
 }
 
 .challenge img{
     width:100%;
     height:100%;
     object-fit:cover;
-    transition:.7s;
+    transition:.5s;
 }
 
 .challenge:hover img{
     transform:scale(1.08);
 }
 
-.challenge::after{
-    content:"";
+.challenge-overlay{
     position:absolute;
     inset:0;
-    background:linear-gradient(0deg,rgba(0,0,0,.85),transparent 60%);
+    display:flex;
+    align-items:flex-end;
+    padding:25px;
+    background:linear-gradient(transparent,rgba(0,0,0,.9));
 }
 
-.challenge-info{
-    position:absolute;
-    z-index:2;
-    left:25px;
-    right:25px;
-    bottom:25px;
-    color:#fff;
+.challenge h3{
+    color:#d4af37;
+    font-size:22px;
 }
 
-.challenge-info span{
-    color:var(--gold2);
-    font-size:11px;
-    letter-spacing:2px;
-    font-weight:800;
+@media(max-width:900px){
+    .challenge-grid{
+        grid-template-columns:1fr 1fr;
+    }
 }
 
-.challenge-info h3{
-    font-family:'Cinzel',serif;
-    font-size:25px;
-    margin-top:7px;
+@media(max-width:550px){
+    .challenge-grid{
+        grid-template-columns:1fr;
+    }
 }
 
 /* ================= CASTING ================= */
 
 .casting{
-    background:#111;
-    color:white;
-}
-
-.casting .section-title{
-    color:#fff;
-}
-
-.casting .section-text{
-    color:#aaa;
+    background:#f7f7f7;
 }
 
 .form-box{
-    max-width:950px;
+    max-width:900px;
     margin:auto;
-    background:#fff;
-    color:#222;
+    background:white;
     padding:40px;
-    border:2px solid var(--gold);
-    box-shadow:0 20px 60px rgba(0,0,0,.3);
+    border-radius:10px;
+    box-shadow:0 15px 50px rgba(0,0,0,.1);
+    border-top:4px solid #d4af37;
 }
 
 .form-grid{
@@ -468,283 +397,263 @@ section{
 }
 
 .form-group{
-    margin-bottom:5px;
+    display:flex;
+    flex-direction:column;
 }
 
 .form-group.full{
     grid-column:1/-1;
 }
 
-.form-group label{
-    display:block;
-    font-size:12px;
-    font-weight:800;
+label{
+    font-size:14px;
+    font-weight:bold;
     margin-bottom:8px;
-    color:#333;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea{
-    width:100%;
-    padding:14px 15px;
+input,
+select,
+textarea{
+    padding:13px;
     border:1px solid #ddd;
+    border-radius:4px;
+    font-size:15px;
     outline:none;
-    font-family:inherit;
-    border-radius:3px;
-    transition:.3s;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus{
-    border-color:var(--gold);
-    box-shadow:0 0 0 3px rgba(201,162,39,.12);
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:#d4af37;
 }
 
-.form-group textarea{
-    min-height:100px;
+textarea{
+    min-height:120px;
     resize:vertical;
 }
 
-.checkbox{
+.declaration{
+    grid-column:1/-1;
     display:flex;
     gap:10px;
     align-items:flex-start;
-    margin:20px 0;
-    font-size:12px;
+    font-size:13px;
     color:#555;
-    line-height:1.6;
 }
 
-.checkbox input{
-    margin-top:4px;
+.declaration input{
+    width:auto;
 }
 
-.payment-box{
-    margin-top:25px;
-    padding:25px;
-    text-align:center;
-    border:2px solid var(--gold);
-    background:#fffaf0;
-    border-radius:6px;
+.submit-btn{
+    grid-column:1/-1;
+    border:none;
+    background:#111;
+    color:#d4af37;
+    padding:16px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    border-radius:4px;
 }
 
-.payment-box h3{
-    font-family:'Cinzel',serif;
-    margin-bottom:8px;
-}
-
-.payment-price{
-    font-size:30px;
-    font-weight:800;
+.submit-btn:hover{
+    background:#d4af37;
     color:#111;
-    margin:10px 0 15px;
 }
 
-#paymentStatus{
-    display:none;
-    margin-top:15px;
-    padding:12px;
-    background:#ecfff1;
-    color:#17652d;
-    border:1px solid #a9ddb7;
+@media(max-width:650px){
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-group.full,
+    .declaration,
+    .submit-btn{
+        grid-column:auto;
+    }
+
+    .form-box{
+        padding:22px;
+    }
 }
 
 /* ================= PROFILE ================= */
 
 .profile{
-    background:var(--cream);
+    background:white;
 }
 
 .profile-grid{
+    max-width:1050px;
+    margin:auto;
     display:grid;
-    grid-template-columns:330px 1fr;
-    gap:60px;
+    grid-template-columns:350px 1fr;
+    gap:50px;
     align-items:center;
 }
 
 .profile-photo{
-    min-height:430px;
-    border:8px solid #fff;
-    box-shadow:var(--shadow);
-    background:
-      linear-gradient(135deg,rgba(201,162,39,.35),rgba(0,0,0,.2)),
-      url("images/profile.jpg") center/cover;
+    width:100%;
+    height:450px;
+    object-fit:cover;
+    border-radius:8px;
 }
 
-.profile-content h2{
-    font-family:'Cinzel',serif;
-    font-size:45px;
+.profile-text h3{
+    font-family:Georgia,serif;
+    font-size:36px;
+    margin-bottom:10px;
 }
 
-.profile-content .role{
-    color:var(--gold);
-    font-weight:800;
-    margin:10px 0 25px;
+.profile-text h4{
+    color:#c49b27;
+    margin-bottom:25px;
 }
 
-.profile-content p{
-    line-height:1.9;
-    color:#666;
-    margin-bottom:20px;
+.profile-text p{
+    line-height:1.8;
+    color:#555;
+    margin-bottom:15px;
 }
 
-.profile-stats{
+.stats{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:12px;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
     margin-top:30px;
 }
 
 .stat{
-    border:1px solid var(--border);
-    padding:18px;
-    background:white;
+    border:1px solid #ddd;
+    padding:20px 10px;
     text-align:center;
 }
 
 .stat strong{
     display:block;
-    font-size:22px;
-    color:var(--gold);
+    font-size:27px;
+    color:#c49b27;
 }
 
 .stat span{
-    font-size:10px;
-    color:#777;
+    font-size:12px;
+    color:#666;
+}
+
+@media(max-width:800px){
+    .profile-grid{
+        grid-template-columns:1fr;
+    }
 }
 
 /* ================= PROJECTS ================= */
 
 .projects{
-    background:white;
+    background:#fafafa;
 }
 
 .project-grid{
+    max-width:1200px;
+    margin:auto;
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:22px;
+    gap:25px;
 }
 
 .project{
-    border:1px solid #eee;
     background:white;
-    box-shadow:0 10px 30px rgba(0,0,0,.06);
-    transition:.3s;
+    border-radius:8px;
     overflow:hidden;
+    box-shadow:0 8px 30px rgba(0,0,0,.08);
 }
 
-.project:hover{
-    transform:translateY(-6px);
-    box-shadow:var(--shadow);
-}
-
-.project-poster{
-    height:250px;
-    overflow:hidden;
-    background:#111;
-}
-
-.project-poster img{
+.project img{
     width:100%;
-    height:100%;
+    height:230px;
     object-fit:cover;
-    transition:.5s;
 }
 
-.project:hover img{
-    transform:scale(1.05);
+.project-info{
+    padding:22px;
 }
 
-.project-body{
-    padding:23px;
+.project-info h3{
+    font-family:Georgia,serif;
+    font-size:25px;
+    margin-bottom:10px;
 }
 
-.project-body small{
-    color:var(--gold);
-    font-weight:800;
-    letter-spacing:1px;
+.project-info p{
+    color:#666;
+    line-height:1.6;
+    font-size:14px;
 }
 
-.project-body h3{
-    font-family:'Cinzel',serif;
-    margin:8px 0;
-    font-size:23px;
+@media(max-width:850px){
+    .project-grid{
+        grid-template-columns:1fr 1fr;
+    }
 }
 
-.project-body p{
-    color:#777;
-    font-size:13px;
-    line-height:1.7;
+@media(max-width:550px){
+    .project-grid{
+        grid-template-columns:1fr;
+    }
 }
 
-/* ================= TV CREDITS ================= */
+/* ================= CREDITS ================= */
 
 .credits{
     background:#111;
-    color:#fff;
-}
-
-.credits .section-title{
     color:white;
 }
 
-.credit-list{
-    max-width:900px;
+.credit-table{
+    max-width:950px;
     margin:auto;
+    overflow-x:auto;
 }
 
-.credit-row{
-    display:flex;
-    justify-content:space-between;
-    gap:20px;
-    padding:20px 0;
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    padding:16px;
     border-bottom:1px solid #333;
+    text-align:left;
 }
 
-.credit-row strong{
-    color:#fff;
+th{
+    color:#d4af37;
 }
 
-.credit-row span{
-    color:var(--gold2);
-    text-align:right;
+td{
+    color:#ddd;
 }
 
 /* ================= YOUTUBE ================= */
 
 .youtube{
-    background:var(--cream);
+    text-align:center;
+    background:#fff;
 }
 
 .youtube-box{
-    max-width:950px;
+    max-width:800px;
     margin:auto;
-    background:#fff;
-    border:1px solid var(--border);
-    padding:45px;
-    text-align:center;
-    box-shadow:var(--shadow);
-}
-
-.youtube-icon{
-    width:75px;
-    height:52px;
-    margin:0 auto 20px;
-    background:#e00000;
-    border-radius:14px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#fff;
-    font-size:25px;
+    padding:45px 25px;
+    border:1px solid #ddd;
+    border-top:4px solid #d4af37;
+    border-radius:8px;
 }
 
 .youtube-box h3{
-    font-family:'Cinzel',serif;
-    font-size:30px;
-    margin-bottom:10px;
+    font-family:Georgia,serif;
+    font-size:34px;
+    margin-bottom:15px;
 }
 
 .youtube-box p{
@@ -756,237 +665,118 @@ section{
 /* ================= GALLERY ================= */
 
 .gallery{
-    background:white;
+    background:#f7f7f7;
 }
 
 .gallery-grid{
+    max-width:1200px;
+    margin:auto;
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:12px;
 }
 
-.gallery-item{
-    height:240px;
-    overflow:hidden;
-    position:relative;
-    background:#eee;
-}
-
-.gallery-item img{
+.gallery-grid img{
     width:100%;
-    height:100%;
+    height:230px;
     object-fit:cover;
-    transition:.6s;
+    border-radius:5px;
+    transition:.4s;
 }
 
-.gallery-item:hover img{
-    transform:scale(1.08);
+.gallery-grid img:hover{
+    transform:scale(1.03);
+}
+
+@media(max-width:800px){
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+    }
 }
 
 /* ================= FOOTER ================= */
 
 footer{
-    background:#111;
-    color:#aaa;
-    padding:55px 20px 25px;
+    background:#050505;
+    color:white;
+    padding:60px 6% 25px;
+    text-align:center;
+    border-top:2px solid #d4af37;
 }
 
-.footer-grid{
-    max-width:1200px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr;
-    gap:50px;
-}
-
-.footer-brand h2{
-    font-family:'Cinzel',serif;
-    color:#fff;
-    margin-bottom:15px;
-}
-
-.footer-brand h2 span{
-    color:var(--gold2);
-}
-
-.footer-brand p{
-    line-height:1.8;
-    font-size:13px;
-}
-
-.footer-col h4{
-    color:#fff;
-    margin-bottom:18px;
-}
-
-.footer-col a{
-    display:block;
+.footer-logo{
+    font-family:Georgia,serif;
+    font-size:34px;
+    color:#d4af37;
+    letter-spacing:4px;
     margin-bottom:10px;
-    font-size:13px;
 }
 
-.footer-col a:hover{
-    color:var(--gold2);
+footer p{
+    color:#999;
+    margin:8px 0;
+}
+
+.footer-contact{
+    margin:25px 0;
+}
+
+.footer-contact a{
+    color:#d4af37;
+    text-decoration:none;
 }
 
 .copyright{
-    max-width:1200px;
-    margin:40px auto 0;
+    border-top:1px solid #222;
+    margin-top:30px;
     padding-top:20px;
-    border-top:1px solid #333;
-    font-size:11px;
-    text-align:center;
-}
-
-/* ================= POPUP ================= */
-
-.modal{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.75);
-    z-index:10000;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-}
-
-.modal-box{
-    background:white;
-    max-width:500px;
-    width:100%;
-    padding:35px;
-    text-align:center;
-    border-top:5px solid var(--gold);
-}
-
-.modal-box h3{
-    font-family:'Cinzel',serif;
-    margin-bottom:15px;
-}
-
-.modal-box p{
+    font-size:12px;
     color:#666;
-    line-height:1.7;
-    font-size:14px;
 }
 
-.application-id{
-    margin:20px 0;
-    padding:15px;
-    background:#fffaf0;
-    border:1px dashed var(--gold);
-    font-weight:800;
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media(max-width:900px){
-
-    .nav-links{
-        position:absolute;
-        top:78px;
-        left:0;
-        right:0;
-        display:none;
-        flex-direction:column;
-        background:white;
-        padding:25px;
-        border-bottom:1px solid var(--border);
-    }
-
-    .nav-links.show{
-        display:flex;
-    }
-
-    .menu-btn{
-        display:block;
-    }
-
-    .hero{
-        min-height:650px;
-    }
-
-    .king-grid,
-    .profile-grid{
-        grid-template-columns:1fr;
-    }
-
-    .challenge-grid,
-    .project-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .gallery-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr 1fr;
-    }
-}
+/* ================= MOBILE ================= */
 
 @media(max-width:600px){
 
     section{
-        padding:70px 15px;
+        padding:65px 5%;
     }
 
-    .navbar{
-        padding:12px 15px;
+    .vf-mark{
+        font-size:60px;
     }
 
-    .hero-content{
-        padding:60px 20px;
+    .vf-name{
+        font-size:13px;
+        letter-spacing:5px;
     }
 
-    .hero h1{
+    .small-title{
+        font-size:11px;
+        letter-spacing:4px;
+    }
+
+    .king-title{
         font-size:48px;
     }
 
-    .hero p{
+    .tagline{
         font-size:13px;
+        letter-spacing:2px;
     }
 
-    .form-box{
-        padding:22px;
+    .section-title{
+        font-size:32px;
     }
 
-    .form-grid{
-        grid-template-columns:1fr;
+    .show-image{
+        height:300px;
     }
 
-    .form-group.full{
-        grid-column:auto;
-    }
-
-    .challenge-grid,
-    .project-grid,
-    .gallery-grid{
-        grid-template-columns:1fr;
-    }
-
-    .profile-stats{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .footer-grid{
-        grid-template-columns:1fr;
-    }
-
-    .king-points{
-        grid-template-columns:1fr;
-    }
-
-    .credit-row{
-        flex-direction:column;
-    }
-
-    .credit-row span{
-        text-align:left;
+    .profile-photo{
+        height:350px;
     }
 }
-
 </style>
 </head>
 
@@ -996,27 +786,18 @@ footer{
 
 <header>
 
-<div class="navbar">
+    <div class="header-logo">
+        VF | VASWAN FILMS
+    </div>
 
-<a href="#home" class="logo">
-KON <span>BANEGA</span> KING
-</a>
-
-<button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-<nav class="nav-links" id="navLinks">
-
-<a href="#home">HOME</a>
-<a href="#show">SHOW</a>
-<a href="#challenges">CHALLENGES</a>
-<a href="#projects">PROJECTS</a>
-<a href="#profile">KRISHNA VASWAN</a>
-<a href="#youtube">YOUTUBE</a>
-<a href="#casting">CASTING</a>
-
-</nav>
-
-</div>
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#show">SHOW</a>
+        <a href="#challenges">CHALLENGES</a>
+        <a href="#casting">CASTING</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
 
 </header>
 
@@ -1025,127 +806,103 @@ KON <span>BANEGA</span> KING
 
 <section class="hero" id="home">
 
-<div class="slide slide1 active"></div>
-<div class="slide slide2"></div>
-<div class="slide slide3"></div>
-<div class="slide slide4"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
+    <div class="hero-slide"></div>
 
-<div class="hero-content">
+    <div class="hero-content">
 
-<div class="small-title">K.K. ENTERTAINMENT PRESENTS</div>
+        <div class="vf-logo">
 
-<h1>
-KON BANEGA<br>
-<span>KING</span>
-</h1>
+            <div class="vf-mark">
+                VF
+            </div>
 
-<p>
-The ultimate reality adventure show where courage,
-strength, intelligence and survival come together.
-Only one contestant will earn the crown.
-</p>
+            <div class="vf-name">
+                VASWAN FILMS
+            </div>
 
-<div class="hero-buttons">
+        </div>
 
-<a href="#casting" class="btn btn-gold">
-APPLY FOR CASTING
-</a>
+        <div class="small-title">
+            PRESENTS
+        </div>
 
-<a href="#show" class="btn btn-outline">
-EXPLORE THE SHOW
-</a>
+        <h1 class="king-title">
+            KON BANEGA
+            <span>KING</span>
+        </h1>
 
-</div>
+        <div class="tagline">
+            THE ULTIMATE REALITY CHALLENGE
+        </div>
 
-</div>
+        <div class="hero-buttons">
 
-<div class="slide-dots">
+            <a href="#casting" class="btn btn-gold">
+                APPLY NOW
+            </a>
 
-<span class="dot active" onclick="goSlide(0)"></span>
-<span class="dot" onclick="goSlide(1)"></span>
-<span class="dot" onclick="goSlide(2)"></span>
-<span class="dot" onclick="goSlide(3)"></span>
+            <a href="#show" class="btn btn-outline">
+                EXPLORE SHOW
+            </a>
 
-</div>
+        </div>
+
+    </div>
 
 </section>
 
 
 <!-- ================= SHOW ================= -->
 
-<section class="king-intro" id="show">
+<section class="show" id="show">
 
-<div class="container">
+    <h2 class="section-title">
+        WHAT IS <span>KON BANEGA KING?</span>
+    </h2>
 
-<div class="section-head">
+    <p class="section-subtitle">
+        A high-energy reality adventure where courage, intelligence,
+        teamwork and determination decide who has what it takes to become
+        the ultimate KING.
+    </p>
 
-<div class="section-kicker">THE ULTIMATE CHALLENGE</div>
+    <div class="show-grid">
 
-<h2 class="section-title">
-Who Will Become The King?
-</h2>
+        <img
+        class="show-image"
+        src="https://images.unsplash.com/photo-1521336575822-6da63fb45455?auto=format&fit=crop&w=1200&q=90"
+        alt="Adventure Challenge">
 
-<p class="section-text">
-Not just a competition. A test of courage, endurance,
-strategy and determination.
-</p>
+        <div class="show-text">
 
-</div>
+            <div class="gold-line"></div>
 
-<div class="king-grid">
+            <h3>
+                Are You Ready To Become The King?
+            </h3>
 
-<div>
+            <p>
+                Enter a world of adventure, physical challenges,
+                mental battles and unexpected twists.
+            </p>
 
-<div class="king-card">
+            <p>
+                Every challenge will test your limits. Every decision
+                will matter. Only the strongest and smartest contestant
+                can reach the final throne.
+            </p>
 
-<h3>The Fight For The Crown</h3>
+            <p>
+                This is not just a competition.
+                <strong>This is your chance to become KING.</strong>
+            </p>
 
-<p>
-Contestants will face physically demanding challenges,
-mental tests and unpredictable situations designed to
-discover the strongest and smartest competitor.
-</p>
+        </div>
 
-<p>
-Every challenge brings them closer to the crown.
-Every mistake can change the game.
-</p>
-
-<a href="#casting" class="btn btn-gold">
-BECOME A CONTESTANT
-</a>
-
-</div>
-
-</div>
-
-<div class="king-points">
-
-<div class="point">
-<strong>01 — COURAGE</strong>
-<span>Face challenges without fear.</span>
-</div>
-
-<div class="point">
-<strong>02 — STRENGTH</strong>
-<span>Push your physical limits.</span>
-</div>
-
-<div class="point">
-<strong>03 — STRATEGY</strong>
-<span>Think before you act.</span>
-</div>
-
-<div class="point">
-<strong>04 — SURVIVAL</strong>
-<span>Stay strong until the end.</span>
-</div>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
@@ -1154,61 +911,66 @@ BECOME A CONTESTANT
 
 <section class="challenges" id="challenges">
 
-<div class="container">
+    <h2 class="section-title">
+        THE <span>CHALLENGES</span>
+    </h2>
 
-<div class="section-head">
+    <p class="section-subtitle">
+        Adventure. Strength. Speed. Strategy.
+        Face challenges designed to test every side of your personality.
+    </p>
 
-<div class="section-kicker">FACE YOUR FEAR</div>
+    <div class="challenge-grid">
 
-<h2 class="section-title">The Challenges</h2>
+        <div class="challenge">
 
-<p class="section-text">
-Different environments. Different obstacles.
-One ultimate goal — become the King.
-</p>
+            <img
+            src="https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=900&q=90"
+            alt="Rope Challenge">
 
-</div>
+            <div class="challenge-overlay">
+                <h3>ROPE CHALLENGE</h3>
+            </div>
 
-<div class="challenge-grid">
+        </div>
 
-<div class="challenge">
+        <div class="challenge">
 
-<img src="https://images.unsplash.com/photo-1767385206119-f6671d92327a?auto=format&fit=crop&w=1000&q=85" alt="Tree climbing challenge">
+            <img
+            src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=900&q=90"
+            alt="Jungle Challenge">
 
-<div class="challenge-info">
-<span>CHALLENGE 01</span>
-<h3>JUNGLE CLIMB</h3>
-</div>
+            <div class="challenge-overlay">
+                <h3>JUNGLE MISSION</h3>
+            </div>
 
-</div>
+        </div>
 
+        <div class="challenge">
 
-<div class="challenge">
+            <img
+            src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=900&q=90"
+            alt="Running Challenge">
 
-<img src="https://images.unsplash.com/photo-1775647423221-ac87d3ec338b?auto=format&fit=crop&w=1000&q=85" alt="Rope bridge challenge">
+            <div class="challenge-overlay">
+                <h3>SPEED RUN</h3>
+            </div>
 
-<div class="challenge-info">
-<span>CHALLENGE 02</span>
-<h3>ROPE WARRIOR</h3>
-</div>
+        </div>
 
-</div>
+        <div class="challenge">
 
+            <img
+            src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=900&q=90"
+            alt="Adventure Challenge">
 
-<div class="challenge">
+            <div class="challenge-overlay">
+                <h3>ULTIMATE MISSION</h3>
+            </div>
 
-<img src="https://images.unsplash.com/photo-1762709753410-25f211f9402f?auto=format&fit=crop&w=1000&q=85" alt="Mud challenge">
+        </div>
 
-<div class="challenge-info">
-<span>CHALLENGE 03</span>
-<h3>MUD RUN</h3>
-</div>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
@@ -1217,226 +979,179 @@ One ultimate goal — become the King.
 
 <section class="casting" id="casting">
 
-<div class="container">
+    <h2 class="section-title">
+        <span>CASTING</span> APPLICATION
+    </h2>
 
-<div class="section-head">
+    <p class="section-subtitle">
+        Think you have what it takes?
+        Submit your details and take the first step toward becoming
+        the next KING.
+    </p>
 
-<div class="section-kicker">OFFICIAL CASTING</div>
+    <div class="form-box">
 
-<h2 class="section-title">
-Apply For Kon Banega King
-</h2>
+        <form id="castingForm">
 
-<p class="section-text">
-Think you have what it takes? Complete the application
-and submit your details for consideration.
-</p>
+            <div class="form-grid">
 
-</div>
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" required placeholder="Enter your name">
+                </div>
 
+                <div class="form-group">
+                    <label>Father's Name *</label>
+                    <input type="text" required placeholder="Father's name">
+                </div>
 
-<div class="form-box">
+                <div class="form-group">
+                    <label>Mother's Name</label>
+                    <input type="text" placeholder="Mother's name">
+                </div>
 
-<form id="castingForm">
+                <div class="form-group">
+                    <label>Age *</label>
+                    <input type="number" min="18" required placeholder="Age">
+                </div>
 
-<div class="form-grid">
+                <div class="form-group">
+                    <label>Gender *</label>
+                    <select required>
+                        <option value="">Select Gender</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                    </select>
+                </div>
 
-<div class="form-group">
-<label>FULL NAME *</label>
-<input type="text" id="name" required>
-</div>
+                <div class="form-group">
+                    <label>Contact Number *</label>
+                    <input type="tel" required placeholder="Mobile number">
+                </div>
 
-<div class="form-group">
-<label>FATHER'S NAME *</label>
-<input type="text" id="fatherName" required>
-</div>
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input type="email" required placeholder="Email address">
+                </div>
 
-<div class="form-group">
-<label>MOTHER'S NAME *</label>
-<input type="text" id="motherName" required>
-</div>
+                <div class="form-group">
+                    <label>Instagram Link</label>
+                    <input type="url" placeholder="Instagram profile URL">
+                </div>
 
-<div class="form-group">
-<label>AGE *</label>
-<input type="number" id="age" min="18" max="70" required>
-</div>
+                <div class="form-group full">
+                    <label>YouTube Video Link</label>
+                    <input type="url" placeholder="Paste your introduction video link">
+                </div>
 
-<div class="form-group">
-<label>GENDER *</label>
+                <div class="form-group full">
+                    <label>Address *</label>
+                    <textarea required placeholder="Complete address"></textarea>
+                </div>
 
-<select id="gender" required>
+                <div class="form-group full">
+                    <label>Upload Photo</label>
+                    <input type="file" accept="image/*">
+                </div>
 
-<option value="">Select Gender</option>
-<option>Male</option>
-<option>Female</option>
-<option>Other</option>
+                <div class="form-group full">
+                    <label>Upload Introduction Video</label>
+                    <input type="file" accept="video/*">
+                </div>
 
-</select>
+                <div class="declaration">
 
-</div>
+                    <input type="checkbox" required>
 
+                    <span>
+                        I confirm that the information provided by me is correct
+                        and I agree to the casting/application terms of
+                        Kon Banega King.
+                    </span>
 
-<div class="form-group">
-<label>EMAIL *</label>
-<input type="email" id="email" required>
-</div>
+                </div>
 
+                <button
+                type="submit"
+                class="submit-btn">
+                    SUBMIT APPLICATION
+                </button>
 
-<div class="form-group">
-<label>CONTACT NUMBER *</label>
-<input type="tel" id="phone" pattern="[0-9]{10}" maxlength="10" required>
-</div>
+            </div>
 
+        </form>
 
-<div class="form-group">
-<label>INSTAGRAM PROFILE LINK</label>
-<input type="url" id="instagram" placeholder="https://instagram.com/">
-</div>
-
-
-<div class="form-group full">
-<label>FULL ADDRESS *</label>
-
-<textarea id="address" required></textarea>
-
-</div>
-
-
-<div class="form-group full">
-<label>YOUTUBE VIDEO / AUDITION LINK *</label>
-
-<input type="url" id="youtubeVideo" placeholder="https://youtube.com/..." required>
-
-</div>
-
-
-<div class="form-group full">
-<label>UPLOAD PHOTO</label>
-
-<input type="file" id="photo" accept="image/*">
-
-</div>
-
-</div>
-
-
-<div class="checkbox">
-
-<input type="checkbox" id="declaration" required>
-
-<label for="declaration">
-
-I confirm that the information provided by me is true and
-I agree to the casting terms and conditions. I understand
-that submission/payment does not guarantee selection.
-
-</label>
-
-</div>
-
-
-<div class="payment-box">
-
-<h3>CASTING REGISTRATION</h3>
-
-<div class="payment-price">₹199</div>
-
-<p>
-Complete the application and proceed to secure payment.
-</p>
-
-<button type="submit" class="btn btn-gold">
-PAY & SUBMIT APPLICATION
-</button>
-
-<div id="paymentStatus"></div>
-
-</div>
-
-</form>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
 <!-- ================= PROFILE ================= -->
 
-<section class="profile" id="profile">
+<section class="profile">
 
-<div class="container">
+    <h2 class="section-title">
+        <span>KRISHNA VASWAN</span>
+    </h2>
 
-<div class="section-head">
+    <p class="section-subtitle">
+        Actor • Producer • Writer • Director
+    </p>
 
-<div class="section-kicker">CREATOR & ENTERTAINER</div>
+    <div class="profile-grid">
 
-<h2 class="section-title">
-Krishna Vaswan
-</h2>
+        <img
+        class="profile-photo"
+        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=90"
+        alt="Krishna Vaswan">
 
-</div>
+        <div class="profile-text">
 
-<div class="profile-grid">
+            <div class="gold-line"></div>
 
-<div class="profile-photo"></div>
+            <h3>
+                Krishna Vaswan
+            </h3>
 
-<div class="profile-content">
+            <h4>
+                Actor | Producer | Writer | Director
+            </h4>
 
-<h2>Krishna Vaswan</h2>
+            <p>
+                Krishna Vaswan is a Mumbai-based actor and filmmaker
+                associated with television, advertising, web content
+                and film production.
+            </p>
 
-<div class="role">
-ACTOR • PRODUCER • WRITER • DIRECTOR
-</div>
+            <p>
+                He has worked across television projects and is also
+                developing original film and reality-show concepts
+                under his production initiatives.
+            </p>
 
-<p>
-Krishna Vaswan is a Mumbai-based actor and filmmaker
-associated with television, advertisements, web content
-and film projects.
-</p>
+            <div class="stats">
 
-<p>
-With experience across acting and production, his work
-includes television serials, advertisements, web series
-and independent film projects.
-</p>
+                <div class="stat">
+                    <strong>200+</strong>
+                    <span>TV Episodes</span>
+                </div>
 
-<p>
-He is also associated with K.K. Entertainment and
-continues to develop new film, web-series and reality
-content.
-</p>
+                <div class="stat">
+                    <strong>5</strong>
+                    <span>Ads</span>
+                </div>
 
-<div class="profile-stats">
+                <div class="stat">
+                    <strong>1</strong>
+                    <span>Web Series</span>
+                </div>
 
-<div class="stat">
-<strong>200+</strong>
-<span>TV EPISODES</span>
-</div>
+            </div>
 
-<div class="stat">
-<strong>5</strong>
-<span>ADS</span>
-</div>
+        </div>
 
-<div class="stat">
-<strong>1</strong>
-<span>WEB SERIES</span>
-</div>
-
-<div class="stat">
-<strong>30</strong>
-<span>AGE</span>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
@@ -1445,184 +1160,138 @@ content.
 
 <section class="projects" id="projects">
 
-<div class="container">
+    <h2 class="section-title">
+        OUR <span>PROJECTS</span>
+    </h2>
 
-<div class="section-head">
+    <p class="section-subtitle">
+        Selected film, web and entertainment projects.
+    </p>
 
-<div class="section-kicker">OUR WORK</div>
+    <div class="project-grid">
 
-<h2 class="section-title">
-Projects & Filmography
-</h2>
+        <div class="project">
 
-<p class="section-text">
-Selected projects associated with Krishna Vaswan
-and K.K. Entertainment.
-</p>
+            <img
+            src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1000&q=90"
+            alt="Gunnah">
 
-</div>
+            <div class="project-info">
 
+                <h3>GUNNAH</h3>
 
-<div class="project-grid">
+                <p>
+                    Crime thriller web series.
+                    Presented by K.K. Entertainment.
+                    Produced and written by Krishna Vaswan.
+                </p>
 
+            </div>
 
-<div class="project">
+        </div>
 
-<div class="project-poster">
 
-<img src="images/gunnah.jpg"
-alt="Gunnah Web Series"
-onerror="this.src='https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1000&q=85'">
+        <div class="project">
 
-</div>
+            <img
+            src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1000&q=90"
+            alt="Aakhiri Ticket">
 
-<div class="project-body">
+            <div class="project-info">
 
-<small>WEB SERIES • CRIME THRILLER</small>
+                <h3>AAKHIRI TICKET</h3>
 
-<h3>Gunnah</h3>
+                <p>
+                    A festival-oriented emotional story.
+                    Written & Directed by Krishna Vaswan.
+                </p>
 
-<p>
-A crime-thriller project presented by K.K. Entertainment.
-</p>
+            </div>
 
-</div>
+        </div>
 
-</div>
 
+        <div class="project">
 
-<div class="project">
+            <img
+            src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=90"
+            alt="King Kon">
 
-<div class="project-poster">
+            <div class="project-info">
 
-<img src="images/aakhiri-ticket.jpg"
-alt="Aakhiri Ticket"
-onerror="this.src='https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1000&q=85'">
+                <h3>KING KON</h3>
 
-</div>
+                <p>
+                    Produced by KK Entertainment.
+                    A concept built around attitude, ambition
+                    and the desire to become the KING.
+                </p>
 
-<div class="project-body">
+            </div>
 
-<small>SHORT FILM</small>
+        </div>
 
-<h3>Aakhiri Ticket</h3>
 
-<p>
-Written & Directed by Krishna Vaswan.
-A festival-oriented emotional story.
-</p>
+        <div class="project">
 
-</div>
+            <img
+            src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1000&q=90"
+            alt="Army Man">
 
-</div>
+            <div class="project-info">
 
+                <h3>ARMY MAN</h3>
 
-<div class="project">
+                <p>
+                    Army Man: A Love Story —
+                    romance, patriotism and the border.
+                </p>
 
-<div class="project-poster">
+            </div>
 
-<img src="images/king-kon.jpg"
-alt="King Kon"
-onerror="this.src='https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=85'">
+        </div>
 
-</div>
 
-<div class="project-body">
+        <div class="project">
 
-<small>FILM PROJECT</small>
+            <img
+            src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=1000&q=90"
+            alt="Vardi">
 
-<h3>King Kon</h3>
+            <div class="project-info">
 
-<p>
-Produced by K.K. Entertainment.
-A project built around attitude, identity and power.
-</p>
+                <h3>VARDI ME DIL DHADAKTA HAI</h3>
 
-</div>
+                <p>
+                    A dramatic love story built around duty,
+                    emotions and relationships.
+                </p>
 
-</div>
+            </div>
 
+        </div>
 
-<div class="project">
 
-<div class="project-poster">
+        <div class="project">
 
-<img src="images/army-man.jpg"
-alt="Army Man A Love Story"
-onerror="this.src='https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=1000&q=85'">
+            <img
+            src="https://images.unsplash.com/photo-1533922928707-ff1a5d5d9f52?auto=format&fit=crop&w=1000&q=90"
+            alt="Love Agreement">
 
-</div>
+            <div class="project-info">
 
-<div class="project-body">
+                <h3>LOVE AGREEMENT</h3>
 
-<small>FEATURE FILM</small>
+                <p>
+                    A simple relationship story with a
+                    social and emotional message.
+                </p>
 
-<h3>Army Man: A Love Story</h3>
+            </div>
 
-<p>
-A romance and patriotism-based feature concept set
-around love and the border.
-</p>
+        </div>
 
-</div>
-
-</div>
-
-
-<div class="project">
-
-<div class="project-poster">
-
-<img src="images/vardi.jpg"
-alt="Vardi Me Dil Dhadakta Hai"
-onerror="this.src='https://images.unsplash.com/photo-1524498250077-390f9e378fc0?auto=format&fit=crop&w=1000&q=85'">
-
-</div>
-
-<div class="project-body">
-
-<small>FILM CONCEPT</small>
-
-<h3>Vardi Me Dil Dhadakta Hai</h3>
-
-<p>
-A story concept combining duty, emotions and love.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="project">
-
-<div class="project-poster">
-
-<img src="images/love-agreement.jpg"
-alt="Love Agreement"
-onerror="this.src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1000&q=85'">
-
-</div>
-
-<div class="project-body">
-
-<small>ROMANCE</small>
-
-<h3>Love Agreement</h3>
-
-<p>
-A compact relationship story designed around love,
-choices and a social message.
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
@@ -1631,97 +1300,120 @@ choices and a social message.
 
 <section class="credits">
 
-<div class="container">
+    <h2 class="section-title">
+        TV & <span>MEDIA CREDITS</span>
+    </h2>
 
-<div class="section-head">
+    <p class="section-subtitle">
+        Selected television and advertising work.
+    </p>
 
-<div class="section-kicker">TELEVISION & ADVERTISING</div>
+    <div class="credit-table">
 
-<h2 class="section-title">Selected Credits</h2>
+        <table>
 
-</div>
+            <thead>
+                <tr>
+                    <th>Project</th>
+                    <th>Episode / Work</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
 
-<div class="credit-list">
+            <tbody>
 
-<div class="credit-row">
-<strong>Rang jaun tere rang main</strong>
-<span>Episode 126</span>
-</div>
+                <tr>
+                    <td>Rang Jaun Tere Rang Main</td>
+                    <td>Episode 126</td>
+                    <td>TV Serial</td>
+                </tr>
 
-<div class="credit-row">
-<strong>Devaniwat</strong>
-<span>Season 1 • Episode 28</span>
-</div>
+                <tr>
+                    <td>Devaniwat</td>
+                    <td>Season 1 – Episode 28</td>
+                    <td>TV Serial</td>
+                </tr>
 
-<div class="credit-row">
-<strong>Ramayana Love Kush Kaand</strong>
-<span>Television Project</span>
-</div>
+                <tr>
+                    <td>Ramayana Love Kush Kaand</td>
+                    <td>TV Project</td>
+                    <td>TV</td>
+                </tr>
 
-<div class="credit-row">
-<strong>Suhagan</strong>
-<span>Episode 30</span>
-</div>
+                <tr>
+                    <td>Suhagan</td>
+                    <td>Episode 30</td>
+                    <td>TV Serial</td>
+                </tr>
 
-<div class="credit-row">
-<strong>Veer Hanuman</strong>
-<span>Episode 48</span>
-</div>
+                <tr>
+                    <td>Veer Hanuman</td>
+                    <td>Episode 48</td>
+                    <td>TV Serial</td>
+                </tr>
 
-<div class="credit-row">
-<strong>Gunnah</strong>
-<span>Web Series</span>
-</div>
+                <tr>
+                    <td>Election Commission 2024</td>
+                    <td>With Vijay Varma</td>
+                    <td>Advertisement</td>
+                </tr>
 
-<div class="credit-row">
-<strong>Election Commission 2024</strong>
-<span>Advertisement • Vijay Verma</span>
-</div>
+                <tr>
+                    <td>Gunnah</td>
+                    <td>Web Series</td>
+                    <td>Web</td>
+                </tr>
 
-</div>
+            </tbody>
 
-</div>
+        </table>
+
+    </div>
 
 </section>
 
 
 <!-- ================= YOUTUBE ================= -->
 
-<section class="youtube" id="youtube">
+<section class="youtube">
 
-<div class="container">
+    <h2 class="section-title">
+        WATCH <span>OUR WORK</span>
+    </h2>
 
-<div class="section-head">
+    <p class="section-subtitle">
+        Follow Vaswan Films for films, songs, web projects,
+        behind-the-scenes content and upcoming entertainment projects.
+    </p>
 
-<div class="section-kicker">WATCH OUR WORK</div>
+    <div class="youtube-box">
 
-<h2 class="section-title">Krishna Vaswan Films</h2>
+        <h3>
+            VASWAN FILMS
+        </h3>
 
-</div>
+        <p>
+            Official YouTube channel of Vaswan Films.
+        </p>
 
-<div class="youtube-box">
+        <a
+        href="https://www.youtube.com/@Krishnavaswanfilms"
+        target="_blank"
+        class="btn btn-gold">
+            VISIT YOUTUBE CHANNEL
+        </a>
 
-<div class="youtube-icon">▶</div>
+        <br><br>
 
-<h3>Official YouTube Channel</h3>
+        <a
+        href="https://youtu.be/_50br1r5L54"
+        target="_blank"
+        class="btn btn-outline"
+        style="color:#111;border-color:#111;">
+            WATCH GUNNAH
+        </a>
 
-<p>
-Watch films, songs, web-series projects, behind-the-scenes
-content and upcoming work from Krishna Vaswan Films.
-</p>
-
-<a
-href="https://www.youtube.com/@Krishnavaswanfilms"
-target="_blank"
-class="btn btn-gold">
-
-WATCH ON YOUTUBE
-
-</a>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
@@ -1730,400 +1422,114 @@ WATCH ON YOUTUBE
 
 <section class="gallery">
 
-<div class="container">
+    <h2 class="section-title">
+        <span>GALLERY</span>
+    </h2>
 
-<div class="section-head">
+    <p class="section-subtitle">
+        Moments from our creative world.
+    </p>
 
-<div class="section-kicker">VISUAL WORLD</div>
+    <div class="gallery-grid">
 
-<h2 class="section-title">Gallery</h2>
+        <img
+        src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=85"
+        alt="Gallery">
 
-</div>
+        <img
+        src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=800&q=85"
+        alt="Gallery">
 
-<div class="gallery-grid">
+        <img
+        src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=85"
+        alt="Gallery">
 
-<div class="gallery-item">
-<img src="images/gallery1.jpg"
-alt="Production gallery"
-onerror="this.src='https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=85'">
-</div>
+        <img
+        src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=85"
+        alt="Gallery">
 
-<div class="gallery-item">
-<img src="images/gallery2.jpg"
-alt="Film production"
-onerror="this.src='https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=900&q=85'">
-</div>
+        <img
+        src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=85"
+        alt="Gallery">
 
-<div class="gallery-item">
-<img src="images/gallery3.jpg"
-alt="Film camera"
-onerror="this.src='https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900&q=85'">
-</div>
+        <img
+        src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=85"
+        alt="Gallery">
 
-<div class="gallery-item">
-<img src="images/gallery4.jpg"
-alt="Cinema production"
-onerror="this.src='https://images.unsplash.com/photo-1485095329183-d0797cdc5676?auto=format&fit=crop&w=900&q=85'">
-</div>
+        <img
+        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=85"
+        alt="Gallery">
 
-</div>
+        <img
+        src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=800&q=85"
+        alt="Gallery">
 
-</div>
+    </div>
 
 </section>
 
 
 <!-- ================= FOOTER ================= -->
 
-<footer>
+<footer id="contact">
 
-<div class="footer-grid">
+    <div class="footer-logo">
+        VF
+    </div>
 
-<div class="footer-brand">
+    <h3>
+        VASWAN FILMS
+    </h3>
 
-<h2>
-K.K. <span>ENTERTAINMENT</span>
-</h2>
+    <p>
+        A K.K. Entertainment Initiative
+    </p>
 
-<p>
-Film, television, web series, reality content and
-entertainment production.
-</p>
+    <div class="footer-contact">
 
-</div>
+        <p>
+            Email:
+            <a href="mailto:Vaswankrishna@gmail.com">
+                Vaswankrishna@gmail.com
+            </a>
+        </p>
 
+        <p>
+            Production:
+            <a href="mailto:Comedykrishna4@gmail.com">
+                Comedykrishna4@gmail.com
+            </a>
+        </p>
 
-<div class="footer-col">
+        <p>
+            Mumbai, India
+        </p>
 
-<h4>QUICK LINKS</h4>
+    </div>
 
-<a href="#home">Home</a>
-<a href="#show">Kon Banega King</a>
-<a href="#projects">Projects</a>
-<a href="#casting">Casting</a>
-
-</div>
-
-
-<div class="footer-col">
-
-<h4>CONNECT</h4>
-
-<a href="https://www.youtube.com/@Krishnavaswanfilms" target="_blank">
-YouTube
-</a>
-
-<a href="mailto:vaswankrishna@gmail.com">
-Email
-</a>
-
-<a href="mailto:Comedykrishna4@gmail.com">
-Production Enquiry
-</a>
-
-</div>
-
-</div>
-
-
-<div class="copyright">
-
-© 2026 K.K. Entertainment • Kon Banega King • All Rights Reserved
-
-</div>
+    <p class="copyright">
+        © 2026 Vaswan Films. All Rights Reserved.
+    </p>
 
 </footer>
 
 
-<!-- ================= SUCCESS MODAL ================= -->
-
-<div class="modal" id="successModal">
-
-<div class="modal-box">
-
-<h3>APPLICATION RECEIVED</h3>
-
-<p>
-Your payment was successfully processed.
-Your application will be submitted for casting review.
-</p>
-
-<div class="application-id" id="applicationId">
-Application ID
-</div>
-
-<button class="btn btn-gold" onclick="closeModal()">
-CLOSE
-</button>
-
-</div>
-
-</div>
-
+<!-- ================= SCRIPT ================= -->
 
 <script>
 
-/* ================= MOBILE MENU ================= */
-
-function toggleMenu(){
-
-    document.getElementById("navLinks").classList.toggle("show");
-
-}
-
-
-/* ================= HERO SLIDER ================= */
-
-let currentSlide = 0;
-
-const slides = document.querySelectorAll(".slide");
-const dots = document.querySelectorAll(".dot");
-
-function goSlide(index){
-
-    slides.forEach(slide => slide.classList.remove("active"));
-    dots.forEach(dot => dot.classList.remove("active"));
-
-    currentSlide = index;
-
-    slides[currentSlide].classList.add("active");
-    dots[currentSlide].classList.add("active");
-
-}
-
-setInterval(function(){
-
-    currentSlide++;
-
-    if(currentSlide >= slides.length){
-        currentSlide = 0;
-    }
-
-    goSlide(currentSlide);
-
-},5000);
-
-
-/* ================= FORM ================= */
-
-const form = document.getElementById("castingForm");
-
-form.addEventListener("submit", function(e){
+document.getElementById("castingForm").addEventListener("submit", function(e){
 
     e.preventDefault();
 
-    if(!document.getElementById("declaration").checked){
-
-        alert("Please accept the declaration.");
-        return;
-
-    }
-
-    startPayment();
-
-});
-
-
-/* ================= RAZORPAY ================= */
-
-/*
-IMPORTANT:
-
-Replace the value below with your Razorpay KEY ID.
-
-Example:
-
-const RAZORPAY_KEY_ID = "rzp_live_xxxxxxxxx";
-
-NEVER put Razorpay Secret Key here.
-*/
-
-const RAZORPAY_KEY_ID = "YOUR_RAZORPAY_KEY_ID";
-
-
-function startPayment(){
-
-    const name =
-        document.getElementById("name").value;
-
-    const email =
-        document.getElementById("email").value;
-
-    const phone =
-        document.getElementById("phone").value;
-
-
-    if(RAZORPAY_KEY_ID === "YOUR_RAZORPAY_KEY_ID"){
-
-        alert(
-          "Razorpay Key ID अभी add नहीं की गई है।\n\n" +
-          "Code में RAZORPAY_KEY_ID की जगह अपनी Razorpay Key ID डालें।"
-        );
-
-        return;
-
-    }
-
-
-    const options = {
-
-        key: RAZORPAY_KEY_ID,
-
-        amount: 19900,
-
-        currency:"INR",
-
-        name:"K.K. Entertainment",
-
-        description:"Kon Banega King Casting Registration",
-
-        image:"",
-
-        prefill:{
-
-            name:name,
-
-            email:email,
-
-            contact:phone
-
-        },
-
-        notes:{
-
-            show:"Kon Banega King",
-
-            applicant:name
-
-        },
-
-        theme:{
-
-            color:"#c9a227"
-
-        },
-
-        handler:function(response){
-
-            paymentSuccess(response);
-
-        },
-
-        modal:{
-
-            ondismiss:function(){
-
-                showStatus(
-                  "Payment cancelled. Your application was not submitted.",
-                  true
-                );
-
-            }
-
-        }
-
-    };
-
-
-    const rzp = new Razorpay(options);
-
-    rzp.open();
-
-}
-
-
-/* ================= PAYMENT SUCCESS ================= */
-
-function paymentSuccess(response){
-
-    const applicationID =
-        "KBK-" +
-        new Date().getFullYear() +
-        "-" +
-        Math.floor(100000 + Math.random() * 900000);
-
-
-    document.getElementById("applicationId").innerText =
-        "Application ID: " + applicationID;
-
-
-    document.getElementById("successModal").style.display="flex";
-
-
-    /*
-    IMPORTANT:
-
-    Real production system में यहां payment ID को
-    Vercel API पर भेजना होगा।
-
-    Example future API:
-
-    fetch("/api/submit-application", {
-        method:"POST",
-        headers:{
-            "Content-Type":"application/json"
-        },
-        body:JSON.stringify({
-            applicationID:applicationID,
-            paymentID:response.razorpay_payment_id,
-            name:document.getElementById("name").value,
-            email:document.getElementById("email").value
-        })
-    });
-
-    Vercel backend:
-    1. Razorpay payment verify करेगा
-    2. Application PDF बनाएगा
-    3. PDF email करेगा
-    4. Application database में save करेगा
-    */
-
-}
-
-
-/* ================= STATUS ================= */
-
-function showStatus(message,error=false){
-
-    const status =
-        document.getElementById("paymentStatus");
-
-    status.style.display="block";
-
-    status.innerText=message;
-
-    if(error){
-
-        status.style.background="#fff0f0";
-        status.style.color="#a00000";
-
-    }
-
-}
-
-
-/* ================= MODAL ================= */
-
-function closeModal(){
-
-    document.getElementById("successModal").style.display="none";
-
-}
-
-
-/* ================= NAV CLOSE ================= */
-
-document.querySelectorAll(".nav-links a").forEach(link => {
-
-    link.addEventListener("click",function(){
-
-        document.getElementById("navLinks").classList.remove("show");
-
-    });
+    alert(
+        "Thank you for applying for Kon Banega King! " +
+        "Your application has been received."
+    );
 
 });
 
 </script>
 
 </body>
-  </html>
+</html>
