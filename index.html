@@ -2060,24 +2060,107 @@ castingForm.addEventListener("submit",function(event){
 
 /* ================= PAYMENT ================= */
 
-/*
-IMPORTANT:
+async function startPayment() {
+    const form = document.getElementById("castingForm");
 
-Do NOT put your Razorpay SECRET KEY inside this HTML.
+    const formData = new FormData(form);
 
-The real payment system should connect to a secure Vercel
-backend/API.
+    const data = {
+        name: formData.get("name"),
+        email: formData.get("email"),
+        phone: formData.get("phone"),
+        city: formData.get("city"),
+        portfolio: formData.get("portfolio") || ""
+    };
 
-This temporary function only shows a message until the
-Razorpay backend is connected.
-*/
+    if (!data.name || !data.email || !data.phone || !data.city) {
+        alert("Please complete all required details first.");
+        return;
+    }
 
-function startPayment(){
+    const paymentButton = document.querySelector(".payment-btn");
 
-    alert(
-        "Payment gateway will be connected here. Razorpay verification should be handled securely through the Vercel backend."
-    );
+    paymentButton.disabled = true;
+    paymentButton.innerText = "PLEASE WAIT...";
 
+    try {
+        const response = await fetch("/api/create-order", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+            throw new Error(result.error || "Unable to create payment order.");
+        }
+
+        const options = {
+            key: result.key_id,
+            amount: result.amount,
+            currency: result.currency,
+            name: "VASWAN FILMS",
+            description: "Kon Banega King - Casting Application",
+            order_id: result.order_id,
+
+            prefill: {
+                name: data.name,
+                email: data.email,
+                contact: data.phone
+            },
+
+            theme: {
+                color: "#d4af37"
+            },
+
+            handler: function (paymentResponse) {
+                alert(
+                    "Payment successful!\\n\\nPayment ID: " +
+                    paymentResponse.razorpay_payment_id
+                );
+
+                paymentButton.innerText = "PAYMENT SUCCESSFUL";
+                paymentButton.disabled = true;
+            },
+
+            modal: {
+                ondismiss: function () {
+                    paymentButton.disabled = false;
+                    paymentButton.innerText = "PROCEED TO PAYMENT";
+                }
+            }
+        };
+
+        const razorpay = new Razorpay(options);
+
+        razorpay.on("payment.failed", function (response) {
+            console.error(response.error);
+
+            alert(
+                "Payment failed.\\n\\n" +
+                (response.error.description || "Please try again.")
+            );
+
+            paymentButton.disabled = false;
+            paymentButton.innerText = "PROCEED TO PAYMENT";
+        });
+
+        razorpay.open();
+
+    } catch (error) {
+        console.error(error);
+
+        alert(
+            "Payment could not be started.\\n\\n" +
+            error.message
+        );
+
+        paymentButton.disabled = false;
+        paymentButton.innerText = "PROCEED TO PAYMENT";
+    }
 }
 
 
@@ -2088,6 +2171,7 @@ console.log(
 );
 
 </script>
-
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    
 </body>
     </html>
