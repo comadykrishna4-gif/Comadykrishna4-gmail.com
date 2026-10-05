@@ -1,22 +1,17 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Vaswan Films | Production House</title>
 
+<meta name="description" content="Vaswan Films - Film Production, Web Series, Casting and Entertainment.">
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
 <style>
-
-/* =========================
-   BASIC
-========================= */
-
 *{
   margin:0;
   padding:0;
@@ -29,720 +24,568 @@ html{
 
 body{
   font-family:Arial,Helvetica,sans-serif;
-  background:#ffffff;
-  color:#171717;
+  background:#fff;
+  color:#222;
+  overflow-x:hidden;
 }
 
 :root{
-  --gold:#c49a35;
-  --gold-dark:#a77b18;
-  --black:#151515;
+  --gold:#c79a28;
+  --gold-dark:#9d7617;
   --cream:#fffaf0;
-  --border:#e8dfca;
+  --black:#151515;
+  --gray:#666;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
 }
 
 .container{
-  width:92%;
-  max-width:1200px;
+  width:min(1180px,92%);
   margin:auto;
 }
 
-section{
-  padding:80px 0;
-}
-
-
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 header{
-  position:sticky;
+  position:fixed;
   top:0;
+  left:0;
+  width:100%;
   z-index:1000;
   background:rgba(255,255,255,.96);
-  border-bottom:1px solid var(--border);
+  border-bottom:1px solid rgba(199,154,40,.25);
   backdrop-filter:blur(10px);
 }
 
-.navbar{
-  min-height:75px;
-
+.nav{
+  height:76px;
   display:flex;
   align-items:center;
   justify-content:space-between;
 }
 
 .logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
+  font-size:27px;
+  font-weight:800;
+  letter-spacing:1px;
 }
 
-.logo-circle{
-  width:45px;
-  height:45px;
-
-  border-radius:50%;
-
-  background:var(--black);
+.logo span{
   color:var(--gold);
-
-  border:2px solid var(--gold);
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  font-weight:bold;
-}
-
-.logo-text{
-  font-weight:bold;
-  letter-spacing:2px;
-}
-
-.logo-text small{
-  display:block;
-  color:#888;
-  font-size:8px;
-  letter-spacing:3px;
 }
 
 .nav-links{
   display:flex;
-  gap:25px;
-  list-style:none;
+  gap:28px;
+  align-items:center;
 }
 
 .nav-links a{
-  color:#222;
-  font-size:13px;
-  font-weight:bold;
+  font-size:14px;
+  font-weight:700;
+  text-transform:uppercase;
+  transition:.3s;
 }
 
 .nav-links a:hover{
-  color:var(--gold-dark);
+  color:var(--gold);
 }
 
-.menu{
+.menu-btn{
   display:none;
-  font-size:27px;
+  border:0;
+  background:none;
+  font-size:28px;
   cursor:pointer;
 }
 
-
-/* =========================
-   HERO SLIDER
-========================= */
+/* HERO */
 
 .hero{
   position:relative;
-  min-height:680px;
+  height:100vh;
+  min-height:650px;
   overflow:hidden;
-
-  background:#f7f2e7;
+  margin-top:76px;
+  background:#111;
 }
 
 .hero-slide{
   position:absolute;
   inset:0;
-
-  background-position:center;
-  background-size:cover;
-
   opacity:0;
-
-  transition:opacity 1s ease;
+  transition:opacity 1.2s ease;
 }
 
 .hero-slide.active{
   opacity:1;
 }
 
-.hero-slide::after{
-  content:"";
+.hero-slide img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
 
+.hero-overlay{
   position:absolute;
   inset:0;
-
   background:
-  linear-gradient(
-    90deg,
-    rgba(255,255,255,.98),
-    rgba(255,255,255,.82),
-    rgba(255,255,255,.20)
-  );
+    linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.28),rgba(0,0,0,.45));
 }
 
 .hero-content{
-  position:relative;
+  position:absolute;
+  left:7%;
+  top:50%;
+  transform:translateY(-50%);
+  color:#fff;
+  max-width:650px;
   z-index:5;
-
-  min-height:680px;
-
-  display:flex;
-  align-items:center;
-}
-
-.hero-text{
-  max-width:680px;
 }
 
 .hero-label{
-  color:var(--gold-dark);
-
-  font-size:12px;
-  font-weight:bold;
-
+  color:#e6c35b;
   letter-spacing:4px;
-
-  margin-bottom:15px;
+  font-weight:bold;
+  font-size:13px;
+  margin-bottom:18px;
 }
 
 .hero h1{
-  font-family:Georgia,serif;
-
-  font-size:
-  clamp(45px,7vw,78px);
-
-  line-height:1.03;
-
+  font-size:clamp(45px,7vw,88px);
+  line-height:.98;
   margin-bottom:20px;
 }
 
 .hero h1 span{
-  color:var(--gold);
+  color:#e6c35b;
 }
 
 .hero p{
-  max-width:600px;
-
-  color:#666;
-
   font-size:18px;
-
+  line-height:1.7;
+  color:#eee;
   margin-bottom:28px;
 }
 
 .btn{
   display:inline-block;
-
   padding:14px 25px;
-
-  margin-right:8px;
-
-  border-radius:4px;
-
-  font-weight:bold;
-
-  transition:.25s;
-}
-
-.btn-gold{
+  border:1px solid var(--gold);
   background:var(--gold);
   color:#fff;
-}
-
-.btn-black{
-  background:var(--black);
-  color:#fff;
+  font-weight:700;
+  border-radius:3px;
+  cursor:pointer;
+  transition:.3s;
 }
 
 .btn:hover{
-  transform:translateY(-2px);
+  background:#fff;
+  color:#111;
+}
+
+.btn-outline{
+  background:transparent;
+  margin-left:10px;
 }
 
 .hero-dots{
   position:absolute;
-
-  bottom:25px;
-  left:50%;
-
-  transform:translateX(-50%);
-
-  z-index:10;
-
+  bottom:30px;
+  left:7%;
   display:flex;
   gap:8px;
+  z-index:10;
 }
 
 .hero-dot{
-  width:9px;
-  height:9px;
-
-  border-radius:50%;
-
-  border:1px solid var(--gold);
-
-  background:transparent;
+  width:35px;
+  height:3px;
+  background:#fff;
+  opacity:.45;
+  cursor:pointer;
 }
 
 .hero-dot.active{
-  background:var(--gold);
+  background:#e6c35b;
+  opacity:1;
 }
 
+/* SECTIONS */
 
-/* =========================
-   SECTION TITLE
-========================= */
-
-.section-head{
-  text-align:center;
-  margin-bottom:45px;
+section{
+  padding:90px 0;
 }
 
-.section-head small{
+.section-label{
   color:var(--gold-dark);
-
+  font-size:12px;
   letter-spacing:3px;
-
   font-weight:bold;
-
-  font-size:11px;
+  margin-bottom:12px;
 }
 
-.section-head h2{
-  font-family:Georgia,serif;
-
-  font-size:
-  clamp(35px,5vw,55px);
-
-  margin:8px 0;
+.section-title{
+  font-size:44px;
+  margin-bottom:22px;
 }
 
-.section-head h2 span{
+.section-title span{
   color:var(--gold);
 }
 
-.section-head p{
-  color:#777;
+.section-text{
+  color:var(--gray);
+  line-height:1.8;
+  font-size:16px;
 }
 
+/* ABOUT */
 
-/* =========================
-   ABOUT
-========================= */
+.about{
+  background:#fff;
+}
 
 .about-grid{
   display:grid;
-
   grid-template-columns:1fr 1fr;
-
-  gap:55px;
-
+  gap:60px;
   align-items:center;
 }
 
 .about-image{
-  min-height:460px;
-
-  border-radius:10px;
-
-  background:
-  url(
-  "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=85"
-  )
-  center/cover;
-
-  box-shadow:
-  0 20px 50px rgba(0,0,0,.12);
+  height:520px;
+  border-radius:5px;
+  overflow:hidden;
+  border:1px solid #ead9a8;
 }
 
-.gold-line{
-  width:65px;
-  height:3px;
-
-  background:var(--gold);
-
-  margin-bottom:18px;
+.about-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
-.about-text h2{
-  font-family:Georgia,serif;
-
-  font-size:48px;
-
-  line-height:1.1;
-
-  margin-bottom:20px;
+.about-box{
+  margin-top:25px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
 }
 
-.about-text h2 span{
-  color:var(--gold);
+.about-stat{
+  padding:20px;
+  background:var(--cream);
+  border:1px solid #ead9a8;
+  text-align:center;
 }
 
-.about-text p{
-  color:#666;
-
-  margin-bottom:15px;
+.about-stat strong{
+  display:block;
+  color:var(--gold-dark);
+  font-size:28px;
 }
 
-
-/* =========================
-   PROJECTS
-========================= */
+/* PROJECTS */
 
 .projects{
-  background:#faf8f2;
+  background:#fffaf2;
 }
 
 .project-grid{
   display:grid;
-
-  grid-template-columns:
-  repeat(3,1fr);
-
-  gap:22px;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  margin-top:40px;
 }
 
 .project-card{
   background:#fff;
-
-  border:1px solid var(--border);
-
-  padding:30px;
-
-  min-height:220px;
-
+  border:1px solid #ead9a8;
+  overflow:hidden;
   transition:.3s;
 }
 
 .project-card:hover{
-  transform:translateY(-5px);
-
-  box-shadow:
-  0 15px 35px rgba(0,0,0,.08);
+  transform:translateY(-7px);
+  box-shadow:0 15px 35px rgba(0,0,0,.1);
 }
 
-.project-number{
-  color:var(--gold-dark);
-
-  font-size:12px;
-
-  font-weight:bold;
-
-  letter-spacing:2px;
+.project-card img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
 }
 
-.project-card h3{
-  font-family:Georgia,serif;
-
-  font-size:28px;
-
-  margin:12px 0;
+.project-content{
+  padding:22px;
 }
 
-.project-card p{
+.project-content h3{
+  margin-bottom:9px;
+}
+
+.project-content p{
   color:#777;
-
-  font-size:14px;
+  line-height:1.6;
 }
 
-
-/* =========================
-   GALLERY
-========================= */
+/* GALLERY */
 
 .gallery{
   background:#fff;
 }
 
-.gallery-box{
-  position:relative;
-
-  max-width:1050px;
-
-  margin:auto;
-
-  background:#111;
-
-  border:5px solid #111;
-
-  border-radius:10px;
-
-  overflow:hidden;
-
-  box-shadow:
-  0 20px 50px rgba(0,0,0,.15);
-}
-
 .gallery-stage{
   position:relative;
-
-  height:
-  min(65vw,620px);
-
-  min-height:350px;
-
+  width:100%;
+  height:620px;
+  margin-top:40px;
+  overflow:hidden;
   background:#111;
+  border-radius:6px;
+  border:3px solid #ead9a8;
 }
 
-.gallery-item{
+.gallery-slide{
   position:absolute;
-
   inset:0;
-
   opacity:0;
-
-  transition:opacity .7s ease;
-
+  transition:opacity .8s ease;
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 }
 
-.gallery-item.active{
+.gallery-slide.active{
   opacity:1;
-
-  z-index:2;
 }
 
-.gallery-item img,
-.gallery-item video{
+.gallery-slide img,
+.gallery-slide video{
   width:100%;
   height:100%;
-
-  object-fit:contain;
-
-  background:#111;
+  object-fit:cover;
 }
 
-.gallery-button{
+.gallery-caption{
   position:absolute;
+  left:25px;
+  bottom:20px;
+  padding:10px 15px;
+  background:rgba(0,0,0,.65);
+  color:#fff;
+  border-left:3px solid var(--gold);
+}
 
+.gallery-controls{
+  position:absolute;
   top:50%;
-
+  left:0;
+  right:0;
+  display:flex;
+  justify-content:space-between;
   transform:translateY(-50%);
-
+  padding:0 15px;
   z-index:10;
+}
 
+.gallery-control{
   width:45px;
   height:45px;
-
   border-radius:50%;
-
   border:1px solid #fff;
-
-  background:rgba(0,0,0,.55);
-
+  background:rgba(0,0,0,.45);
   color:#fff;
-
-  font-size:26px;
-
   cursor:pointer;
+  font-size:20px;
 }
 
-.gallery-prev{
-  left:15px;
-}
-
-.gallery-next{
-  right:15px;
-}
-
-.gallery-dots{
-  position:absolute;
-
-  bottom:15px;
-
-  left:50%;
-
-  transform:translateX(-50%);
-
-  z-index:10;
-
-  display:flex;
-
-  gap:7px;
-}
-
-.gallery-dot{
-  width:8px;
-  height:8px;
-
-  border-radius:50%;
-
-  border:1px solid #fff;
-
-  background:transparent;
-}
-
-.gallery-dot.active{
-  background:var(--gold);
-}
-
-.gallery-message{
-  position:absolute;
-
-  inset:0;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  color:#aaa;
-
+.gallery-status{
   text-align:center;
+  color:#777;
+  margin-top:15px;
 }
 
-
-/* =========================
-   ADMISSION
-========================= */
+/* ADMISSION */
 
 .admission{
-  background:#faf8f2;
+  background:var(--cream);
 }
 
-.admission-box{
-  max-width:900px;
-
-  margin:auto;
-
+.form-wrap{
+  max-width:850px;
+  margin:35px auto 0;
   background:#fff;
-
-  border:1px solid var(--border);
-
+  border:1px solid #ead9a8;
   padding:35px;
-
-  border-radius:8px;
-
-  box-shadow:
-  0 15px 40px rgba(0,0,0,.06);
+  border-radius:5px;
 }
 
-.admission-box h3{
-  font-family:Georgia,serif;
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
 
+.form-group{
+  margin-bottom:18px;
+}
+
+.form-group.full{
+  grid-column:1/-1;
+}
+
+.form-group label{
+  display:block;
+  font-size:13px;
+  font-weight:bold;
+  margin-bottom:7px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+  width:100%;
+  padding:13px;
+  border:1px solid #ddd;
+  border-radius:3px;
+  outline:none;
+  font-family:inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+  border-color:var(--gold);
+}
+
+.form-group textarea{
+  min-height:120px;
+  resize:vertical;
+}
+
+.payment{
+  display:none;
+  margin-top:25px;
+  padding:25px;
+  text-align:center;
+  border:2px solid var(--gold);
+  background:#fffaf0;
+  border-radius:6px;
+}
+
+.payment h3{
+  margin-bottom:10px;
+}
+
+.price{
+  color:var(--gold-dark);
   font-size:32px;
-
-  margin-bottom:8px;
+  font-weight:bold;
+  margin:15px 0;
 }
 
-.admission-box p{
-  color:#777;
+.form-message{
+  margin-top:15px;
+  text-align:center;
+  font-weight:bold;
 }
 
+/* CONTACT */
 
-/* =========================
-   CONTACT
-========================= */
+.contact{
+  background:#151515;
+  color:#fff;
+}
+
+.contact .section-text{
+  color:#ccc;
+}
 
 .contact-grid{
   display:grid;
-
-  grid-template-columns:
-  repeat(3,1fr);
-
+  grid-template-columns:repeat(3,1fr);
   gap:20px;
+  margin-top:40px;
 }
 
 .contact-card{
-  border:1px solid var(--border);
-
+  border:1px solid #4a4025;
   padding:30px;
-
-  text-align:center;
+  background:#1c1c1c;
 }
 
 .contact-card h3{
-  font-family:Georgia,serif;
-
-  font-size:23px;
-
-  margin:10px 0;
+  color:#e6c35b;
+  margin-bottom:10px;
 }
 
 .contact-card p{
-  color:#777;
+  color:#ccc;
+  line-height:1.7;
+  word-break:break-word;
 }
 
-.contact-card a{
-  color:var(--gold-dark);
-}
-
-
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer{
-  background:var(--black);
-
+  background:#0d0d0d;
   color:#aaa;
-
+  padding:25px 0;
   text-align:center;
-
-  padding:35px 20px;
+  font-size:13px;
 }
 
-footer strong{
-  color:var(--gold);
+footer span{
+  color:#e6c35b;
 }
 
+/* MOBILE */
 
-/* =========================
-   MOBILE
-========================= */
+@media(max-width:800px){
 
-@media(max-width:850px){
-
-  .nav-links{
-    display:none;
-
-    position:absolute;
-
-    top:75px;
-
-    left:0;
-
-    width:100%;
-
-    background:#fff;
-
-    flex-direction:column;
-
-    padding:20px;
-
-    border-bottom:1px solid var(--border);
+  .nav{
+    height:68px;
   }
 
-  .nav-links.active{
-    display:flex;
+  .logo{
+    font-size:22px;
   }
 
-  .menu{
+  .menu-btn{
     display:block;
   }
 
-  .about-grid{
-    grid-template-columns:1fr;
+  .nav-links{
+    position:absolute;
+    top:68px;
+    left:0;
+    width:100%;
+    background:#fff;
+    display:none;
+    flex-direction:column;
+    padding:20px;
+    border-bottom:1px solid #ead9a8;
   }
 
-  .project-grid{
-    grid-template-columns:1fr 1fr;
+  .nav-links.open{
+    display:flex;
   }
 
-  .contact-grid{
-    grid-template-columns:1fr;
+  .hero{
+    margin-top:68px;
+    min-height:600px;
   }
 
-}
-
-@media(max-width:600px){
-
-  section{
-    padding:60px 0;
-  }
-
-  .hero,
   .hero-content{
-    min-height:610px;
+    left:6%;
+    right:6%;
   }
 
   .hero h1{
@@ -750,11 +593,36 @@ footer strong{
   }
 
   .hero p{
-    font-size:16px;
+    font-size:15px;
+  }
+
+  .btn{
+    padding:12px 18px;
+  }
+
+  .btn-outline{
+    margin-left:5px;
+  }
+
+  section{
+    padding:65px 0;
+  }
+
+  .section-title{
+    font-size:35px;
+  }
+
+  .about-grid{
+    grid-template-columns:1fr;
+    gap:30px;
   }
 
   .about-image{
-    min-height:350px;
+    height:380px;
+  }
+
+  .about-box{
+    grid-template-columns:1fr 1fr 1fr;
   }
 
   .project-grid{
@@ -762,450 +630,557 @@ footer strong{
   }
 
   .gallery-stage{
-    height:72vw;
-    min-height:300px;
+    height:430px;
   }
 
+  .form-wrap{
+    padding:20px;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .form-group.full{
+    grid-column:auto;
+  }
+
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
 }
 
-</style>
+@media(max-width:480px){
 
+  .hero h1{
+    font-size:40px;
+  }
+
+  .hero p{
+    font-size:14px;
+  }
+
+  .about-box{
+    grid-template-columns:1fr;
+  }
+
+  .gallery-stage{
+    height:350px;
+  }
+
+  .btn{
+    display:block;
+    width:max-content;
+    margin-top:8px;
+  }
+
+  .btn-outline{
+    margin-left:0;
+  }
+}
+</style>
 </head>
 
 <body>
 
-
-<!-- =========================
-     HEADER
-========================= -->
+<!-- HEADER -->
 
 <header>
+  <div class="container nav">
 
-<nav class="navbar container">
+    <a href="#home" class="logo">
+      VASWAN <span>FILMS</span>
+    </a>
 
-<a href="#home" class="logo">
+    <button class="menu-btn" id="menuBtn">☰</button>
 
-<div class="logo-circle">
-VF
-</div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#admission">Casting</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-<div class="logo-text">
-
-VASWAN FILMS
-
-<small>
-PRODUCTION HOUSE
-</small>
-
-</div>
-
-</a>
-
-
-<div
-class="menu"
-onclick="toggleMenu()"
->
-☰
-</div>
-
-
-<ul class="nav-links" id="navLinks">
-
-<li>
-<a href="#home">
-Home
-</a>
-</li>
-
-<li>
-<a href="#about">
-About
-</a>
-</li>
-
-<li>
-<a href="#projects">
-Projects
-</a>
-</li>
-
-<li>
-<a href="#gallery">
-Gallery
-</a>
-</li>
-
-<li>
-<a href="#admission">
-Admission
-</a>
-</li>
-
-<li>
-<a href="#contact">
-Contact
-</a>
-</li>
-
-</ul>
-
-</nav>
-
+  </div>
 </header>
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- HERO -->
 
-<section
-class="hero"
-id="home"
->
+<section class="hero" id="home">
 
+  <div class="hero-slide active">
+    <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2000&q=90" alt="Cinema">
+  </div>
 
-<div
-class="hero-slide active"
-style="
-background-image:url(
-'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1800&q=85'
-);
-"
-></div>
+  <div class="hero-slide">
+    <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=2000&q=90" alt="Film production">
+  </div>
 
+  <div class="hero-slide">
+    <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=2000&q=90" alt="Cinema production">
+  </div>
 
-<div
-class="hero-slide"
-style="
-background-image:url(
-'https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1800&q=85'
-);
-"
-></div>
+  <div class="hero-overlay"></div>
 
+  <div class="hero-content">
 
-<div
-class="hero-slide"
-style="
-background-image:url(
-'https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1800&q=85'
-);
-"
-></div>
+    <div class="hero-label">
+      FILM • WEB SERIES • ENTERTAINMENT
+    </div>
 
+    <h1>
+      Stories That<br>
+      <span>Stay With You.</span>
+    </h1>
 
-<div
-class="hero-slide"
-style="
-background-image:url(
-'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1800&q=85'
-);
-"
-></div>
+    <p>
+      Vaswan Films is a creative production house focused on
+      cinema, web series, casting and powerful visual storytelling.
+    </p>
 
+    <a href="#projects" class="btn">
+      Explore Projects
+    </a>
 
-<div class="hero-content container">
+    <a href="#admission" class="btn btn-outline">
+      Join Casting
+    </a>
 
-<div class="hero-text">
+  </div>
 
-<div class="hero-label">
-VASWAN FILMS • CINEMA • WEB SERIES • TALENT
-</div>
-
-<h1>
-
-Your Talent.<br>
-
-Your <span>Stage.</span><br>
-
-Your Story.
-
-</h1>
-
-<p>
-
-Creating films, web series and entertainment projects
-while giving fresh talent a professional platform.
-
-</p>
-
-<a
-href="#admission"
-class="btn btn-gold"
->
-Reality Show Admission
-</a>
-
-<a
-href="#projects"
-class="btn btn-black"
->
-Explore Projects
-</a>
-
-</div>
-
-</div>
-
-
-<div
-class="hero-dots"
-id="heroDots"
-></div>
+  <div class="hero-dots" id="heroDots"></div>
 
 </section>
 
 
-<!-- =========================
-     ABOUT
-========================= -->
+<!-- ABOUT -->
 
-<section
-class="about"
-id="about"
->
+<section class="about" id="about">
 
-<div class="container">
+  <div class="container about-grid">
 
-<div class="section-head">
+    <div class="about-image">
+      <img
+        src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=85"
+        alt="Vaswan Films">
+    </div>
 
-<small>
-ABOUT VASWAN FILMS
-</small>
+    <div>
 
-<h2>
-Where Talent Meets
-<span>Opportunity.</span>
-</h2>
+      <div class="section-label">
+        ABOUT VASWAN FILMS
+      </div>
 
-<p>
-Films, web series, reality entertainment and new talent.
-</p>
+      <h2 class="section-title">
+        Cinema With <span>Purpose.</span>
+      </h2>
 
-</div>
+      <p class="section-text">
+        Vaswan Films is an independent entertainment and production
+        platform creating films, web series, digital content and
+        opportunities for talented artists.
+      </p>
 
+      <p class="section-text" style="margin-top:15px;">
+        Our focus is on meaningful stories, professional production
+        and discovering fresh talent for the entertainment industry.
+      </p>
 
-<div class="about-grid">
+      <div class="about-box">
 
+        <div class="about-stat">
+          <strong>200+</strong>
+          Episodes
+        </div>
 
-<div class="about-image"></div>
+        <div class="about-stat">
+          <strong>5+</strong>
+          Ads
+        </div>
 
+        <div class="about-stat">
+          <strong>1+</strong>
+          Web Series
+        </div>
 
-<div class="about-text">
+      </div>
 
-<div class="gold-line"></div>
+    </div>
 
-<div class="hero-label">
-OUR VISION
-</div>
-
-<h2>
-
-Discover.
-Develop.
-<span>Deliver.</span>
-
-</h2>
-
-<p>
-
-Vaswan Films is focused on creating meaningful
-entertainment projects and discovering fresh talent.
-
-</p>
-
-<p>
-
-Our aim is to build a professional platform where
-performers, creators and filmmakers can showcase
-their work and connect with opportunities.
-
-</p>
-
-<a
-href="#admission"
-class="btn btn-gold"
->
-Apply Now
-</a>
-
-</div>
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
 
-<!-- =========================
-     PROJECTS
-========================= -->
+<!-- PROJECTS -->
 
-<section
-class="projects"
-id="projects"
->
+<section class="projects" id="projects">
 
-<div class="container">
+  <div class="container">
 
-<div class="section-head">
+    <div class="section-label">
+      OUR WORK
+    </div>
 
-<small>
-VASWAN FILMS
-</small>
+    <h2 class="section-title">
+      Selected <span>Projects.</span>
+    </h2>
 
-<h2>
-Our <span>Projects.</span>
-</h2>
+    <p class="section-text">
+      Films and digital stories created with passion and purpose.
+    </p>
 
-<p>
-Films, web series and entertainment projects.
-</p>
+    <div class="project-grid">
 
-</div>
+      <article class="project-card">
 
+        <img
+          src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=85"
+          alt="Gunnah">
 
-<div class="project-grid">
+        <div class="project-content">
+          <h3>Gunnah</h3>
+          <p>
+            A crime-thriller web series exploring the consequences
+            of wrong behaviour and misconduct.
+          </p>
+        </div>
 
-
-<div class="project-card">
-
-<div class="project-number">
-01 — SHORT FILM
-</div>
-
-<h3>
-Aakhiri Ticket
-</h3>
-
-<p>
-A story of dreams, emotions and an unforgettable journey.
-</p>
-
-</div>
+      </article>
 
 
-<div class="project-card">
+      <article class="project-card">
 
-<div class="project-number">
-02 — WEB SERIES
-</div>
+        <img
+          src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1000&q=85"
+          alt="Aakhiri Ticket">
 
-<h3>
-Gunnah
-</h3>
+        <div class="project-content">
+          <h3>Aakhiri Ticket</h3>
+          <p>
+            A heartfelt story about humanity, sacrifice and the
+            value of a single train ticket.
+          </p>
+        </div>
 
-<p>
-A crime thriller exploring wrong behaviour,
-consequences and society.
-</p>
-
-</div>
-
-
-<div class="project-card">
-
-<div class="project-number">
-03 — ENTERTAINMENT
-</div>
-
-<h3>
-Police Power
-</h3>
-
-<p>
-An entertainment project from the Vaswan Films slate.
-</p>
-
-</div>
+      </article>
 
 
-</div>
+      <article class="project-card">
 
-</div>
+        <img
+          src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1000&q=85"
+          alt="Upcoming Projects">
+
+        <div class="project-content">
+          <h3>Upcoming Projects</h3>
+          <p>
+            New films, web series and entertainment projects are
+            currently in development.
+          </p>
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<!-- =========================
-     GALLERY
-========================= -->
+<!-- GALLERY -->
 
-<section
-class="gallery"
-id="gallery"
->
+<section class="gallery" id="gallery">
 
-<div class="container">
+  <div class="container">
 
-<div class="section-head">
+    <div class="section-label">
+      BEHIND THE SCENES
+    </div>
 
-<small>
-BEHIND THE SCENES
-</small>
+    <h2 class="section-title">
+      Our <span>Gallery.</span>
+    </h2>
 
-<h2>
-Our <span>Gallery.</span>
-</h2>
-
-<p>
-Photos and videos uploaded from the admin panel
-will automatically appear here.
-</p>
-
-</div>
+    <p class="section-text">
+      Photos and videos uploaded through the production dashboard
+      automatically appear here.
+    </p>
 
 
-<div class="gallery-box">
+    <div class="gallery-stage" id="galleryStage">
 
+      <div class="gallery-slide active">
+        <img
+          src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1600&q=85"
+          alt="Production">
+        <div class="gallery-caption">
+          Vaswan Films
+        </div>
+      </div>
 
-<div
-class="gallery-stage"
-id="galleryStage"
->
+      <div class="gallery-controls">
 
-<div
-class="gallery-message"
-id="galleryMessage"
->
-Loading gallery...
-</div>
+        <button
+          class="gallery-control"
+          id="galleryPrev">
+          ‹
+        </button>
 
-</div>
+        <button
+          class="gallery-control"
+          id="galleryNext">
+          ›
+        </button>
 
+      </div>
 
-<button
-class="gallery-button gallery-prev"
-id="galleryPrev"
->
-‹
-</button>
+    </div>
 
+    <div class="gallery-status" id="galleryStatus">
+      Loading gallery...
+    </div>
 
-<button
-class="gallery-button gallery-next"
-id="galleryNext"
->
-›
-</button>
-
-
-<div
-class="gallery-dots"
-id="galleryDots"
-></div>
-
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
 
-<!-- PART 2 WILL CONTINUE HERE -->
+<!-- CASTING / ADMISSION -->
+
+<section class="admission" id="admission">
+
+  <div class="container">
+
+    <div class="section-label">
+      CASTING & TALENT
+    </div>
+
+    <h2 class="section-title">
+      Join <span>Vaswan Films.</span>
+    </h2>
+
+    <p class="section-text">
+      Submit your details and portfolio for upcoming film,
+      web series, advertisement and entertainment opportunities.
+    </p>
+
+
+    <div class="form-wrap">
+
+      <form id="castingForm">
+
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input
+              type="text"
+              id="name"
+              required
+              placeholder="Enter your full name">
+          </div>
+
+
+          <div class="form-group">
+            <label>Age *</label>
+            <input
+              type="number"
+              id="age"
+              min="1"
+              max="100"
+              required
+              placeholder="Age">
+          </div>
+
+
+          <div class="form-group">
+            <label>City *</label>
+            <input
+              type="text"
+              id="city"
+              required
+              placeholder="Mumbai">
+          </div>
+
+
+          <div class="form-group">
+            <label>Gender *</label>
+            <select id="gender" required>
+              <option value="">Select</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+
+          <div class="form-group">
+            <label>Talent *</label>
+            <select id="talent" required>
+              <option value="">Select talent</option>
+              <option>Actor</option>
+              <option>Actress</option>
+              <option>Model</option>
+              <option>Writer</option>
+              <option>Director</option>
+              <option>Cinematographer</option>
+              <option>Singer</option>
+              <option>Dancer</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+
+          <div class="form-group">
+            <label>Phone *</label>
+            <input
+              type="tel"
+              id="phone"
+              required
+              placeholder="Mobile number">
+          </div>
+
+
+          <div class="form-group">
+            <label>Email *</label>
+            <input
+              type="email"
+              id="email"
+              required
+              placeholder="Email address">
+          </div>
+
+
+          <div class="form-group">
+            <label>Portfolio / Instagram / YouTube</label>
+            <input
+              type="url"
+              id="portfolio"
+              placeholder="https://">
+          </div>
+
+
+          <div class="form-group full">
+            <label>About Your Talent</label>
+            <textarea
+              id="aboutTalent"
+              placeholder="Tell us briefly about yourself and your experience"></textarea>
+          </div>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="btn"
+          id="continuePayment">
+          Continue to Registration Fee
+        </button>
+
+      </form>
+
+
+      <div class="payment" id="paymentBox">
+
+        <h3>Registration Fee</h3>
+
+        <p>
+          Complete the ₹199 registration payment
+          to submit your casting application.
+        </p>
+
+        <div class="price">
+          ₹199
+        </div>
+
+        <button
+          class="btn"
+          id="payButton">
+          Pay ₹199 Securely
+        </button>
+
+        <div
+          class="form-message"
+          id="paymentMessage">
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+  <div class="container">
+
+    <div class="section-label">
+      GET IN TOUCH
+    </div>
+
+    <h2 class="section-title">
+      Contact <span>Us.</span>
+    </h2>
+
+    <p class="section-text">
+      For production, casting and collaboration enquiries,
+      connect with Vaswan Films.
+    </p>
+
+
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <h3>Email</h3>
+        <p>
+          Vaswankrishna@gmail.com
+        </p>
+      </div>
+
+
+      <div class="contact-card">
+        <h3>Production</h3>
+        <p>
+          K.K. Entertainment / Vaswan Films
+        </p>
+      </div>
+
+
+      <div class="contact-card">
+        <h3>Location</h3>
+        <p>
+          Mumbai, Maharashtra, India
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container">
+    © 2026 <span>Vaswan Films</span>.
+    All Rights Reserved.
+  </div>
+
+</footer>
+
 
 <script>
 
@@ -1213,14 +1188,27 @@ id="galleryDots"
    MOBILE MENU
 ========================= */
 
-function toggleMenu(){
+const menuBtn =
+  document.getElementById("menuBtn");
 
-  document
-  .getElementById("navLinks")
-  .classList
-  .toggle("active");
+const navLinks =
+  document.getElementById("navLinks");
 
-}
+menuBtn.addEventListener("click", function(){
+
+  navLinks.classList.toggle("open");
+
+});
+
+
+document.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+  link.addEventListener("click", function(){
+    navLinks.classList.remove("open");
+  });
+
+});
 
 
 /* =========================
@@ -1228,812 +1216,83 @@ function toggleMenu(){
 ========================= */
 
 const heroSlides =
-[
-  ...document.querySelectorAll(".hero-slide")
-];
+  document.querySelectorAll(".hero-slide");
 
 const heroDots =
-document.getElementById("heroDots");
+  document.getElementById("heroDots");
 
 let heroIndex = 0;
 
 
-heroSlides.forEach(
-  function(slide,index){
+/* Create dots */
 
-    const dot =
-    document.createElement("button");
+heroSlides.forEach(function(slide,index){
 
-    dot.className =
-    "hero-dot";
+  const dot =
+    document.createElement("div");
 
-    if(index === 0){
-      dot.classList.add("active");
-    }
+  dot.className =
+    "hero-dot" +
+    (index === 0 ? " active" : "");
 
-    dot.onclick =
-    function(){
-      showHero(index);
-    };
+  dot.addEventListener("click",function(){
 
-    heroDots.appendChild(dot);
+    showHero(index);
 
-  }
-);
+  });
+
+  heroDots.appendChild(dot);
+
+});
 
 
-function showHero(index){
-
-  heroIndex =
-  (index + heroSlides.length)
-  % heroSlides.length;
-
-
-  heroSlides.forEach(
-    function(slide,i){
-
-      slide.classList.toggle(
-        "active",
-        i === heroIndex
-      );
-
-    }
-  );
-
-
-  const dots =
+const heroDotItems =
   document.querySelectorAll(".hero-dot");
 
 
-  dots.forEach(
-    function(dot,i){
-
-      dot.classList.toggle(
-        "active",
-        i === heroIndex
-      );
-
-    }
-  );
-
-}
-
-
-setInterval(
-  function(){
-
-    showHero(heroIndex + 1);
-
-  },
-  5000
-);
-
-</script>
-<!-- =========================
-     REALITY SHOW ADMISSION
-========================= -->
-
-<section
-  class="admission"
-  id="admission"
-  style="background:#faf8f2;padding:80px 0;"
->
-
-  <div class="container">
-
-    <div class="section-head">
-
-      <small>
-        REGISTRATION OPEN
-      </small>
-
-      <h2>
-        Reality Show
-        <span>Admission.</span>
-      </h2>
-
-      <p>
-        Complete your registration and continue
-        to the ₹199 payment.
-      </p>
-
-    </div>
-
-
-    <div
-      style="
-      max-width:900px;
-      margin:auto;
-      background:#fff;
-      border:1px solid #e8dfca;
-      padding:35px;
-      border-radius:8px;
-      box-shadow:0 15px 40px rgba(0,0,0,.06);
-      "
-    >
-
-      <h3
-        style="
-        font-family:Georgia,serif;
-        font-size:32px;
-        margin-bottom:8px;
-        "
-      >
-        Reality Show Registration
-      </h3>
-
-      <p
-        style="
-        color:#777;
-        margin-bottom:25px;
-        "
-      >
-        Registration Fee:
-        <strong style="color:#a77b18;">
-          ₹199
-        </strong>
-      </p>
-
-
-      <form id="registrationForm">
-
-        <div
-          style="
-          display:grid;
-          grid-template-columns:1fr 1fr;
-          gap:15px;
-          "
-          class="form-row"
-        >
-
-          <div>
-
-            <label
-              style="
-              display:block;
-              font-size:13px;
-              font-weight:bold;
-              margin-bottom:6px;
-              "
-            >
-              Full Name *
-            </label>
-
-            <input
-              id="name"
-              type="text"
-              required
-              placeholder="Enter your name"
-              style="
-              width:100%;
-              padding:13px;
-              border:1px solid #ddd;
-              border-radius:4px;
-              "
-            >
-
-          </div>
-
-
-          <div>
-
-            <label
-              style="
-              display:block;
-              font-size:13px;
-              font-weight:bold;
-              margin-bottom:6px;
-              "
-            >
-              Age *
-            </label>
-
-            <input
-              id="age"
-              type="number"
-              min="18"
-              required
-              placeholder="Your age"
-              style="
-              width:100%;
-              padding:13px;
-              border:1px solid #ddd;
-              border-radius:4px;
-              "
-            >
-
-          </div>
-
-        </div>
-
-
-        <div
-          style="
-          display:grid;
-          grid-template-columns:1fr 1fr;
-          gap:15px;
-          margin-top:15px;
-          "
-          class="form-row"
-        >
-
-          <div>
-
-            <label
-              style="
-              display:block;
-              font-size:13px;
-              font-weight:bold;
-              margin-bottom:6px;
-              "
-            >
-              City *
-            </label>
-
-            <input
-              id="city"
-              type="text"
-              required
-              placeholder="Your city"
-              style="
-              width:100%;
-              padding:13px;
-              border:1px solid #ddd;
-              border-radius:4px;
-              "
-            >
-
-          </div>
-
-
-          <div>
-
-            <label
-              style="
-              display:block;
-              font-size:13px;
-              font-weight:bold;
-              margin-bottom:6px;
-              "
-            >
-              Gender *
-            </label>
-
-            <select
-              id="gender"
-              required
-              style="
-              width:100%;
-              padding:13px;
-              border:1px solid #ddd;
-              border-radius:4px;
-              background:#fff;
-              "
-            >
-
-              <option value="">
-                Select
-              </option>
-
-              <option>
-                Male
-              </option>
-
-              <option>
-                Female
-              </option>
-
-              <option>
-                Other
-              </option>
-
-            </select>
-
-          </div>
-
-        </div>
-
-
-        <div style="margin-top:15px;">
-
-          <label
-            style="
-            display:block;
-            font-size:13px;
-            font-weight:bold;
-            margin-bottom:6px;
-            "
-          >
-            Your Talent *
-          </label>
-
-          <select
-            id="talent"
-            required
-            style="
-            width:100%;
-            padding:13px;
-            border:1px solid #ddd;
-            border-radius:4px;
-            background:#fff;
-            "
-          >
-
-            <option value="">
-              Select your talent
-            </option>
-
-            <option>
-              Acting
-            </option>
-
-            <option>
-              Singing
-            </option>
-
-            <option>
-              Dancing
-            </option>
-
-            <option>
-              Comedy
-            </option>
-
-            <option>
-              Modeling
-            </option>
-
-            <option>
-              Other
-            </option>
-
-          </select>
-
-        </div>
-
-
-        <div
-          style="
-          display:grid;
-          grid-template-columns:1fr 1fr;
-          gap:15px;
-          margin-top:15px;
-          "
-          class="form-row"
-        >
-
-          <div>
-
-            <label
-              style="
-              display:block;
-              font-size:13px;
-              font-weight:bold;
-              margin-bottom:6px;
-              "
-            >
-              Contact Number *
-            </label>
-
-            <input
-              id="phone"
-              type="tel"
-              inputmode="numeric"
-              pattern="[0-9]{10}"
-              maxlength="10"
-              required
-              placeholder="10 digit mobile number"
-              style="
-              width:100%;
-              padding:13px;
-              border:1px solid #ddd;
-              border-radius:4px;
-              "
-            >
-
-          </div>
-
-
-          <div>
-
-            <label
-              style="
-              display:block;
-              font-size:13px;
-              font-weight:bold;
-              margin-bottom:6px;
-              "
-            >
-              Email ID *
-            </label>
-
-            <input
-              id="email"
-              type="email"
-              required
-              placeholder="your@email.com"
-              style="
-              width:100%;
-              padding:13px;
-              border:1px solid #ddd;
-              border-radius:4px;
-              "
-            >
-
-          </div>
-
-        </div>
-
-
-        <div style="margin-top:15px;">
-
-          <label
-            style="
-            display:block;
-            font-size:13px;
-            font-weight:bold;
-            margin-bottom:6px;
-            "
-          >
-            Portfolio / Instagram / YouTube
-          </label>
-
-          <input
-            id="portfolio"
-            type="text"
-            placeholder="Optional link"
-            style="
-            width:100%;
-            padding:13px;
-            border:1px solid #ddd;
-            border-radius:4px;
-            "
-          >
-
-        </div>
-
-
-        <div style="margin-top:15px;">
-
-          <label
-            style="
-            display:block;
-            font-size:13px;
-            font-weight:bold;
-            margin-bottom:6px;
-            "
-          >
-            About Your Talent
-          </label>
-
-          <textarea
-            id="aboutTalent"
-            placeholder="Tell us briefly about yourself and your talent"
-            style="
-            width:100%;
-            min-height:100px;
-            padding:13px;
-            border:1px solid #ddd;
-            border-radius:4px;
-            resize:vertical;
-            "
-          ></textarea>
-
-        </div>
-
-
-        <button
-          id="payButton"
-          type="submit"
-          style="
-          width:100%;
-          margin-top:20px;
-          padding:15px;
-          border:0;
-          border-radius:4px;
-          background:#c49a35;
-          color:#fff;
-          font-size:15px;
-          font-weight:bold;
-          cursor:pointer;
-          "
-        >
-          CONTINUE TO ₹199 PAYMENT
-        </button>
-
-      </form>
-
-
-      <!-- PAYMENT BOX -->
-
-      <div
-        id="paymentBox"
-        style="
-        display:none;
-        margin-top:25px;
-        padding:25px;
-        text-align:center;
-        border:2px solid #d4af37;
-        background:#fffaf0;
-        border-radius:6px;
-        "
-      >
-
-        <h3>
-          Registration Fee
-        </h3>
-
-        <div
-          style="
-          font-size:36px;
-          color:#a77b18;
-          font-weight:bold;
-          margin:8px;
-          "
-        >
-          ₹199
-        </div>
-
-        <p>
-          Secure payment via Razorpay.
-        </p>
-
-        <button
-          id="razorpayButton"
-          type="button"
-          style="
-          width:100%;
-          padding:15px;
-          border:0;
-          border-radius:4px;
-          background:#c49a35;
-          color:#fff;
-          font-weight:bold;
-          cursor:pointer;
-          margin-top:15px;
-          "
-        >
-          PAY ₹199 NOW
-        </button>
-
-        <div
-          id="paymentMessage"
-          style="
-          margin-top:12px;
-          color:#666;
-          font-size:13px;
-          "
-        ></div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     CONTACT
-========================= -->
-
-<section
-  id="contact"
-  style="
-  background:#fff;
-  padding:80px 0;
-  "
->
-
-  <div class="container">
-
-    <div class="section-head">
-
-      <small>
-        CONTACT
-      </small>
-
-      <h2>
-        Work With
-        <span>Vaswan Films.</span>
-      </h2>
-
-      <p>
-        For production, collaboration and
-        entertainment opportunities.
-      </p>
-
-    </div>
-
-
-    <div class="contact-grid">
-
-      <div class="contact-card">
-
-        <div style="font-size:30px;">
-          🎬
-        </div>
-
-        <h3>
-          Production
-        </h3>
-
-        <p>
-          Films & Web Series
-        </p>
-
-      </div>
-
-
-      <div class="contact-card">
-
-        <div style="font-size:30px;">
-          ⭐
-        </div>
-
-        <h3>
-          Talent
-        </h3>
-
-        <p>
-          Reality Show Registration
-        </p>
-
-      </div>
-
-
-      <div class="contact-card">
-
-        <div style="font-size:30px;">
-          ▶️
-        </div>
-
-        <h3>
-          YouTube
-        </h3>
-
-        <p>
-
-          <a
-            href="https://www.youtube.com/@Krishnavaswanfilms"
-            target="_blank"
-          >
-            Vaswan Films
-          </a>
-
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-  <p>
-
-    © 2026
-
-    <strong>
-      VASWAN FILMS
-    </strong>
-
-    . All Rights Reserved.
-
-  </p>
-
-</footer>
-
-
-<!-- =========================
-     RAZORPAY
-========================= -->
-
-<script
-src="https://checkout.razorpay.com/v1/checkout.js"
-></script>
-
-
-<script>
-
-/* =========================
-   HERO SLIDER
-========================= */
-
-const heroSlides =
-[
-  ...document.querySelectorAll(".hero-slide")
-];
-
-const heroDots =
-document.getElementById("heroDots");
-
-let heroIndex = 0;
-
-
-heroSlides.forEach(
-  function(slide,index){
-
-    const dot =
-    document.createElement("button");
-
-    dot.className =
-    "hero-dot";
-
-    if(index === 0){
-      dot.classList.add("active");
-    }
-
-    dot.onclick =
-    function(){
-
-      showHero(index);
-
-    };
-
-    heroDots.appendChild(dot);
-
-  }
-);
-
-
 function showHero(index){
 
-  heroIndex =
-  (index + heroSlides.length)
-  % heroSlides.length;
+  heroSlides.forEach(function(slide){
+    slide.classList.remove("active");
+  });
 
+  heroDotItems.forEach(function(dot){
+    dot.classList.remove("active");
+  });
 
-  heroSlides.forEach(
-    function(slide,i){
+  heroSlides[index].classList.add("active");
+  heroDotItems[index].classList.add("active");
 
-      slide.classList.toggle(
-        "active",
-        i === heroIndex
-      );
-
-    }
-  );
-
-
-  document
-  .querySelectorAll(".hero-dot")
-  .forEach(
-    function(dot,i){
-
-      dot.classList.toggle(
-        "active",
-        i === heroIndex
-      );
-
-    }
-  );
+  heroIndex = index;
 
 }
 
 
-setInterval(
-  function(){
+setInterval(function(){
 
-    showHero(heroIndex + 1);
+  heroIndex =
+    (heroIndex + 1) % heroSlides.length;
 
-  },
-  5000
-);
+  showHero(heroIndex);
+
+},5000);
 
 
 /* =========================
-   CLOUDINARY GALLERY
+   GALLERY
 ========================= */
+
+const galleryStage =
+  document.getElementById("galleryStage");
+
+const galleryStatus =
+  document.getElementById("galleryStatus");
+
+const galleryPrev =
+  document.getElementById("galleryPrev");
+
+const galleryNext =
+  document.getElementById("galleryNext");
 
 let galleryItems = [];
 
@@ -2042,31 +1301,25 @@ let galleryIndex = 0;
 let galleryTimer = null;
 
 
-const galleryStage =
-document.getElementById("galleryStage");
+/* Load Cloudinary gallery */
 
-const galleryDots =
-document.getElementById("galleryDots");
-
-const galleryMessage =
-document.getElementById("galleryMessage");
-
-
-async function loadCloudinaryGallery(){
+async function loadGallery(){
 
   try{
 
+    galleryStatus.innerText =
+      "Loading gallery...";
+
+
     const response =
-    await fetch(
-      "/api/gallery",
-      {
+      await fetch("/api/gallery",{
+        method:"GET",
         cache:"no-store"
-      }
-    );
+      });
 
 
     const data =
-    await response.json();
+      await response.json();
 
 
     if(
@@ -2076,424 +1329,365 @@ async function loadCloudinaryGallery(){
 
       throw new Error(
         data.error ||
-        "Gallery loading failed."
+        "Gallery unavailable"
       );
 
     }
 
 
     galleryItems =
-    Array.isArray(data.items)
-    ? data.items
-    : [];
+      data.items || [];
 
 
-    renderGallery();
+    /* Remove existing dynamic slides */
+
+    galleryStage
+      .querySelectorAll(".dynamic-gallery-slide")
+      .forEach(function(item){
+        item.remove();
+      });
 
 
-  }catch(error){
+    if(galleryItems.length === 0){
 
-    console.error(
-      "Gallery error:",
-      error
-    );
+      galleryStatus.innerText =
+        "No uploaded media yet.";
 
-
-    galleryItems = [];
-
-    galleryMessage.style.display =
-    "flex";
-
-    galleryMessage.innerText =
-    "Gallery is currently unavailable.";
-
-  }
-
-}
-
-
-function renderGallery(){
-
-  galleryStage
-  .querySelectorAll(".gallery-item")
-  .forEach(
-    function(item){
-
-      item.remove();
+      return;
 
     }
-  );
 
 
-  galleryDots.innerHTML = "";
-
-
-  if(!galleryItems.length){
-
-    galleryMessage.style.display =
-    "flex";
-
-    galleryMessage.innerText =
-    "No gallery media uploaded yet.";
-
-    return;
-
-  }
-
-
-  galleryMessage.style.display =
-  "none";
-
-
-  galleryItems.forEach(
-    function(item,index){
+    galleryItems.forEach(function(item,index){
 
       const slide =
-      document.createElement("div");
+        document.createElement("div");
 
       slide.className =
-      "gallery-item";
+        "gallery-slide dynamic-gallery-slide";
 
 
       if(index === 0){
-
-        slide.classList.add(
-          "active"
-        );
-
+        slide.classList.add("active");
       }
 
 
       if(item.type === "video"){
 
         const video =
-        document.createElement("video");
+          document.createElement("video");
 
-        video.src =
-        item.url;
+        video.src = item.url;
+        video.controls = true;
+        video.playsInline = true;
 
-        video.controls =
-        true;
-
-        video.muted =
-        true;
-
-        video.playsInline =
-        true;
-
-        video.preload =
-        "metadata";
-
-
-        slide.appendChild(
-          video
-        );
+        slide.appendChild(video);
 
       }else{
 
         const image =
-        document.createElement("img");
+          document.createElement("img");
 
-        image.src =
-        item.url;
+        image.src = item.url;
+        image.alt = "Vaswan Films Gallery";
 
-        image.alt =
-        "Vaswan Films Gallery";
+        image.loading = "lazy";
 
-        image.loading =
-        "lazy";
-
-
-        slide.appendChild(
-          image
-        );
+        slide.appendChild(image);
 
       }
 
 
-      galleryStage.appendChild(
-        slide
+      const caption =
+        document.createElement("div");
+
+      caption.className =
+        "gallery-caption";
+
+      caption.innerText =
+        "Vaswan Films";
+
+      slide.appendChild(caption);
+
+
+      galleryStage.insertBefore(
+        slide,
+        galleryStage.querySelector(".gallery-controls")
       );
 
-
-      const dot =
-      document.createElement("button");
-
-      dot.className =
-      "gallery-dot";
+    });
 
 
-      if(index === 0){
-
-        dot.classList.add(
-          "active"
-        );
-
-      }
+    galleryStatus.innerText =
+      galleryItems.length +
+      " media item(s) loaded.";
 
 
-      dot.onclick =
-      function(){
-
-        showGallery(index);
-
-      };
+    galleryIndex = 0;
 
 
-      galleryDots.appendChild(
-        dot
-      );
+    startGalleryAutoPlay();
 
-    }
-  );
+  }catch(error){
 
+    console.error(
+      "Gallery Error:",
+      error
+    );
 
-  startGallerySlider();
+    galleryStatus.innerText =
+      "Gallery could not be loaded.";
+
+  }
 
 }
 
 
+/* Change gallery slide */
+
 function showGallery(index){
 
-  if(!galleryItems.length){
+  const slides =
+    galleryStage.querySelectorAll(
+      ".dynamic-gallery-slide"
+    );
+
+
+  if(!slides.length){
     return;
   }
 
 
-  galleryIndex =
-  (index + galleryItems.length)
-  % galleryItems.length;
+  slides.forEach(function(slide){
+    slide.classList.remove("active");
+  });
 
 
-  document
-  .querySelectorAll(".gallery-item")
-  .forEach(
-    function(item,i){
-
-      item.classList.toggle(
-        "active",
-        i === galleryIndex
-      );
-
-    }
-  );
-
-
-  document
-  .querySelectorAll(".gallery-dot")
-  .forEach(
-    function(dot,i){
-
-      dot.classList.toggle(
-        "active",
-        i === galleryIndex
-      );
-
-    }
-  );
-
-}
-
-
-function startGallerySlider(){
-
-  clearInterval(
-    galleryTimer
-  );
-
-
-  if(
-    galleryItems.length > 1
-  ){
-
-    galleryTimer =
-    setInterval(
-      function(){
-
-        showGallery(
-          galleryIndex + 1
-        );
-
-      },
-      4000
-    );
-
+  if(index < 0){
+    index = slides.length - 1;
   }
 
+  if(index >= slides.length){
+    index = 0;
+  }
+
+
+  slides[index].classList.add("active");
+
+  galleryIndex = index;
+
 }
 
 
-document
-.getElementById("galleryPrev")
-.onclick =
-function(){
+/* Next */
 
-  showGallery(
-    galleryIndex - 1
-  );
+galleryNext.addEventListener(
+  "click",
+  function(){
 
-};
+    showGallery(
+      galleryIndex + 1
+    );
 
+    restartGalleryAutoPlay();
 
-document
-.getElementById("galleryNext")
-.onclick =
-function(){
-
-  showGallery(
-    galleryIndex + 1
-  );
-
-};
+  }
+);
 
 
-loadCloudinaryGallery();
+/* Previous */
+
+galleryPrev.addEventListener(
+  "click",
+  function(){
+
+    showGallery(
+      galleryIndex - 1
+    );
+
+    restartGalleryAutoPlay();
+
+  }
+);
+
+
+/* Automatic gallery slider */
+
+function startGalleryAutoPlay(){
+
+  clearInterval(galleryTimer);
+
+  galleryTimer =
+    setInterval(function(){
+
+      showGallery(
+        galleryIndex + 1
+      );
+
+    },5000);
+
+}
+
+
+function restartGalleryAutoPlay(){
+
+  startGalleryAutoPlay();
+
+}
+
+
+/* Load gallery */
+
+loadGallery();
+
+
+/* Refresh gallery every 60 seconds */
+
+setInterval(
+  loadGallery,
+  60000
+);
 
 
 /* =========================
-   RAZORPAY REGISTRATION
+   CASTING FORM
 ========================= */
 
-const registrationForm =
-document.getElementById(
-  "registrationForm"
-);
-
+const castingForm =
+  document.getElementById("castingForm");
 
 const paymentBox =
-document.getElementById(
-  "paymentBox"
-);
+  document.getElementById("paymentBox");
 
+const continuePayment =
+  document.getElementById("continuePayment");
 
-const razorpayButton =
-document.getElementById(
-  "razorpayButton"
-);
-
+const payButton =
+  document.getElementById("payButton");
 
 const paymentMessage =
-document.getElementById(
-  "paymentMessage"
-);
+  document.getElementById("paymentMessage");
 
 
-let registrationData =
-null;
+let applicantData = null;
 
 
-registrationForm.addEventListener(
+/* Form */
+
+castingForm.addEventListener(
   "submit",
   function(event){
 
     event.preventDefault();
 
 
-    if(
-      !registrationForm.checkValidity()
-    ){
-
-      registrationForm.reportValidity();
-
-      return;
-
-    }
-
-
-    registrationData = {
+    applicantData = {
 
       name:
-      document
-      .getElementById("name")
-      .value
-      .trim(),
+        document.getElementById("name").value.trim(),
 
-      email:
-      document
-      .getElementById("email")
-      .value
-      .trim(),
-
-      phone:
-      document
-      .getElementById("phone")
-      .value
-      .trim(),
+      age:
+        document.getElementById("age").value.trim(),
 
       city:
-      document
-      .getElementById("city")
-      .value
-      .trim(),
+        document.getElementById("city").value.trim(),
+
+      gender:
+        document.getElementById("gender").value,
+
+      talent:
+        document.getElementById("talent").value,
+
+      phone:
+        document.getElementById("phone").value.trim(),
+
+      email:
+        document.getElementById("email").value.trim(),
 
       portfolio:
-      document
-      .getElementById("portfolio")
-      .value
-      .trim()
+        document.getElementById("portfolio").value.trim(),
+
+      aboutTalent:
+        document.getElementById("aboutTalent").value.trim()
 
     };
 
 
     paymentBox.style.display =
-    "block";
+      "block";
 
 
-    paymentBox.scrollIntoView(
-      {
-        behavior:"smooth",
-        block:"center"
-      }
-    );
+    paymentBox.scrollIntoView({
+      behavior:"smooth",
+      block:"center"
+    });
 
   }
 );
 
 
-razorpayButton.addEventListener(
+/* =========================
+   RAZORPAY
+========================= */
+
+payButton.addEventListener(
   "click",
   async function(){
 
-    if(!registrationData){
+    if(!applicantData){
+
+      paymentMessage.innerText =
+        "Please complete the form first.";
 
       return;
 
     }
 
 
-    razorpayButton.disabled =
-    true;
-
+    payButton.disabled = true;
 
     paymentMessage.innerText =
-    "Creating secure payment order...";
+      "Creating secure payment...";
 
 
     try{
 
       const response =
-      await fetch(
-        "/api/create-order",
-        {
+        await fetch(
+          "/api/create-order",
+          {
+            method:"POST",
 
-          method:"POST",
+            headers:{
+              "Content-Type":
+                "application/json"
+            },
 
-          headers:{
-            "Content-Type":
-            "application/json"
-          },
+            body:JSON.stringify({
 
-          body:
-          JSON.stringify(
-            registrationData
-          )
+              name:
+                applicantData.name,
 
-        }
-      );
+              email:
+                applicantData.email,
+
+              phone:
+                applicantData.phone,
+
+              city:
+                applicantData.city,
+
+              portfolio:
+                applicantData.portfolio
+
+            })
+
+          }
+        );
 
 
       const data =
-      await response.json();
+        await response.json();
 
 
       if(
@@ -2512,139 +1706,152 @@ razorpayButton.addEventListener(
       const options = {
 
         key:
-        data.key_id,
+          data.key_id,
 
         amount:
-        data.amount,
+          data.amount,
 
         currency:
-        data.currency || "INR",
+          data.currency,
 
         name:
-        "Vaswan Films",
+          "Vaswan Films",
 
         description:
-        "Reality Show Registration",
+          "Casting Registration Fee",
 
         order_id:
-        data.order_id,
+          data.order_id,
 
 
-        handler:
-        async function(payment){
+        prefill:{
 
-          paymentMessage.innerText =
-          "Verifying payment...";
+          name:
+            applicantData.name,
 
-
-          try{
-
-            const verify =
-            await fetch(
-              "/api/verify-payment",
-              {
-
-                method:"POST",
-
-                headers:{
-                  "Content-Type":
-                  "application/json"
-                },
-
-                body:
-                JSON.stringify({
-
-                  razorpay_order_id:
-                  payment.razorpay_order_id,
-
-                  razorpay_payment_id:
-                  payment.razorpay_payment_id,
-
-                  razorpay_signature:
-                  payment.razorpay_signature
-
-                })
-
-              }
-            );
-
-
-            const result =
-            await verify.json();
-
-
-            if(
-              !verify.ok ||
-              !result.success
-            ){
-
-              throw new Error(
-                result.error ||
-                "Payment verification failed."
-              );
-
-            }
-
-
-            paymentMessage.innerText =
-            "Payment successful and verified. Thank you for registering! ✅";
-
-
-            razorpayButton.disabled =
-            true;
-
-
-          }catch(error){
-
-            paymentMessage.innerText =
-            error.message;
-
-            razorpayButton.disabled =
-            false;
-
-          }
-
-        },
-
-
-        modal:{
-
-          ondismiss:
-          function(){
-
-            razorpayButton.disabled =
-            false;
-
-            paymentMessage.innerText =
-            "Payment window closed.";
-
-          }
+          email:
+            applicantData.email
 
         },
 
 
         theme:{
-          color:"#c49a35"
+          color:"#c79a28"
+        },
+
+
+        handler:
+          async function(payment){
+
+            paymentMessage.innerText =
+              "Verifying payment...";
+
+
+            try{
+
+              const verifyResponse =
+                await fetch(
+                  "/api/verify-payment",
+                  {
+                    method:"POST",
+
+                    headers:{
+                      "Content-Type":
+                        "application/json"
+                    },
+
+                    body:JSON.stringify({
+
+                      razorpay_order_id:
+                        payment.razorpay_order_id,
+
+                      razorpay_payment_id:
+                        payment.razorpay_payment_id,
+
+                      razorpay_signature:
+                        payment.razorpay_signature
+
+                    })
+
+                  }
+                );
+
+
+              const verifyData =
+                await verifyResponse.json();
+
+
+              if(
+                !verifyResponse.ok ||
+                !verifyData.success
+              ){
+
+                throw new Error(
+                  verifyData.error ||
+                  "Payment verification failed."
+                );
+
+              }
+
+
+              paymentMessage.innerText =
+                "Payment successful! Your registration has been received. ✅";
+
+
+              payButton.disabled =
+                true;
+
+
+            }catch(error){
+
+              console.error(error);
+
+              paymentMessage.innerText =
+                "Payment was received but verification failed. Please contact us.";
+
+              payButton.disabled =
+                false;
+
+            }
+
+          },
+
+
+        modal:{
+
+          ondismiss:function(){
+
+            payButton.disabled =
+              false;
+
+            paymentMessage.innerText =
+              "Payment window closed.";
+
+          }
+
         }
 
       };
 
 
       const razorpay =
-      new Razorpay(
-        options
-      );
+        new Razorpay(options);
 
 
       razorpay.on(
         "payment.failed",
-        function(){
+        function(response){
+
+          console.error(
+            response.error
+          );
 
           paymentMessage.innerText =
-          "Payment failed. Please try again.";
+            response.error.description ||
+            "Payment failed.";
 
-          razorpayButton.disabled =
-          false;
+          payButton.disabled =
+            false;
 
         }
       );
@@ -2655,18 +1862,14 @@ razorpayButton.addEventListener(
 
     }catch(error){
 
-      console.error(
-        error
-      );
-
+      console.error(error);
 
       paymentMessage.innerText =
-      error.message ||
-      "Something went wrong.";
+        error.message ||
+        "Something went wrong.";
 
-
-      razorpayButton.disabled =
-      false;
+      payButton.disabled =
+        false;
 
     }
 
@@ -2676,6 +1879,5 @@ razorpayButton.addEventListener(
 </script>
 
 </body>
-  </html>
-</body>
 </html>
+```
