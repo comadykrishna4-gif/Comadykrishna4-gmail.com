@@ -182,7 +182,7 @@ export default async function handler(req, res) {
     const resend = new Resend(resendApiKey);
 
     const { data, error } = await resend.emails.send({
-      from: "VASWAN FILMS <onboarding@resend.dev>",
+      from: "VASWAN FILMS <casting@vaswanfilms.in>",
       to: [
   "comadykrishna4@gmail.com",
   "Vaswankrishna@gmail.com"
