@@ -4,505 +4,171 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Vaswan Films - Indian Film Production, Casting, Artist Registration, Web Series, Short Films and Entertainment.">
 <meta name="theme-color" content="#080808">
+
 <title>Vaswan Films | Official Website</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="Vaswan Films - Film Production, Web Series, Short Films, Casting, Artist Registration and Entertainment Projects across India.">
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:Poppins,sans-serif;background:#090909;color:#fff}
-a{text-decoration:none;color:inherit}
-:root{--gold:#d5ad63;--black:#090909}
-
-header{
-position:sticky;top:0;z-index:999;
-background:#080808;border-bottom:1px solid #49391f;
-padding:14px 5%;
-display:flex;align-items:center;justify-content:space-between
-}
-.logo{font-family:Cinzel,serif;color:var(--gold);font-size:23px;font-weight:bold}
-.logo span{display:block;font:9px Poppins;letter-spacing:4px;color:white}
-nav{display:flex;gap:17px;align-items:center}
-nav a{font-size:11px;color:white}
-nav a:hover{color:var(--gold)}
-.menu{display:none;background:none;color:var(--gold);border:1px solid var(--gold);padding:8px 12px;font-size:20px}
-
-.hero{
-min-height:620px;
-display:flex;align-items:center;padding:70px 8%;
-background:linear-gradient(90deg,#000e,#0008),
-url('https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1800') center/cover
-}
-.hero-content{max-width:700px}
-.hero small{color:var(--gold);letter-spacing:4px}
-.hero h1{font:700 clamp(42px,7vw,75px) Cinzel;margin:20px 0}
-.hero h1 span{color:var(--gold)}
-.hero p{color:#ddd;max-width:550px;line-height:1.9;font-size:14px}
-.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-.btn{
-display:inline-block;padding:13px 22px;
-background:var(--gold);color:#080808;
-font-size:11px;font-weight:700;border:1px solid var(--gold);
-cursor:pointer
-}
-.btn.outline{background:transparent;color:var(--gold)}
-.btn:hover{background:#fff;color:#000;border-color:#fff}
-
-section{padding:80px 7%;scroll-margin-top:75px}
-.heading{text-align:center;margin-bottom:40px}
-.heading small{color:var(--gold);letter-spacing:4px}
-.heading h2{font:600 38px Cinzel;margin:12px 0}
-.heading h2 span{color:var(--gold)}
-.heading p{font-size:13px;color:#aaa;max-width:700px;margin:auto;line-height:1.8}
-
-.light{background:#f5f2eb;color:#171717}
-.light .heading p{color:#666}
-.light .heading h2{color:#111}
-
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.about-image{
-min-height:330px;display:grid;place-items:center;
-background:linear-gradient(140deg,#493619,#080808);
-font:60px Cinzel;color:var(--gold)
-}
-.about-text h3{font:24px Cinzel;margin-bottom:20px}
-.about-text p{font-size:13px;color:#bbb;line-height:2;margin-bottom:15px}
-
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:#171717;border:1px solid #382e1d;overflow:hidden}
-.card-img{
-height:210px;background:linear-gradient(140deg,#574222,#111);
-display:flex;align-items:center;justify-content:center;
-flex-direction:column;color:var(--gold);text-align:center;
-font:26px Cinzel;padding:15px
-}
-.card-content{padding:22px}
-.card-content h3{font:20px Cinzel;color:var(--gold);margin-bottom:10px}
-.card-content p{font-size:12px;color:#aaa;line-height:1.8;margin-bottom:15px}
-.card-content a{font-size:11px;color:var(--gold)}
-
-.service-card{padding:25px;border:1px solid #42351f;background:#151515}
-.service-card h3{color:var(--gold);font:19px Cinzel;margin:10px 0}
-.service-card p{font-size:12px;color:#aaa;line-height:1.8}
-.service-card .number{font:25px Cinzel;color:var(--gold)}
-
-.notice{
-border:1px solid var(--gold);padding:28px;
-display:flex;justify-content:space-between;align-items:center;gap:20px;
-}
-.notice p{font-size:12px;color:#aaa;margin-top:8px}
-
-form{
-max-width:850px;margin:auto;padding:30px;
-background:#171717;border:1px solid #4b3a20
-}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-form label{font-size:12px;color:var(--gold);display:block}
-input,select,textarea{
-width:100%;padding:13px;margin-top:7px;
-background:#090909;border:1px solid #494033;
-color:white;font:13px Poppins;outline:none
-}
-input:focus,select:focus,textarea:focus{border-color:var(--gold)}
-.full{grid-column:1/-1}
-.consent{display:flex;align-items:flex-start;gap:10px;margin:20px 0;color:#ccc!important}
-.consent input{width:auto;margin-top:4px}
-form button{margin-top:15px}
-.form-message{color:var(--gold);font-size:12px;margin-top:12px}
-
-.workshop{
-background:linear-gradient(120deg,#312516,#090909);
-padding:40px;text-align:center;border:1px solid #68502b
-}
-.workshop h3{font:28px Cinzel;color:var(--gold);margin-bottom:15px}
-.workshop p{font-size:13px;color:#ccc;margin-bottom:20px}
-
-.reality{
-min-height:300px;display:flex;flex-direction:column;
-align-items:center;justify-content:center;text-align:center;
-background:linear-gradient(140deg,#493619,#080808);
-border:1px solid var(--gold);padding:30px
-}
-.reality h3{font:40px Cinzel;color:var(--gold)}
-.reality p{font-size:12px;color:#ddd;margin:15px}
-
-.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.gallery-item{
-height:190px;background:linear-gradient(145deg,#604a29,#141414);
-display:grid;place-items:center;color:var(--gold);font:17px Cinzel
-}
-
-.contact-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:30px}
-.contact-info{padding:25px;background:#171717;border:1px solid #49391f}
-.contact-info h3{font:23px Cinzel;color:var(--gold);margin-bottom:20px}
-.contact-info p{font-size:13px;color:#ccc;margin:18px 0}
-.contact-info a{color:var(--gold)}
-
-footer{padding:40px 7%;background:#050505;text-align:center;border-top:1px solid #49391f}
-footer h2{font:25px Cinzel;color:var(--gold)}
-footer p{font-size:11px;color:#999;margin:12px}
-footer a{color:var(--gold);font-size:12px;margin:8px}
-
-@media(max-width:950px){
-nav{display:none;position:absolute;top:100%;left:0;width:100%;
-background:#090909;padding:20px;flex-direction:column;align-items:flex-start}
-nav.active{display:flex}
-.menu{display:block}
-}
-@media(max-width:700px){
-.hero{min-height:550px;padding:50px 7%}
-.hero h1{font-size:43px}
-section{padding:60px 6%}
-.heading h2{font-size:30px}
-.about-grid,.contact-grid{grid-template-columns:1fr}
-.grid{grid-template-columns:1fr}
-.gallery-grid{grid-template-columns:1fr 1fr}
-.form-grid{grid-template-columns:1fr}
-.full{grid-column:auto}
-.notice{flex-direction:column;align-items:flex-start}
-}
-</style>
+<link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
 
+<div class="top">
+VASWAN FILMS | FILM PRODUCTION | ENTERTAINMENT
+</div>
+
 <header>
-<a href="#home" class="logo">VASWAN FILMS<span>MAKE STORIES MATTER</span></a>
-<button class="menu" onclick="toggleMenu()">☰</button>
-<nav id="nav">
-<a href="#home">HOME</a>
-<a href="#about">ABOUT US</a>
-<a href="#films">OUR FILMS</a>
-<a href="#casting">CASTING</a>
-<a href="#services">SERVICES</a>
-<a href="#workshop">WORKSHOP</a>
-<a href="#reality">REALITY SHOWS</a>
-<a href="#gallery">GALLERY</a>
-<a href="#contact">CONTACT</a>
+
+<a class="brand" href="index.html">
+VF
+<span>
+VASWAN FILMS
+<small>MAKE STORIES MATTER</small>
+</span>
+</a>
+
+<button class="toggle"
+onclick="document.querySelector('nav').classList.toggle('show')">
+☰
+</button>
+
+<nav>
+<a class="active" href="index.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="films.html">Our Films</a>
+<a href="casting.html">Casting Calls</a>
+<a href="artist-registration.html">Artist Registration</a>
+<a href="services.html">Production Services</a>
+<a href="workshop.html">Acting Workshop</a>
+<a href="reality-shows.html">Reality Shows</a>
+<a href="gallery.html">Gallery</a>
+<a href="contact.html">Contact Us</a>
 </nav>
+
 </header>
 
-<!-- HOME -->
-<section class="hero" id="home">
-<div class="hero-content">
-<small>WELCOME TO VASWAN FILMS</small>
-<h1>WE CREATE<br><span>YOUR STORIES</span></h1>
-<p>
-Vaswan Films is an Indian Film Production and Entertainment Company.
-We create films, web series, short films, music videos and discover new talent across India.
+<main>
+
+<!-- HOME BANNER -->
+
+<section class="hero">
+
+<small>INDIAN FILM PRODUCTION & ENTERTAINMENT</small>
+
+<h1 id="heroTitle">
+Every story
+<br>
+<em>deserves a screen.</em>
+</h1>
+
+<p id="heroText">
+We create films, discover talent and bring creative ideas to life across India.
 </p>
+
 <div class="buttons">
-<a class="btn" href="#artist">JOIN AS AN ARTIST</a>
-<a class="btn outline" href="#services">WORK WITH US</a>
-<a class="btn outline" href="#contact">HIRE VASWAN FILMS</a>
+
+<a class="btn" href="artist-registration.html">
+JOIN AS AN ARTIST
+</a>
+
+<a class="btn outline" href="services.html">
+WORK WITH US
+</a>
+
+<a class="btn outline" href="contact.html">
+HIRE VASWAN FILMS
+</a>
+
 </div>
-</div>
+
 </section>
 
-<!-- ABOUT -->
-<section class="light" id="about">
-<div class="heading">
-<small>WHO WE ARE</small>
-<h2>ABOUT <span>VASWAN FILMS</span></h2>
-<p>Building stories, connecting talent and creating opportunities.</p>
-</div>
-<div class="about-grid">
-<div class="about-image">VASWAN FILMS</div>
-<div class="about-text">
-<h3>Our Vision, Our Cinema</h3>
-<p>Vaswan Films is an Indian entertainment and film production company focused on films, web series, short films, casting, artist development and creative projects.</p>
-<p>Our vision is to connect talented people from every part of India and create opportunities in the entertainment industry.</p>
-<p>We believe every artist has a story and every story deserves a platform.</p>
-</div>
-</div>
-</section>
+<!-- WEBSITE SECTIONS -->
 
-<!-- FILMS -->
-<section id="films">
-<div class="heading">
-<small>OUR PROJECTS</small>
-<h2>OUR <span>FILMS</span></h2>
-<p>Discover films and creative projects from Vaswan Films.</p>
-</div>
+<section class="section">
+
+<h2>
+Explore <em>Vaswan Films</em>
+</h2>
+
 <div class="grid">
-<div class="card">
-<div class="card-img">GUNNAH<br><small>CRIME THRILLER</small></div>
-<div class="card-content">
-<h3>GUNNAH</h3>
-<p>A crime thriller project presented by Vaswan Films.</p>
-<a href="https://youtu.be/_50br1r5L54" target="_blank">WATCH FILM ON YOUTUBE →</a>
+
+<a class="tile" href="about.html">
+<b>About Us</b>
+<span>Know Our Company →</span>
+</a>
+
+<a class="tile" href="films.html">
+<b>Our Films</b>
+<span>Watch Our Projects →</span>
+</a>
+
+<a class="tile" href="casting.html">
+<b>Casting Calls</b>
+<span>Find Auditions →</span>
+</a>
+
+<a class="tile" href="artist-registration.html">
+<b>Artist Registration</b>
+<span>Join Our Artist Network →</span>
+</a>
+
+<a class="tile" href="services.html">
+<b>Production Services</b>
+<span>Work With Us →</span>
+</a>
+
+<a class="tile" href="workshop.html">
+<b>Acting Workshop</b>
+<span>Learn Acting →</span>
+</a>
+
+<a class="tile" href="reality-shows.html">
+<b>Reality Shows</b>
+<span>Participate In Shows →</span>
+</a>
+
+<a class="tile" href="gallery.html">
+<b>Gallery</b>
+<span>See Our Work →</span>
+</a>
+
+<a class="tile" href="contact.html">
+<b>Contact Us</b>
+<span>Business Enquiries →</span>
+</a>
+
 </div>
-</div>
-<div class="card">
-<div class="card-img">A NEW STORY</div>
-<div class="card-content">
-<h3>UPCOMING FILMS</h3>
-<p>Our upcoming short films, feature films and web series.</p>
-<a href="#contact">COLLABORATE →</a>
-</div>
-</div>
-<div class="card">
-<div class="card-img">CINEMA</div>
-<div class="card-content">
-<h3>FILM PRODUCTION</h3>
-<p>Stories, creative development and film production.</p>
-<a href="#services">OUR SERVICES →</a>
-</div>
-</div>
-</div>
+
 </section>
 
-<!-- CASTING -->
-<section class="light" id="casting">
-<div class="heading">
-<small>OPPORTUNITIES</small>
-<h2>CASTING <span>CALLS</span></h2>
-<p>Official casting announcements and audition opportunities from Vaswan Films.</p>
-</div>
-<div class="notice">
-<div>
-<h3>Upcoming Auditions</h3>
-<p>New casting notices will be published here with role details, age requirements, location and audition dates.</p>
-</div>
-<a class="btn" href="#artist">REGISTER NOW</a>
-</div>
-<p style="font-size:11px;color:#777;margin-top:18px">
-Registration does not guarantee selection or a role. Only trust official announcements.
-</p>
-</section>
-
-<!-- ARTIST REGISTRATION -->
-<section id="artist">
-<div class="heading">
-<small>JOIN OUR NETWORK</small>
-<h2>ARTIST <span>REGISTRATION</span></h2>
-<p>Actors, models, singers, dancers and creative professionals can submit their profiles.</p>
-</div>
-
-<form id="artistForm">
-<div class="form-grid">
-<label>Full Name *
-<input name="name" required placeholder="Enter your name"></label>
-
-<label>Age *
-<input name="age" type="number" min="16" max="100" required></label>
-
-<label>Father's Name
-<input name="father"></label>
-
-<label>Mother's Name
-<input name="mother"></label>
-
-<label>Gender
-<select name="gender">
-<option value="">Select</option>
-<option>Male</option>
-<option>Female</option>
-<option>Other</option>
-</select></label>
-
-<label>Profession *
-<select name="profession" required>
-<option value="">Select</option>
-<option>Actor</option>
-<option>Model</option>
-<option>Singer</option>
-<option>Dancer</option>
-<option>Writer</option>
-<option>Director</option>
-<option>Editor</option>
-<option>Other</option>
-</select></label>
-
-<label>Phone Number *
-<input name="phone" type="tel" required></label>
-
-<label>Email *
-<input name="email" type="email" required></label>
-
-<label>City *
-<input name="city" required></label>
-
-<label>State *
-<input name="state" required></label>
-
-<label class="full">Instagram / YouTube / Portfolio Link
-<input name="portfolio" type="url" placeholder="https://"></label>
-
-<label class="full">About Yourself
-<textarea name="message" rows="4"></textarea></label>
-</div>
-
-<label class="consent">
-<input type="checkbox" required>
-I confirm that my details are correct and allow Vaswan Films to contact me regarding relevant opportunities.
-</label>
-
-<button class="btn" type="submit">SUBMIT ARTIST PROFILE</button>
-<p id="artistMessage" class="form-message"></p>
-</form>
-</section>
-
-<!-- PRODUCTION SERVICES -->
-<section class="light" id="services">
-<div class="heading">
-<small>BUSINESS & COLLABORATION</small>
-<h2>PRODUCTION <span>SERVICES</span></h2>
-<p>Let's work together and create something special.</p>
-</div>
-<div class="grid">
-<div class="service-card"><div class="number">01</div><h3>Film Production</h3><p>Feature films, short films and web series production.</p></div>
-<div class="service-card"><div class="number">02</div><h3>Music Videos</h3><p>Music video shooting and creative production.</p></div>
-<div class="service-card"><div class="number">03</div><h3>Advertisement</h3><p>Commercial videos and brand promotions.</p></div>
-<div class="service-card"><div class="number">04</div><h3>Video Editing</h3><p>Professional editing and post production.</p></div>
-<div class="service-card"><div class="number">05</div><h3>Artist Portfolio</h3><p>Artist portfolio and presentation services.</p></div>
-<div class="service-card"><div class="number">06</div><h3>Creative Projects</h3><p>Writing, direction and production collaborations.</p></div>
-</div>
-</section>
-
-<!-- WORKSHOP -->
-<section id="workshop">
-<div class="heading">
-<small>LEARN AND PERFORM</small>
-<h2>ACTING <span>WORKSHOP</span></h2>
-<p>Learn acting, camera performance, theatre and audition techniques.</p>
-</div>
-<div class="workshop">
-<h3>YOUR JOURNEY STARTS HERE</h3>
-<p>Upcoming acting workshop batches, locations, faculty and fees will be announced officially.</p>
-<a class="btn" href="#contact">ENQUIRE NOW</a>
-</div>
-</section>
-
-<!-- REALITY SHOW -->
-<section class="light" id="reality">
-<div class="heading">
-<small>ENTERTAINMENT & TALENT</small>
-<h2>REALITY <span>SHOWS</span></h2>
-<p>Discover entertainment concepts and competitions presented by Vaswan Films.</p>
-</div>
-<div class="reality">
-<p>VASWAN FILMS PRESENTS</p>
-<h3>KON BANEGA KING</h3>
-<p>ULTIMATE REALITY CHALLENGE</p>
-<a class="btn" href="#contact">GET DETAILS</a>
-</div>
-</section>
-
-<!-- GALLERY -->
-<section id="gallery">
-<div class="heading">
-<small>OUR MEMORIES</small>
-<h2>PHOTO <span>GALLERY</span></h2>
-<p>Film sets, production moments, artists and events.</p>
-</div>
-
-<div class="gallery-grid" id="galleryGrid">
-<div class="gallery-item">VASWAN FILMS</div>
-<div class="gallery-item">BEHIND THE SCENES</div>
-<div class="gallery-item">FILM PRODUCTION</div>
-<div class="gallery-item">OUR TEAM</div>
-</div>
-</section>
-
-<!-- CONTACT -->
-<section class="light" id="contact">
-<div class="heading">
-<small>LET'S CONNECT</small>
-<h2>CONTACT <span>US</span></h2>
-<p>For business enquiries, collaborations, casting and production projects.</p>
-</div>
-
-<div class="contact-grid">
-<form id="contactForm">
-<div class="form-grid">
-<label>Name *
-<input name="name" required></label>
-
-<label>Phone *
-<input name="phone" required type="tel"></label>
-
-<label>Email
-<input name="email" type="email"></label>
-
-<label>Enquiry Type *
-<select name="enquiry" required>
-<option value="">Select</option>
-<option>Hire Vaswan Films</option>
-<option>Work With Vaswan Films</option>
-<option>Artist / Casting</option>
-<option>Acting Workshop</option>
-<option>Reality Show</option>
-<option>Other</option>
-</select></label>
-
-<label class="full">Company / Project
-<input name="company"></label>
-
-<label class="full">Message *
-<textarea name="message" rows="5" required></textarea></label>
-</div>
-<button class="btn" type="submit">SEND ENQUIRY</button>
-<p id="contactMessage" class="form-message"></p>
-</form>
-
-<div class="contact-info">
-<h3>VASWAN FILMS</h3>
-<p><b>Email</b><br><a href="mailto:Vaswankrishna@gmail.com">Vaswankrishna@gmail.com</a></p>
-<p><b>Website</b><br><a href="https://vaswanfilms.in">www.vaswanfilms.in</a></p>
-<p><b>YouTube</b><br><a href="https://www.youtube.com/@Krishnavaswanfilms" target="_blank">Vaswan Films Channel</a></p>
-<p><b>Location</b><br>India</p>
-</div>
-</div>
-</section>
+</main>
 
 <footer>
-<h2>VASWAN FILMS</h2>
-<p>MAKE STORIES MATTER</p>
-<p>© <span id="year"></span> Vaswan Films. All Rights Reserved.</p>
-<a href="#home">HOME</a>
-<a href="#about">ABOUT</a>
-<a href="#contact">CONTACT</a>
-<a href="privacy.html">PRIVACY POLICY</a>
+
+<b>VASWAN FILMS</b>
+
+<p>
+© <span id="year"></span> Vaswan Films.
+All Rights Reserved.
+</p>
+
+<p>
+Email:
+<a href="mailto:Vaswankrishna@gmail.com">
+Vaswankrishna@gmail.com
+</a>
+</p>
+
+<a href="https://www.youtube.com/@Krishnavaswanfilms">
+YouTube Channel
+</a>
+
 </footer>
 
-<script>
-function toggleMenu(){
-document.getElementById('nav').classList.toggle('active');
-}
-document.querySelectorAll('#nav a').forEach(a=>{
-a.addEventListener('click',()=>{
-document.getElementById('nav').classList.remove('active');
-});
-});
-document.getElementById('year').textContent=new Date().getFullYear();
-
-const companyEmail="Vaswankrishna@gmail.com";
-
-function emailForm(formId,messageId,subject){
-const form=document.getElementById(formId);
-form.addEventListener('submit',function(e){
-e.preventDefault();
-if(!form.reportValidity())return;
-const data=new FormData(form);
-let body="";
-for(const [key,value] of data.entries()){
-if(key!=="consent")body+=key+": "+value+"\n";
-}
-document.getElementById(messageId).textContent=
-"Your email app is opening. Please review and press Send.";
-window.location.href="mailto:"+companyEmail+
-"?subject="+encodeURIComponent(subject)+
-"&body="+encodeURIComponent(body);
-});
-}
-emailForm("artistForm","artistMessage","Vaswan Films Artist Registration");
-emailForm("contactForm","contactMessage","Vaswan Films Business Enquiry");
-</script>
+<script src="assets/site.js"></script>
 
 </body>
 </html>
