@@ -3,466 +3,502 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VASWAN FILMS | Official Production House</title>
-<meta name="description" content="Vaswan Films - Films, Web Series, Casting, Artist Registration and Entertainment.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VASWAN FILMS | Production House</title>
+<meta name="description" content="Vaswan Films - Film Production, Artist Registration, Acting Workshop, Casting and Reality Shows.">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+:root {
+ --gold:#d6ad60;
+ --black:#080808;
+ --white:#fff;
+}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:#090909;color:#fff;font-family:Arial,Helvetica,sans-serif}
-:root{--gold:#d9b56b;--cream:#f6e4bd;--muted:#b9b4aa}
-a{text-decoration:none;color:inherit}
-button,input,select,textarea{font:inherit}
-img{max-width:100%;display:block}
-.container{width:min(1200px,90%);margin:auto}
-
-/* NAVIGATION */
-header{position:sticky;top:0;z-index:100;background:#080808f2;border-bottom:1px solid #6f572f;backdrop-filter:blur(12px)}
-.navbar{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:13px}
-.brand-symbol{width:58px;height:58px;border:2px solid var(--gold);display:grid;place-items:center;color:var(--cream);font-family:Georgia,serif;font-size:25px;font-weight:bold;transform:rotate(45deg)}
-.brand-symbol span{transform:rotate(-45deg)}
-.brand-name{font-family:Georgia,serif;font-size:27px;font-weight:bold;letter-spacing:2px;color:var(--cream)}
-.brand-tag{font-size:9px;letter-spacing:4px;color:var(--gold);margin-top:5px}
-.navlinks{display:flex;align-items:center;gap:21px}
-.navlinks a{font-size:12px;font-weight:bold;letter-spacing:1px;color:#eee;transition:.3s}
-.navlinks a:hover{color:var(--gold)}
-.nav-cta{border:1px solid var(--gold);padding:12px 16px;color:var(--cream)!important}
-.menu-toggle{display:none;background:none;border:1px solid var(--gold);color:var(--gold);padding:10px 14px}
-
-/* HERO */
-.hero{min-height:690px;position:relative;display:flex;align-items:center;overflow:hidden;background:
-linear-gradient(90deg,#050505 0%,#050505d9 38%,#05050555 100%),
-linear-gradient(0deg,#090909 0%,transparent 35%),
-url("https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2000&q=85") center/cover}
-.hero-content{padding:95px 0;max-width:760px}
-.eyebrow{color:var(--gold);font-size:12px;letter-spacing:5px;font-weight:bold;margin-bottom:25px}
-.hero h1{font-family:Georgia,serif;font-size:clamp(48px,8vw,100px);line-height:.98;color:var(--cream);letter-spacing:1px}
-.hero h1 span{color:var(--gold);display:block}
-.hero-line{width:100px;height:3px;background:var(--gold);margin:30px 0}
-.hero p{font-size:18px;line-height:1.8;color:#dedbd4;max-width:580px}
-.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 25px;background:var(--gold);color:#100e09;font-weight:bold;font-size:12px;letter-spacing:1.5px;border:1px solid var(--gold);transition:.3s}
-.btn:hover{background:var(--cream);transform:translateY(-3px)}
-.btn-outline{background:transparent;color:var(--cream)}
-.hero-note{margin-top:65px;color:#c9b994;font-size:11px;letter-spacing:4px}
-
-/* SECTIONS */
-section{padding:100px 0;scroll-margin-top:85px}
-.section-kicker{text-align:center;color:var(--gold);font-size:11px;letter-spacing:5px;font-weight:bold;margin-bottom:15px}
-.section-title{text-align:center;font-family:Georgia,serif;font-size:clamp(34px,5vw,58px);color:var(--cream);font-weight:normal}
-.section-desc{text-align:center;color:var(--muted);font-size:16px;line-height:1.9;max-width:760px;margin:20px auto 50px}
-.gold-rule{width:65px;height:2px;background:var(--gold);margin:22px auto}
-.dark-section{background:#111}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.panel{background:#151515;border:1px solid #382f20;padding:30px;transition:.3s}
-.panel:hover{border-color:var(--gold);transform:translateY(-5px)}
-.panel-number{font-family:Georgia,serif;color:var(--gold);font-size:35px}
-.panel h3{font-family:Georgia,serif;color:var(--cream);font-size:23px;margin:18px 0 12px}
-.panel p{color:var(--muted);line-height:1.8;font-size:14px}
-
-/* ABOUT */
-.about-layout{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
-.about-image{height:460px;background:
-linear-gradient(0deg,#0008,#0002),
-url("https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1100&q=85") center/cover}
-.about-copy .section-kicker,.about-copy .section-title{text-align:left}
-.about-copy .section-title{font-size:48px}
-.about-copy p{color:#c4c0b8;line-height:2;margin-top:20px}
-
-/* FILM CARDS */
-.films{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.film{position:relative;min-height:430px;overflow:hidden;background:#181818;border:1px solid #514127}
-.film img{width:100%;height:430px;object-fit:cover;transition:.5s}
-.film:hover img{transform:scale(1.06)}
-.film-info{position:absolute;inset:auto 0 0;padding:55px 23px 24px;background:linear-gradient(transparent,#000 70%)}
-.film-info small{color:var(--gold);letter-spacing:3px;font-size:10px}
-.film-info h3{font-family:Georgia,serif;font-size:28px;color:var(--cream);margin:10px 0}
-.film-info p{font-size:13px;color:#ddd;line-height:1.6}
-
-/* REGISTRATION */
-.registration{background:linear-gradient(100deg,#17130c,#090909 65%)}
-.registration-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
-.registration-card{padding:40px;border:1px solid #72572e;background:#0d0d0d}
-.registration-card h3{font-family:Georgia,serif;font-size:30px;color:var(--cream);margin:15px 0}
-.registration-card p{color:var(--muted);line-height:1.8;margin-bottom:20px}
-
-/* WORKSHOP / REALITY */
-.feature-strip{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #514127}
-.feature{padding:28px 20px;text-align:center;border-right:1px solid #514127}
-.feature:last-child{border:0}
-.feature strong{display:block;color:var(--gold);font-family:Georgia,serif;font-size:23px;margin-bottom:10px}
-.feature span{font-size:12px;color:#c5c0b5;line-height:1.7}
-
-/* GALLERY */
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.gallery img{width:100%;height:230px;object-fit:cover;filter:brightness(.8);transition:.3s}
-.gallery img:hover{filter:brightness(1);transform:scale(1.015)}
-
-/* YOUTUBE */
-.youtube-box{padding:60px 25px;text-align:center;border:1px solid #604b29;background:linear-gradient(120deg,#1a160e,#101010)}
-.youtube-box h3{font-family:Georgia,serif;font-size:38px;color:var(--cream);margin-bottom:15px}
-.youtube-box p{color:#c8c2b5;line-height:1.8;margin-bottom:25px}
-
-/* CONTACT + FORM */
-.contact-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px}
-.contact-info h3{font-family:Georgia,serif;font-size:32px;color:var(--cream);margin-bottom:20px}
-.contact-info p{color:#bbb;line-height:2;margin-bottom:15px}
-.formbox{background:#121212;border:1px solid #493a24;padding:30px}
-.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.field{display:flex;flex-direction:column;gap:8px}
-.field.full{grid-column:1/-1}
-.field label{color:var(--gold);font-size:12px;font-weight:bold;letter-spacing:1px}
-.field input,.field select,.field textarea{background:#080808;border:1px solid #49402f;padding:14px;color:white;width:100%;outline:none}
-.field textarea{min-height:100px}
-.note{font-size:12px;color:#aaa;line-height:1.7;margin:17px 0}
-
-/* FOOTER */
-footer{background:#050505;border-top:1px solid #70562d;padding:55px 0 25px}
-.footer-top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
-.footer-brand{font-family:Georgia,serif;font-size:30px;color:var(--cream)}
-.footer-top p{color:#aaa;line-height:1.8;margin-top:12px;max-width:350px}
-.footer-links{display:flex;gap:16px;flex-wrap:wrap;max-width:500px}
-.footer-links a{font-size:12px;color:#cfc5b0}
-.copyright{border-top:1px solid #28231a;margin-top:35px;padding-top:22px;text-align:center;color:#777;font-size:12px}
-
-@media(max-width:950px){
- .menu-toggle{display:block}
- .navlinks{display:none;position:absolute;top:88px;left:0;right:0;background:#080808;padding:20px 5%;flex-direction:column;align-items:stretch;border-bottom:1px solid var(--gold)}
- .navlinks.show{display:flex}
- .navlinks a{padding:12px 0}
- .grid,.films{grid-template-columns:repeat(2,1fr)}
- .feature-strip{grid-template-columns:repeat(2,1fr)}
- .feature:nth-child(2){border-right:0}
- .feature:nth-child(-n+2){border-bottom:1px solid #514127}
+body{
+ background:#080808;color:white;
+ font-family:Poppins,sans-serif;
 }
-@media(max-width:650px){
- .navbar{min-height:78px}
- .brand-symbol{width:45px;height:45px;font-size:20px}
- .brand-name{font-size:20px;letter-spacing:1px}
- .brand-tag{font-size:8px;letter-spacing:2px}
- .navlinks{top:78px}
- .hero{min-height:620px;background-position:60% center}
- .hero-content{padding:70px 0}
- .hero p{font-size:16px}
- section{padding:70px 0}
- .about-layout,.registration-grid,.contact-layout{grid-template-columns:1fr}
- .about-image{height:300px}
- .about-copy .section-title{font-size:38px}
- .grid,.films{grid-template-columns:1fr}
- .film,.film img{height:390px;min-height:390px}
- .gallery{grid-template-columns:repeat(2,1fr)}
- .gallery img{height:150px}
- .feature{padding:22px 10px}
- .feature strong{font-size:19px}
- .formgrid{grid-template-columns:1fr}
- .field.full{grid-column:auto}
- .youtube-box h3{font-size:29px}
+a{text-decoration:none;color:inherit}
+img{width:100%;display:block}
+section{padding:85px 7%}
+.gold{color:var(--gold)}
+.heading{
+ font-family:Cinzel,serif;
+ text-align:center;
+ font-size:clamp(30px,5vw,52px);
+ margin-bottom:15px;
+}
+.subheading{
+ text-align:center;color:#aaa;
+ margin-bottom:45px;
+}
+header{
+ position:fixed;top:0;left:0;width:100%;
+ z-index:1000;background:#080808ed;
+ border-bottom:1px solid #a98442;
+}
+.nav{
+ max-width:1500px;margin:auto;
+ padding:15px 5%;
+ display:flex;justify-content:space-between;
+ align-items:center;
+}
+.logo{
+ font-family:Cinzel,serif;
+ font-weight:800;font-size:27px;
+ color:var(--gold);letter-spacing:3px;
+}
+.logo span{display:block;font-size:9px;letter-spacing:7px;text-align:center}
+nav{display:flex;gap:22px;align-items:center}
+nav a{font-size:12px;font-weight:600;transition:.3s}
+nav a:hover{color:var(--gold)}
+.menu{display:none;font-size:28px;cursor:pointer;color:var(--gold)}
+.btn{
+ display:inline-block;background:var(--gold);
+ color:#080808;padding:14px 27px;
+ font-weight:700;border-radius:3px;
+ transition:.3s;border:1px solid var(--gold);
+}
+.btn:hover{background:transparent;color:var(--gold)}
+.btn-outline{
+ display:inline-block;border:1px solid var(--gold);
+ color:var(--gold);padding:13px 25px;
+ margin:7px;
+}
+.hero{
+ min-height:100vh;display:flex;align-items:center;
+ padding:140px 8% 80px;
+ background:
+ linear-gradient(90deg,#000 5%,#000b 45%,#0003),
+ url('https://images.unsplash.com/photo-1485846234645-a62644f84728?w=2000') center/cover;
+}
+.hero-content{max-width:800px}
+.hero-label{color:var(--gold);letter-spacing:6px;font-size:14px}
+.hero h1{
+ font-family:Cinzel,serif;
+ font-size:clamp(45px,8vw,100px);
+ line-height:1.15;margin:20px 0;
+}
+.hero p{font-size:17px;color:#ddd;max-width:600px;line-height:1.9}
+.hero-buttons{margin-top:35px}
+.line{height:2px;width:90px;background:var(--gold);margin:20px auto}
+.about{
+ display:grid;grid-template-columns:1fr 1fr;
+ gap:55px;align-items:center;
+}
+.about-img img{
+ height:520px;object-fit:cover;
+ border:1px solid var(--gold);
+}
+.about-text h2{font-family:Cinzel,serif;font-size:42px;margin-bottom:25px}
+.about-text p{color:#bbb;line-height:2;margin-bottom:20px}
+.stats{
+ display:grid;grid-template-columns:repeat(3,1fr);
+ gap:15px;margin-top:35px;text-align:center;
+}
+.stat strong{font-size:32px;color:var(--gold)}
+.stat p{font-size:12px}
+.dark-section{background:#111}
+.cards{
+ display:grid;grid-template-columns:repeat(3,1fr);
+ gap:25px;
+}
+.card{
+ background:#171717;border:1px solid #292929;
+ transition:.4s;overflow:hidden;
+}
+.card:hover{transform:translateY(-8px);border-color:var(--gold)}
+.card img{height:260px;object-fit:cover}
+.card-content{padding:23px}
+.card h3{font-family:Cinzel,serif;color:var(--gold);margin-bottom:12px}
+.card p{color:#aaa;font-size:13px;line-height:1.8;margin-bottom:15px}
+.card a{color:var(--gold);font-weight:600;font-size:13px}
+.banner{
+ text-align:center;
+ background:linear-gradient(#000a,#000c),
+ url('https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=1800') center/cover fixed;
+ padding:110px 7%;
+}
+.banner h2{font-family:Cinzel,serif;font-size:clamp(32px,6vw,65px)}
+.banner p{color:#ddd;margin:20px auto;max-width:650px}
+.form-wrap{
+ max-width:850px;margin:auto;
+ background:#141414;border:1px solid #73582f;
+ padding:35px;
+}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.field{margin-bottom:18px}
+.field label{display:block;color:var(--gold);font-size:13px;margin-bottom:8px}
+.field input,.field select,.field textarea{
+ width:100%;padding:14px;background:#080808;
+ border:1px solid #444;color:white;font-family:inherit;
+ outline:none;
+}
+.field input:focus,.field textarea:focus{border-color:var(--gold)}
+.field textarea{height:110px}
+.full{grid-column:1/-1}
+.form-wrap button{width:100%;cursor:pointer;font-size:15px}
+.youtube{
+ text-align:center;
+ background:linear-gradient(120deg,#180707,#080808);
+}
+.youtube h2{font-family:Cinzel,serif;font-size:45px}
+.youtube p{color:#bbb;margin:20px}
+.gallery{
+ display:grid;grid-template-columns:repeat(3,1fr);gap:15px;
+}
+.gallery img{height:260px;object-fit:cover;transition:.3s}
+.gallery img:hover{transform:scale(1.03)}
+.contact-grid{
+ display:grid;grid-template-columns:repeat(3,1fr);gap:25px;
+ text-align:center;
+}
+.contact-box{padding:35px 15px;background:#151515;border:1px solid #333}
+.contact-box h3{color:var(--gold);margin-bottom:12px}
+.contact-box p{font-size:13px;color:#bbb;overflow-wrap:anywhere}
+footer{
+ background:#030303;padding:55px 7% 20px;
+ border-top:1px solid #73582f;text-align:center;
+}
+footer .logo{margin-bottom:20px}
+footer p{color:#888;font-size:12px;line-height:2}
+.footer-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin:25px 0}
+.footer-links a{font-size:12px;color:#ccc}
+footer small{color:#666}
+@media(max-width:1000px){
+ nav{
+ display:none;position:absolute;top:70px;left:0;width:100%;
+ background:#080808;padding:25px;flex-direction:column;
+ border-bottom:1px solid var(--gold);
+ }
+ nav.active{display:flex}
+ .menu{display:block}
+ .about{grid-template-columns:1fr}
+ .cards{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+ section{padding:65px 5%}
+ .hero{min-height:90vh;padding:120px 6% 65px}
+ .hero h1{font-size:46px}
+ .hero p{font-size:14px}
+ .cards,.gallery,.contact-grid{grid-template-columns:1fr}
+ .form-grid{grid-template-columns:1fr}
+ .full{grid-column:auto}
+ .form-wrap{padding:20px}
+ .about-img img{height:320px}
+ .about-text h2{font-size:32px}
+ .stats{gap:5px}
+ .stat strong{font-size:24px}
+ .banner{background-attachment:scroll}
 }
 </style>
 </head>
 
 <body>
+
 <header>
-<div class="container navbar">
-<a href="#home" class="brand">
- <div class="brand-symbol"><span>VF</span></div>
- <div>
-  <div class="brand-name">VASWAN FILMS</div>
-  <div class="brand-tag">A WORLD OF CINEMA</div>
+ <div class="nav">
+  <a href="#home" class="logo">VASWAN FILMS
+   <span>PRODUCTION HOUSE</span>
+  </a>
+  <div class="menu" onclick="toggleMenu()">☰</div>
+  <nav id="navigation">
+   <a href="#home">HOME</a>
+   <a href="#about">ABOUT</a>
+   <a href="#films">FILMS</a>
+   <a href="#artist">ARTIST</a>
+   <a href="#students">STUDENTS</a>
+   <a href="#workshop">WORKSHOP</a>
+   <a href="#casting">CASTING</a>
+   <a href="#reality">REALITY SHOW</a>
+   <a href="#gallery">GALLERY</a>
+   <a href="#contact">CONTACT</a>
+  </nav>
  </div>
-</a>
-<button class="menu-toggle" onclick="toggleMenu()">☰ MENU</button>
-<nav class="navlinks" id="navlinks">
-<a href="#home">HOME</a>
-<a href="#about">ABOUT</a>
-<a href="#films">FILMS</a>
-<a href="#artist">ARTIST</a>
-<a href="#student">STUDENT</a>
-<a href="#workshop">WORKSHOP</a>
-<a href="#gallery">GALLERY</a>
-<a href="#contact" class="nav-cta">CONTACT</a>
-</nav>
-</div>
 </header>
 
-<main>
-<!-- HERO -->
+<!-- HOME -->
 <section class="hero" id="home">
-<div class="container">
-<div class="hero-content">
-<div class="eyebrow">AN INDEPENDENT FILM PRODUCTION HOUSE</div>
-<h1>WE CREATE <span>LEGACIES.</span></h1>
-<div class="hero-line"></div>
-<p>Every story deserves a screen. Every dream deserves a chance. Welcome to Vaswan Films — where imagination becomes cinema.</p>
-<div class="actions">
-<a class="btn" href="#films">EXPLORE OUR CINEMA</a>
-<a class="btn btn-outline" href="#artist">JOIN OUR JOURNEY</a>
-</div>
-<div class="hero-note">FILMS • WEB SERIES • CASTING • ENTERTAINMENT</div>
-</div>
-</div>
+ <div class="hero-content">
+  <div class="hero-label">WELCOME TO VASWAN FILMS</div>
+  <h1>WE CREATE<br><span class="gold">CINEMA.</span></h1>
+  <p>
+   Dream. Create. Inspire.
+   A new generation of cinema, stories, artists
+   and entertainment. Your journey to the big screen starts here.
+  </p>
+  <div class="hero-buttons">
+   <a class="btn" href="#artist">REGISTER NOW</a>
+   <a class="btn-outline" href="#films">EXPLORE FILMS</a>
+  </div>
+ </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
-<div class="container about-layout">
-<div class="about-image" role="img" aria-label="Cinematic film production scene"></div>
-<div class="about-copy">
-<div class="section-kicker">OUR STORY</div>
-<h2 class="section-title">MORE THAN A PRODUCTION HOUSE.</h2>
-<div class="gold-rule" style="margin-left:0"></div>
-<p>Vaswan Films is an independent film production company driven by the power of storytelling. We work towards bringing original ideas, new talent and meaningful entertainment to the screen.</p>
-<p>From films and web series to casting and creative projects, our vision is to build stories that connect with audiences.</p>
-<a class="btn" href="#contact">CONNECT WITH US</a>
-</div>
-</div>
+ <div class="about">
+  <div class="about-img">
+   <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1000" alt="Film production camera">
+  </div>
+  <div class="about-text">
+   <div class="gold">ABOUT OUR COMPANY</div>
+   <h2>THE WORLD OF <span class="gold">VASWAN FILMS</span></h2>
+   <p>
+    Vaswan Films is a film production and entertainment
+    platform dedicated to cinema, creative storytelling,
+    artist development and new talent.
+   </p>
+   <p>
+    We believe every great artist has a story.
+    Our mission is to provide opportunities to talented
+    people and create memorable entertainment.
+   </p>
+   <a href="#contact" class="btn">KNOW MORE</a>
+   <div class="stats">
+    <div class="stat"><strong>FILMS</strong><p>PRODUCTION</p></div>
+    <div class="stat"><strong>ARTISTS</strong><p>NEW TALENT</p></div>
+    <div class="stat"><strong>STORIES</strong><p>ENTERTAINMENT</p></div>
+   </div>
+  </div>
+ </div>
 </section>
 
 <!-- FILMS -->
-<section class="dark-section" id="films">
-<div class="container">
-<div class="section-kicker">THE WORLD OF STORIES</div>
-<h2 class="section-title">OUR CINEMA</h2>
-<div class="gold-rule"></div>
-<p class="section-desc">Stories of emotion, courage, mystery and life. Explore the projects of Vaswan Films.</p>
-<div class="films">
-<article class="film">
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85" alt="Gunnah film visual">
-<div class="film-info"><small>CRIME THRILLER</small><h3>GUNNAH</h3><p>A story that explores crime, choices and consequences.</p><a class="btn" href="https://youtu.be/_50br1r5L54" target="_blank">WATCH FILM</a></div>
-</article>
-<article class="film">
-<img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=900&q=85" alt="Upcoming film visual">
-<div class="film-info"><small>UPCOMING FEATURE FILM</small><h3>RADHA TERE PYAR MAIN</h3><p>An upcoming cinematic journey.</p></div>
-</article>
-<article class="film">
-<img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900&q=85" alt="Upcoming cinema project">
-<div class="film-info"><small>COMING SOON</small><h3>NEW STORIES</h3><p>New films and web series are in development.</p></div>
-</article>
-</div>
-</div>
+<section id="films" class="dark-section">
+ <h2 class="heading">OUR <span class="gold">FILMS</span></h2>
+ <div class="line"></div>
+ <p class="subheading">Stories that deserve to be seen.</p>
+ <div class="cards">
+  <div class="card">
+   <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800" alt="Gunnah film">
+   <div class="card-content">
+    <h3>GUNNAH</h3>
+    <p>A crime thriller story presented by Vaswan Films.</p>
+    <a href="https://youtu.be/_50br1r5L54" target="_blank">WATCH FILM →</a>
+   </div>
+  </div>
+  <div class="card">
+   <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=800" alt="Aakhiri Ticket">
+   <div class="card-content">
+    <h3>AAKHIRI TICKET</h3>
+    <p>A journey of dreams, emotions and relationships.</p>
+    <a href="#contact">EXPLORE →</a>
+   </div>
+  </div>
+  <div class="card">
+   <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800" alt="Upcoming film">
+   <div class="card-content">
+    <h3>UPCOMING PROJECTS</h3>
+    <p>Discover our upcoming cinema and entertainment projects.</p>
+    <a href="#contact">KNOW MORE →</a>
+   </div>
+  </div>
+ </div>
 </section>
 
-<!-- ARTIST + STUDENT -->
-<section class="registration" id="artist">
-<div class="container">
-<div class="section-kicker">BE A PART OF THE STORY</div>
-<h2 class="section-title">YOUR JOURNEY STARTS HERE</h2>
-<div class="gold-rule"></div>
-<p class="section-desc">A platform for fresh faces, passionate performers and creative minds.</p>
-<div class="registration-grid">
-<div class="registration-card">
-<div class="panel-number">01</div>
-<h3>ARTIST REGISTRATION</h3>
-<p>Are you an actor, model or performer? Share your profile with Vaswan Films for consideration in relevant upcoming projects.</p>
-<a class="btn" href="#artist-form">REGISTER AS ARTIST</a>
-</div>
-<div class="registration-card" id="student">
-<div class="panel-number">02</div>
-<h3>STUDENT REGISTRATION</h3>
-<p>Interested in acting and filmmaking? Express your interest in our learning and workshop opportunities.</p>
-<a class="btn" href="#student-form">REGISTER AS STUDENT</a>
-</div>
-</div>
-</div>
+<!-- ARTIST REGISTRATION -->
+<section id="artist">
+ <h2 class="heading">ARTIST <span class="gold">REGISTRATION</span></h2>
+ <div class="line"></div>
+ <p class="subheading">Your talent. Your opportunity. Your journey.</p>
+ <div class="form-wrap">
+  <form onsubmit="submitForm(event,'Artist Registration')">
+   <div class="form-grid">
+    <div class="field"><label>Full Name</label><input name="name" required></div>
+    <div class="field"><label>Age</label><input type="number" name="age" required></div>
+    <div class="field"><label>Gender</label>
+     <select name="gender" required>
+      <option value="">Select</option><option>Male</option><option>Female</option><option>Other</option>
+     </select>
+    </div>
+    <div class="field"><label>Mobile Number</label><input name="phone" type="tel" required></div>
+    <div class="field"><label>Email</label><input name="email" type="email" required></div>
+    <div class="field"><label>City</label><input name="city" required></div>
+    <div class="field full"><label>Acting Experience</label>
+     <textarea name="experience" placeholder="Tell us about your experience"></textarea>
+    </div>
+    <div class="field full"><label>Upload Your Photograph</label><input type="file" name="photo" accept="image/*"></div>
+    <div class="field full"><label>Audition Video Link</label><input name="video" type="url" placeholder="YouTube / Google Drive link"></div>
+   </div>
+   <button class="btn" type="submit">SUBMIT ARTIST REGISTRATION</button>
+  </form>
+ </div>
 </section>
 
-<!-- FORMS -->
-<section class="dark-section" id="artist-form">
-<div class="container">
-<div class="section-kicker">JOIN THE CAST</div>
-<h2 class="section-title">ARTIST APPLICATION</h2>
-<div class="gold-rule"></div>
-<p class="section-desc">Fill in your details and send your artist profile to our team.</p>
-<div class="formbox">
-<form onsubmit="sendForm(event,'Artist Registration')">
-<div class="formgrid">
-<div class="field"><label>FULL NAME *</label><input name="Full Name" required></div>
-<div class="field"><label>AGE *</label><input name="Age" type="number" required></div>
-<div class="field"><label>GENDER</label><select name="Gender"><option>Male</option><option>Female</option><option>Other</option></select></div>
-<div class="field"><label>PHONE *</label><input name="Phone" type="tel" required></div>
-<div class="field"><label>EMAIL</label><input name="Email" type="email"></div>
-<div class="field"><label>CITY</label><input name="City"></div>
-<div class="field full"><label>EXPERIENCE / INTRODUCTION</label><textarea name="Experience"></textarea></div>
-<div class="field full"><label>PORTFOLIO / VIDEO LINK</label><input name="Portfolio Link" type="url"></div>
-</div>
-<p class="note">Submitting this form opens your email app. It does not automatically upload photos or save applications to a database.</p>
-<button class="btn" type="submit">SEND ARTIST APPLICATION</button>
-</form>
-</div>
-</div>
-</section>
-
-<section id="student">
-<div class="container">
-<div class="section-kicker">LEARN. CREATE. PERFORM.</div>
-<h2 class="section-title">STUDENT APPLICATION</h2>
-<div class="gold-rule"></div>
-<p class="section-desc">Register your interest in acting and filmmaking workshops.</p>
-<div class="formbox">
-<form onsubmit="sendForm(event,'Student Registration')">
-<div class="formgrid">
-<div class="field"><label>STUDENT NAME *</label><input name="Student Name" required></div>
-<div class="field"><label>AGE *</label><input name="Age" type="number" required></div>
-<div class="field"><label>FATHER'S NAME</label><input name="Father Name"></div>
-<div class="field"><label>MOTHER'S NAME</label><input name="Mother Name"></div>
-<div class="field"><label>PHONE *</label><input name="Phone" type="tel" required></div>
-<div class="field"><label>EMAIL *</label><input name="Email" type="email" required></div>
-<div class="field"><label>COURSE</label><select name="Course"><option>Acting</option><option>Film Direction</option><option>Cinematography</option><option>Editing</option><option>Other</option></select></div>
-<div class="field"><label>QUALIFICATION</label><input name="Qualification"></div>
-<div class="field full"><label>ADDRESS</label><textarea name="Address"></textarea></div>
-</div>
-<p class="note">This application is an enquiry. Fees, admission confirmation and payment are handled separately.</p>
-<button class="btn" type="submit">SEND STUDENT APPLICATION</button>
-</form>
-</div>
-</div>
+<!-- STUDENT REGISTRATION -->
+<section id="students" class="dark-section">
+ <h2 class="heading">STUDENT <span class="gold">REGISTRATION</span></h2>
+ <div class="line"></div>
+ <p class="subheading">Learn acting. Build confidence. Become an artist.</p>
+ <div class="form-wrap">
+  <form onsubmit="submitForm(event,'Student Registration')">
+   <div class="form-grid">
+    <div class="field"><label>Student Name</label><input name="name" required></div>
+    <div class="field"><label>Age</label><input type="number" name="age" required></div>
+    <div class="field"><label>Father's Name</label><input name="father" required></div>
+    <div class="field"><label>Mother's Name</label><input name="mother"></div>
+    <div class="field"><label>Mobile Number</label><input name="phone" type="tel" required></div>
+    <div class="field"><label>Email ID</label><input name="email" type="email" required></div>
+    <div class="field"><label>Qualification</label><input name="qualification"></div>
+    <div class="field"><label>Course</label>
+     <select name="course" required>
+      <option value="">Select Course</option>
+      <option>Acting</option><option>Camera Acting</option>
+      <option>Film Direction</option><option>Script Writing</option>
+     </select>
+    </div>
+    <div class="field full"><label>Full Address</label><textarea name="address"></textarea></div>
+    <div class="field full"><label>Upload Photo</label><input type="file" name="photo" accept="image/*"></div>
+   </div>
+   <button class="btn" type="submit">SUBMIT STUDENT REGISTRATION</button>
+  </form>
+ </div>
 </section>
 
 <!-- WORKSHOP -->
-<section class="dark-section" id="workshop">
-<div class="container">
-<div class="section-kicker">BUILD YOUR CRAFT</div>
-<h2 class="section-title">ACTING & FILM WORKSHOP</h2>
-<div class="gold-rule"></div>
-<p class="section-desc">Explore performance, camera confidence and the art of filmmaking.</p>
-<div class="feature-strip">
-<div class="feature"><strong>ACTING</strong><span>Expressions and performance</span></div>
-<div class="feature"><strong>CAMERA</strong><span>On-screen confidence</span></div>
-<div class="feature"><strong>DIRECTION</strong><span>Visual storytelling</span></div>
-<div class="feature"><strong>EDITING</strong><span>Crafting the final story</span></div>
-</div>
-<div style="text-align:center;margin-top:35px"><a class="btn" href="#student">APPLY NOW</a></div>
-</div>
+<section id="workshop">
+ <h2 class="heading">ACTOR'S <span class="gold">WORKSHOP</span></h2>
+ <div class="line"></div>
+ <div class="cards">
+  <div class="card">
+   <img src="https://images.unsplash.com/photo-1503095396549-807759245b35?w=800" alt="Acting workshop">
+   <div class="card-content">
+    <h3>ACTING TRAINING</h3>
+    <p>Learn acting skills, expressions and character development.</p>
+    <a href="#students">JOIN NOW →</a>
+   </div>
+  </div>
+  <div class="card">
+   <img src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=800" alt="Performance">
+   <div class="card-content">
+    <h3>CAMERA PERFORMANCE</h3>
+    <p>Develop confidence and learn camera performance techniques.</p>
+    <a href="#students">JOIN NOW →</a>
+   </div>
+  </div>
+  <div class="card">
+   <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800" alt="Film production">
+   <div class="card-content">
+    <h3>FILM MAKING</h3>
+    <p>Explore direction, filmmaking and storytelling.</p>
+    <a href="#students">JOIN NOW →</a>
+   </div>
+  </div>
+ </div>
 </section>
 
-<!-- CASTING + SERVICES + REALITY -->
-<section id="casting">
-<div class="container">
-<div class="section-kicker">OPPORTUNITIES</div>
-<h2 class="section-title">WHAT WE DO</h2>
-<div class="gold-rule"></div>
-<div class="grid">
-<div class="panel"><div class="panel-number">01</div><h3>CASTING CALLS</h3><p>Opportunities for fresh talent and experienced performers in upcoming projects.</p><a class="btn" href="#artist">APPLY</a></div>
-<div class="panel"><div class="panel-number">02</div><h3>PRODUCTION SERVICES</h3><p>Creative collaboration for films, web series and digital content production.</p><a class="btn" href="#contact">ENQUIRE</a></div>
-<div class="panel"><div class="panel-number">03</div><h3>REALITY SHOWS</h3><p>Discover our reality entertainment concept, Kon Banega King and upcoming shows.</p><a class="btn" href="#reality">EXPLORE</a></div>
-</div>
-</div>
+<!-- CASTING -->
+<section id="casting" class="banner">
+ <h2>YOUR FACE. YOUR <span class="gold">IDENTITY.</span></h2>
+ <p>Looking for opportunities in films, web series, advertisements and entertainment projects?</p>
+ <a class="btn" href="#artist">APPLY FOR CASTING</a>
 </section>
 
-<section class="dark-section" id="reality">
-<div class="container">
-<div class="section-kicker">THE ULTIMATE CHALLENGE</div>
-<h2 class="section-title">KON BANEGA KING</h2>
-<div class="gold-rule"></div>
-<p class="section-desc">An entertainment and reality challenge concept by Vaswan Films. Stay connected for audition and registration announcements.</p>
-<div style="text-align:center"><a class="btn" href="#contact">GET INFORMATION</a></div>
-</div>
+<!-- REALITY SHOW -->
+<section id="reality" class="dark-section">
+ <h2 class="heading">REALITY <span class="gold">SHOWS</span></h2>
+ <div class="line"></div>
+ <div class="cards">
+  <div class="card">
+   <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=900" alt="Kon Banega King">
+   <div class="card-content">
+    <h3>KON BANEGA KING</h3>
+    <p>Ultimate Reality Challenge. Are you ready to take on the challenge?</p>
+    <a href="#artist">PARTICIPATE →</a>
+   </div>
+  </div>
+  <div class="card">
+   <img src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=900" alt="Entertainment show">
+   <div class="card-content">
+    <h3>UPCOMING SHOWS</h3>
+    <p>New entertainment formats and exciting opportunities.</p>
+    <a href="#contact">KNOW MORE →</a>
+   </div>
+  </div>
+ </div>
 </section>
 
 <!-- GALLERY -->
 <section id="gallery">
-<div class="container">
-<div class="section-kicker">BEHIND THE SCENES</div>
-<h2 class="section-title">OUR GALLERY</h2>
-<div class="gold-rule"></div>
-<p class="section-desc">A glimpse into the world of cinema, production and creativity.</p>
-<div class="gallery">
-<img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=700&q=80" alt="Cinema">
-<img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=700&q=80" alt="Film camera">
-<img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=700&q=80" alt="Production">
-<img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=700&q=80" alt="Camera">
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=80" alt="Film scene">
-<img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=700&q=80" alt="Visual story">
-</div>
-</div>
+ <h2 class="heading">OUR <span class="gold">GALLERY</span></h2>
+ <div class="line"></div>
+ <p class="subheading">Behind the scenes. Beyond imagination.</p>
+ <div class="gallery">
+  <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=800" alt="Cinema">
+  <img src="https://images.unsplash.com/photo-1503095396549-807759245b35?w=800" alt="Stage">
+  <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=800" alt="Film production">
+  <img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=800" alt="Camera">
+  <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=800" alt="Artist">
+  <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=800" alt="Event">
+ </div>
 </section>
 
 <!-- YOUTUBE -->
-<section class="dark-section" id="youtube">
-<div class="container">
-<div class="youtube-box">
-<div class="section-kicker">WATCH OUR STORIES</div>
-<h3>VASWAN FILMS ON YOUTUBE</h3>
-<p>Films, short films, web series and updates from our creative journey.<br>Subscribe to our official channel.</p>
-<a class="btn" href="https://www.youtube.com/@Krishnavaswanfilms" target="_blank">▶ VISIT YOUTUBE CHANNEL</a>
-</div>
-</div>
+<section class="youtube">
+ <h2>WATCH <span class="gold">VASWAN FILMS</span></h2>
+ <p>Watch our films, web series, entertainment and latest projects.</p>
+ <a class="btn" href="https://www.youtube.com/@Krishnavaswanfilms" target="_blank">▶ SUBSCRIBE ON YOUTUBE</a>
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
-<div class="container">
-<div class="section-kicker">LET'S CREATE SOMETHING</div>
-<h2 class="section-title">GET IN TOUCH</h2>
-<div class="gold-rule"></div>
-<p class="section-desc">For business enquiries, casting, production and collaborations.</p>
-<div class="contact-layout">
-<div class="contact-info">
-<h3>VASWAN FILMS</h3>
-<p>A World of Cinema</p>
-<p><strong>Email</strong><br>Vaswankrishna@gmail.com</p>
-<p><strong>YouTube</strong><br>Krishna Vaswan Films</p>
-<a class="btn" href="mailto:Vaswankrishna@gmail.com">EMAIL OUR TEAM</a>
-</div>
-<div class="formbox">
-<form onsubmit="sendForm(event,'Contact Enquiry')">
-<div class="formgrid">
-<div class="field"><label>YOUR NAME *</label><input name="Name" required></div>
-<div class="field"><label>PHONE *</label><input name="Phone" required></div>
-<div class="field full"><label>EMAIL</label><input name="Email" type="email"></div>
-<div class="field full"><label>ENQUIRY TYPE</label><select name="Enquiry"><option>Business</option><option>Casting</option><option>Production</option><option>Workshop</option><option>Other</option></select></div>
-<div class="field full"><label>MESSAGE *</label><textarea name="Message" required></textarea></div>
-</div>
-<p class="note">This form opens your email app to send your enquiry.</p>
-<button class="btn" type="submit">SEND ENQUIRY</button>
-</form>
-</div>
-</div>
-</div>
+<section id="contact" class="dark-section">
+ <h2 class="heading">CONTACT <span class="gold">US</span></h2>
+ <div class="line"></div>
+ <p class="subheading">Let's create something extraordinary together.</p>
+ <div class="contact-grid">
+  <div class="contact-box">
+   <h3>EMAIL</h3>
+   <p>Vaswankrishna@gmail.com</p>
+  </div>
+  <div class="contact-box">
+   <h3>WEBSITE</h3>
+   <p>www.vaswanfilms.in</p>
+  </div>
+  <div class="contact-box">
+   <h3>YOUTUBE</h3>
+   <p>Vaswan Films Official</p>
+  </div>
+ </div>
 </section>
-</main>
 
 <footer>
-<div class="container">
-<div class="footer-top">
-<div>
-<div class="footer-brand">VASWAN FILMS</div>
-<p>A world of cinema. Creating stories, discovering talent and building memorable entertainment.</p>
-</div>
-<div class="footer-links">
-<a href="#home">HOME</a><a href="#about">ABOUT</a>
-<a href="#films">FILMS</a><a href="#artist">ARTIST</a>
-<a href="#student">STUDENT</a><a href="#gallery">GALLERY</a>
-<a href="#youtube">YOUTUBE</a><a href="#contact">CONTACT</a>
-</div>
-</div>
-<div class="copyright">© <span id="year"></span> VASWAN FILMS. ALL RIGHTS RESERVED.</div>
-</div>
+ <div class="logo">VASWAN FILMS</div>
+ <p>YOUR STORIES. YOUR CINEMA.</p>
+ <div class="footer-links">
+  <a href="#home">HOME</a>
+  <a href="#about">ABOUT</a>
+  <a href="#films">FILMS</a>
+  <a href="#artist">REGISTRATION</a>
+  <a href="#contact">CONTACT</a>
+ </div>
+ <small>© 2026 VASWAN FILMS. ALL RIGHTS RESERVED.</small>
 </footer>
 
 <script>
 function toggleMenu(){
- document.getElementById("navlinks").classList.toggle("show");
+ document.getElementById('navigation').classList.toggle('active');
 }
-document.querySelectorAll(".navlinks a").forEach(function(link){
- link.addEventListener("click",function(){
-  document.getElementById("navlinks").classList.remove("show");
+document.querySelectorAll('nav a').forEach(link=>{
+ link.addEventListener('click',()=>{
+  document.getElementById('navigation').classList.remove('active');
  });
 });
-document.getElementById("year").textContent=new Date().getFullYear();
-
-function sendForm(event,title){
+function submitForm(event,type){
  event.preventDefault();
- const formData=new FormData(event.target);
- let body=title+"\n\n";
- for(const [key,value] of formData.entries()){
+ const form=event.target;
+ const data=new FormData(form);
+ let body=type+"\n\n";
+ for(const [key,value] of data.entries()){
+  if(value instanceof File) continue;
   body+=key+": "+value+"\n";
  }
- const subject=encodeURIComponent("Vaswan Films - "+title);
+ const email="Vaswankrishna@gmail.com";
+ const subject=encodeURIComponent(type+" - Vaswan Films");
  const message=encodeURIComponent(body);
- window.location.href="mailto:Vaswankrishna@gmail.com?subject="+subject+"&body="+message;
+ window.location.href="mailto:"+email+"?subject="+subject+"&body="+message;
+ alert("Your email app will open. Please send the registration email.");
 }
 </script>
 </body>
