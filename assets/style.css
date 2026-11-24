@@ -1,0 +1,406 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #090909;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.top {
+    background: #c9a45b;
+    color: #111;
+    text-align: center;
+    padding: 7px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #080808;
+    border-bottom: 1px solid #49391f;
+    padding: 15px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #d7b36a;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.brand span {
+    color: white;
+    font-family: Georgia, serif;
+    font-size: 15px;
+}
+
+.brand small {
+    display: block;
+    color: #c9a45b;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+nav {
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #ddd;
+    font-size: 11px;
+    transition: .3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #d7b36a;
+}
+
+.toggle {
+    display: none;
+    background: transparent;
+    color: #d7b36a;
+    border: 1px solid #c9a45b;
+    padding: 8px 12px;
+    font-size: 20px;
+}
+
+.hero {
+    min-height: 570px;
+    padding: 100px 9%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background:
+    linear-gradient(90deg, #000 5%, #0009 100%),
+    url("https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1800&q=85")
+    center/cover no-repeat;
+}
+
+.hero small,
+.pagehero small {
+    color: #d7b36a;
+    letter-spacing: 3px;
+    font-size: 12px;
+}
+
+.hero h1,
+.pagehero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(40px, 7vw, 75px);
+    line-height: 1.15;
+    margin: 20px 0;
+}
+
+.hero em,
+.pagehero em,
+h2 em {
+    color: #d7b36a;
+    font-style: normal;
+}
+
+.hero p,
+.pagehero p {
+    color: #ddd;
+    max-width: 650px;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background: #c9a45b;
+    color: #111;
+    padding: 13px 22px;
+    border: 1px solid #c9a45b;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: transparent;
+    color: #d7b36a;
+}
+
+.btn.outline {
+    background: transparent;
+    color: #d7b36a;
+}
+
+.section {
+    padding: 70px 8%;
+}
+
+.section h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.tile,
+.card,
+.panel,
+.form {
+    padding: 25px;
+    background: #151515;
+    border: 1px solid #49391f;
+    transition: .3s;
+}
+
+.tile:hover,
+.card:hover {
+    border-color: #d7b36a;
+    transform: translateY(-4px);
+}
+
+.tile b {
+    display: block;
+    color: #d7b36a;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.tile span,
+.tile p,
+.card p {
+    color: #bbb;
+    font-size: 12px;
+}
+
+.pagehero {
+    text-align: center;
+    padding: 75px 6%;
+    background: linear-gradient(120deg, #241b0e, #080808);
+    border-bottom: 1px solid #49391f;
+}
+
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.split p {
+    color: #bbb;
+    margin-bottom: 15px;
+}
+
+.art {
+    min-height: 250px;
+    background: linear-gradient(135deg, #61491f, #090909);
+    display: grid;
+    place-content: center;
+    text-align: center;
+    color: #e0bd75;
+    font-size: 35px;
+}
+
+.fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.fields label {
+    color: #d7b36a;
+    font-size: 12px;
+}
+
+.fields .wide {
+    grid-column: 1 / -1;
+}
+
+input,
+select,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    margin-top: 7px;
+    background: #090909;
+    border: 1px solid #51442e;
+    color: white;
+    font-size: 14px;
+}
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.check {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 18px 0;
+    color: #ccc;
+}
+
+.check input {
+    width: auto;
+}
+
+.status {
+    color: #d7b36a;
+    margin-top: 12px;
+}
+
+.muted {
+    color: #999;
+    font-size: 12px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.gallery img,
+.gallery video {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    background: #222;
+}
+
+.center {
+    text-align: center;
+}
+
+footer {
+    padding: 35px 6%;
+    text-align: center;
+    background: #050505;
+    border-top: 1px solid #49391f;
+    color: #aaa;
+    font-size: 12px;
+}
+
+footer b {
+    color: #d7b36a;
+    font-family: Georgia, serif;
+    font-size: 25px;
+}
+
+footer p {
+    margin: 8px 0;
+}
+
+footer a {
+    color: #d7b36a;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width: 850px) {
+
+    header {
+        flex-wrap: wrap;
+    }
+
+    .toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #080808;
+        padding: 20px;
+        flex-direction: column;
+        border-top: 1px solid #49391f;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    nav a {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .split {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 520px) {
+
+    .hero {
+        min-height: 480px;
+        padding: 65px 7%;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .section {
+        padding: 45px 6%;
+    }
+
+    .grid,
+    .fields,
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .fields .wide {
+        grid-column: auto;
+    }
+
+    .gallery img,
+    .gallery video {
+        height: 220px;
+    }
+
+}
