@@ -3,366 +3,467 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VASWAN FILMS | Official Website</title>
-<meta name="description" content="Vaswan Films - Film Production, Artist Registration, Student Registration, Acting Workshop and Entertainment.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VASWAN FILMS | Official Production House</title>
+<meta name="description" content="Vaswan Films - Films, Web Series, Casting, Artist Registration and Entertainment.">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
-:root{--gold:#e2b957;--gold2:#ffdf91;--black:#080808}
-body{background:var(--black);color:#fff;font-family:Arial,Helvetica,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#090909;color:#fff;font-family:Arial,Helvetica,sans-serif}
+:root{--gold:#d9b56b;--cream:#f6e4bd;--muted:#b9b4aa}
 a{text-decoration:none;color:inherit}
 button,input,select,textarea{font:inherit}
+img{max-width:100%;display:block}
+.container{width:min(1200px,90%);margin:auto}
 
-/* HEADER */
-header{background:#050505;border-bottom:2px solid #9b742c;position:sticky;top:0;z-index:100}
-.topbar{max-width:1400px;margin:auto;padding:15px 4%;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;align-items:center;gap:14px}
-.logo{width:65px;height:65px;border:3px solid var(--gold);border-radius:12px;display:grid;place-items:center;font-size:28px;font-weight:1000;color:var(--gold2);box-shadow:0 0 18px #d6ad5544}
-.brandname{font-size:clamp(22px,4vw,34px);font-weight:1000;letter-spacing:2px;color:var(--gold2)}
-.tagline{font-size:11px;letter-spacing:4px;color:#fff;margin-top:5px}
-.menu{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
-.menu a{font-size:14px;font-weight:800;color:#fff}
-.menu a:hover{color:var(--gold)}
-.menu-btn{display:none;background:var(--gold);border:0;padding:10px 15px;font-weight:bold;border-radius:5px}
+/* NAVIGATION */
+header{position:sticky;top:0;z-index:100;background:#080808f2;border-bottom:1px solid #6f572f;backdrop-filter:blur(12px)}
+.navbar{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:13px}
+.brand-symbol{width:58px;height:58px;border:2px solid var(--gold);display:grid;place-items:center;color:var(--cream);font-family:Georgia,serif;font-size:25px;font-weight:bold;transform:rotate(45deg)}
+.brand-symbol span{transform:rotate(-45deg)}
+.brand-name{font-family:Georgia,serif;font-size:27px;font-weight:bold;letter-spacing:2px;color:var(--cream)}
+.brand-tag{font-size:9px;letter-spacing:4px;color:var(--gold);margin-top:5px}
+.navlinks{display:flex;align-items:center;gap:21px}
+.navlinks a{font-size:12px;font-weight:bold;letter-spacing:1px;color:#eee;transition:.3s}
+.navlinks a:hover{color:var(--gold)}
+.nav-cta{border:1px solid var(--gold);padding:12px 16px;color:var(--cream)!important}
+.menu-toggle{display:none;background:none;border:1px solid var(--gold);color:var(--gold);padding:10px 14px}
 
 /* HERO */
-.hero{min-height:650px;padding:90px 5%;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(#000b,#000d),radial-gradient(ellipse at center,#59431c,#080808 75%);border-bottom:1px solid #6d5120}
-.hero-inner{max-width:1050px}
-.hero-mark{font-size:clamp(48px,10vw,112px);font-weight:1000;letter-spacing:4px;color:var(--gold2);text-shadow:0 0 35px #d6ad5577}
-.hero-subtitle{font-size:clamp(22px,4vw,38px);font-weight:900;letter-spacing:5px;margin:20px 0}
-.goldline{width:140px;height:4px;background:var(--gold);margin:22px auto}
-.hero p{font-size:clamp(17px,2vw,22px);line-height:1.8;color:#ddd}
-.btn{display:inline-block;background:linear-gradient(135deg,#f4d58b,#b9872c);color:#080808;padding:16px 28px;border-radius:5px;font-size:16px;font-weight:1000;margin:12px 6px;border:0;cursor:pointer}
-.btn:hover{filter:brightness(1.15)}
-.btn-outline{background:transparent;border:2px solid var(--gold);color:var(--gold2)}
+.hero{min-height:690px;position:relative;display:flex;align-items:center;overflow:hidden;background:
+linear-gradient(90deg,#050505 0%,#050505d9 38%,#05050555 100%),
+linear-gradient(0deg,#090909 0%,transparent 35%),
+url("https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2000&q=85") center/cover}
+.hero-content{padding:95px 0;max-width:760px}
+.eyebrow{color:var(--gold);font-size:12px;letter-spacing:5px;font-weight:bold;margin-bottom:25px}
+.hero h1{font-family:Georgia,serif;font-size:clamp(48px,8vw,100px);line-height:.98;color:var(--cream);letter-spacing:1px}
+.hero h1 span{color:var(--gold);display:block}
+.hero-line{width:100px;height:3px;background:var(--gold);margin:30px 0}
+.hero p{font-size:18px;line-height:1.8;color:#dedbd4;max-width:580px}
+.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 25px;background:var(--gold);color:#100e09;font-weight:bold;font-size:12px;letter-spacing:1.5px;border:1px solid var(--gold);transition:.3s}
+.btn:hover{background:var(--cream);transform:translateY(-3px)}
+.btn-outline{background:transparent;color:var(--cream)}
+.hero-note{margin-top:65px;color:#c9b994;font-size:11px;letter-spacing:4px}
 
-/* GENERAL */
-section{padding:85px 6%;scroll-margin-top:100px}
-.section-dark{background:#111}
-.section-title{text-align:center;font-size:clamp(30px,5vw,48px);font-weight:1000;color:var(--gold2);margin-bottom:14px}
-.section-desc{text-align:center;color:#ccc;font-size:18px;line-height:1.8;max-width:900px;margin:0 auto 35px}
-.line{height:4px;width:90px;background:var(--gold);margin:0 auto 35px}
-.grid{max-width:1250px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
-.card{background:#171717;border:1px solid #6d5120;border-radius:12px;padding:30px 24px;text-align:center;box-shadow:0 10px 25px #0005}
-.card h3{font-size:24px;color:var(--gold2);font-weight:1000;margin-bottom:15px}
-.card p{font-size:16px;line-height:1.8;color:#ccc}
-.card .btn{margin-top:20px}
-.icon{font-size:38px;margin-bottom:15px}
+/* SECTIONS */
+section{padding:100px 0;scroll-margin-top:85px}
+.section-kicker{text-align:center;color:var(--gold);font-size:11px;letter-spacing:5px;font-weight:bold;margin-bottom:15px}
+.section-title{text-align:center;font-family:Georgia,serif;font-size:clamp(34px,5vw,58px);color:var(--cream);font-weight:normal}
+.section-desc{text-align:center;color:var(--muted);font-size:16px;line-height:1.9;max-width:760px;margin:20px auto 50px}
+.gold-rule{width:65px;height:2px;background:var(--gold);margin:22px auto}
+.dark-section{background:#111}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.panel{background:#151515;border:1px solid #382f20;padding:30px;transition:.3s}
+.panel:hover{border-color:var(--gold);transform:translateY(-5px)}
+.panel-number{font-family:Georgia,serif;color:var(--gold);font-size:35px}
+.panel h3{font-family:Georgia,serif;color:var(--cream);font-size:23px;margin:18px 0 12px}
+.panel p{color:var(--muted);line-height:1.8;font-size:14px}
 
-/* FORMS */
-.formbox{max-width:850px;margin:auto;background:#141414;padding:35px;border:1px solid #98732d;border-radius:12px}
-.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.field{display:flex;flex-direction:column;gap:9px}
-.field.full{grid-column:1/-1}
-.field label{font-size:16px;font-weight:900;color:var(--gold2)}
-.field input,.field select,.field textarea{width:100%;padding:15px;background:#080808;color:white;border:1px solid #80612c;border-radius:5px;font-size:16px}
-.field textarea{min-height:110px;resize:vertical}
-.form-note{font-size:13px;color:#bbb;line-height:1.6;margin:18px 0}
+/* ABOUT */
+.about-layout{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.about-image{height:460px;background:
+linear-gradient(0deg,#0008,#0002),
+url("https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1100&q=85") center/cover}
+.about-copy .section-kicker,.about-copy .section-title{text-align:left}
+.about-copy .section-title{font-size:48px}
+.about-copy p{color:#c4c0b8;line-height:2;margin-top:20px}
+
+/* FILM CARDS */
+.films{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.film{position:relative;min-height:430px;overflow:hidden;background:#181818;border:1px solid #514127}
+.film img{width:100%;height:430px;object-fit:cover;transition:.5s}
+.film:hover img{transform:scale(1.06)}
+.film-info{position:absolute;inset:auto 0 0;padding:55px 23px 24px;background:linear-gradient(transparent,#000 70%)}
+.film-info small{color:var(--gold);letter-spacing:3px;font-size:10px}
+.film-info h3{font-family:Georgia,serif;font-size:28px;color:var(--cream);margin:10px 0}
+.film-info p{font-size:13px;color:#ddd;line-height:1.6}
+
+/* REGISTRATION */
+.registration{background:linear-gradient(100deg,#17130c,#090909 65%)}
+.registration-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.registration-card{padding:40px;border:1px solid #72572e;background:#0d0d0d}
+.registration-card h3{font-family:Georgia,serif;font-size:30px;color:var(--cream);margin:15px 0}
+.registration-card p{color:var(--muted);line-height:1.8;margin-bottom:20px}
+
+/* WORKSHOP / REALITY */
+.feature-strip{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #514127}
+.feature{padding:28px 20px;text-align:center;border-right:1px solid #514127}
+.feature:last-child{border:0}
+.feature strong{display:block;color:var(--gold);font-family:Georgia,serif;font-size:23px;margin-bottom:10px}
+.feature span{font-size:12px;color:#c5c0b5;line-height:1.7}
 
 /* GALLERY */
-.gallerybox{min-height:160px;border:1px dashed #98732d;border-radius:10px;display:grid;place-items:center;padding:25px;color:#ccc;text-align:center}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gallery img{width:100%;height:230px;object-fit:cover;filter:brightness(.8);transition:.3s}
+.gallery img:hover{filter:brightness(1);transform:scale(1.015)}
+
+/* YOUTUBE */
+.youtube-box{padding:60px 25px;text-align:center;border:1px solid #604b29;background:linear-gradient(120deg,#1a160e,#101010)}
+.youtube-box h3{font-family:Georgia,serif;font-size:38px;color:var(--cream);margin-bottom:15px}
+.youtube-box p{color:#c8c2b5;line-height:1.8;margin-bottom:25px}
+
+/* CONTACT + FORM */
+.contact-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px}
+.contact-info h3{font-family:Georgia,serif;font-size:32px;color:var(--cream);margin-bottom:20px}
+.contact-info p{color:#bbb;line-height:2;margin-bottom:15px}
+.formbox{background:#121212;border:1px solid #493a24;padding:30px}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field.full{grid-column:1/-1}
+.field label{color:var(--gold);font-size:12px;font-weight:bold;letter-spacing:1px}
+.field input,.field select,.field textarea{background:#080808;border:1px solid #49402f;padding:14px;color:white;width:100%;outline:none}
+.field textarea{min-height:100px}
+.note{font-size:12px;color:#aaa;line-height:1.7;margin:17px 0}
 
 /* FOOTER */
-footer{background:#030303;border-top:2px solid #98732d;padding:45px 5%;text-align:center}
-footer h2{font-size:28px;color:var(--gold2);font-weight:1000}
-footer p{color:#aaa;margin-top:12px;line-height:1.8}
-.footerlinks{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin:25px 0}
-.footerlinks a{color:var(--gold2);font-weight:bold}
+footer{background:#050505;border-top:1px solid #70562d;padding:55px 0 25px}
+.footer-top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.footer-brand{font-family:Georgia,serif;font-size:30px;color:var(--cream)}
+.footer-top p{color:#aaa;line-height:1.8;margin-top:12px;max-width:350px}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap;max-width:500px}
+.footer-links a{font-size:12px;color:#cfc5b0}
+.copyright{border-top:1px solid #28231a;margin-top:35px;padding-top:22px;text-align:center;color:#777;font-size:12px}
 
-/* MOBILE */
-@media(max-width:900px){
- .menu-btn{display:block}
- .topbar{flex-wrap:wrap}
- .menu{display:none;width:100%;flex-direction:column;align-items:stretch;padding:15px 0}
- .menu.open{display:flex}
- .menu a{font-size:17px;padding:12px;border-bottom:1px solid #332817}
+@media(max-width:950px){
+ .menu-toggle{display:block}
+ .navlinks{display:none;position:absolute;top:88px;left:0;right:0;background:#080808;padding:20px 5%;flex-direction:column;align-items:stretch;border-bottom:1px solid var(--gold)}
+ .navlinks.show{display:flex}
+ .navlinks a{padding:12px 0}
+ .grid,.films{grid-template-columns:repeat(2,1fr)}
+ .feature-strip{grid-template-columns:repeat(2,1fr)}
+ .feature:nth-child(2){border-right:0}
+ .feature:nth-child(-n+2){border-bottom:1px solid #514127}
 }
-@media(max-width:600px){
- .brandname{font-size:22px;letter-spacing:1px}
- .logo{width:55px;height:55px;font-size:23px}
- .tagline{font-size:9px;letter-spacing:2px}
- .hero{min-height:570px;padding:65px 5%}
- section{padding:65px 5%}
- .formbox{padding:22px 16px}
+@media(max-width:650px){
+ .navbar{min-height:78px}
+ .brand-symbol{width:45px;height:45px;font-size:20px}
+ .brand-name{font-size:20px;letter-spacing:1px}
+ .brand-tag{font-size:8px;letter-spacing:2px}
+ .navlinks{top:78px}
+ .hero{min-height:620px;background-position:60% center}
+ .hero-content{padding:70px 0}
+ .hero p{font-size:16px}
+ section{padding:70px 0}
+ .about-layout,.registration-grid,.contact-layout{grid-template-columns:1fr}
+ .about-image{height:300px}
+ .about-copy .section-title{font-size:38px}
+ .grid,.films{grid-template-columns:1fr}
+ .film,.film img{height:390px;min-height:390px}
+ .gallery{grid-template-columns:repeat(2,1fr)}
+ .gallery img{height:150px}
+ .feature{padding:22px 10px}
+ .feature strong{font-size:19px}
  .formgrid{grid-template-columns:1fr}
  .field.full{grid-column:auto}
- .btn{font-size:15px;padding:14px 20px}
+ .youtube-box h3{font-size:29px}
 }
 </style>
 </head>
 
 <body>
-
 <header>
-<div class="topbar">
- <a class="brand" href="#home">
-  <div class="logo">VF</div>
-  <div>
-   <div class="brandname">VASWAN FILMS</div>
-   <div class="tagline">A WORLD OF CINEMA</div>
-  </div>
- </a>
-
- <button class="menu-btn" onclick="toggleMenu()">☰ MENU</button>
-
- <nav class="menu" id="menu">
-  <a href="#home" onclick="closeMenu()">HOME</a>
-  <a href="#about" onclick="closeMenu()">ABOUT</a>
-  <a href="#films" onclick="closeMenu()">FILMS</a>
-  <a href="#artist" onclick="closeMenu()">ARTIST</a>
-  <a href="#student" onclick="closeMenu()">STUDENT</a>
-  <a href="#workshop" onclick="closeMenu()">WORKSHOP</a>
-  <a href="#reality" onclick="closeMenu()">REALITY SHOWS</a>
-  <a href="#gallery" onclick="closeMenu()">GALLERY</a>
-  <a href="#contact" onclick="closeMenu()">CONTACT</a>
- </nav>
+<div class="container navbar">
+<a href="#home" class="brand">
+ <div class="brand-symbol"><span>VF</span></div>
+ <div>
+  <div class="brand-name">VASWAN FILMS</div>
+  <div class="brand-tag">A WORLD OF CINEMA</div>
+ </div>
+</a>
+<button class="menu-toggle" onclick="toggleMenu()">☰ MENU</button>
+<nav class="navlinks" id="navlinks">
+<a href="#home">HOME</a>
+<a href="#about">ABOUT</a>
+<a href="#films">FILMS</a>
+<a href="#artist">ARTIST</a>
+<a href="#student">STUDENT</a>
+<a href="#workshop">WORKSHOP</a>
+<a href="#gallery">GALLERY</a>
+<a href="#contact" class="nav-cta">CONTACT</a>
+</nav>
 </div>
 </header>
 
-<!-- HOME -->
+<main>
+<!-- HERO -->
 <section class="hero" id="home">
- <div class="hero-inner">
-  <div class="hero-mark">VASWAN FILMS</div>
-  <div class="goldline"></div>
-  <div class="hero-subtitle">WE CREATE STORIES</div>
-  <p>Dreams. Emotions. Cinema.<br>
-  Creating meaningful films, discovering new talent and bringing stories to life.</p>
-  <a class="btn" href="#films">EXPLORE OUR FILMS</a>
-  <a class="btn btn-outline" href="#artist">JOIN AS AN ARTIST</a>
- </div>
+<div class="container">
+<div class="hero-content">
+<div class="eyebrow">AN INDEPENDENT FILM PRODUCTION HOUSE</div>
+<h1>WE CREATE <span>LEGACIES.</span></h1>
+<div class="hero-line"></div>
+<p>Every story deserves a screen. Every dream deserves a chance. Welcome to Vaswan Films — where imagination becomes cinema.</p>
+<div class="actions">
+<a class="btn" href="#films">EXPLORE OUR CINEMA</a>
+<a class="btn btn-outline" href="#artist">JOIN OUR JOURNEY</a>
+</div>
+<div class="hero-note">FILMS • WEB SERIES • CASTING • ENTERTAINMENT</div>
+</div>
+</div>
 </section>
 
 <!-- ABOUT -->
 <section id="about">
- <h2 class="section-title">ABOUT VASWAN FILMS</h2>
- <div class="line"></div>
- <p class="section-desc">
-  Vaswan Films is an independent film production company focused on films,
-  web series, digital entertainment and creative storytelling.
-  We believe in fresh talent, original ideas and powerful stories.
-  Our mission is to create quality entertainment and provide opportunities
-  to passionate artists and students.
- </p>
- <div class="grid">
-  <div class="card"><div class="icon">🎬</div><h3>OUR VISION</h3><p>To create memorable cinema and meaningful entertainment.</p></div>
-  <div class="card"><div class="icon">⭐</div><h3>OUR MISSION</h3><p>To discover new talent and give creative people opportunities.</p></div>
-  <div class="card"><div class="icon">🎥</div><h3>OUR WORK</h3><p>Films, web series, casting, workshops and production services.</p></div>
- </div>
+<div class="container about-layout">
+<div class="about-image" role="img" aria-label="Cinematic film production scene"></div>
+<div class="about-copy">
+<div class="section-kicker">OUR STORY</div>
+<h2 class="section-title">MORE THAN A PRODUCTION HOUSE.</h2>
+<div class="gold-rule" style="margin-left:0"></div>
+<p>Vaswan Films is an independent film production company driven by the power of storytelling. We work towards bringing original ideas, new talent and meaningful entertainment to the screen.</p>
+<p>From films and web series to casting and creative projects, our vision is to build stories that connect with audiences.</p>
+<a class="btn" href="#contact">CONNECT WITH US</a>
+</div>
+</div>
 </section>
 
 <!-- FILMS -->
-<section class="section-dark" id="films">
- <h2 class="section-title">OUR FILMS & PROJECTS</h2>
- <div class="line"></div>
- <p class="section-desc">Discover stories and projects from Vaswan Films.</p>
- <div class="grid">
-  <div class="card">
-   <div class="icon">🎞️</div>
-   <h3>GUNNAH</h3>
-   <p>A crime thriller project presented by K.K. Entertainment, produced by Krishna Vaswan.</p>
-   <a class="btn" href="https://youtu.be/_50br1r5L54" target="_blank">WATCH NOW</a>
-  </div>
-  <div class="card">
-   <div class="icon">❤️</div>
-   <h3>RADHA TERE PYAR MAIN</h3>
-   <p>An upcoming feature film project.</p>
-  </div>
-  <div class="card">
-   <div class="icon">🎬</div>
-   <h3>UPCOMING PROJECTS</h3>
-   <p>More films and web series coming soon.</p>
-  </div>
- </div>
+<section class="dark-section" id="films">
+<div class="container">
+<div class="section-kicker">THE WORLD OF STORIES</div>
+<h2 class="section-title">OUR CINEMA</h2>
+<div class="gold-rule"></div>
+<p class="section-desc">Stories of emotion, courage, mystery and life. Explore the projects of Vaswan Films.</p>
+<div class="films">
+<article class="film">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85" alt="Gunnah film visual">
+<div class="film-info"><small>CRIME THRILLER</small><h3>GUNNAH</h3><p>A story that explores crime, choices and consequences.</p><a class="btn" href="https://youtu.be/_50br1r5L54" target="_blank">WATCH FILM</a></div>
+</article>
+<article class="film">
+<img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=900&q=85" alt="Upcoming film visual">
+<div class="film-info"><small>UPCOMING FEATURE FILM</small><h3>RADHA TERE PYAR MAIN</h3><p>An upcoming cinematic journey.</p></div>
+</article>
+<article class="film">
+<img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900&q=85" alt="Upcoming cinema project">
+<div class="film-info"><small>COMING SOON</small><h3>NEW STORIES</h3><p>New films and web series are in development.</p></div>
+</article>
+</div>
+</div>
 </section>
 
-<!-- ARTIST REGISTRATION -->
-<section id="artist">
- <h2 class="section-title">ARTIST REGISTRATION</h2>
- <div class="line"></div>
- <p class="section-desc">Want to become an actor or artist? Submit your details to Vaswan Films.</p>
-
- <div class="formbox">
-  <form onsubmit="sendForm(event,'Artist Registration')">
-   <div class="formgrid">
-    <div class="field"><label>Full Name *</label><input name="Full Name" required></div>
-    <div class="field"><label>Age *</label><input name="Age" type="number" min="1" required></div>
-    <div class="field"><label>Gender</label><select name="Gender"><option>Male</option><option>Female</option><option>Other</option></select></div>
-    <div class="field"><label>Phone Number *</label><input name="Phone" type="tel" required></div>
-    <div class="field"><label>Email</label><input name="Email" type="email"></div>
-    <div class="field"><label>City</label><input name="City"></div>
-    <div class="field full"><label>Acting Experience</label><textarea name="Experience" placeholder="Tell us about your experience"></textarea></div>
-    <div class="field full"><label>Photo / Portfolio Link</label><input name="Portfolio Link" type="url" placeholder="Paste your Google Drive or portfolio link"></div>
-   </div>
-   <p class="form-note">By submitting, you agree that Vaswan Films may contact you regarding relevant opportunities. This form opens your email app to send your details.</p>
-   <button class="btn" type="submit">SUBMIT ARTIST DETAILS</button>
-  </form>
- </div>
+<!-- ARTIST + STUDENT -->
+<section class="registration" id="artist">
+<div class="container">
+<div class="section-kicker">BE A PART OF THE STORY</div>
+<h2 class="section-title">YOUR JOURNEY STARTS HERE</h2>
+<div class="gold-rule"></div>
+<p class="section-desc">A platform for fresh faces, passionate performers and creative minds.</p>
+<div class="registration-grid">
+<div class="registration-card">
+<div class="panel-number">01</div>
+<h3>ARTIST REGISTRATION</h3>
+<p>Are you an actor, model or performer? Share your profile with Vaswan Films for consideration in relevant upcoming projects.</p>
+<a class="btn" href="#artist-form">REGISTER AS ARTIST</a>
+</div>
+<div class="registration-card" id="student">
+<div class="panel-number">02</div>
+<h3>STUDENT REGISTRATION</h3>
+<p>Interested in acting and filmmaking? Express your interest in our learning and workshop opportunities.</p>
+<a class="btn" href="#student-form">REGISTER AS STUDENT</a>
+</div>
+</div>
+</div>
 </section>
 
-<!-- STUDENT REGISTRATION -->
-<section class="section-dark" id="student">
- <h2 class="section-title">STUDENT REGISTRATION</h2>
- <div class="line"></div>
- <p class="section-desc">Apply for acting and filmmaking learning opportunities with Vaswan Films.</p>
+<!-- FORMS -->
+<section class="dark-section" id="artist-form">
+<div class="container">
+<div class="section-kicker">JOIN THE CAST</div>
+<h2 class="section-title">ARTIST APPLICATION</h2>
+<div class="gold-rule"></div>
+<p class="section-desc">Fill in your details and send your artist profile to our team.</p>
+<div class="formbox">
+<form onsubmit="sendForm(event,'Artist Registration')">
+<div class="formgrid">
+<div class="field"><label>FULL NAME *</label><input name="Full Name" required></div>
+<div class="field"><label>AGE *</label><input name="Age" type="number" required></div>
+<div class="field"><label>GENDER</label><select name="Gender"><option>Male</option><option>Female</option><option>Other</option></select></div>
+<div class="field"><label>PHONE *</label><input name="Phone" type="tel" required></div>
+<div class="field"><label>EMAIL</label><input name="Email" type="email"></div>
+<div class="field"><label>CITY</label><input name="City"></div>
+<div class="field full"><label>EXPERIENCE / INTRODUCTION</label><textarea name="Experience"></textarea></div>
+<div class="field full"><label>PORTFOLIO / VIDEO LINK</label><input name="Portfolio Link" type="url"></div>
+</div>
+<p class="note">Submitting this form opens your email app. It does not automatically upload photos or save applications to a database.</p>
+<button class="btn" type="submit">SEND ARTIST APPLICATION</button>
+</form>
+</div>
+</div>
+</section>
 
- <div class="formbox">
-  <form onsubmit="sendForm(event,'Student Registration')">
-   <div class="formgrid">
-    <div class="field"><label>Student Name *</label><input name="Student Name" required></div>
-    <div class="field"><label>Age *</label><input name="Age" type="number" required></div>
-    <div class="field"><label>Father's Name</label><input name="Father Name"></div>
-    <div class="field"><label>Mother's Name</label><input name="Mother Name"></div>
-    <div class="field"><label>Phone Number *</label><input name="Phone" type="tel" required></div>
-    <div class="field"><label>Email *</label><input name="Email" type="email" required></div>
-    <div class="field"><label>Course</label><select name="Course"><option>Acting</option><option>Camera & Cinematography</option><option>Film Direction</option><option>Editing</option><option>Other</option></select></div>
-    <div class="field"><label>Qualification</label><input name="Qualification"></div>
-    <div class="field full"><label>Full Address</label><textarea name="Address"></textarea></div>
-   </div>
-   <p class="form-note">Registration details will be sent by email. Any course fee and payment process must be confirmed separately by Vaswan Films.</p>
-   <button class="btn" type="submit">SUBMIT STUDENT APPLICATION</button>
-  </form>
- </div>
+<section id="student">
+<div class="container">
+<div class="section-kicker">LEARN. CREATE. PERFORM.</div>
+<h2 class="section-title">STUDENT APPLICATION</h2>
+<div class="gold-rule"></div>
+<p class="section-desc">Register your interest in acting and filmmaking workshops.</p>
+<div class="formbox">
+<form onsubmit="sendForm(event,'Student Registration')">
+<div class="formgrid">
+<div class="field"><label>STUDENT NAME *</label><input name="Student Name" required></div>
+<div class="field"><label>AGE *</label><input name="Age" type="number" required></div>
+<div class="field"><label>FATHER'S NAME</label><input name="Father Name"></div>
+<div class="field"><label>MOTHER'S NAME</label><input name="Mother Name"></div>
+<div class="field"><label>PHONE *</label><input name="Phone" type="tel" required></div>
+<div class="field"><label>EMAIL *</label><input name="Email" type="email" required></div>
+<div class="field"><label>COURSE</label><select name="Course"><option>Acting</option><option>Film Direction</option><option>Cinematography</option><option>Editing</option><option>Other</option></select></div>
+<div class="field"><label>QUALIFICATION</label><input name="Qualification"></div>
+<div class="field full"><label>ADDRESS</label><textarea name="Address"></textarea></div>
+</div>
+<p class="note">This application is an enquiry. Fees, admission confirmation and payment are handled separately.</p>
+<button class="btn" type="submit">SEND STUDENT APPLICATION</button>
+</form>
+</div>
+</div>
 </section>
 
 <!-- WORKSHOP -->
-<section id="workshop">
- <h2 class="section-title">ACTING WORKSHOP</h2>
- <div class="line"></div>
- <p class="section-desc">Learn acting, camera performance, dialogue delivery and the basics of film production.</p>
- <div class="grid">
-  <div class="card"><h3>ACTING TRAINING</h3><p>Learn expressions, emotions, body language and performance.</p></div>
-  <div class="card"><h3>CAMERA PERFORMANCE</h3><p>Understand camera acting and on-screen presentation.</p></div>
-  <div class="card"><h3>FILM KNOWLEDGE</h3><p>Explore the creative world of filmmaking.</p></div>
- </div>
- <div style="text-align:center;margin-top:30px">
-  <a class="btn" href="#student">APPLY FOR WORKSHOP</a>
- </div>
+<section class="dark-section" id="workshop">
+<div class="container">
+<div class="section-kicker">BUILD YOUR CRAFT</div>
+<h2 class="section-title">ACTING & FILM WORKSHOP</h2>
+<div class="gold-rule"></div>
+<p class="section-desc">Explore performance, camera confidence and the art of filmmaking.</p>
+<div class="feature-strip">
+<div class="feature"><strong>ACTING</strong><span>Expressions and performance</span></div>
+<div class="feature"><strong>CAMERA</strong><span>On-screen confidence</span></div>
+<div class="feature"><strong>DIRECTION</strong><span>Visual storytelling</span></div>
+<div class="feature"><strong>EDITING</strong><span>Crafting the final story</span></div>
+</div>
+<div style="text-align:center;margin-top:35px"><a class="btn" href="#student">APPLY NOW</a></div>
+</div>
 </section>
 
-<!-- CASTING -->
-<section class="section-dark" id="casting">
- <h2 class="section-title">CASTING CALLS</h2>
- <div class="line"></div>
- <p class="section-desc">Fresh talent and experienced artists can share their profiles for upcoming projects.</p>
- <div class="grid">
-  <div class="card"><h3>MALE ARTISTS</h3><p>Actors for upcoming film and web series projects.</p></div>
-  <div class="card"><h3>FEMALE ARTISTS</h3><p>Actresses and performers for upcoming projects.</p></div>
-  <div class="card"><h3>FRESH TALENT</h3><p>New faces and passionate performers are welcome.</p></div>
- </div>
- <div style="text-align:center;margin-top:30px">
-  <a class="btn" href="#artist">APPLY FOR CASTING</a>
- </div>
+<!-- CASTING + SERVICES + REALITY -->
+<section id="casting">
+<div class="container">
+<div class="section-kicker">OPPORTUNITIES</div>
+<h2 class="section-title">WHAT WE DO</h2>
+<div class="gold-rule"></div>
+<div class="grid">
+<div class="panel"><div class="panel-number">01</div><h3>CASTING CALLS</h3><p>Opportunities for fresh talent and experienced performers in upcoming projects.</p><a class="btn" href="#artist">APPLY</a></div>
+<div class="panel"><div class="panel-number">02</div><h3>PRODUCTION SERVICES</h3><p>Creative collaboration for films, web series and digital content production.</p><a class="btn" href="#contact">ENQUIRE</a></div>
+<div class="panel"><div class="panel-number">03</div><h3>REALITY SHOWS</h3><p>Discover our reality entertainment concept, Kon Banega King and upcoming shows.</p><a class="btn" href="#reality">EXPLORE</a></div>
+</div>
+</div>
 </section>
 
-<!-- PRODUCTION SERVICES -->
-<section id="services">
- <h2 class="section-title">PRODUCTION SERVICES</h2>
- <div class="line"></div>
- <p class="section-desc">Creative and production support for films, web series and digital projects.</p>
- <div class="grid">
-  <div class="card"><h3>FILM PRODUCTION</h3><p>Film and web series production services.</p></div>
-  <div class="card"><h3>CASTING</h3><p>Artist search and casting coordination.</p></div>
-  <div class="card"><h3>VIDEO PRODUCTION</h3><p>Creative video and digital content production.</p></div>
-  <div class="card"><h3>CREATIVE SERVICES</h3><p>Story development and creative project support.</p></div>
- </div>
-</section>
-
-<!-- REALITY SHOWS -->
-<section class="section-dark" id="reality">
- <h2 class="section-title">REALITY SHOWS</h2>
- <div class="line"></div>
- <div class="grid">
-  <div class="card">
-   <div class="icon">👑</div>
-   <h3>KON BANEGA KING</h3>
-   <p>Ultimate Reality Challenge by Vaswan Films. Stay connected for auditions and updates.</p>
-   <a class="btn" href="#contact">GET DETAILS</a>
-  </div>
-  <div class="card">
-   <div class="icon">🏆</div>
-   <h3>UPCOMING SHOWS</h3>
-   <p>More reality entertainment projects coming soon.</p>
-  </div>
- </div>
+<section class="dark-section" id="reality">
+<div class="container">
+<div class="section-kicker">THE ULTIMATE CHALLENGE</div>
+<h2 class="section-title">KON BANEGA KING</h2>
+<div class="gold-rule"></div>
+<p class="section-desc">An entertainment and reality challenge concept by Vaswan Films. Stay connected for audition and registration announcements.</p>
+<div style="text-align:center"><a class="btn" href="#contact">GET INFORMATION</a></div>
+</div>
 </section>
 
 <!-- GALLERY -->
 <section id="gallery">
- <h2 class="section-title">PHOTO & VIDEO GALLERY</h2>
- <div class="line"></div>
- <p class="section-desc">Film shoots, behind the scenes, events and production moments.</p>
- <div class="gallerybox">
-  <div>
-   <div class="icon">📸</div>
-   <h3>GALLERY COMING SOON</h3>
-   <p>Production photos and videos will be displayed here.</p>
-  </div>
- </div>
+<div class="container">
+<div class="section-kicker">BEHIND THE SCENES</div>
+<h2 class="section-title">OUR GALLERY</h2>
+<div class="gold-rule"></div>
+<p class="section-desc">A glimpse into the world of cinema, production and creativity.</p>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=700&q=80" alt="Cinema">
+<img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=700&q=80" alt="Film camera">
+<img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=700&q=80" alt="Production">
+<img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=700&q=80" alt="Camera">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=80" alt="Film scene">
+<img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=700&q=80" alt="Visual story">
+</div>
+</div>
 </section>
 
 <!-- YOUTUBE -->
-<section class="section-dark" id="youtube">
- <h2 class="section-title">VASWAN FILMS ON YOUTUBE</h2>
- <div class="line"></div>
- <p class="section-desc">Watch our films, short films, trailers and latest videos on our official YouTube channel.</p>
- <div style="text-align:center">
-  <a class="btn" href="https://www.youtube.com/@Krishnavaswanfilms" target="_blank">▶ SUBSCRIBE ON YOUTUBE</a>
-  <br>
-  <a class="btn btn-outline" href="https://youtu.be/_50br1r5L54" target="_blank">WATCH GUNNAH</a>
- </div>
+<section class="dark-section" id="youtube">
+<div class="container">
+<div class="youtube-box">
+<div class="section-kicker">WATCH OUR STORIES</div>
+<h3>VASWAN FILMS ON YOUTUBE</h3>
+<p>Films, short films, web series and updates from our creative journey.<br>Subscribe to our official channel.</p>
+<a class="btn" href="https://www.youtube.com/@Krishnavaswanfilms" target="_blank">▶ VISIT YOUTUBE CHANNEL</a>
+</div>
+</div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
- <h2 class="section-title">CONTACT VASWAN FILMS</h2>
- <div class="line"></div>
- <p class="section-desc">For business enquiries, casting, production and collaboration.</p>
- <div class="grid">
-  <div class="card"><div class="icon">✉️</div><h3>EMAIL US</h3><p>Vaswankrishna@gmail.com</p><a class="btn" href="mailto:Vaswankrishna@gmail.com">SEND EMAIL</a></div>
-  <div class="card"><div class="icon">▶</div><h3>YOUTUBE</h3><p>Krishna Vaswan Films</p><a class="btn" href="https://www.youtube.com/@Krishnavaswanfilms" target="_blank">VISIT CHANNEL</a></div>
- </div>
+<div class="container">
+<div class="section-kicker">LET'S CREATE SOMETHING</div>
+<h2 class="section-title">GET IN TOUCH</h2>
+<div class="gold-rule"></div>
+<p class="section-desc">For business enquiries, casting, production and collaborations.</p>
+<div class="contact-layout">
+<div class="contact-info">
+<h3>VASWAN FILMS</h3>
+<p>A World of Cinema</p>
+<p><strong>Email</strong><br>Vaswankrishna@gmail.com</p>
+<p><strong>YouTube</strong><br>Krishna Vaswan Films</p>
+<a class="btn" href="mailto:Vaswankrishna@gmail.com">EMAIL OUR TEAM</a>
+</div>
+<div class="formbox">
+<form onsubmit="sendForm(event,'Contact Enquiry')">
+<div class="formgrid">
+<div class="field"><label>YOUR NAME *</label><input name="Name" required></div>
+<div class="field"><label>PHONE *</label><input name="Phone" required></div>
+<div class="field full"><label>EMAIL</label><input name="Email" type="email"></div>
+<div class="field full"><label>ENQUIRY TYPE</label><select name="Enquiry"><option>Business</option><option>Casting</option><option>Production</option><option>Workshop</option><option>Other</option></select></div>
+<div class="field full"><label>MESSAGE *</label><textarea name="Message" required></textarea></div>
+</div>
+<p class="note">This form opens your email app to send your enquiry.</p>
+<button class="btn" type="submit">SEND ENQUIRY</button>
+</form>
+</div>
+</div>
+</div>
 </section>
-
 </main>
 
 <footer>
- <h2>VASWAN FILMS</h2>
- <p>A WORLD OF CINEMA</p>
- <div class="footerlinks">
-  <a href="#home">HOME</a>
-  <a href="#about">ABOUT</a>
-  <a href="#films">FILMS</a>
-  <a href="#artist">ARTIST REGISTRATION</a>
-  <a href="#student">STUDENT REGISTRATION</a>
-  <a href="#youtube">YOUTUBE</a>
-  <a href="#contact">CONTACT</a>
- </div>
- <p>© <span id="year"></span> Vaswan Films. All Rights Reserved.</p>
+<div class="container">
+<div class="footer-top">
+<div>
+<div class="footer-brand">VASWAN FILMS</div>
+<p>A world of cinema. Creating stories, discovering talent and building memorable entertainment.</p>
+</div>
+<div class="footer-links">
+<a href="#home">HOME</a><a href="#about">ABOUT</a>
+<a href="#films">FILMS</a><a href="#artist">ARTIST</a>
+<a href="#student">STUDENT</a><a href="#gallery">GALLERY</a>
+<a href="#youtube">YOUTUBE</a><a href="#contact">CONTACT</a>
+</div>
+</div>
+<div class="copyright">© <span id="year"></span> VASWAN FILMS. ALL RIGHTS RESERVED.</div>
+</div>
 </footer>
 
 <script>
 function toggleMenu(){
- document.getElementById("menu").classList.toggle("open");
+ document.getElementById("navlinks").classList.toggle("show");
 }
-function closeMenu(){
- document.getElementById("menu").classList.remove("open");
-}
+document.querySelectorAll(".navlinks a").forEach(function(link){
+ link.addEventListener("click",function(){
+  document.getElementById("navlinks").classList.remove("show");
+ });
+});
 document.getElementById("year").textContent=new Date().getFullYear();
 
-function sendForm(event,formTitle){
+function sendForm(event,title){
  event.preventDefault();
- const form=event.target;
- const data=new FormData(form);
- let body=formTitle+"\n\n";
- for(const [key,value] of data.entries()){
+ const formData=new FormData(event.target);
+ let body=title+"\n\n";
+ for(const [key,value] of formData.entries()){
   body+=key+": "+value+"\n";
  }
- const subject=encodeURIComponent("Vaswan Films - "+formTitle);
+ const subject=encodeURIComponent("Vaswan Films - "+title);
  const message=encodeURIComponent(body);
  window.location.href="mailto:Vaswankrishna@gmail.com?subject="+subject+"&body="+message;
 }
 </script>
-
 </body>
 </html>
